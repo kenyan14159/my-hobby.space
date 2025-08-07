@@ -1,0 +1,163 @@
+{
+    "womens-all-japan-history": [
+      {
+        "kai": 42,
+        "year": 2024,
+        "rank": 9,
+        "totalTime": "2:08:22",
+        "runners": [
+          { "section": 1, "name": "齋藤 みう", "grade": 4, "rank": 24, "time": "23:49" },
+          { "section": 2, "name": "関本 遥", "grade": 1, "rank": 17, "time": "13:37" },
+          { "section": 3, "name": "嶋田 桃子", "grade": 4, "rank": 5, "time": "19:30" },
+          { "section": 4, "name": "柳井 桜子", "grade": 3, "rank": 5, "time": "15:58" },
+          { "section": 5, "name": "山﨑 りさ", "grade": 4, "rank": 4, "time": "30:00" },
+          { "section": 6, "name": "尾方 唯莉", "grade": 4, "rank": 3, "time": "25:28" }
+        ]
+      },
+      {
+        "kai": 41,
+        "year": 2023,
+        "rank": 5,
+        "totalTime": "2:06:45",
+        "runners": [
+          { "section": 1, "name": "保坂 晴子", "grade": 4, "rank": 4, "time": "21:45" },
+          { "section": 2, "name": "尾方 唯莉", "grade": 3, "rank": 5, "time": "13:18" },
+          { "section": 3, "name": "嶋田 桃子", "grade": 3, "rank": 4, "time": "19:06" },
+          { "section": 4, "name": "齋藤 みう", "grade": 3, "rank": 8, "time": "16:31" },
+          { "section": 5, "name": "山﨑 りさ", "grade": 3, "rank": 2, "time": "29:53" },
+          { "section": 6, "name": "柳井 桜子", "grade": 2, "rank": 13, "time": "26:12" }
+        ]
+      },
+      {
+        "kai": 40,
+        "year": 2022,
+        "rank": 6,
+        "totalTime": "2:08:05",
+        "runners": [
+          { "section": 1, "name": "山﨑 りさ", "grade": 2, "rank": 3, "time": "21:29" },
+          { "section": 2, "name": "齋藤 みう", "grade": 2, "rank": 3, "time": "12:36" },
+          { "section": 3, "name": "尾方 唯莉", "grade": 2, "rank": 8, "time": "22:59" },
+          { "section": 4, "name": "黒田 澪", "grade": 4, "rank": 3, "time": "16:16" },
+          { "section": 5, "name": "嶋田 桃子", "grade": 2, "rank": 16, "time": "32:03" },
+          { "section": 6, "name": "赤堀 かりん", "grade": 4, "rank": 3, "time": "22:42" }
+        ]
+      },
+      {
+        "kai": 39,
+        "year": 2021,
+        "rank": 5,
+        "totalTime": "2:06:56",
+        "runners": [
+          { "section": 1, "name": "保坂 晴子", "grade": 2, "rank": 3, "time": "21:55" },
+          { "section": 2, "name": "尾方 唯莉", "grade": 1, "rank": 2, "time": "12:17" },
+          { "section": 3, "name": "山﨑 りさ", "grade": 1, "rank": 4, "time": "22:47" },
+          { "section": 4, "name": "岡島 楓", "grade": 4, "rank": 2, "time": "15:47" },
+          { "section": 5, "name": "栗原 泉", "grade": 2, "rank": 13, "time": "31:05" },
+          { "section": 6, "name": "宮内志佳", "grade": 2, "rank": 7, "time": "23:05" }
+        ]
+      },
+      {
+        "kai": 38,
+        "year": 2020,
+        "rank": 3,
+        "totalTime": "2:06:11",
+        "runners": [
+          { "section": 1, "name": "岡島 楓", "rank": 5, "time": "21:35" },
+          { "section": 2, "name": "保坂 晴子", "rank": 1, "time": "12:30", "isSectionRecord": true },
+          { "section": 3, "name": "一瀬 美結", "rank": 4, "time": "22:58" },
+          { "section": 4, "name": "赤堀 かりん", "rank": 2, "time": "15:50" },
+          { "section": 5, "name": "栗原 泉", "rank": 4, "time": "30:25" },
+          { "section": 6, "name": "宮内 志佳", "rank": 4, "time": "22:53" }
+        ]
+      },
+      {
+        "kai": 37,
+        "year": 2019,
+        "rank": 5,
+        "totalTime": "2:08:40",
+        "runners": [
+          { "section": 1, "name": "工藤 杏華", "rank": 3, "time": "21:41" },
+          { "section": 2, "name": "赤堀 かりん", "rank": 5, "time": "12:41" },
+          { "section": 3, "name": "村上 愛華", "rank": 9, "time": "23:17" },
+          { "section": 4, "name": "花野 桃子", "rank": 5, "time": "16:36" },
+          { "section": 5, "name": "一瀬 美結", "rank": 10, "time": "31:13" },
+          { "section": 6, "name": "中村 朱里", "rank": 6, "time": "23:12" }
+        ]
+      },
+      {
+        "kai": 36,
+        "year": 2018,
+        "rank": 11,
+        "totalTime": "2:10:16",
+        "runners": [
+          { "section": 1, "name": "工藤 杏華", "rank": 18, "time": "21:46" },
+          { "section": 2, "name": "村上 愛華", "rank": 8, "time": "18:43" },
+          { "section": 3, "name": "一瀬 美結", "rank": 5, "time": "23:11" },
+          { "section": 4, "name": "絹野 紗月", "rank": 16, "time": "16:52" },
+          { "section": 5, "name": "花野 桃子", "rank": 11, "time": "31:27" },
+          { "section": 6, "name": "平野 文珠", "rank": 13, "time": "18:17" }
+        ]
+      },
+      {
+        "kai": 35,
+        "year": 2017,
+        "rank": 7,
+        "totalTime": "2:08:12",
+        "runners": [
+          { "section": 1, "name": "工藤 杏華", "rank": 7, "time": "20:54" },
+          { "section": 2, "name": "唐沢 ゆり", "rank": 10, "time": "18:40" },
+          { "section": 3, "name": "細田 あい", "rank": 1, "time": "22:06", "isSectionRecord": true },
+          { "section": 4, "name": "花野 桃子", "rank": 5, "time": "16:34" },
+          { "section": 5, "name": "平野 文珠", "rank": 17, "time": "32:13" },
+          { "section": 6, "name": "鈴木 彩智歩", "rank": 7, "time": "17:45" }
+        ]
+      },
+      {
+        "kai": 34,
+        "year": 2016,
+        "rank": 7,
+        "totalTime": "2:06:50",
+        "runners": [
+          { "section": 1, "name": "細田 あい", "rank": 9, "time": "20:54" },
+          { "section": 2, "name": "高橋 真以", "rank": 9, "time": "18:43" },
+          { "section": 3, "name": "金杉 侑香", "rank": 8, "time": "22:49" },
+          { "section": 4, "name": "絹野 紗月", "rank": 8, "time": "16:23" },
+          { "section": 5, "name": "唐沢 ゆり", "rank": 9, "time": "30:32" },
+          { "section": 6, "name": "鈴木 彩智歩", "rank": 5, "time": "17:29" }
+        ]
+      },
+      { "kai": 33, "year": 2015, "rank": 4 },
+      { "kai": 32, "year": 2014, "rank": 17 },
+      { "kai": 31, "year": 2013, "rank": 5 },
+      { "kai": 30, "year": 2012, "rank": 18 },
+      { "kai": 29, "year": 2011, "rank": null },
+      { "kai": 28, "year": 2010, "rank": 15 },
+      { "kai": 27, "year": 2009, "rank": null },
+      { "kai": 26, "year": 2008, "rank": 8 },
+      { "kai": 25, "year": 2007, "rank": 13 },
+      { "kai": 24, "year": 2006, "rank": null },
+      { "kai": 23, "year": 2005, "rank": 12 },
+      { "kai": 22, "year": 2004, "rank": 7 },
+      { "kai": 21, "year": 2003, "rank": 5 },
+      { "kai": 20, "year": 2002, "rank": 5 },
+      { "kai": 19, "year": 2001, "rank": 17 },
+      { "kai": 18, "year": 2000, "rank": 14 },
+      { "kai": 17, "year": 1999, "rank": null },
+      { "kai": 16, "year": 1998, "rank": null },
+      { "kai": 15, "year": 1997, "rank": 17 },
+      { "kai": 14, "year": 1996, "rank": 11 },
+      { "kai": 13, "year": 1995, "rank": null },
+      { "kai": 12, "year": 1994, "rank": 10 },
+      { "kai": 11, "year": 1993, "rank": 7 },
+      { "kai": 10, "year": 1992, "rank": 4 },
+      { "kai": 9, "year": 1991, "rank": 3 },
+      { "kai": 8, "year": 1990, "rank": 12 },
+      { "kai": 7, "year": 1989, "rank": 6 },
+      { "kai": 6, "year": 1988, "rank": 3 },
+      { "kai": 5, "year": 1987, "rank": 6 },
+      { "kai": 4, "year": 1986, "rank": 6 },
+      { "kai": 3, "year": 1985, "rank": 12 },
+      { "kai": 2, "year": 1984, "rank": 11 },
+      { "kai": 1, "year": 1983, "rank": 9 }
+    ]
+  }

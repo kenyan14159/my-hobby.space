@@ -1,0 +1,319 @@
+{
+    "mixed-history": [
+      {
+        "year": 2025,
+        "tournamentName": "全国招待大学対校男女混合駅伝",
+        "rank": 1,
+        "totalTime": "0:58:27",
+        "isTournamentRecord": true,
+        "runners": [
+          {
+            "section": 1,
+            "gender": "男子",
+            "distance": "3km",
+            "name": "高村 比呂飛",
+            "rank": "6位",
+            "time": "8:08",
+            "isSectionRecord": true
+          },
+          {
+            "section": 2,
+            "gender": "女子",
+            "distance": "2km",
+            "name": "飯田 和代",
+            "rank": "3位",
+            "time": "6:11",
+            "isSectionRecord": true
+          },
+          {
+            "section": 3,
+            "gender": "男子",
+            "distance": "5km",
+            "name": "富永 椋太",
+            "rank": "1位",
+            "time": "13:45",
+            "isSectionRecord": true
+          },
+          {
+            "section": 4,
+            "gender": "女子",
+            "distance": "3km",
+            "name": "山﨑 りさ",
+            "rank": "2位",
+            "time": "9:21",
+            "isSectionRecord": true
+          },
+          {
+            "section": 5,
+            "gender": "男子",
+            "distance": "2km",
+            "name": "分須 尊紀",
+            "rank": "1位タイ",
+            "time": "5:20",
+            "isSectionRecord": true
+          },
+          {
+            "section": 6,
+            "gender": "女子",
+            "distance": "5km",
+            "name": "尾方 唯莉",
+            "rank": "1位",
+            "time": "15:42",
+            "isSectionRecord": true
+          }
+        ]
+      },
+      {
+        "year": 2024,
+        "tournamentName": "全国招待大学対校男女混合駅伝",
+        "rank": 2,
+        "totalTime": "1:00:21",
+        "isTournamentRecord": false,
+        "runners": [
+          {
+            "section": 1,
+            "gender": "男子",
+            "distance": "3km",
+            "name": "平島 龍斗",
+            "rank": "3位",
+            "time": "8:10",
+            "isSectionRecord": true
+          },
+          {
+            "section": 2,
+            "gender": "女子",
+            "distance": "2km",
+            "name": "佐藤 悠花",
+            "rank": "1位",
+            "time": "6:13",
+            "isSectionRecord": true
+          },
+          {
+            "section": 3,
+            "gender": "男子",
+            "distance": "5km",
+            "name": "田島 駿介",
+            "rank": "3位タイ",
+            "time": "14:19",
+            "isSectionRecord": false
+          },
+          {
+            "section": 4,
+            "gender": "女子",
+            "distance": "3km",
+            "name": "柳井 桜子",
+            "rank": "4位",
+            "time": "9:43",
+            "isSectionRecord": false
+          },
+          {
+            "section": 5,
+            "gender": "男子",
+            "distance": "2km",
+            "name": "漆畑 徳輝",
+            "rank": "2位",
+            "time": "5:23",
+            "isSectionRecord": false
+          },
+          {
+            "section": 6,
+            "gender": "女子",
+            "distance": "5km",
+            "name": "田中 希実",
+            "rank": "6位タイ",
+            "time": "16:33",
+            "isSectionRecord": false
+          }
+        ]
+      },
+      {
+        "year": 2023,
+        "tournamentName": "全国招待大学対校男女混合駅伝",
+        "rank": 1,
+        "totalTime": "1:00:50",
+        "isTournamentRecord": false,
+        "runners": [
+          {
+            "section": 1,
+            "gender": "男子",
+            "distance": "3km",
+            "name": "富永 椋太",
+            "rank": "1位",
+            "time": "8:18",
+            "isSectionRecord": false
+          },
+          {
+            "section": 2,
+            "gender": "女子",
+            "distance": "2km",
+            "name": "柳井 桜子",
+            "rank": "2位タイ",
+            "time": "6:16",
+            "isSectionRecord": false
+          },
+          {
+            "section": 3,
+            "gender": "男子",
+            "distance": "5km",
+            "name": "廣澤 優斗",
+            "rank": "7位",
+            "time": "14:37",
+            "isSectionRecord": false
+          },
+          {
+            "section": 4,
+            "gender": "女子",
+            "distance": "3km",
+            "name": "齋藤 みう",
+            "rank": "2位",
+            "time": "9:39",
+            "isSectionRecord": false
+          },
+          {
+            "section": 5,
+            "gender": "男子",
+            "distance": "2km",
+            "name": "高村 比呂飛",
+            "rank": "6位タイ",
+            "time": "5:34",
+            "isSectionRecord": false
+          },
+          {
+            "section": 6,
+            "gender": "女子",
+            "distance": "5km",
+            "name": "尾方 唯莉",
+            "rank": "4位",
+            "time": "16:26",
+            "isSectionRecord": true
+          }
+        ]
+      },
+      {
+        "year": 2022,
+        "tournamentName": "全国招待大学対校男女混合駅伝",
+        "rank": 4,
+        "totalTime": "1:01:58",
+        "isTournamentRecord": false,
+        "runners": [
+          {
+            "section": 1,
+            "gender": "男子",
+            "distance": "3km",
+            "name": "廣澤 優斗",
+            "rank": "4位",
+            "time": "8:16",
+            "isSectionRecord": false
+          },
+          {
+            "section": 2,
+            "gender": "女子",
+            "distance": "2km",
+            "name": "齋藤 みう",
+            "rank": "10位タイ",
+            "time": "6:33",
+            "isSectionRecord": false
+          },
+          {
+            "section": 3,
+            "gender": "男子",
+            "distance": "5km",
+            "name": "髙津 浩揮",
+            "rank": "7位タイ",
+            "time": "14:59",
+            "isSectionRecord": false
+          },
+          {
+            "section": 4,
+            "gender": "女子",
+            "distance": "3km",
+            "name": "山崎 りさ",
+            "rank": "1位",
+            "time": "9:29",
+            "isSectionRecord": false
+          },
+          {
+            "section": 5,
+            "gender": "男子",
+            "distance": "2km",
+            "name": "盛本 聖也",
+            "rank": "4位",
+            "time": "5:29",
+            "isSectionRecord": false
+          },
+          {
+            "section": 6,
+            "gender": "女子",
+            "distance": "5km",
+            "name": "嶋田 桃子",
+            "rank": "9位",
+            "time": "17:12",
+            "isSectionRecord": false
+          }
+        ]
+      },
+      {
+        "year": 2021,
+        "tournamentName": "全国招待大学対校男女混合駅伝",
+        "rank": 3,
+        "totalTime": "1:02:44",
+        "isTournamentRecord": false,
+        "runners": [
+          {
+            "section": 1,
+            "gender": "男子",
+            "distance": "3km",
+            "name": "大畑 怜士",
+            "rank": "3位",
+            "time": "8:27",
+            "isSectionRecord": false
+          },
+          {
+            "section": 2,
+            "gender": "女子",
+            "distance": "2km",
+            "name": "宮内 志佳",
+            "rank": "1位",
+            "time": "6:13",
+            "isSectionRecord": false
+          },
+          {
+            "section": 3,
+            "gender": "男子",
+            "distance": "5km",
+            "name": "水口 裕斗",
+            "rank": "9位",
+            "time": "15:11",
+            "isSectionRecord": false
+          },
+          {
+            "section": 4,
+            "gender": "女子",
+            "distance": "3km",
+            "name": "小原 茉莉",
+            "rank": "7位",
+            "time": "10:09",
+            "isSectionRecord": false
+          },
+          {
+            "section": 5,
+            "gender": "男子",
+            "distance": "2km",
+            "name": "北脇 秀人",
+            "rank": "6位タイ",
+            "time": "5:46",
+            "isSectionRecord": false
+          },
+          {
+            "section": 6,
+            "gender": "女子",
+            "distance": "5km",
+            "name": "保坂 晴子",
+            "rank": "1位",
+            "time": "16:58",
+            "isSectionRecord": false
+          }
+        ]
+      }
+    ]
+  }

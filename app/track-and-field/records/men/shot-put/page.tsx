@@ -1,0 +1,1 @@
+export default function MenShotPutRecordPage() { return null; } 

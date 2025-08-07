@@ -1,0 +1,17 @@
+# Use Apache rewrite rules to send all requests to index.html, allowing Next.js client-side routing.
+<IfModule mod_rewrite.c>
+  Options -MultiViews
+  RewriteEngine On
+
+  # Exclude Next.js build assets and other static files
+  RewriteCond %{REQUEST_URI} ^/_next/ [NC]
+  RewriteRule ^ - [L]
+
+  # If the requested resource exists as a file or directory, serve it directly.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Otherwise, fall back to the SPA entry point.
+  RewriteRule ^ index.html [L]
+</IfModule> 

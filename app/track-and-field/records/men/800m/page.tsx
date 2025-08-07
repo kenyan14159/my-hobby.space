@@ -1,0 +1,1 @@
+export default function Men800mRecordPage() { return null; } 

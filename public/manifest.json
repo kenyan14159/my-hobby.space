@@ -1,0 +1,27 @@
+{
+  "name": "日本体育大学駅伝部公式",
+  "short_name": "日体大駅伝部",
+  "description": "日本体育大学陸上競技部男子駅伝ブロックの公式ウェブサイト",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu192.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["sports", "education"],
+  "lang": "ja",
+  "dir": "ltr"
+} 

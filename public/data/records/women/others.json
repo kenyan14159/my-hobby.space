@@ -1,0 +1,48 @@
+{
+    "3000mSC": [
+      { "name": "齋藤 みう", "school": "伊豆中央", "time": "9:41.57", "year": "4年", "recordYear": "2025年", "location": "3000mSC", "note": "その他" },
+      { "name": "宮内 志佳", "school": "茨城キリ", "time": "10:05.33", "year": "2年", "recordYear": "2021年", "location": "3000mSC", "note": "その他" },
+      { "name": "中村 朱里", "school": "長野東", "time": "10:11.79", "year": "3年", "recordYear": "2021年", "location": "3000mSC", "note": "その他" },
+      { "name": "赤堀 かりん", "school": "浜松市立", "time": "10:13.54", "year": "3年", "recordYear": "2021年", "location": "3000mSC", "note": "その他" },
+      { "name": "金杉 侑香", "school": "東京高校", "time": "10:27.92", "year": "2年", "recordYear": "2017年", "location": "3000mSC", "note": "その他" },
+      { "name": "伊野波 理桜", "school": "名護高校", "time": "10:32.03", "year": "2年", "recordYear": "2021年", "location": "3000mSC", "note": "その他" },
+      { "name": "渡邉 珠有", "school": "茨城キリ", "time": "10:37.36", "year": "1年", "recordYear": "2023年", "location": "3000mSC", "note": "その他" },
+      { "name": "中村 美咲", "school": "埼玉栄", "time": "10:39.18", "year": "1年", "recordYear": "2015年", "location": "3000mSC", "note": "その他" },
+      { "name": "絹野 紗月", "school": "高岡商業", "time": "10:45.49", "year": "4年", "recordYear": "2019年", "location": "3000mSC", "note": "その他" },
+      { "name": "高橋 真以", "school": "山梨大付属", "time": "10:50.29", "year": "2年", "recordYear": "2016年", "location": "3000mSC", "note": "その他" },
+      { "name": "平野 文珠", "school": "松崎高校", "time": "10:50.34", "year": "4年", "recordYear": "2019年", "location": "3000mSC", "note": "その他" },
+      { "name": "植村 絵里香", "school": "相模女子", "time": "11:18.04", "year": "2年", "recordYear": "2015年", "location": "3000mSC", "note": "その他" },
+      { "name": "村上 愛華", "school": "長野東", "time": "11:20.44", "year": "2年", "recordYear": "2018年", "location": "3000mSC", "note": "その他" },
+      { "name": "田村 茜", "school": "沼田女子", "time": "11:30.92", "year": "1年", "recordYear": "2015年", "location": "3000mSC", "note": "その他" },
+      { "name": "橋本 有純", "school": "伊賀白鳳", "time": "11:34.33", "year": "2年", "recordYear": "2018年", "location": "3000mSC", "note": "その他" }
+    ],
+    "ハーフマラソン": [
+      { "name": "平田 裕美", "school": "騎西高校", "time": "1:13:10", "year": "3年", "recordYear": "2003年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "稲田 雪恵", "school": "花巻南", "time": "1:13:25", "year": "1年", "recordYear": "2004年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "嶋田 桃子", "school": "九州国際", "time": "1:13:26", "year": "2年", "recordYear": "2023年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "芦 麻生", "school": "盛岡女子", "time": "1:13:29", "year": "1年", "recordYear": "2013年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "疋田 裕己", "school": "荏田高校", "time": "1:13:40", "year": "2年", "recordYear": "2013年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "齋藤 一乃", "school": "長生高校", "time": "1:14:03", "year": "1年", "recordYear": "2025年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "花野 桃子", "school": "村上高校", "time": "1:14:23", "year": "2年", "recordYear": "2019年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "鈴木 麻里子", "school": "那須拓陽", "time": "1:14:26", "year": "3年", "recordYear": "2007年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "村上 愛華", "school": "長野東", "time": "1:14:26", "year": "3年", "recordYear": "2020年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "一瀬 美結", "school": "茨城キリ", "time": "1:14:54", "year": "1年", "recordYear": "2019年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "鈴木 彩智歩", "school": "茨城キリ", "time": "1:14:59", "year": "3年", "recordYear": "2019年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "平野 文珠", "school": "松崎高校", "time": "1:15:16", "year": "3年", "recordYear": "2019年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "黒田 澪", "school": "ルーテル学", "time": "1:15:35", "year": "1年", "recordYear": "2020年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "柳井 桜子", "school": "大阪薫英", "time": "1:15:39", "year": "4年", "recordYear": "2024年", "location": "ハーフマラソン", "note": "その他" },
+      { "name": "田中 真愛", "school": "平田", "time": "1:15:44", "year": "1年", "recordYear": "2015年", "location": "ハーフマラソン", "note": "その他" }
+    ],
+    "マラソン": [
+      { "name": "浜田 真由美", "school": "光高校", "time": "2:40:45", "year": "4年", "recordYear": "1990年", "location": "マラソン", "note": "その他" },
+      { "name": "山田 佐知恵", "school": "七里が浜", "time": "2:43:48", "year": "4年", "recordYear": "1995年", "location": "マラソン", "note": "その他" },
+      { "name": "川口 紀子", "school": "湖西高校", "time": "2:45:15", "year": "4年", "recordYear": "1992年", "location": "マラソン", "note": "その他" },
+      { "name": "海老根 美恵子", "school": "茨城キリ", "time": "2:49:46", "year": "2年", "recordYear": "1993年", "location": "マラソン", "note": "その他" },
+      { "name": "白田 雅子", "school": "米沢中央", "time": "2:51:03", "year": "2年", "recordYear": "1987年", "location": "マラソン", "note": "その他" },
+      { "name": "田中 真愛", "school": "平田高校", "time": "2:51:27", "year": "4年", "recordYear": "2018年", "location": "マラソン", "note": "その他" },
+      { "name": "布施 温菜", "school": "NSAC", "time": "2:58:01", "year": "2年", "recordYear": "2018年", "location": "マラソン", "note": "その他" },
+      { "name": "堀内 怜", "school": "浦和学院", "time": "2:58:27", "year": "3年", "recordYear": "2001年", "location": "マラソン", "note": "その他" },
+      { "name": "井筒 紫乃", "school": "日体大柏", "time": "3:03:40", "year": "3年", "recordYear": "1982年", "location": "マラソン", "note": "その他" },
+      { "name": "本田 牧子", "school": "桜華女学", "time": "3:11:52", "year": "", "recordYear": "2001年", "location": "マラソン", "note": "その他" }
+    ]
+  }

@@ -1,0 +1,1 @@
+export default function WomenRelayRecordPage() { return null; } 

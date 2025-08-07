@@ -1,0 +1,194 @@
+{
+    "監督・コーチ": [
+      {
+        "name": "玉城 良二",
+        "nameRubyParts": [
+          { "kanji": "玉城", "ruby": "たまき" },
+          { "kanji": "良二", "ruby": "りょうじ" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-staff3.jpg",
+        "role": "監督",
+        "highSchool": "吉田高校",
+        "university": "日本体育大学 1984卒",
+        "isStudent": false
+      },
+      {
+        "name": "小川 欽也",
+        "nameRubyParts": [
+          { "kanji": "小川", "ruby": "おがわ" },
+          { "kanji": "欽也", "ruby": "きんや" }
+        ],
+        "imageUrl": "",
+        "role": "コーチ",
+        "highSchool": "洛南高校",
+        "university": "日本体育大学 体育/体育 1988卒",
+        "isStudent": false
+      },
+      {
+        "name": "小野木 俊",
+        "nameRubyParts": [
+          { "kanji": "小野木", "ruby": "おのき" },
+          { "kanji": "俊", "ruby": "しゅん" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-staff2.jpg",
+        "role": "コーチ",
+        "highSchool": "鉾田一高",
+        "university": "日本体育大学 体育/体育 2016卒",
+        "isStudent": false
+      },
+      {
+        "name": "嶋野 太海",
+        "nameRubyParts": [
+          { "kanji": "嶋野", "ruby": "しまの" },
+          { "kanji": "太海", "ruby": "ひろうみ" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-staff1.jpg",
+        "role": "コーチ",
+        "highSchool": "拓大紅陵",
+        "university": "日本体育大学 体育/体育 2020卒",
+        "isStudent": false
+      }
+    ],
+    "学生スタッフ": [
+      {
+        "name": "黒葛原 佑真",
+        "nameRubyParts": [
+          { "kanji": "黒葛原", "ruby": "つづらはら" },
+          { "kanji": "佑真", "ruby": "ゆうま" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers7.jpeg",
+        "role": "主務",
+        "grade": 4,
+        "highSchool": "清風高校",
+        "faculty": "体育",
+        "department": "体育",
+        "isStudent": true
+      },
+      {
+        "name": "黒宮 颯太",
+        "nameRubyParts": [
+          { "kanji": "黒宮", "ruby": "くろみや" },
+          { "kanji": "颯太", "ruby": "そうた" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers41.jpeg",
+        "role": "マネージャー",
+        "grade": 4,
+        "highSchool": "愛知高校",
+        "faculty": "体育",
+        "department": "体育",
+        "isStudent": true
+      },
+      {
+        "name": "本島 尚緒",
+        "nameRubyParts": [
+          { "kanji": "本島", "ruby": "もとじま" },
+          { "kanji": "尚緒", "ruby": "なお" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers28.jpeg",
+        "role": "トレーナー",
+        "grade": 4,
+        "highSchool": "佐久長聖",
+        "faculty": "体育",
+        "department": "体育",
+        "isStudent": true
+      },
+      {
+        "name": "野田 朱音",
+        "nameRubyParts": [
+          { "kanji": "野田", "ruby": "のだ" },
+          { "kanji": "朱音", "ruby": "あかね" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers46.jpeg",
+        "role": "マネージャー",
+        "grade": 4,
+        "highSchool": "翔凜高校",
+        "faculty": "スポーツマネジメント",
+        "department": "スポーツライフマネジメント",
+        "isStudent": true
+      },
+      {
+        "name": "尾上 雄大",
+        "nameRubyParts": [
+          { "kanji": "尾上", "ruby": "おのうえ" },
+          { "kanji": "雄大", "ruby": "ゆうた" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers65.jpeg",
+        "role": "マネージャー",
+        "grade": 3,
+        "highSchool": "日体大柏",
+        "faculty": "体育",
+        "department": "体育",
+        "isStudent": true
+      },
+      {
+        "name": "大島 正虎",
+        "nameRubyParts": [
+          { "kanji": "大島", "ruby": "おおしま" },
+          { "kanji": "正虎", "ruby": "まさとら" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers14.jpeg",
+        "role": "マネージャー",
+        "grade": 3,
+        "highSchool": "学法石川",
+        "faculty": "体育",
+        "department": "体育",
+        "isStudent": true
+      },
+      {
+        "name": "濵野 宙良",
+        "nameRubyParts": [
+          { "kanji": "濵野", "ruby": "はまの" },
+          { "kanji": "宙良", "ruby": "そら" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers45.jpeg",
+        "role": "トレーナー",
+        "grade": 3,
+        "highSchool": "西脇工業",
+        "faculty": "体育",
+        "department": "体育",
+        "isStudent": true
+      },
+      {
+        "name": "藤原 大竜",
+        "nameRubyParts": [
+          { "kanji": "藤原", "ruby": "ふじわら" },
+          { "kanji": "大竜", "ruby": "おうり" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers34.jpeg",
+        "role": "マネージャー",
+        "grade": 2,
+        "highSchool": "相洋高校",
+        "faculty": "体育",
+        "department": "体育",
+        "isStudent": true
+      },
+      {
+        "name": "増元 惟織",
+        "nameRubyParts": [
+          { "kanji": "増元", "ruby": "ますもと" },
+          { "kanji": "惟織", "ruby": "いおり" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers55.jpeg",
+        "role": "マネージャー",
+        "grade": 2,
+        "highSchool": "和歌山北",
+        "faculty": "スポーツマネジメント",
+        "department": "スポーツマネジメント",
+        "isStudent": true
+      },
+      {
+        "name": "荒井 悠",
+        "nameRubyParts": [
+          { "kanji": "荒井", "ruby": "あらい" },
+          { "kanji": "悠", "ruby": "ゆう" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-members2.jpeg",
+        "role": "マネージャー",
+        "grade": 1,
+        "highSchool": "國學院栃木",
+        "faculty": "体育",
+        "department": "健康",
+        "isStudent": true
+      }
+    ]
+  }

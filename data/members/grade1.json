@@ -1,0 +1,339 @@
+{
+    "1年生": [
+      {
+        "name": "今野 健太",
+        "nameRubyParts": [
+          { "kanji": "今野", "ruby": "いまの" },
+          { "kanji": "健太", "ruby": "けんた" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers56.jpeg",
+        "highSchool": "埼玉栄",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'07\"47" },
+          { "event": "3000mSC", "time": "9'41\"19" },
+          { "event": "5000m", "time": "14'35\"32" },
+          { "event": "10000m", "time": "31'49\"74" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "大宮 健治",
+        "nameRubyParts": [
+          { "kanji": "大宮", "ruby": "おおみや" },
+          { "kanji": "健治", "ruby": "けんじ" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers8.jpeg",
+        "highSchool": "酒田南",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'03\"52" },
+          { "event": "5000m", "time": "14'32\"70" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "勝又 大介",
+        "nameRubyParts": [
+          { "kanji": "勝又", "ruby": "かつまた" },
+          { "kanji": "大介", "ruby": "だいすけ" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers35.jpeg",
+        "highSchool": "御殿場西",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'01\"79" },
+          { "event": "3000mSC", "time": "9'22\"37" },
+          { "event": "5000m", "time": "14'56\"06" },
+          { "event": "10000m", "time": "32'14\"62" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "佐々木 快斗",
+        "nameRubyParts": [
+          { "kanji": "佐々木", "ruby": "ささき" },
+          { "kanji": "快斗", "ruby": "かいと" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers43.jpeg",
+        "highSchool": "相可高校",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'54\"16" },
+          { "event": "5000m", "time": "14'59\"28" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "島村 真登",
+        "nameRubyParts": [
+          { "kanji": "島村", "ruby": "しまむら" },
+          { "kanji": "真登", "ruby": "まなと" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers62.jpeg",
+        "highSchool": "小林高校",
+        "faculty": "児童スポーツ教育",
+        "department": "児童スポーツ教育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'07\"57" },
+          { "event": "5000m", "time": "15'10\"49" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "水津 勇人",
+        "nameRubyParts": [
+          { "kanji": "水津", "ruby": "すいづ" },
+          { "kanji": "勇人", "ruby": "はやと" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers47.jpeg",
+        "highSchool": "高川学園",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'04\"14" },
+          { "event": "5000m", "time": "14'32\"99" },
+          { "event": "10000m", "time": "31'31\"81" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "只隈 昂大",
+        "nameRubyParts": [
+          { "kanji": "只隈", "ruby": "ただくま" },
+          { "kanji": "昂大", "ruby": "こうだい" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers29.jpeg",
+        "highSchool": "大牟田",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'05\"00" },
+          { "event": "5000m", "time": "15'15\"77" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "鳥羽 恭平",
+        "nameRubyParts": [
+          { "kanji": "鳥羽", "ruby": "とば" },
+          { "kanji": "恭平", "ruby": "きょうへい" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers60.jpeg",
+        "highSchool": "愛知高校",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'52\"85" },
+          { "event": "5000m", "time": "14'44\"31" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "夏見 虹郎",
+        "nameRubyParts": [
+          { "kanji": "夏見", "ruby": "なつみ" },
+          { "kanji": "虹郎", "ruby": "にじろう" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers42.jpeg",
+        "highSchool": "小豆島中央",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'53\"78" },
+          { "event": "5000m", "time": "14'15\"75" },
+          { "event": "10000m", "time": "29'19\"91" },
+          { "event": "ハーフマラソン", "time": "1:08'13" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "野手 駈",
+        "nameRubyParts": [
+          { "kanji": "野手", "ruby": "ので" },
+          { "kanji": "駈", "ruby": "かける" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers19.jpeg",
+        "highSchool": "文星芸大",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'01\"27" },
+          { "event": "5000m", "time": "14'20\"40" },
+          { "event": "10000m", "time": "29'43\"35" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "野村 汰輝",
+        "nameRubyParts": [
+          { "kanji": "野村", "ruby": "のむら" },
+          { "kanji": "汰輝", "ruby": "たいき" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers58.jpeg",
+        "highSchool": "秋田工業",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'59\"99" },
+          { "event": "5000m", "time": "14'32\"42" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "稗村 泰吾",
+        "nameRubyParts": [
+          { "kanji": "稗村", "ruby": "ひえむら" },
+          { "kanji": "泰吾", "ruby": "たいご" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers22.jpeg",
+        "highSchool": "相洋高校",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'54\"97" },
+          { "event": "3000mSC", "time": "9'45\"68" },
+          { "event": "5000m", "time": "15'02\"13" },
+          { "event": "10000m", "time": "32'30\"74" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "平木 仁",
+        "nameRubyParts": [
+          { "kanji": "平木", "ruby": "ひらき" },
+          { "kanji": "仁", "ruby": "じん" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers38.jpeg",
+        "highSchool": "市船橋",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'58\"28" },
+          { "event": "5000m", "time": "14'55\"31" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "藤原 想太",
+        "nameRubyParts": [
+          { "kanji": "藤原", "ruby": "ふじわら" },
+          { "kanji": "想太", "ruby": "そうた" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers40.jpeg",
+        "highSchool": "青森山田",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'05\"08" },
+          { "event": "3000mSC", "time": "9'13\"36" },
+          { "event": "5000m", "time": "14'55\"50" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "増田 陸斗",
+        "nameRubyParts": [
+          { "kanji": "増田", "ruby": "ますだ" },
+          { "kanji": "陸斗", "ruby": "りくと" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-members5.jpeg",
+        "highSchool": "佐久長聖",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'10\"46" },
+          { "event": "5000m", "time": "14'47\"42" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "松田 進",
+        "nameRubyParts": [
+          { "kanji": "松田", "ruby": "まつだ" },
+          { "kanji": "進", "ruby": "しん" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers61.jpeg",
+        "highSchool": "東北高校",
+        "faculty": "体育",
+        "department": "健康",
+        "personalBests": [
+          { "event": "1500m", "time": "4'19\"64" },
+          { "event": "3000mSC", "time": "10'26\"53" },
+          { "event": "5000m", "time": "15'07\"85" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "村上 愛祈",
+        "nameRubyParts": [
+          { "kanji": "村上", "ruby": "むらかみ" },
+          { "kanji": "愛祈", "ruby": "あいき" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers15.jpeg",
+        "highSchool": "東農大二",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'06\"18" },
+          { "event": "5000m", "time": "14'53\"35" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "山本 琉生",
+        "nameRubyParts": [
+          { "kanji": "山本", "ruby": "やまもと" },
+          { "kanji": "琉生", "ruby": "るい" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers63.jpeg",
+        "highSchool": "洛北高校",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'57\"45" },
+          { "event": "5000m", "time": "14'27\"13" },
+          { "event": "10000m", "time": "30'37\"20" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "渡辺 和志",
+        "nameRubyParts": [
+          { "kanji": "渡辺", "ruby": "わたなべ" },
+          { "kanji": "和志", "ruby": "かずし" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-members3.jpeg",
+        "highSchool": "水島工業",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'55\"51" },
+          { "event": "5000m", "time": "14'26\"87" }
+        ],
+        "grade": 1
+      },
+      {
+        "name": "渡邊 晄月",
+        "nameRubyParts": [
+          { "kanji": "渡邊", "ruby": "わたなべ" },
+          { "kanji": "晄月", "ruby": "みづき" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers32.jpeg",
+        "highSchool": "帝京安積",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'01\"13" },
+          { "event": "3000mSC", "time": "9'17\"26" },
+          { "event": "5000m", "time": "14'57\"91" },
+          { "event": "10000m", "time": "33'09\"57" }
+        ],
+        "grade": 1
+      }
+    ]
+  }

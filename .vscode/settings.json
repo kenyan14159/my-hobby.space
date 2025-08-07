@@ -1,0 +1,28 @@
+{
+    "liveServer.settings.port": 5500,
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "css.customData": [".vscode/css_custom_data.json"],
+    "tailwindCSS.includeLanguages": {
+        "typescript": "javascript",
+        "typescriptreact": "javascript"
+    },
+    "tailwindCSS.experimental.classRegex": [
+        ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+        ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ],
+    "tailwindCSS.validate": true,
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "terminal.integrated.env.osx": {
+        "NODE_OPTIONS": "--no-warnings"
+    },
+    "terminal.integrated.env.linux": {
+        "NODE_OPTIONS": "--no-warnings"
+    },
+    "terminal.integrated.env.windows": {
+        "NODE_OPTIONS": "--no-warnings"
+    }
+}

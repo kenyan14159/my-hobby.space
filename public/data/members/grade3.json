@@ -1,0 +1,240 @@
+{
+    "3年生": [
+      {
+        "name": "阿知和 優汰",
+        "nameRubyParts": [
+          { "kanji": "阿知和", "ruby": "あちわ" },
+          { "kanji": "優汰", "ruby": "ゆうた" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers33.jpeg",
+        "highSchool": "豊川高校",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'04\"91" },
+          { "event": "5000m", "time": "14'38\"09" },
+          { "event": "10000m", "time": "30'47\"79" },
+          { "event": "ハーフマラソン", "time": "1:07'57" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "天瀬 海斗",
+        "nameRubyParts": [
+          { "kanji": "天瀬", "ruby": "あませ" },
+          { "kanji": "海斗", "ruby": "かいと" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers25.jpeg",
+        "highSchool": "盛岡大附",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'58\"15" },
+          { "event": "5000m", "time": "14'25\"74" },
+          { "event": "10000m", "time": "29'32\"38" },
+          { "event": "3000mSC", "time": "8'49\"23" },
+          { "event": "ハーフマラソン", "time": "1:05'46" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "池田 優也",
+        "nameRubyParts": [
+          { "kanji": "池田", "ruby": "いけだ" },
+          { "kanji": "優也", "ruby": "ゆうや" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/02/member27-e1748839671520.jpg",
+        "highSchool": "秋田工業",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'55\"99" },
+          { "event": "5000m", "time": "14'35\"10" },
+          { "event": "10000m", "time": "30'45\"95" },
+          { "event": "ハーフマラソン", "time": "1:07:32" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "大下 翼",
+        "nameRubyParts": [
+          { "kanji": "大下", "ruby": "おおした" },
+          { "kanji": "翼", "ruby": "つばさ" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers13.jpeg",
+        "highSchool": "美方高校",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'06\"29" },
+          { "event": "5000m", "time": "14'43\"73" },
+          { "event": "10000m", "time": "30'49\"35" },
+          { "event": "ハーフマラソン", "time": "1:05'07" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "大島 脩太",
+        "nameRubyParts": [
+          { "kanji": "大島", "ruby": "おおしま" },
+          { "kanji": "脩太", "ruby": "しゅうた" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers27.jpeg",
+        "highSchool": "白石高校",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'07\"94" },
+          { "event": "5000m", "time": "14'19\"72" },
+          { "event": "10000m", "time": "29'45\"54" },
+          { "event": "3000mSC", "time": "10'05\"98" },
+          { "event": "ハーフマラソン", "time": "1:06'04" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "纓坂 倭人",
+        "nameRubyParts": [
+          { "kanji": "纓坂", "ruby": "おざか" },
+          { "kanji": "倭人", "ruby": "やまと" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers48.jpeg",
+        "highSchool": "高岡向陵",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'57\"47" },
+          { "event": "5000m", "time": "14'23\"76" },
+          { "event": "10000m", "time": "30'29\"68" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "小野里 琉生",
+        "nameRubyParts": [
+          { "kanji": "小野里", "ruby": "おのざと" },
+          { "kanji": "琉生", "ruby": "るい" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers11.jpeg",
+        "highSchool": "中央学院",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'58\"17" },
+          { "event": "5000m", "time": "14'37\"37" },
+          { "event": "10000m", "time": "30'53\"37" },
+          { "event": "3000mSC", "time": "10'51\"18" },
+          { "event": "ハーフマラソン", "time": "1:13'43" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "佐藤 輝歩",
+        "nameRubyParts": [
+          { "kanji": "佐藤", "ruby": "さとう" },
+          { "kanji": "輝歩", "ruby": "きらと" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers59.jpeg",
+        "highSchool": "学法石川",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'02\"29" },
+          { "event": "5000m", "time": "14'26\"93" },
+          { "event": "10000m", "time": "29'53\"29" },
+          { "event": "3000mSC", "time": "9'07\"53" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "瀬戸 雅史",
+        "nameRubyParts": [
+          { "kanji": "瀬戸", "ruby": "せと" },
+          { "kanji": "雅史", "ruby": "まさし" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers36.jpeg",
+        "highSchool": "上伊那農",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'49\"86" },
+          { "event": "5000m", "time": "14'23\"32" },
+          { "event": "10000m", "time": "29'30\"85" },
+          { "event": "ハーフマラソン", "time": "1:07'57" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "中條 隆太",
+        "nameRubyParts": [
+          { "kanji": "中條", "ruby": "ちゅうじょう" },
+          { "kanji": "隆太", "ruby": "りゅうた" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers24.jpeg",
+        "highSchool": "遊学館",
+        "faculty": "スポーツマネジメント",
+        "department": "スポーツライフマネジメント",
+        "personalBests": [
+          { "event": "1500m", "time": "3'57\"20" },
+          { "event": "5000m", "time": "14'48\"82" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "花城 欄斗",
+        "nameRubyParts": [
+          { "kanji": "花城", "ruby": "はなしろ" },
+          { "kanji": "欄斗", "ruby": "らんと" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-members4.jpeg",
+        "highSchool": "宜野湾",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'58\"26" },
+          { "event": "5000m", "time": "14'50\"84" },
+          { "event": "3000mSC", "time": "10'06\"25" },
+          { "event": "10000m", "time": "32'34\"02" },
+          { "event": "ハーフマラソン", "time": "1:07:14" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "松本 悠真",
+        "nameRubyParts": [
+          { "kanji": "松本", "ruby": "まつもと" },
+          { "kanji": "悠真", "ruby": "ゆうま" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers52.jpeg",
+        "highSchool": "島田高校",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "4'09\"58" },
+          { "event": "5000m", "time": "14'46\"34" },
+          { "event": "10000m", "time": "30'45\"09" },
+          { "event": "ハーフマラソン", "time": "1:05'54" }
+        ],
+        "grade": 3
+      },
+      {
+        "name": "吉田 黎大",
+        "nameRubyParts": [
+          { "kanji": "吉田", "ruby": "よしだ" },
+          { "kanji": "黎大", "ruby": "れお" }
+        ],
+        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers21.jpeg",
+        "highSchool": "埼玉栄",
+        "faculty": "体育",
+        "department": "体育",
+        "personalBests": [
+          { "event": "1500m", "time": "3'53\"86" },
+          { "event": "5000m", "time": "14'15\"16" },
+          { "event": "10000m", "time": "29'39\"34" },
+          { "event": "3000mSC", "time": "9'12\"85" },
+          { "event": "ハーフマラソン", "time": "1:04'11" }
+        ],
+        "grade": 3
+      }
+    ]
+  }
