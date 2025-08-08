@@ -149,6 +149,7 @@ export default function GiftsJuneJulyPage() {
                   src={imagePath}
                   alt={`差し入れ写真 ${index + 1}`}
                   fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-110 image-protection"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -183,6 +184,7 @@ export default function GiftsJuneJulyPage() {
                     width={1200}
                     height={800}
                     className="max-w-full max-h-[90vh] object-contain rounded-lg"
+                    sizes="(max-width: 768px) 90vw, 1200px"
                   />
                 </div>
 

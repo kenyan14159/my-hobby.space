@@ -112,7 +112,7 @@ export default function NewsPage() {
 
         {/* 年別フィルター */}
         <div className="flex flex-wrap justify-center gap-2 mb-4">
-          <Button
+            <Button
             variant={yearFilter === 'all' ? 'default' : 'outline'}
             size="sm"
               onClick={() => { setYearFilter('all'); pagination.goToPage(1); }}

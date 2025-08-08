@@ -93,12 +93,12 @@ const LeaderCard = ({ role, name, school, imgSrc }: { role: string; name: string
             <Dialog>
                 <DialogTrigger asChild>
                     <div className="relative w-16 h-16 mx-auto mb-4 rounded-xl overflow-hidden cursor-pointer ring-2 ring-slate-100 group-hover:ring-blue-200 transition-all duration-300">
-                        <Image src={imgSrc} alt={name} layout="fill" objectFit="cover" />
+                        <Image src={imgSrc} alt={name} fill className="object-cover" sizes="64px" />
                     </div>
                 </DialogTrigger>
                 <DialogContent className="p-0 border-0 max-w-lg">
                     <DialogTitle className="sr-only">{name}</DialogTitle>
-                    <Image src={imgSrc} alt={name} width={600} height={800} className="rounded-xl" />
+                    <Image src={imgSrc} alt={name} width={600} height={800} className="rounded-xl" sizes="(max-width: 768px) 90vw, 600px" />
                 </DialogContent>
             </Dialog>
             <div className="text-center space-y-1">

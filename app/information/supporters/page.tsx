@@ -98,8 +98,8 @@ const SupporterProfile = ({ supporter, onImageClick }: { supporter: typeof itoSu
         role="button"
         aria-label="サポーター画像を拡大"
       >
-        <AspectRatio ratio={3 / 4} className="rounded-xl overflow-hidden shadow-md">
-          <Image src={supporter.image} alt={supporter.name} fill className="object-cover" />
+          <AspectRatio ratio={3 / 4} className="rounded-xl overflow-hidden shadow-md">
+          <Image src={supporter.image} alt={supporter.name} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" />
         </AspectRatio>
       </motion.div>
       <div className="lg:w-2/3">
@@ -151,6 +151,7 @@ const SupporterProfile = ({ supporter, onImageClick }: { supporter: typeof itoSu
               alt="ライラック治療院" 
               fill 
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 800px"
             />
           </AspectRatio>
         </div>
@@ -190,7 +191,7 @@ const SupporterCard = ({ supporter }: { supporter: { name: string, logo: string,
         className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 h-full flex flex-col"
     >
         <AspectRatio ratio={16 / 9} className="bg-gray-50">
-            <Image src={supporter.logo} alt={supporter.name} fill className="object-contain p-4"/>
+            <Image src={supporter.logo} alt={supporter.name} fill className="object-contain p-4" sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 200px" />
         </AspectRatio>
         <div className="p-4 flex-grow flex flex-col">
             <h3 className="font-bold text-lg text-sky-900 flex-grow">{supporter.name}</h3>

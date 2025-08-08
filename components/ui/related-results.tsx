@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { getAllResults, ResultMeta } from "@/lib/results";
+import { CardImage } from "@/components/ui/card-image";
 
 export function RelatedResults() {
   const pathname = usePathname();
@@ -23,11 +24,13 @@ export function RelatedResults() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((item) => (
           <Link key={item.slug} href={`/topics/results/${item.slug}`} className="block">
-            <div
-              className="relative h-40 rounded-lg overflow-hidden shadow border bg-center bg-cover"
-              style={{ backgroundImage: `url(${item.image})` }}
-            >
-              <div className="absolute inset-0 bg-black/35" />
+            <div className="relative h-40 rounded-lg overflow-hidden shadow border">
+              <CardImage
+                src={item.image}
+                alt={item.title}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                overlayClassName="bg-black/35"
+              />
               <div className="absolute inset-0 p-3 flex flex-col justify-end">
                 <h4 className="text-white text-sm font-semibold drop-shadow">
                   {item.title}

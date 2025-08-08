@@ -22,6 +22,7 @@ export default function ArinaminSponsorPage() {
             src={imageUrl}
             alt="アリナミン製薬株式会社スポンサー契約締結式の様子"
             fill
+            sizes="(max-width: 768px) 100vw, 800px"
             className="object-cover"
             onClick={() => setModalOpen(true)}
           />

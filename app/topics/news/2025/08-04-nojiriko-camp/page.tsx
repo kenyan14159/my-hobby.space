@@ -124,6 +124,7 @@ export default function NojirikoCampPage() {
                       src={imagePath}
                       alt={`野尻湖合宿写真 ${index + 1}`}
                       fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover transition-transform duration-300 group-hover:scale-110 image-protection"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -202,6 +203,7 @@ export default function NojirikoCampPage() {
                     width={1200}
                     height={800}
                     className="max-w-full max-h-[90vh] object-contain rounded-lg"
+                    sizes="(max-width: 768px) 90vw, 1200px"
                   />
                 </div>
 

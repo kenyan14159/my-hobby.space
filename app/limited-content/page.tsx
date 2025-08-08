@@ -100,6 +100,7 @@ export default function LimitedContent() {
                       fill 
                       style={{objectFit: 'cover', objectPosition: category.bgPosition}}
                       className="transition-transform duration-500 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, 800px"
                       priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>

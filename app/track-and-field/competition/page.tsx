@@ -19,6 +19,7 @@ export default function CompetitionPage() {
             alt="日体大競技会"
             fill
             className="object-cover"
+            sizes="(max-width: 768px) 100vw, 1200px"
           />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <div className="text-center text-white p-6">

@@ -337,7 +337,7 @@ export function PhotoGallery({ showTitle = true, maxImages = 30 }: PhotoGalleryP
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="relative w-full h-full flex items-center justify-center">
-                  <Image
+                <Image
                     src={displayImages[selectedImage]}
                     alt={`チームフォト ${selectedImage + 1}`}
                     width={1200}

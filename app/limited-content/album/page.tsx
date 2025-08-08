@@ -243,6 +243,7 @@ export default function AlbumPage() {
                       alt="saya"
                       fill
                       className="object-cover"
+                      sizes="64px"
                     />
                   </div>
                   <div>

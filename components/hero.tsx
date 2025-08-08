@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useAnimation } from "framer-motion";
+import Image from "next/image";
 
 export function Hero() {
   const controlsTitle = useAnimation();
@@ -44,14 +45,16 @@ export function Hero() {
     <div className="relative overflow-hidden -mt-16 w-full max-w-full">
       {/* モバイルでは高さを調整 */}
       <div className="h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-screen w-full">
-        {/* 背景画像 */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url('https://nssu-ekiden.com/wp-content/uploads/2025/02/myfavorite.jpeg')",
-          }}
-        >
+        {/* 背景画像（next/image で最適化） */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://nssu-ekiden.com/wp-content/uploads/2025/02/myfavorite.jpeg"
+            alt="日本体育大学駅伝部 背景"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
           {/* オーバーレイ（グラデーション） */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         </div>

@@ -36,6 +36,7 @@ export function ImageModal({ src, isOpen, onClose }: ImageModalProps) {
               height={600}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
               style={{ width: 'auto', height: 'auto' }}
+              sizes="(max-width: 768px) 90vw, 800px"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.src = 'https://placehold.co/400x300/f3f4f6/6b7280?text=画像を読み込めませんでした';

@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   verification: {
-    google: 'your-google-verification-code', // Google Search Consoleで取得したコードに置き換えてください
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
   },
   alternates: {
     canonical: 'https://nssu-ekiden.com',

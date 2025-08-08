@@ -53,6 +53,17 @@ export default function ResultPageLayout({
       { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
     ],
   } as const;
+  const jsonLdSportsEvent = {
+    '@context': 'https://schema.org',
+    '@type': 'SportsEvent',
+    name: title,
+    startDate: date || undefined,
+    location: place
+      ? { '@type': 'Place', name: place }
+      : undefined,
+    eventStatus: 'https://schema.org/EventScheduled',
+    url: pageUrl,
+  } as const;
   return (
     <div className={`min-h-screen bg-gradient-to-br ${gradient} py-16`}>
       <motion.div
@@ -63,6 +74,7 @@ export default function ResultPageLayout({
       >
         {/* 構造化データ */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSportsEvent) }} />
         {/* パンくず */}
         <div className="mb-6">
           <Breadcrumbs items={breadcrumbItems} />
