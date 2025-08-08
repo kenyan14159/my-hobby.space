@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ArrowUp, Award, Medal, Search, Trophy, X, Star, Scale, Info } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { EkidenNavigation } from "@/components/ui/ekiden-navigation";
 
 // --- 型定義 ---
@@ -274,6 +275,9 @@ export default function IzumoEkidenHistoryPage() {
             className="min-h-screen bg-gradient-to-br from-white to-purple-50"
         >
             <div className="container mx-auto px-4 py-8">
+                <div className="mb-6">
+                    <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '駅伝', href: '/ekiden' }, { label: '出雲駅伝' }]} />
+                </div>
                 <AnimatedPageHeader
                     title="出雲駅伝"
                     subtitle="男子駅伝ブロック"

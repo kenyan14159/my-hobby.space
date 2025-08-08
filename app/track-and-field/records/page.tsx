@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 
 const events = [
@@ -35,6 +36,9 @@ const categories = [
 export default function TrackAndFieldRecordsPage() {
   return (
     <main className="max-w-5xl mx-auto py-10 px-4">
+      <div className="mb-6">
+        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: '歴代記録' }]} />
+      </div>
       <AnimatedPageHeader title="歴代記録" subtitle="歴代記録・ランキングを種目別に掲載" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
         {categories.map((cat) => (

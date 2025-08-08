@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 // 2025年度大会日程データ
 const scheduleItems = [
@@ -148,6 +149,9 @@ const seasonStyle: Record<string, string> = {
 export default function TrackAndFieldSchedulePage() {
   return (
     <div className="container mx-auto px-4 py-16">
+      <div className="mb-6">
+        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: '大会日程' }]} />
+      </div>
       <AnimatedPageHeader
         title="2025年度 大会日程"
         subtitle="日本体育大学陸上競技部の大会スケジュール"

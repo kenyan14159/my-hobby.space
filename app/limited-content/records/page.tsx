@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, TrendingUp, FileX, Loader2, Eye, EyeOff } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import React from "react";
 
 // --- 型定義 ---
@@ -456,6 +457,9 @@ export default function RecordsPage() {
     return (
         <div className="bg-gray-50 min-h-screen">
             <div className="container mx-auto px-4 py-12">
+                <div className="mb-6">
+                    <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '限定コンテンツ', href: '/limited-content' }, { label: '学内PBランキング' }]} />
+                </div>
                 <AnimatedPageHeader 
                     title="学内PBランキング"
                     subtitle="各種目の学内PBランキングを確認できます"

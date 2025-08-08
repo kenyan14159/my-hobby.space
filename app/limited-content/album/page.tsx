@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Camera, ExternalLink, Calendar, ChevronDown, ChevronUp, Image as ImageIcon, Loader2 } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import Image from "next/image";
 
 // --- 型定義 ---
@@ -201,6 +202,9 @@ export default function AlbumPage() {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto">
+          <div className="mb-6">
+            <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '限定コンテンツ', href: '/limited-content' }, { label: 'アルバム' }]} />
+          </div>
           <AnimatedPageHeader 
             title="アルバム"
             subtitle="活動アルバムを大会別にご覧いただけます"

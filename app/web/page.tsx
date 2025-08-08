@@ -1,4 +1,5 @@
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { InstagramIcon } from "@/components/ui/InstagramIcon";
@@ -33,6 +34,9 @@ export default function WebPage() {
         <AnimatedPageHeader
           title="Webサイト集"
         />
+        <div className="mt-6 mb-2">
+          <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'Webサイト集' }]} />
+        </div>
 
 
         {/* 関連リンク集 */}

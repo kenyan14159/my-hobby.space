@@ -17,6 +17,7 @@ import {
   Instagram
 } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { InfoQuickAccess } from "@/components/info-quick-access";
 
 // --- データ定義 ---
@@ -88,6 +89,9 @@ export default function AboutPage() {
       >
         <div className="max-w-5xl mx-auto">
           {/* ページヘッダー */}
+          <div className="mb-6">
+            <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'チーム情報', href: '/information' }, { label: 'ホームページについて' }]} />
+          </div>
           <AnimatedPageHeader 
             title="ホームページについて"
             subtitle="当サイトの利用規約、プライバシーポリシー、運営方針について"

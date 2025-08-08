@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { AnimatedPageHeader } from '@/components/ui/animated-page-header';
+import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { Image as ImageIcon, Sparkles, Info, Lock } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import Image from 'next/image';
@@ -66,6 +67,9 @@ export default function LimitedContent() {
           subtitle="駅伝部員の特別なコンテンツ"
           underlineColor="bg-sky-500"
         />
+        <div className="mb-6">
+          <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '限定コンテンツ' }]} />
+        </div>
 
         <motion.div 
           className="max-w-4xl mx-auto mb-10"

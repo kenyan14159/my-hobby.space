@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Timer, Medal, TrendingUp } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { CardImage } from "@/components/ui/card-image";
 
 const records = [
   { title: "箱根駅伝", stats: ["77年連続77回出場", "優勝10回", "5連覇"] },
@@ -291,16 +292,12 @@ function CountdownSection({
     <div className="relative rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 shadow-lg">
       {/* 背景画像とオーバーレイ */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0">
-          <img
-            src={backgroundImage || "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite145.jpg"}
-            alt="背景画像"
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
-        {/* ダークオーバーレイ */}
-        <div className="absolute inset-0 bg-neutral-900/80" />
+        <CardImage
+          src={backgroundImage || "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite145.jpg"}
+          alt="背景画像"
+          sizes="100vw"
+          overlayClassName="bg-neutral-900/80"
+        />
       </div>
 
       {/* メインコンテンツ */}

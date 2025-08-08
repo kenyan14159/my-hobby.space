@@ -8,6 +8,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Star, Heart, Link as LinkIcon, Instagram, Facebook, Twitter, Mail, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { InfoQuickAccess } from "@/components/info-quick-access";
 import { ImageModal } from "@/components/bulletin-board";
 import { useState } from "react";
@@ -221,6 +222,9 @@ export default function SupportersPage() {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-5xl mx-auto">
+          <div className="mb-6">
+            <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'チーム情報', href: '/information' }, { label: 'サポーターの皆様' }]} />
+          </div>
           <AnimatedPageHeader 
             title="サポーターの皆様"
             subtitle="日頃からの温かいご支援、心より感謝申し上げます。"

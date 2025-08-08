@@ -4,6 +4,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Search } from 'lucide-react';
 import { AnimatedPageHeader } from '@/components/ui/animated-page-header';
+import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { TopicsQuickAccess } from '@/components/topics-quick-access';
 import { getAllNews, NewsMeta } from '@/lib/news';
 import NewsGrid from '@/components/news-grid';
@@ -90,6 +91,11 @@ export default function NewsPage() {
         title="ニュース"
         subtitle="駅伝部に関する最新ニュースをお届けします。"
       />
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="mb-6">
+          <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'トピックス', href: '/topics' }, { label: 'ニュース' }]} />
+        </div>
+      </div>
 
       {/* クイックアクセスボタン */}
       <TopicsQuickAccess />

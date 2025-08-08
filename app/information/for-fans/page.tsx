@@ -6,6 +6,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Megaphone, Gift, AlertCircle, Contact, PackageCheck, Archive } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { InfoQuickAccess } from "@/components/info-quick-access";
 
 // --- データ定義 ---
@@ -54,6 +55,9 @@ export default function ForSupportersPage() {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-5xl mx-auto">
+          <div className="mb-6">
+            <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'チーム情報', href: '/information' }, { label: '応援してくださる皆様へ' }]} />
+          </div>
           <AnimatedPageHeader 
             title="応援してくださる皆様へ"
             subtitle="日頃からの温かいご支援、心より感謝申し上げます。"

@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Lock, Key, Trophy, Star, Target, Rocket, Calendar, Users, Flag, Route, Clock, ChevronRight, ArrowRight, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import LetterGlitch from "./LetterGlitch";
 
 // --- パスワードフォームコンポーネント ---
@@ -160,6 +161,9 @@ const LimitedContent = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/20">
             <div className="container mx-auto px-6 pt-16">
+                <div className="mb-6">
+                    <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '限定コンテンツ', href: '/limited-content' }, { label: 'NSSU 男子駅伝ブロック' }]} />
+                </div>
                 <AnimatedPageHeader
                     title="NSSU 男子駅伝ブロック"
                     subtitle="Team Goals & Schedule 2025"

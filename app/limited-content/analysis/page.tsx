@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -108,6 +109,9 @@ export default function HakoneAnalysisPage() {
     return (
         <div className="bg-gray-50 min-h-screen">
             <div className="container mx-auto px-4 py-12">
+                <div className="mb-6">
+                    <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '限定コンテンツ', href: '/limited-content' }, { label: '箱根駅伝区間分析' }]} />
+                </div>
                 {/* 上部ナビゲーション */}
                 <div className="mb-8">
                     <div className="flex flex-wrap gap-2 justify-center">

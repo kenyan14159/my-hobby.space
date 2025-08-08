@@ -1,4 +1,5 @@
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
@@ -7,6 +8,9 @@ import { ExternalLink } from "lucide-react";
 export default function TrackAndFieldSupportersPage() {
   return (
     <div className="container mx-auto px-4 py-16">
+      <div className="mb-6">
+        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: 'OB・OGの皆様へ' }]} />
+      </div>
       <AnimatedPageHeader
         title="OB・OGの皆様へ"
         subtitle="卒業生・関係者向けのご案内"

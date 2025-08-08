@@ -7,6 +7,7 @@ import { CalendarDays, MapPin, Clock, Info, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { TopicsQuickAccess } from "@/components/topics-quick-access";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 // イベントの型定義
 interface Event {
@@ -232,6 +233,9 @@ export default function Schedule() {
           title="スケジュール"
           subtitle="男子駅伝部の今後のスケジュールです"
         />
+        <div className="mb-6">
+          <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'トピックス', href: '/topics' }, { label: 'スケジュール' }]} />
+        </div>
 
         {/* クイックアクセスボタン */}
         <TopicsQuickAccess />

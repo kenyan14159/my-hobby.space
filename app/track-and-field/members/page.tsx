@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 
 // 各ブロックごとにカラーを分ける
@@ -25,6 +26,9 @@ const blocks = [
 export default function TrackAndFieldMembersPage() {
   return (
     <main className="max-w-4xl mx-auto py-10 px-4">
+      <div className="mb-6">
+        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: 'メンバー・ブロック紹介' }]} />
+      </div>
       <AnimatedPageHeader
         title="メンバー・ブロック紹介"
         subtitle="各ブロックの選手紹介はこちらからご覧いただけます"

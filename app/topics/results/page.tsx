@@ -8,6 +8,7 @@ import { Search } from 'lucide-react';
 import SpotlightCard from '@/components/SpotlightCard';
 import { CardImage } from '@/components/ui/card-image';
 import { AnimatedPageHeader } from '@/components/ui/animated-page-header';
+import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { TopicsQuickAccess } from '@/components/topics-quick-access';
 import { getAllResults, ResultMeta } from '@/lib/results';
 import { usePagination } from '@/lib/hooks/use-pagination';
@@ -98,6 +99,9 @@ export default function ResultsPage() {
           title="リザルト"
           subtitle="大会、記録会の成績をご覧いただけます。"
         />
+        <div className="mb-6">
+          <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'トピックス', href: '/topics' }, { label: 'リザルト' }]} />
+        </div>
 
         {/* クイックアクセスボタン */}
         <TopicsQuickAccess />

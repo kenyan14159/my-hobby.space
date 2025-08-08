@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -66,6 +67,9 @@ export default function TrackAndFieldNewsPage() {
 
   return (
     <main className="max-w-3xl mx-auto py-10 px-4">
+      <div className="mb-6">
+        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: 'ニュース' }]} />
+      </div>
       <AnimatedPageHeader title="ニュース" subtitle="最新の活動・大会情報・お知らせ" />
       <section className="mt-8 space-y-6">
         {newsList.map((item, idx) => (

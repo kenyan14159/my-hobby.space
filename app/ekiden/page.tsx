@@ -186,6 +186,7 @@ export default function EkidenHistoryPage() {
                                 width={800}
                                 height={600}
                                 className="w-full h-auto object-contain"
+                                sizes="(max-width: 768px) 90vw, 800px"
                                 unoptimized
                             />
                             <div className="p-4 text-center space-y-1">

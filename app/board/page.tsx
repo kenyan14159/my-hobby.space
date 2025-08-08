@@ -9,6 +9,7 @@ import {
   ImageModal,
   NotificationContainer
 } from "@/components/bulletin-board";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export default function BulletinBoardPage() {
   const [showTerms, setShowTerms] = useState(false);
@@ -38,6 +39,9 @@ export default function BulletinBoardPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="mb-6">
+        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '掲示板' }]} />
+      </div>
       <header className="text-center mb-10">
         <h1 className="text-4xl font-black text-sky-800 mb-2">
           駅伝匿名掲示板

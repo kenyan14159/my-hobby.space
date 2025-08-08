@@ -18,6 +18,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Mail, Phone, MapPin, Loader2, FileText } from "lucide-react";
 import { useState } from "react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { InfoQuickAccess } from "@/components/info-quick-access";
 
 // バリデーションスキーマの定義
@@ -104,6 +105,9 @@ export default function ContactPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
+          <div className="mb-6">
+            <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'チーム情報', href: '/information' }, { label: 'お問い合わせ' }]} />
+          </div>
           <AnimatedPageHeader 
             title="お問い合わせ"
             subtitle="ご質問・ご相談など、お気軽にお問い合わせください。"

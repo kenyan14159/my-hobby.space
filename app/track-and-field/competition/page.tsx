@@ -7,6 +7,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Calendar, MapPin, Download, ExternalLink, AlertCircle, Info } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export default function CompetitionPage() {
   return (
@@ -34,7 +35,10 @@ export default function CompetitionPage() {
           </div>
         </AspectRatio>
       </div>
-      {/* 下部にもAnimatedPageHeaderで統一感＋変化 */}
+      {/* パンくず＋下部にもAnimatedPageHeaderで統一感＋変化 */}
+      <div className="mb-6">
+        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: '日体大競技会' }]} />
+      </div>
       <AnimatedPageHeader
         title="日体大競技会について"
         subtitle="開催日程・会場・エントリー・案内・お問い合わせはこちら"
