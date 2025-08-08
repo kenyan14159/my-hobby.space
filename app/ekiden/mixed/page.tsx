@@ -375,20 +375,7 @@ export default function MixedEkidenHistoryPage() {
                     </AnimatePresence>
                 </div>
 
-                {/* スクロールトップボタン */}
-                <AnimatePresence>
-                    {showScroll && (
-                        <motion.button
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0 }}
-                            onClick={scrollToTop}
-                            className="fixed bottom-8 right-8 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition-colors z-50"
-                        >
-                            <ArrowUp className="h-5 w-5" />
-                        </motion.button>
-                    )}
-                </AnimatePresence>
+                {/* スクロールトップボタン（共通ボタンに統一のためページ内ボタンは削除） */}
             </div>
         </motion.div>
     );

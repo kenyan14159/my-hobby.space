@@ -15,10 +15,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LimitedcontentLayout({
+export default function RecordsNoIndexLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return children;
 }
+
+

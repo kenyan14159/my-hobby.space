@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Search } from 'lucide-react';
 import { AnimatedPageHeader } from '@/components/ui/animated-page-header';
@@ -23,7 +23,7 @@ const getYears = (items: NewsMeta[]) => {
   return yrs.sort((a, b) => b.localeCompare(a));
 };
 
-export default function NewsPage() {
+function NewsPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
@@ -193,5 +193,13 @@ export default function NewsPage() {
         </div>
       )}
     </NewsPageLayout>
+  );
+}
+
+export default function NewsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">読み込み中...</div>}>
+      <NewsPageContent />
+    </Suspense>
   );
 }

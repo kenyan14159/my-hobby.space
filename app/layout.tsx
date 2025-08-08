@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ImageProtection } from "@/components/ui/image-protection";
+import { BackToTop } from "@/components/ui/back-to-top";
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -78,6 +79,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const isDevelopment = process.env.NODE_ENV === 'development';
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SportsTeam',
@@ -115,6 +117,20 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://nssu-ekiden.com" />
         <link rel="preconnect" href="https://ekiden-results.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://ekiden-results.com" />
+        {/* 開発環境では react-refresh に必要な 'unsafe-eval' を許可。*/}
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content={
+            `default-src 'self'; ` +
+            `img-src 'self' https: data: blob:; ` +
+            `script-src 'self' 'unsafe-inline' ${isDevelopment ? "'unsafe-eval' " : ''}https:; ` +
+            `style-src 'self' 'unsafe-inline'; ` +
+            `font-src 'self' https: data:; ` +
+            `connect-src 'self' https://*.supabase.co https://formspree.io https://api.formspree.io; ` +
+            `base-uri 'self'; ` +
+            `form-action 'self' https://formspree.io https://api.formspree.io`
+          }
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -124,9 +140,10 @@ export default function RootLayout({
         <ImageProtection>
           <div className="flex flex-col min-h-screen responsive-container">
             <Navigation />
-            <main className="flex-grow responsive-container">
+            <main className="flex-grow responsive-container pt-16">
               {children}
             </main>
+            <BackToTop />
             <Footer />
           </div>
         </ImageProtection>

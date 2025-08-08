@@ -42,7 +42,7 @@ export function Hero() {
   }, [controlsTitle, controlsSubtitle]);
 
   return (
-    <div className="relative overflow-hidden -mt-16 w-full max-w-full">
+    <div className="relative overflow-hidden w-full max-w-full">
       {/* モバイルでは高さを調整 */}
       <div className="h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-screen w-full">
         {/* 背景画像（next/image で最適化） */}

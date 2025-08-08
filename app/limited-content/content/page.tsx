@@ -116,7 +116,7 @@ const LimitedContent = () => {
     const linkItems = [
         { href: "/limited-content/records/", label: "PBランキング", icon: Trophy },
         { href: "/limited-content/album", label: "アルバム", icon: ImageIcon },
-        { href: "/limited-content/analysis/hakone", label: "箱根駅伝区間分析", icon: Route },
+        { href: "/limited-content/analysis/", label: "箱根駅伝区間分析", icon: Route },
     ];
 
     interface CampItem {

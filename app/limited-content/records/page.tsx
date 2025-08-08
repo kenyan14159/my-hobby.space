@@ -343,17 +343,17 @@ export default function RecordsPage() {
                     </div>
                     
                     <div className="overflow-x-auto">
-                        <Table>
+                        <Table className="w-full">
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead className="w-12 text-center">順位</TableHead>
-                                    <TableHead>名前</TableHead>
-                                    <TableHead className="text-center">学年</TableHead>
-                                    <TableHead>出身校</TableHead>
-                                    <TableHead>タイム</TableHead>
-                                    <TableHead className="hidden md:table-cell">大会名</TableHead>
-                                    <TableHead className="hidden md:table-cell">場所</TableHead>
-                                    <TableHead className="hidden md:table-cell">期日</TableHead>
+                                    <TableHead className="w-12 sm:w-20 text-center">順位</TableHead>
+                                    <TableHead className="min-w-[6rem] sm:min-w-[8rem]">名前</TableHead>
+                                    <TableHead className="w-12 sm:w-20 text-center">学年</TableHead>
+                                    <TableHead className="w-24 sm:w-48">出身校</TableHead>
+                                    <TableHead className="w-16 sm:w-24 text-center">タイム</TableHead>
+                                    <TableHead className="min-w-[10rem] hidden md:table-cell">大会名</TableHead>
+                                    <TableHead className="w-24 hidden md:table-cell">場所</TableHead>
+                                    <TableHead className="w-28 hidden md:table-cell">期日</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
@@ -378,8 +378,12 @@ export default function RecordsPage() {
                                                     <TableCell className="text-center">{rank}</TableCell>
                                                     <TableCell>{runner.name}</TableCell>
                                                     <TableCell className="text-center">{runner.grade}</TableCell>
-                                                    <TableCell>{runner.school || 'N/A'}</TableCell>
-                                                    <TableCell className="font-mono">
+                                                    <TableCell>
+                                                        <div className="whitespace-normal sm:whitespace-nowrap overflow-hidden text-ellipsis max-w-[8rem] sm:max-w-[12rem]">
+                                                            {runner.school || 'N/A'}
+                                                        </div>
+                                                    </TableCell>
+                                                    <TableCell className="font-mono text-center">
                                                         {formatTime(runner.timeInSeconds, isLongDistance, eventId)}
                                                     </TableCell>
                                                     <TableCell className="text-xs hidden md:table-cell">{runner.event || 'N/A'}</TableCell>

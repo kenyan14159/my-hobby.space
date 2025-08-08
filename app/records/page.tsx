@@ -953,8 +953,7 @@ export default function RecordsPage() {
                 </div>
             </motion.div>
             
-            {/* トップへ戻るボタン */}
-            <ScrollToTopButton />
+            {/* トップへ戻るボタン（共通ボタンに統一のためページ内ボタンは削除） */}
         </div>
     );
 }

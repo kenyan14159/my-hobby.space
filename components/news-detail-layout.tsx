@@ -77,12 +77,12 @@ export function NewsSection({
 
   return (
     <motion.section
-      className="mb-8"
+      className="my-10 sm:my-14"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
     >
-      <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+      <h2 className="text-2xl font-bold text-gray-900 mb-5 sm:mb-6 flex items-center gap-3">
         {Icon && <Icon className={`w-6 h-6 ${themeClasses[theme]}`} />}
         {title}
       </h2>
@@ -110,7 +110,7 @@ export function NewsHighlight({
 
   return (
     <motion.div
-      className={`p-6 bg-gradient-to-br ${themeClasses[theme]} rounded-xl border`}
+      className={`p-6 bg-gradient-to-br ${themeClasses[theme]} rounded-xl border my-8 sm:my-10`}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay }}
@@ -221,14 +221,14 @@ export function NewsDetailLayout({
         <div className="mb-6">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
-        {/* ヘッダー */}
+        {/* ヘッダー（モバイルでも表示） */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">{title}</h1>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">{title}</h1>
           
           {date && (
             <div className="flex items-center justify-center gap-2 text-gray-600 text-sm">
@@ -264,8 +264,8 @@ export function NewsDetailLayout({
           </Link>
         </motion.div>
 
-        {/* 前後ナビゲーション */}
-        <div className="mt-6">
+        {/* 前後ナビゲーション（モバイル非表示） */}
+        <div className="mt-6 hidden sm:block">
           <PrevNextNav type="news" />
         </div>
 

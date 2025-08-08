@@ -23,6 +23,8 @@ export function BulletinBoardForm({ onPostSubmitted, onShowTerms }: BulletinBoar
   const { showNotification } = useNotification();
 
   const postCooldown = 20000; // 20秒
+  const MAX_AUTHOR_LENGTH = 50;
+  const MAX_CONTENT_LENGTH = 2000;
   const ngWords = [
     'バカ', 'ばか', 'アホ', 'あほ', 'クズ', 'くず', 'ゴミ', 'ごみ', 
     '死ね', 'しね', '殺す', 'ころす', 'うざい', 'ウザい', 'きもい', 'キモい',
@@ -52,6 +54,16 @@ export function BulletinBoardForm({ onPostSubmitted, onShowTerms }: BulletinBoar
     const trimmedContent = content.trim();
     if (!trimmedContent) {
       showNotification('コメントを入力してください。', 'error');
+      return;
+    }
+
+    // 文字数バリデーション
+    if (author.length > MAX_AUTHOR_LENGTH) {
+      showNotification(`お名前は${MAX_AUTHOR_LENGTH}文字以内で入力してください。`, 'error');
+      return;
+    }
+    if (trimmedContent.length > MAX_CONTENT_LENGTH) {
+      showNotification(`コメントは${MAX_CONTENT_LENGTH}文字以内で入力してください。`, 'error');
       return;
     }
 

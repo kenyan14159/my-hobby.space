@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -25,7 +25,7 @@ const getYears = (items: ResultMeta[]) => {
   return yrs.sort((a, b) => b.localeCompare(a));
 };
 
-export default function ResultsPage() {
+function ResultsPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [yearFilter, setYearFilter] = useState<'all' | string>('all');
@@ -224,5 +224,13 @@ export default function ResultsPage() {
         )}
       </motion.div>
     </div>
+  );
+}
+
+export default function ResultsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">読み込み中...</div>}>
+      <ResultsPageContent />
+    </Suspense>
   );
 }

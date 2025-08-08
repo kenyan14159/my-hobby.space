@@ -49,15 +49,11 @@ export default function HakoneAnalysisPage() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const linkItems = [
-        { href: "/limited-content/content", label: "限定コンテンツ" },
-        { href: "/limited-content/records/1500m", label: "1500m PBランキング" },
-        { href: "/limited-content/records/3000msc", label: "3000mSC PBランキング" },
-        { href: "/limited-content/records/5000m", label: "5000m PBランキング" },
-        { href: "/limited-content/records/10000m", label: "10000m PBランキング" },
-        { href: "/limited-content/records/half-marathon", label: "ハーフマラソン PBランキング" },
-        { href: "/limited-content/analysis/hakone", label: "箱根駅伝区間分析" },
-        { href: "/limited-content/album", label: "アルバム" },
+    const navButtons: { href: string; label: string; variant?: 'default' | 'outline' }[] = [
+        { href: "/limited-content/content", label: "限定コンテンツ", variant: 'outline' },
+        { href: "/limited-content/records/", label: "PBランキング", variant: 'outline' },
+        { href: "/limited-content/analysis/hakone", label: "箱根駅伝区間分析", variant: 'default' },
+        { href: "/limited-content/album", label: "アルバム", variant: 'outline' },
     ];
 
     const handlePasswordSubmit = (e: React.FormEvent) => {
@@ -112,17 +108,17 @@ export default function HakoneAnalysisPage() {
                 <div className="mb-6">
                     <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '限定コンテンツ', href: '/limited-content' }, { label: '箱根駅伝区間分析' }]} />
                 </div>
-                {/* 上部ナビゲーション */}
+                {/* 上部ナビゲーション（形状を統一） */}
                 <div className="mb-8">
                     <div className="flex flex-wrap gap-2 justify-center">
-                        {linkItems.map((item) => (
-                            <Link key={item.href} href={item.href} passHref>
+                        {navButtons.map(({ href, label, variant }) => (
+                            <Link key={href} href={href} passHref>
                                 <Button 
-                                    variant={item.href === "/limited-content/analysis/hakone" ? "default" : "outline"}
+                                    variant={variant}
                                     size="sm"
-                                    className="text-xs"
+                                    className="text-xs rounded-full px-4"
                                 >
-                                    {item.label}
+                                    {label}
                                 </Button>
                             </Link>
                         ))}
@@ -168,17 +164,17 @@ export default function HakoneAnalysisPage() {
                     </CardContent>
                 </Card>
 
-                {/* 下部ナビゲーション */}
+                {/* 下部ナビゲーション（形状を統一） */}
                 <div className="mt-8">
                     <div className="flex flex-wrap gap-2 justify-center">
-                        {linkItems.map((item) => (
-                            <Link key={item.href} href={item.href} passHref>
+                        {navButtons.map(({ href, label, variant }) => (
+                            <Link key={href} href={href} passHref>
                                 <Button 
-                                    variant={item.href === "/limited-content/analysis/hakone" ? "default" : "outline"}
+                                    variant={variant}
                                     size="sm"
-                                    className="text-xs"
+                                    className="text-xs rounded-full px-4"
                                 >
-                                    {item.label}
+                                    {label}
                                 </Button>
                             </Link>
                         ))}

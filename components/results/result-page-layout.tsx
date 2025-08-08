@@ -79,18 +79,18 @@ export default function ResultPageLayout({
         <div className="mb-6">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
-        {/* ヘッダー */}
+        {/* ヘッダー（モバイルでも表示） */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">{title}</h1>
-          {subtitle && <h2 className="text-lg md:text-xl text-gray-600 mb-4">{subtitle}</h2>}
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2">{title}</h1>
+          {subtitle && <h2 className="text-base sm:text-lg md:text-xl text-gray-600 mb-4">{subtitle}</h2>}
 
           {(date || place) && (
-            <div className="flex items-center justify-center gap-6 text-gray-600 text-sm">
+            <div className="flex items-center justify-center gap-4 sm:gap-6 text-gray-600 text-sm">
               {date && (
                 <div className="flex items-center gap-2">
                   <Calendar size={18} />
@@ -125,8 +125,8 @@ export default function ResultPageLayout({
           </Link>
         </motion.div>
 
-        {/* 前後ナビゲーション */}
-        <div className="mt-6">
+        {/* 前後ナビゲーション（モバイル非表示） */}
+        <div className="mt-6 hidden sm:block">
           <PrevNextNav type="result" />
         </div>
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 // 記録データの型定義
 interface Record {
@@ -141,7 +142,15 @@ export default function MensTwentyKilometersWalkPage() {
   return (
     <div className="container mx-auto px-4 py-8 mt-4">
       <div className="max-w-6xl mx-auto">
-        <AnimatedPageHeader title="男子 20km競歩 歴代記録" />
+        <div className="mb-6">
+          <Breadcrumbs items={[
+            { label: 'ホーム', href: '/' },
+            { label: '陸上競技部', href: '/track-and-field' },
+            { label: '歴代記録', href: '/track-and-field/records' },
+            { label: '男子20km競歩 歴代ランキング' }
+          ]} />
+        </div>
+        <AnimatedPageHeader title="男子20km競歩 歴代ランキング" />
 
         <Card>
           <CardContent>

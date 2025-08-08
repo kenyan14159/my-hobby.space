@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Medal } from "lucide-react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -100,6 +101,14 @@ export default function MenMarathonRecordPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
+      <div className="mb-6">
+        <Breadcrumbs items={[
+          { label: 'ホーム', href: '/' },
+          { label: '陸上競技部', href: '/track-and-field' },
+          { label: '歴代記録', href: '/track-and-field/records' },
+          { label: '男子マラソン 歴代ランキング' }
+        ]} />
+      </div>
       <AnimatedPageHeader
         title="男子マラソン 歴代ランキング"
       />

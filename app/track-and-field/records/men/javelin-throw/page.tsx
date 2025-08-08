@@ -1,5 +1,6 @@
 "use client";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -14,7 +15,15 @@ export default function MenJavelinThrowRecordPage() {
   return (
     <div className="container mx-auto px-4 py-8 mt-4">
       <div className="max-w-6xl mx-auto">
-        <AnimatedPageHeader title="男子 やり投 歴代記録" />
+        <div className="mb-6">
+          <Breadcrumbs items={[
+            { label: 'ホーム', href: '/' },
+            { label: '陸上競技部', href: '/track-and-field' },
+            { label: '歴代記録', href: '/track-and-field/records' },
+            { label: '男子やり投 歴代ランキング' }
+          ]} />
+        </div>
+        <AnimatedPageHeader title="男子やり投 歴代ランキング" />
         <div className="overflow-x-auto mb-8">
           <table className="w-full border-collapse text-sm">
             <thead>

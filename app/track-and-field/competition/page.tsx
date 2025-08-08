@@ -24,7 +24,7 @@ export default function CompetitionPage() {
           />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <div className="text-center text-white p-6">
-              <h1 className="text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg">日体大競技会</h1>
+              <h2 className="text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg">日体大競技会</h2>
               <p className="text-lg md:text-xl mb-4 drop-shadow">2025年度 年間6回開催・エントリー受付中</p>
               <Button size="lg" asChild>
                 <a href="http://tf.nssu-athletic.com/" target="_blank" rel="noopener noreferrer">
@@ -40,7 +40,7 @@ export default function CompetitionPage() {
         <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: '日体大競技会' }]} />
       </div>
       <AnimatedPageHeader
-        title="日体大競技会について"
+        title="日体大競技会"
         subtitle="開催日程・会場・エントリー・案内・お問い合わせはこちら"
       />
       <div className="max-w-4xl mx-auto">

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import Link from "next/link";
 
 type Member = {
@@ -78,6 +79,9 @@ export default function TrainerWomenPage() {
 
   return (
     <main className="max-w-5xl mx-auto py-10 px-4">
+      <div className="mb-6">
+        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: 'メンバー・ブロック紹介', href: '/track-and-field/members' }, { label: 'トレーナー女子メンバー' }]} />
+      </div>
       <AnimatedPageHeader
         title="トレーナー女子メンバー"
       />

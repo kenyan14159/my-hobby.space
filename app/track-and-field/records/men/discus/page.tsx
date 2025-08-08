@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Medal } from "lucide-react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -14,39 +15,8 @@ type RecordData = {
   recordYear: string;
 };
 
-// 男子十種競技の記録データ
-const recordsData: RecordData[] = [
-  { name: "平田 卓朗", highSchool: "八潮高校", record: "7527", year: 3, recordYear: "2001年" },
-  { name: "武富 祐二", highSchool: "久留米", record: "7048", year: 4, recordYear: "2005年" },
-  { name: "田中 廉人", highSchool: "川崎橘", record: "7018", year: 3, recordYear: "2019年" },
-  { name: "照 光次郎", highSchool: "洛南高校", record: "6970", year: 3, recordYear: "1997年" },
-  { name: "清水 陽春", highSchool: "前橋育英", record: "6957", year: 2, recordYear: "2016年" },
-  { name: "黒岩 俊克", highSchool: "太成高校", record: "6916", year: null, recordYear: "1989年" },
-  { name: "関川 晋哉", highSchool: "茨城キリスト教学園", record: "6909", year: null, recordYear: "1990年" },
-  { name: "小野瀬 翼", highSchool: "七尾東雲", record: "6909", year: 4, recordYear: "2016年" },
-  { name: "武川 幸司", highSchool: "御殿場南", record: "6893", year: null, recordYear: "1992年" },
-  { name: "内藤 重人", highSchool: "小諸高校", record: "6888", year: null, recordYear: "1990年" },
-  { name: "日光 忍", highSchool: "石川県立工業", record: "6865", year: null, recordYear: "1987年" },
-  { name: "宮内 夏葵", highSchool: "東京高校", record: "6862", year: 2, recordYear: "2024年" },
-  { name: "家永 晴郎", highSchool: "大塚高校", record: "6858", year: 3, recordYear: "2005年" },
-  { name: "中川 一紀", highSchool: "草加南", record: "6857", year: "M1", recordYear: "1995年" },
-  { name: "原田 恭宏", highSchool: "天草工業", record: "6849", year: 3, recordYear: "1995年" },
-  { name: "塚本 義貴", highSchool: "勢多農林", record: "6814", year: 4, recordYear: "2017年" },
-  { name: "熊崎 大和", highSchool: "美濃加茂", record: "6762", year: 3, recordYear: "2019年" },
-  { name: "猪狩 大輔", highSchool: "平工業", record: "6759", year: 4, recordYear: "2013年" },
-  { name: "會田 裕亮", highSchool: "八潮高校", record: "6713", year: 4, recordYear: "2009年" },
-  { name: "山本 学", highSchool: "盛岡南", record: "6629", year: 4, recordYear: "2008年" },
-  { name: "遊佐 祥太", highSchool: "利府高校", record: "6620", year: 3, recordYear: "2024年" },
-  { name: "山田 剛", highSchool: "東海大浦安", record: "6597", year: 3, recordYear: "1994年" },
-  { name: "畑山 茂雄", highSchool: "黒石高校", record: "6584", year: 2, recordYear: "1996年" },
-  { name: "宋 強賢", highSchool: "東京高校", record: "6578", year: 4, recordYear: "2007年" },
-  { name: "山田 海太", highSchool: "相洋高校", record: "6576", year: 4, recordYear: "2012年" },
-  { name: "柿沼 厚吏", highSchool: "西邑楽", record: "6561", year: 3, recordYear: "2007年" },
-  { name: "高梨 博文", highSchool: "西武台千葉", record: "6547", year: 4, recordYear: "1996年" },
-  { name: "大野 慎一郎", highSchool: "山口高校", record: "6522", year: 3, recordYear: "2012年" },
-  { name: "大橋 一耀", highSchool: "会津学鳳", record: "6514", year: 4, recordYear: "2024年" },
-  { name: "九鬼 正光", highSchool: "添上高校", record: "6489", year: null, recordYear: "1995年" }
-];
+// 男子円盤投の記録データ（未入力）
+const recordsData: RecordData[] = [];
 
 // データをコンポーネントで使いやすい形式に整形
 const records = recordsData.map(data => {
@@ -62,7 +32,7 @@ const records = recordsData.map(data => {
   return {
     name: data.name,
     school: data.highSchool,
-    time: data.record, // 構造を合わせるため'time'を使用するが、内容は得点
+    time: data.record, // 構造上 'time' を使用（実際は投擲記録）
     year: formattedYear,
     recordYear: data.recordYear,
   };
@@ -95,14 +65,20 @@ const events = [
     { label: "七種競技", path: "heptathlon" },
 ];
 
-export default function MenDecathlonRecordPage() {
+export default function MenDiscusRecordPage() {
   const [showLinks, setShowLinks] = useState(false);
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <AnimatedPageHeader
-        title="男子十種競技 歴代ランキング"
-      />
+      <div className="mb-6">
+        <Breadcrumbs items={[
+          { label: 'ホーム', href: '/' },
+          { label: '陸上競技部', href: '/track-and-field' },
+          { label: '歴代記録', href: '/track-and-field/records' },
+          { label: '男子円盤投 歴代ランキング' }
+        ]} />
+      </div>
+      <AnimatedPageHeader title="男子円盤投 歴代ランキング" />
       {/* 他の記録へボタン */}
       <div className="mb-6 flex justify-center">
         <button
@@ -162,7 +138,7 @@ export default function MenDecathlonRecordPage() {
       </div>
       {/* モバイル用カード型ランキング */}
       <div className="block md:hidden max-w-2xl mx-auto space-y-3">
-        <div className="font-bold text-base text-blue-900 mb-2">男子十種競技歴代ランキングTOP30</div>
+        <div className="font-bold text-base text-blue-900 mb-2">男子円盤投歴代ランキングTOP30</div>
         {records.map((rec, i) => {
           const isNew = rec.recordYear === "2024年";
           return (
@@ -195,7 +171,7 @@ export default function MenDecathlonRecordPage() {
         <div className="mb-8 border-gray-200 bg-gray-50 rounded-xl shadow-sm">
           <div className="flex items-center gap-2 px-6 pt-6 pb-2">
             <Medal className="w-6 h-6 text-yellow-500" strokeWidth={2} />
-            <span className="text-blue-900 text-xl font-bold">男子十種競技歴代ランキングTOP30</span>
+            <span className="text-blue-900 text-xl font-bold">男子円盤投歴代ランキングTOP30</span>
           </div>
           <div className="px-6 pb-6">
             <table className="w-full table-fixed text-sm border-separate border-spacing-y-1">

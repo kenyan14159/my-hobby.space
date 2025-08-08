@@ -15,10 +15,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LimitedcontentLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function NoIndexLayout({ children }: { children: React.ReactNode }) {
+  return children;
 }
+
+
