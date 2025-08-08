@@ -3,7 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ArrowLeft } from 'lucide-react';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/breadcrumbs';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { PrevNextNav } from '@/components/ui/prev-next-nav';
+import { RelatedResults } from '@/components/ui/related-results';
 
 interface ResultPageLayoutProps {
   /** 大会名 (メインタイトル) */
@@ -33,6 +37,22 @@ export default function ResultPageLayout({
   gradient = 'from-gray-50 to-gray-100',
   children,
 }: ResultPageLayoutProps) {
+  const pathname = usePathname();
+  const pageUrl = `https://nssu-ekiden.com${pathname || ''}`;
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'トピックス', href: '/topics' },
+    { label: 'リザルト', href: '/topics/results' },
+    { label: title },
+  ];
+  const jsonLdBreadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'トピックス', item: 'https://nssu-ekiden.com/topics' },
+      { '@type': 'ListItem', position: 2, name: 'リザルト', item: 'https://nssu-ekiden.com/topics/results' },
+      { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
+    ],
+  } as const;
   return (
     <div className={`min-h-screen bg-gradient-to-br ${gradient} py-16`}>
       <motion.div
@@ -41,6 +61,12 @@ export default function ResultPageLayout({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
+        {/* 構造化データ */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+        {/* パンくず */}
+        <div className="mb-6">
+          <Breadcrumbs items={breadcrumbItems} />
+        </div>
         {/* ヘッダー */}
         <motion.div
           className="text-center mb-12"
@@ -86,6 +112,14 @@ export default function ResultPageLayout({
             リザルト一覧へ戻る
           </Link>
         </motion.div>
+
+        {/* 前後ナビゲーション */}
+        <div className="mt-6">
+          <PrevNextNav type="result" />
+        </div>
+
+        {/* 関連結果 */}
+        <RelatedResults />
       </motion.div>
     </div>
   );

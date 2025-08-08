@@ -1,10 +1,12 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
 import SpotlightCard from '@/components/SpotlightCard';
+import { CardImage } from '@/components/ui/card-image';
 import { AnimatedPageHeader } from '@/components/ui/animated-page-header';
 import { TopicsQuickAccess } from '@/components/topics-quick-access';
 import { getAllResults, ResultMeta } from '@/lib/results';
@@ -23,6 +25,8 @@ const getYears = (items: ResultMeta[]) => {
 };
 
 export default function ResultsPage() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [yearFilter, setYearFilter] = useState<'all' | string>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const results = getAllResults();
@@ -58,6 +62,29 @@ export default function ResultsPage() {
     items: sorted,
     itemsPerPage: 12
   });
+
+  // クエリ→状態 初期同期
+  useEffect(() => {
+    const q = searchParams.get('q') || '';
+    const y = (searchParams.get('year') as string) || 'all';
+    const p = parseInt(searchParams.get('page') || '1', 10);
+    setSearchQuery(q);
+    setYearFilter((y === 'all' || /^\d{4}$/.test(y)) ? (y as 'all' | string) : 'all');
+    if (!Number.isNaN(p) && p > 0) {
+      pagination.goToPage(p);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // 状態→クエリ 同期
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (searchQuery) params.set('q', searchQuery);
+    if (yearFilter !== 'all') params.set('year', yearFilter);
+    if (pagination.currentPage > 1) params.set('page', String(pagination.currentPage));
+    const qs = params.toString();
+    router.replace(qs ? `?${qs}` : '?', { scroll: false });
+  }, [searchQuery, yearFilter, pagination.currentPage, router]);
 
   return (
     <div className="bg-gradient-to-br from-white to-sky-50 min-h-screen py-16">
@@ -96,7 +123,7 @@ export default function ResultsPage() {
             <Button
               variant={yearFilter === 'all' ? 'default' : 'outline'}
               size="sm"
-              onClick={() => setYearFilter('all')}
+              onClick={() => { setYearFilter('all'); pagination.goToPage(1); }}
               className={yearFilter === 'all' 
                 ? 'bg-sky-600 hover:bg-sky-700 text-white' 
                 : 'text-sky-600 border-sky-600 hover:bg-sky-50'
@@ -109,7 +136,7 @@ export default function ResultsPage() {
                 key={year}
                 variant={yearFilter === year ? 'default' : 'outline'}
                 size="sm"
-                onClick={() => setYearFilter(year)}
+                onClick={() => { setYearFilter(year); pagination.goToPage(1); }}
                 className={yearFilter === year 
                   ? 'bg-sky-600 hover:bg-sky-700 text-white' 
                   : 'text-sky-600 border-sky-600 hover:bg-sky-50'
@@ -158,16 +185,8 @@ export default function ResultsPage() {
               viewport={{ once: true }}
             >
               <Link href={`/topics/results/${item.slug}`} className="block h-full">
-                <SpotlightCard
-                  className="h-48 sm:h-56 md:h-64 flex flex-col text-white"
-                  style={{
-                    backgroundImage: `url(${item.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                >
-                  {/* Overlay for better readability */}
-                  <div className="absolute inset-0 bg-black/40" />
+                <SpotlightCard className="h-48 sm:h-56 md:h-64 flex flex-col text-white relative overflow-hidden">
+                  <CardImage src={item.image} alt={item.title} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
 
                   <div className="relative flex flex-col flex-1 justify-end p-3 sm:p-4">
                     <h3 className="text-base sm:text-lg font-semibold mb-1 drop-shadow-md leading-tight">{item.title}</h3>

@@ -3,7 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowLeft, LucideIcon } from 'lucide-react';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/breadcrumbs';
+import { PrevNextNav } from '@/components/ui/prev-next-nav';
+import { RelatedNews } from '@/components/ui/related-news';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface NewsDetailLayoutProps {
   /** ニュースのタイトル */
@@ -167,12 +171,41 @@ export function NewsList({
  * ヘッダ (タイトル・日付) と背景グラデーション、戻るボタン、
  * アニメーション付きのコンテナをまとめて提供する。
  */
-export function NewsDetailLayout({
-  title,
-  date,
+export function NewsDetailLayout({ 
+  title, 
+  date, 
   gradient = 'from-gray-50 to-gray-100',
-  children,
+  children, 
 }: NewsDetailLayoutProps) {
+  const pathname = usePathname();
+  const pageUrl = `https://nssu-ekiden.com${pathname || ''}`;
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'トピックス', href: '/topics' },
+    { label: 'ニュース', href: '/topics/news' },
+    { label: title },
+  ];
+  const jsonLdArticle = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: title,
+    datePublished: date || undefined,
+    dateModified: date || undefined,
+    mainEntityOfPage: pageUrl,
+    publisher: {
+      '@type': 'Organization',
+      name: '日本体育大学陸上競技部男子駅伝ブロック',
+      url: 'https://nssu-ekiden.com',
+    },
+  } as const;
+  const jsonLdBreadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'トピックス', item: 'https://nssu-ekiden.com/topics' },
+      { '@type': 'ListItem', position: 2, name: 'ニュース', item: 'https://nssu-ekiden.com/topics/news' },
+      { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
+    ],
+  } as const;
   return (
     <div className={`min-h-screen bg-gradient-to-br ${gradient} py-16`}>
       <motion.div
@@ -181,6 +214,13 @@ export function NewsDetailLayout({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
+        {/* 構造化データ */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
+        {/* パンくず */}
+        <div className="mb-6">
+          <Breadcrumbs items={breadcrumbItems} />
+        </div>
         {/* ヘッダー */}
         <motion.div
           className="text-center mb-12"
@@ -223,6 +263,14 @@ export function NewsDetailLayout({
             ニュース一覧へ戻る
           </Link>
         </motion.div>
+
+        {/* 前後ナビゲーション */}
+        <div className="mt-6">
+          <PrevNextNav type="news" />
+        </div>
+
+        {/* 関連ニュース */}
+        <RelatedNews />
       </motion.div>
     </div>
   );

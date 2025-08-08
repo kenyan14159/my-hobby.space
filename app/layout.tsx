@@ -110,6 +110,11 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning={true}>
       <head>
+        {/* 画像ホストへの接続最適化 */}
+        <link rel="preconnect" href="https://nssu-ekiden.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://nssu-ekiden.com" />
+        <link rel="preconnect" href="https://ekiden-results.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://ekiden-results.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

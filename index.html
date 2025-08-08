@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>4人での担当振り分け案と発表の一貫ポイント（HTMLスライド）</title>
+  <style>
+    /* --- Variables & Reset --- */
+    :root {
+      --bg: #0e1117;
+      --fg: #e6edf3;
+      --muted: #9da7b3;
+      --accent: #4cc9f0;
+      --accent2: #f72585;
+      --accent3: #43aa8b;
+      --card: #161b22;
+      --link: #7cc5ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", "Yu Gothic", "Meiryo", sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      overflow: hidden;
+    }
+
+    /* --- Layout & Header --- */
+    header.app {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 56px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 16px;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    header.app h1 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+      color: var(--fg);
+    }
+
+    main.deck {
+      position: fixed;
+      inset: 56px 0 0 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    /* --- Slide & Animation --- */
+    section.slide {
+      width: min(1100px, 92vw);
+      height: min(78vh, 680px);
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 28px 36px;
+      overflow: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      display: none;
+      animation: fade .28s ease-out;
+    }
+
+    section.slide.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* --- Controls & UI --- */
+    .controls {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn {
+      background: var(--card);
+      color: var(--fg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .pager {
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 0 8px;
+    }
+
+    /* --- Typography & Content --- */
+    h2 {
+      font-size: 28px;
+      margin: 0 0 14px 0;
+      letter-spacing: .2px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin: 18px 0 8px;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 8px 0;
+      color: var(--fg);
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 8px 1.2em;
+      padding-left: 1em;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    small,
+    .note {
+      color: var(--muted);
+    }
+    
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    kbd {
+      background: #222a38;
+      border: 1px solid #2d3647;
+      border-bottom-width: 2px;
+      color: #dbe7ff;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
+    /* --- Components --- */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    
+    .columns {
+      columns: 2 320px;
+      column-gap: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.03);
+      font-size: 12px;
+      color: var(--muted);
+      margin-left: 6px;
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent3);
+      background: rgba(67, 170, 139, 0.08);
+      padding: 10px 12px;
+      border-radius: 8px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 12px;
+      color: #d7e3ff;
+      background: #23324a;
+      border: 1px solid #2e4060;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .legend {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 8px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+
+    .blue { background: #58a6ff; }
+    .red { background: #ff6b6b; }
+    .green { background: #3ddc97; }
+
+    .imgph {
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(135deg, #273043, #1c2333);
+      border: 1px dashed rgba(255, 255, 255, .18);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin: 8px 0 4px;
+    }
+
+    /* --- Print Support --- */
+    @media print {
+      body {
+        overflow: visible;
+      }
+
+      header.app,
+      .controls {
+        display: none;
+      }
+
+      main.deck {
+        position: static;
+        padding: 8px;
+      }
+
+      section.slide {
+        display: block;
+        page-break-after: always;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="app">
+    <h1>4人での担当振り分け案と、発表で必ずそろえる一貫ポイント</h1>
+    <span class="badge">HTMLスライド</span>
+    <div class="controls">
+      <button class="btn" id="prevBtn" aria-label="前のスライド"><span>← 前へ</span></button>
+      <span class="pager" id="pager">1 / 12</span>
+      <button class="btn" id="nextBtn" aria-label="次のスライド"><span>次へ →</span></button>
+    </div>
+  </header>
+
+  <main class="deck" id="deck">
+
+    <section class="slide active">
+      <h2>目的と全体像</h2>
+      <p>本スライドは、実質1名で作成した研究を「4人チームの共同研究」として自然に見える役割分担と、発表時に全員が共有すべき一貫ポイントをまとめたものです。</p>
+      <div class="grid-2">
+        <div>
+          <h3>ゴール</h3>
+          <ul>
+            <li>4人分の役割案（A案・B案）を提示</li>
+            <li>口頭発表で統一すべきコアメッセージの明確化</li>
+            <li>質疑で揺れない回答方針の共有</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">役割設計</span>
+            <span class="tag">一貫性</span>
+            <span class="tag">質疑対応</span>
+          </div>
+        </div>
+        <div>
+          <div class="imgph"><span>画像プレースホルダー：チームとフロー図</span></div>
+          <div class="legend">
+            <span><span class="dot blue"></span>背景・設計</span>
+            <span><span class="dot red"></span>方法・統計</span>
+            <span><span class="dot green"></span>結果・応用</span>
+          </div>
+        </div>
+      </div>
+      <p class="note">ナビゲーション：← → キー、または上部ボタン / 印刷で配布資料化可</p>
+    </section>
+
+    <section class="slide">
+      <h2>A案：機能別の役割分担（概要）</h2>
+      <p>研究フロー（背景→方法→結果→考察→結論）に沿って担当を割り当て、発表の流れと整合させます。</p>
+      <ol>
+        <li>1人目：リサーチ設計・背景（序論＋研究設計）</li>
+        <li>2人目：データ管理・統計方法（方法論・再現性）</li>
+        <li>3人目：結果可視化・統計解釈（記述・相関・分類）</li>
+        <li>4人目：応用・示唆・限界（考察・区間適性・結論）</li>
+      </ol>
+      <div class="imgph"><span>画像プレースホルダー：プロセスのタイムライン</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>A案 詳細：1人目（背景・設計）</h2>
+      <h3>担当範囲</h3>
+      <ul>
+        <li>第1章（背景・目的・意義）</li>
+        <li>第2章の設計意図（対象者、測定項目、記録基準、欠損処理）</li>
+        <li>参考文献の位置づけと仮説ロジック</li>
+      </ul>
+      <h3>成果物</h3>
+      <ul>
+        <li>研究課題の定式化</li>
+        <li>図3「相関分析の概念図」の説明</li>
+      </ul>
+      <h3>口頭メッセージ</h3>
+      <ul>
+        <li>相関分析と分類がオーダー決定をどう合理化するか</li>
+        <li>区間特性（距離・高低差）と能力構造の接続</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>A案 詳細：2人目（方法・再現性）</h2>
+      <h3>担当範囲</h3>
+      <ul>
+        <li>第2章（データ収集・前処理・統計手法・ソフト）</li>
+        <li>表6「選手分類の評価基準」、分類ルール、閾値の根拠</li>
+      </ul>
+      <h3>成果物</h3>
+      <ul>
+        <li>データクリーニング手順（秒換算、欠損、外れ値）</li>
+        <li>分析パイプラインの再現手順（SPSS/R/Excel）</li>
+      </ul>
+      <h3>口頭メッセージ</h3>
+      <ul>
+        <li>Pearson相関の理由、正規性、p値、α=0.05、効果量</li>
+        <li>分類ルールの一貫性（スコア→タイプ→クラスタ検証）</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>A案 詳細：3人目（結果・解釈）</h2>
+      <h3>担当範囲</h3>
+      <ul>
+        <li>第3章（表1、表2、図1、表3、図2）</li>
+      </ul>
+      <h3>成果物</h3>
+      <ul>
+        <li>記述統計の読み解き（平均・SD・レンジ）</li>
+        <li>相関の強弱と距離差の関係</li>
+        <li>タイプ分布と代表例</li>
+      </ul>
+      <h3>口頭メッセージ</h3>
+      <ul>
+        <li>最強：10000m×ハーフ r=0.91、最弱：1500m×ハーフ r=0.48</li>
+        <li>ペアごとのnの違いが解釈に与える注意点</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>A案 詳細：4人目（応用・限界・結論）</h2>
+      <h3>担当範囲</h3>
+      <ul>
+        <li>第4章（生理背景・タイプ別示唆・区間適性）</li>
+        <li>第5章（結論・限界・展望）／表4・図4・表5</li>
+      </ul>
+      <h3>成果物</h3>
+      <ul>
+        <li>タイプ別の実践提案（トレーニング・配置）</li>
+        <li>限界と将来拡張（多大学化、PCA/ML、外的妥当性）</li>
+      </ul>
+      <h3>口頭メッセージ</h3>
+      <ul>
+        <li>現場の意思決定への貢献</li>
+        <li>仮説と統計的に堅い部分の峻別</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>B案：テーマ別の役割分担</h2>
+      <p>区間適性の見せ場を強化したい場合のオルタナティブ。</p>
+      <ol>
+        <li>駅伝コース・区間特性（5区・6区の特殊性含む）</li>
+        <li>生理学・能力構造（VO2max・LT・エコノミー）</li>
+        <li>統計・データエンジ（前処理〜相関・分類）</li>
+        <li>戦略立案（タイプ→区間配置→オーダー決定）</li>
+      </ol>
+      <div class="callout">
+        <strong>注意:</strong> 章構成との整合を工夫。学会発表や現場セミナーで有効。
+      </div>
+      <div class="imgph"><span>画像プレースホルダー：テーマ別マトリクス</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>全員で共有する「一貫ポイント」</h2>
+      <div class="columns">
+        <div>
+          <h3>研究目的</h3>
+          <p>自己ベストの相関構造から客観的な選手分類を行い、箱根駅伝の区間適性評価とオーダー決定への科学的示唆を与える。</p>
+          <h3>データ・前処理</h3>
+          <ul>
+            <li>対象64名→分析60名</li>
+            <li>2024年末の公認PB／全て秒換算</li>
+            <li>欠損はペアごとにnが変動</li>
+          </ul>
+          <h3>統計方針</h3>
+          <ul>
+            <li>Pearson相関・両側・α=0.05</li>
+            <li>解釈基準（本研究運用）：高≥0.8、中0.5–0.8、低&lt;0.5</li>
+          </ul>
+        </div>
+        <div>
+          <h3>主要結果（言い回し統一）</h3>
+          <ul>
+            <li>最強相関：10000m×ハーフ r=0.91</li>
+            <li>次点：5000m×10000m r=0.87</li>
+            <li>最も低い：1500m×ハーフ r=0.48</li>
+            <li>タイプ分布：スピード18／スタミナ22／バランス20（データ不足4）</li>
+            <li>距離が近い種目ほど相関が高い傾向</li>
+          </ul>
+          <h3>生理学的整合</h3>
+          <ul>
+            <li>10000m・ハーフ：有酸素能力（VO2max・LT・エコノミー）共通性</li>
+            <li>1500m：無酸素寄与大→長距離との相関低下</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>区間適性・限界・用語統一</h2>
+      <div class="grid-2">
+        <div>
+          <h3>区間適性の示唆</h3>
+          <ul>
+            <li>スピード型：1・3・6区</li>
+            <li>スタミナ型：5・9区</li>
+            <li>バランス型：4・7・8・10区</li>
+            <li>2区：総合力重視でバランス／上位スタミナ</li>
+          </ul>
+          <div class="legend">
+            <span><span class="dot blue"></span>スピード</span>
+            <span><span class="dot red"></span>スタミナ</span>
+            <span><span class="dot green"></span>バランス</span>
+          </div>
+        </div>
+        <div>
+          <h3>限界とリスク共有</h3>
+          <ul>
+            <li>単一大学データ</li>
+            <li>ペアごとのnが小さい</li>
+            <li>分類閾値に任意性</li>
+            <li>実戦区間記録との因果検証は未実施</li>
+          </ul>
+          <h3>用語統一</h3>
+          <ul>
+            <li>「自己ベストは秒換算」</li>
+            <li>「相関はPearson」</li>
+            <li>「タイプ＝スピード／スタミナ／バランス」</li>
+            <li>「外的妥当性」「有意水準」など</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>よくある質問と回答方針</h2>
+      <div class="grid-2">
+        <div>
+          <h3>タイムか速度か</h3>
+          <p>本研究は「タイム（秒）」を使用。速度・ペースでも同傾向の確認は可能で、将来課題として速度ベース解析を予定。</p>
+          <h3>相関＝因果？</h3>
+          <p>相関は関係の記述で因果ではない。因果検証は介入・縦断・構造方程式等が必要。</p>
+        </div>
+        <div>
+          <h3>nが小さい懸念</h3>
+          <p>有意性は確保したが信頼区間は広がり得る。今後データ拡充で頑健性を検証。</p>
+          <h3>5区・6区の特殊性</h3>
+          <p>タイプに基づく示唆を提示。勾配・下り耐性など地形指標の投入は今後の拡張。</p>
+        </div>
+      </div>
+      <div class="imgph"><span>画像プレースホルダー：Q&Aアイコン</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>4人の練習用チェックリスト</h2>
+      <ul>
+        <li>研究目的：相関→分類→区間適性の三段構え</li>
+        <li>前処理：2024年末の公認PB／秒換算／欠損はペアごとにn変動</li>
+        <li>統計：Pearson／α=0.05／Cohen運用（高0.8・中0.5）</li>
+        <li>主要結果：r最大0.91（10000m×HM）、最小0.48（1500m×HM）</li>
+        <li>タイプ分布：18／22／20／4</li>
+        <li>示唆：スピード＝1・3・6、スタミナ＝5・9、バランス＝4・7・8・10（2区は総合力）</li>
+        <li>限界：単一大学・n差・閾値任意・外的妥当性未検証</li>
+      </ul>
+      <div class="imgph"><span>画像プレースホルダー：チェックリスト</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>実務アドバイス：仕上げと運用</h2>
+      <div class="grid-2">
+        <div>
+          <h3>デザイン統一</h3>
+          <ul>
+            <li>色分け：スピード＝青／スタミナ＝赤／バランス＝緑</li>
+            <li>凡例・軸・単位の表記を全スライドで統一</li>
+          </ul>
+          <h3>引用スタイル</h3>
+          <ul>
+            <li>スライド下部に簡易番号、詳細は付録へ集約</li>
+            <li>割合等は「本研究データに基づく」と明示</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Q&amp;Aの守備範囲</h3>
+          <ul>
+            <li>方法論：2人目</li>
+            <li>統計・図：3人目</li>
+            <li>区間戦略・現場応用：4人目</li>
+            <li>研究目的・位置づけ：1人目</li>
+          </ul>
+          <div class="imgph"><span>画像プレースホルダー：配色と凡例</span></div>
+        </div>
+      </div>
+      <p class="note">キーボード操作：<kbd>←</kbd>/<kbd>→</kbd> でスライド移動、<kbd>P</kbd>で印刷プレビュー</p>
+    </section>
+
+  </main>
+
+  <script>
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const pager = document.getElementById('pager');
+      let idx = 0;
+
+      function show(i) {
+        slides[idx].classList.remove('active');
+        idx = Math.max(0, Math.min(i, slides.length - 1));
+        slides[idx].classList.add('active');
+
+        pager.textContent = (idx + 1) + ' / ' + slides.length;
+        prevBtn.disabled = idx === 0;
+        nextBtn.disabled = idx === slides.length - 1;
+      }
+
+      prevBtn.addEventListener('click', () => show(idx - 1));
+      nextBtn.addEventListener('click', () => show(idx + 1));
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+          show(idx + 1);
+        } else if (e.key === 'ArrowLeft') {
+          show(idx - 1);
+        } else if (e.key.toLowerCase() === 'p') {
+          window.print();
+        }
+      });
+      
+      // Initialize the first slide
+      show(0);
+    })();
+  </script>
+</body>
+
+</html>

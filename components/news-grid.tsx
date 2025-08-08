@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import SpotlightCard from '@/components/SpotlightCard';
+import { CardImage } from '@/components/ui/card-image';
 import type { NewsMeta } from '@/lib/news';
 
 interface Props {
@@ -87,15 +88,8 @@ export default function NewsGrid({ items }: Props) {
             viewport={{ once: true }}
           >
             <Link href={`/topics/news/${item.slug}`} className="block h-full">
-              <SpotlightCard
-                className="h-48 sm:h-56 md:h-64 flex flex-col text-white"
-                style={{
-                  backgroundImage: `url(${item.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              >
-                <div className="absolute inset-0 bg-black/40" />
+              <SpotlightCard className="h-48 sm:h-56 md:h-64 flex flex-col text-white relative overflow-hidden">
+                <CardImage src={item.image} alt={item.title} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                 <div className="relative flex flex-col flex-1 justify-end p-3 sm:p-4">
                   <h3 className="text-base sm:text-lg font-semibold mb-1 drop-shadow-md leading-tight">{item.title}</h3>
                   <p className="text-xs text-gray-200">
