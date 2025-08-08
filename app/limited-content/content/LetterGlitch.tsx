@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, useMemo } from "react";
 
 const LetterGlitch = ({
   glitchColors = ["#2b4539", "#61dca3", "#61b3dc"],
@@ -31,12 +31,21 @@ const LetterGlitch = ({
   const charWidth = 10;
   const charHeight = 20;
 
-  const lettersAndSymbols = [
-    "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","@","#","$","&","*","(",")","-","_","+","=","/","[","]","{","}",";",":","<",">",",","0","1","2","3","4","5","6","7","8","9",
-  ];
+  const lettersAndSymbols = useMemo(
+    () => [
+      "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","@","#","$","&","*","(",")","-","_","+","=","/","[","]","{","}",";",":","<",">",",","0","1","2","3","4","5","6","7","8","9",
+    ],
+    []
+  );
 
-  const getRandomChar = () => lettersAndSymbols[Math.floor(Math.random() * lettersAndSymbols.length)];
-  const getRandomColor = () => glitchColors[Math.floor(Math.random() * glitchColors.length)];
+  const getRandomChar = useCallback(
+    () => lettersAndSymbols[Math.floor(Math.random() * lettersAndSymbols.length)],
+    [lettersAndSymbols]
+  );
+  const getRandomColor = useCallback(
+    () => glitchColors[Math.floor(Math.random() * glitchColors.length)],
+    [glitchColors]
+  );
 
   const hexToRgb = (hex: string) => {
     const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
@@ -60,7 +69,7 @@ const LetterGlitch = ({
     rows: Math.ceil(height / charHeight),
   });
 
-  const initializeLetters = (columns: number, rows: number) => {
+  const initializeLetters = useCallback((columns: number, rows: number) => {
     grid.current = { columns, rows };
     const total = columns * rows;
     letters.current = Array.from({ length: total }, () => ({
@@ -69,7 +78,7 @@ const LetterGlitch = ({
       targetColor: getRandomColor(),
       colorProgress: 1,
     }));
-  };
+  }, [getRandomChar, getRandomColor]);
 
   const drawLetters = useCallback(() => {
     const canvas = canvasRef.current;
@@ -111,7 +120,7 @@ const LetterGlitch = ({
     const { columns, rows } = calculateGrid(rect.width, rect.height);
     initializeLetters(columns, rows);
     drawLetters();
-  }, [drawLetters]);
+  }, [drawLetters, initializeLetters]);
 
   const updateLetters = useCallback(() => {
     if (letters.current.length === 0) return;
@@ -129,7 +138,7 @@ const LetterGlitch = ({
         letter.colorProgress = 0;
       }
     }
-  }, [smooth]);
+  }, [smooth, getRandomChar, getRandomColor]);
 
   const handleSmooth = useCallback(() => {
     let needRedraw = false;

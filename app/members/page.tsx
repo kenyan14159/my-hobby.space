@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image"; // Next.jsのImageコンポーネントを使用
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useState, Fragment, useEffect } from "react"; // useState, Fragment, useEffectフックを追加
+import { useState, Fragment, useEffect, useMemo } from "react"; // useState, Fragment, useEffectフックを追加
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs, BreadcrumbItem } from "@/components/ui/breadcrumbs";
 import { X, Loader2 } from "lucide-react"; // XアイコンとLoader2アイコンをインポート
@@ -46,7 +46,7 @@ interface Staff {
 
 // --- コンポーネント ---
 export default function MemberIntroductionPage() {
-  const grades = [1, 2, 3, 4];
+  const grades = useMemo(() => [1, 2, 3, 4] as const, []);
   
   // データ状態
   const [membersData, setMembersData] = useState<Member[]>([]);
@@ -102,7 +102,8 @@ export default function MemberIntroductionPage() {
     };
 
     loadData();
-  }, []);
+    // grades, setMembersData, setStaffData は安定参照のため省略
+  }, [/* intentionally empty: runs once on mount */]);
 
   const professionalStaff = staffData.filter(s => !s.isStudent);
   const studentStaff = staffData.filter(s => s.isStudent);

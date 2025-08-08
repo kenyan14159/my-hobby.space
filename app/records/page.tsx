@@ -853,6 +853,8 @@ export default function RecordsPage() {
     // 初期化
     useEffect(() => {
         loadRecordsData();
+        // loadRecordsData は同一レンダ内で安定参照（再定義なし）のため依存配列から除外
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // エラー状態
