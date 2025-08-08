@@ -126,7 +126,7 @@ export default function RootLayout({
             `script-src 'self' 'unsafe-inline' ${isDevelopment ? "'unsafe-eval' " : ''}https:; ` +
             `style-src 'self' 'unsafe-inline'; ` +
             `font-src 'self' https: data:; ` +
-            `connect-src 'self' https://*.supabase.co https://formspree.io https://api.formspree.io; ` +
+            `connect-src 'self' https://*.supabase.co https://formspree.io https://api.formspree.io https://cdn.shopimgs.com; ` +
             `base-uri 'self'; ` +
             `form-action 'self' https://formspree.io https://api.formspree.io`
           }

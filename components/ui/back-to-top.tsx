@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -8,12 +8,24 @@ export function BackToTop() {
   const [visible, setVisible] = useState(false);
   const pathname = usePathname();
 
-  // 対象ページのみ有効化
-  // 表示対象（重複防止のため、ページ側で独自ボタンを持つパスは除外）
-  const enabled =
-    pathname === "/" ||
-    pathname === "/ekiden" ||
-    pathname.startsWith("/track-and-field/records");
+  // 末尾スラッシュを吸収して正規化
+  const path = useMemo(() => {
+    if (!pathname) return "/";
+    if (pathname === "/") return "/";
+    return pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+  }, [pathname]);
+
+  // 対象ページのみ有効化（要件ベース）
+  const enabled = useMemo(() => {
+    return (
+      path === "/" ||
+      path === "/records" ||
+      path.startsWith("/ekiden") ||
+      path.startsWith("/limited-content/records") ||
+      path.startsWith("/topics/results") ||
+      path.startsWith("/topics/news")
+    );
+  }, [path]);
 
   useEffect(() => {
     if (!enabled) {
@@ -22,7 +34,9 @@ export function BackToTop() {
     }
     const onScroll = () => {
       const y = window.scrollY || document.documentElement.scrollTop;
-      setVisible(y > 300);
+      // 画面サイズに応じてしきい値を可変化（PCでも表示されやすく）
+      const dynamicThreshold = Math.max(120, Math.min(300, Math.floor(window.innerHeight * 0.3)));
+      setVisible(y > dynamicThreshold);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });

@@ -9,9 +9,10 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Lock, Key, Trophy, Star, Target, Rocket, Calendar, Users, Flag, Route, Clock, ChevronRight, ArrowRight, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
-import LetterGlitch from "./LetterGlitch";
+// シンプル化のため背景アニメーションは廃止
 
 // --- パスワードフォームコンポーネント ---
 const PasswordForm = ({ onAuthenticate }: { onAuthenticate: (isCorrect: boolean) => void }) => {
@@ -31,52 +32,45 @@ const PasswordForm = ({ onAuthenticate }: { onAuthenticate: (isCorrect: boolean)
     };
 
     return (
-        <div className="relative min-h-screen flex items-center justify-center p-4 overflow-hidden">
-            {/* 背景アニメーション */}
-            <div className="absolute inset-0 -z-10">
-                <LetterGlitch glitchSpeed={50} centerVignette outerVignette={false} smooth />
-            </div>
+        <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
             <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.25 }}
                 className="w-full max-w-md"
             >
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
-                    <div className="text-center mb-8">
-                        <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-500/20 rounded-2xl mb-4">
-                            <Lock className="w-8 h-8 text-blue-400" />
+                <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                    <div className="text-center mb-6">
+                        <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-50 rounded-xl mb-3">
+                            <Lock className="w-7 h-7 text-blue-600" />
                         </div>
-                        <h1 className="text-2xl font-bold text-white mb-2">限定コンテンツ</h1>
-                        <p className="text-slate-300 text-sm">関係者のみ閲覧可能です</p>
-                </div>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="relative">
-                            <Key className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                        <Input
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                                placeholder="パスワードを入力"
-                                className="pl-12 h-12 bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400/20"
-                        />
+                        <h1 className="text-xl font-bold text-gray-900 mb-1">限定コンテンツ</h1>
+                        <p className="text-gray-500 text-sm">関係者のみ閲覧可能です</p>
                     </div>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className="relative">
+                            <Key className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                            <Input
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="パスワードを入力"
+                                className="pl-10 h-11"
+                            />
+                        </div>
                         {error && (
                             <motion.p
-                                initial={{ opacity: 0, y: -10 }}
+                                initial={{ opacity: 0, y: -6 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-red-400 text-sm text-center"
+                                className="text-red-500 text-sm text-center"
                             >
                                 {error}
                             </motion.p>
                         )}
-                        <Button 
-                            type="submit" 
-                            className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-all duration-200"
-                        >
+                        <Button type="submit" className="w-full h-11">
                             認証
                         </Button>
-                </form>
+                    </form>
                 </div>
             </motion.div>
         </div>
@@ -175,21 +169,19 @@ const LimitedContent = () => {
 
             {/* コンテンツリンク */}
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
-                className="container mx-auto px-6 pt-8 max-w-7xl"
+                transition={{ delay: 0.1 }}
+                className="container mx-auto px-6 pt-8 max-w-5xl"
             >
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     {linkItems.map(({ href, label, icon: Icon }) => (
-                        <a
-                            key={href}
-                            href={href}
-                            className="flex items-center gap-3 px-5 py-4 bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors group"
-                        >
-                            <Icon className="w-5 h-5 text-blue-600" />
-                            <span className="font-medium text-slate-700 group-hover:text-slate-900">{label}</span>
-                        </a>
+                        <Link key={href} href={href}>
+                            <div className="flex items-center gap-3 px-4 py-3 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-colors">
+                                <Icon className="w-5 h-5 text-gray-700" />
+                                <span className="font-medium text-gray-800">{label}</span>
+                            </div>
+                        </Link>
                     ))}
                 </div>
             </motion.div>
@@ -203,10 +195,10 @@ const LimitedContent = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.25 }}
                     >
-                        <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-6">
-                            <div className="flex items-center mb-6">
-                                <Users className="w-6 h-6 mr-3 text-slate-700" />
-                                <h2 className="text-2xl font-bold text-slate-900">2025年度 幹部紹介</h2>
+                        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+                            <div className="flex items-center mb-5">
+                                <Users className="w-5 h-5 mr-2.5 text-gray-700" />
+                                <h2 className="text-xl font-semibold text-gray-900">2025年度 幹部紹介</h2>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                 <LeaderCard role="主将" name="浦上 和樹" school="(九州学院)" imgSrc="https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers54.jpeg" />
@@ -224,41 +216,40 @@ const LimitedContent = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
                         >
-                            <div className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
-                                <div className="bg-gradient-to-r from-blue-600 to-slate-700 p-8 text-white">
-                                    <div className="flex items-center mb-4">
-                                        <Rocket className="w-8 h-8 mr-3 text-amber-500" />
-                                        <h2 className="text-3xl font-bold">チーム目標 2025</h2>
+                            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                                <div className="bg-gray-900 p-6 text-white">
+                                    <div className="flex items-center mb-3">
+                                        <Rocket className="w-6 h-6 mr-2.5 text-amber-300" />
+                                        <h2 className="text-xl font-semibold">チーム目標 2025</h2>
                                     </div>
-                                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6">
-                                        <div className="flex items-center mb-2 opacity-90">
-                                            <Trophy className="h-5 w-5 text-amber-300 mr-2" />
-                                            <h3 className="text-lg font-medium">最大目標</h3>
+                                    <div className="bg-white/10 rounded-xl p-4 mb-4">
+                                        <div className="flex items-center mb-1">
+                                            <Trophy className="h-4 w-4 text-amber-200 mr-2" />
+                                            <h3 className="text-sm font-medium">最大目標</h3>
                                         </div>
-                                        <p className="text-2xl font-bold">第102回箱根駅伝 総合10位以内 シード権獲得</p>
+                                        <p className="text-lg font-semibold">第102回箱根駅伝 総合10位以内 シード権獲得</p>
                                     </div>
-                                    <div className="text-center">
-                                        <h3 className="text-2xl font-bold mb-2">「體進〜継承を力に、越境を恐れず〜」</h3>
-                                        <p className="opacity-90">心身ともに成長し、伝統を活かしながら新たな可能性に挑戦する</p>
+                                    <div className="text-center opacity-90 text-sm">
+                                        「體進〜継承を力に、越境を恐れず〜」
                                     </div>
                                 </div>
-                                
-                                <div className="p-8 space-y-6">
+
+                                <div className="p-6 space-y-5">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div className="bg-slate-50 rounded-2xl p-6">
-                                            <h4 className="font-bold text-lg mb-4 flex items-center text-slate-900">
+                                        <div className="bg-gray-50 rounded-xl p-5">
+                                            <h4 className="font-semibold mb-3 flex items-center text-gray-900">
                                                 <Target className="h-5 w-5 mr-2 text-blue-600" /> 前期目標
                                             </h4>
-                                            <div className="space-y-2 text-slate-700">
+                                            <div className="space-y-1.5 text-gray-700 text-sm">
                                                 <p><span className="font-medium">関東インカレ:</span> 7点獲得</p>
                                                 <p><span className="font-medium">全日本大学駅伝予選会:</span> 7位以内で突破</p>
                                             </div>
                                         </div>
-                                        <div className="bg-slate-50 rounded-2xl p-6">
-                                            <h4 className="font-bold text-lg mb-4 flex items-center text-slate-900">
+                                        <div className="bg-gray-50 rounded-xl p-5">
+                                            <h4 className="font-semibold mb-3 flex items-center text-gray-900">
                                                 <Target className="h-5 w-5 mr-2 text-blue-600" /> 後期目標
                                             </h4>
-                                            <div className="space-y-2 text-slate-700">
+                                            <div className="space-y-1.5 text-gray-700 text-sm">
                                                 <p><span className="font-medium">箱根駅伝予選会:</span> 10位以内で突破</p>
                                                 <p><span className="font-medium">全日本大学駅伝:</span> 8位以内でシード権獲得</p>
                                             </div>
@@ -268,11 +259,11 @@ const LimitedContent = () => {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div className="text-center p-4 bg-blue-50 rounded-xl">
                                             <h3 className="font-medium text-blue-700 mb-1">PB更新目標</h3>
-                                            <p className="text-2xl font-bold text-blue-900">115回 更新</p>
+                                            <p className="text-xl font-bold text-blue-900">115回 更新</p>
                                         </div>
-                                        <div className="text-center p-4 bg-slate-50 rounded-xl">
-                                            <h3 className="font-medium text-slate-700 mb-1">現在の総PB</h3>
-                                            <p className="text-2xl font-bold text-slate-900">??回</p>
+                                        <div className="text-center p-4 bg-gray-50 rounded-xl">
+                                            <h3 className="font-medium text-gray-700 mb-1">現在の総PB</h3>
+                                            <p className="text-xl font-bold text-gray-900">??回</p>
                                         </div>
                                     </div>
                                 </div>
@@ -357,29 +348,29 @@ const LimitedContent = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
                         >
-                            <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-8">
-                                <div className="flex items-center mb-6">
-                                    <Calendar className="w-8 h-8 mr-3 text-slate-700" />
-                                    <h2 className="text-3xl font-bold text-slate-900">合宿予定</h2>
+                            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+                                <div className="flex items-center mb-5">
+                                    <Calendar className="w-5 h-5 mr-2.5 text-gray-700" />
+                                    <h2 className="text-xl font-semibold text-gray-900">合宿予定</h2>
                                 </div>
-                                <Accordion type="single" collapsible className="space-y-4">
+                                <Accordion type="single" collapsible className="space-y-3">
                                     {Object.entries(campSchedule).map(([month, items], index) => (
-                                        <AccordionItem key={month} value={`item-${index + 1}`} className="border border-slate-100 rounded-2xl overflow-hidden">
-                                            <AccordionTrigger className="text-xl font-semibold px-6 py-4 hover:bg-slate-50 transition-colors">
+                                        <AccordionItem key={month} value={`item-${index + 1}`} className="border border-gray-200 rounded-xl overflow-hidden">
+                                            <AccordionTrigger className="text-base font-semibold px-5 py-3 hover:bg-gray-50 transition-colors">
                                                 {month}
                                             </AccordionTrigger>
-                                            <AccordionContent className="px-6 pb-4">
-                                                <div className="space-y-4">
+                                            <AccordionContent className="px-5 pb-4">
+                                                <div className="space-y-3">
                                                     {items.map((item, itemIndex) => (
-                                                        <div key={`${item.event}-${itemIndex}`} className="bg-slate-50 rounded-xl p-4">
+                                                        <div key={`${item.event}-${itemIndex}`} className="bg-gray-50 rounded-lg p-4">
                                                             <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                                                                <span className="font-medium text-slate-600 text-sm min-w-fit">{item.date}</span>
-                                                                <span className="font-semibold text-slate-900">{item.event}</span>
+                                                                <span className="font-medium text-gray-600 text-sm min-w-fit">{item.date}</span>
+                                                                <span className="font-semibold text-gray-900">{item.event}</span>
                                                             </div>
                                                             {item.sub && (
                                                                 <div className="mt-2 pl-4 space-y-1">
                                                                     {item.sub.map((s, subIndex) => (
-                                                                        <div key={`${s}-${subIndex}`} className="text-sm text-slate-600">• {s}</div>
+                                                                        <div key={`${s}-${subIndex}`} className="text-sm text-gray-600">• {s}</div>
                                                                     ))}
                                                                 </div>
                                                             )}
