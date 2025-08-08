@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { CalendarDays, ListOrdered, Newspaper } from "lucide-react";
 import Image from "next/image";
 
@@ -46,6 +47,9 @@ export default function TopicsPage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
+        <div className="mb-6">
+          <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'トピックス' }]} />
+        </div>
         <AnimatedPageHeader title="トピックス" subtitle="Topics" />
 
         {/* トピックスカード */}
@@ -69,7 +73,7 @@ export default function TopicsPage() {
                       src={item.image}
                       alt={item.name}
                       fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover"
                     />
                     {/* オーバーレイ（透明度を下げて画像をより濃く表示） */}

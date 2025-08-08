@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import SpotlightCard from "./SpotlightCard";
+import { CardImage } from "@/components/ui/card-image";
 import { Users, BarChart3, Trophy, CalendarCheck2, Gift, Camera, Landmark, HelpCircle } from "lucide-react";
 import Link from "next/link";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
@@ -116,16 +117,8 @@ export function TeamHighlights() {
             {highlights.map((item, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <Link href={item.href} className="block h-full group">
-                  <SpotlightCard 
-                    className="h-full" 
-                    spotlightColor="rgba(156, 163, 175, 0.2)" 
-                    style={{ 
-                      backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${item.image})`, 
-                      backgroundSize: 'cover', 
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat'
-                    }}
-                  >
+                  <SpotlightCard className="h-full relative overflow-hidden" spotlightColor="rgba(156, 163, 175, 0.2)">
+                    <CardImage src={item.image} alt={item.title} sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw" overlayClassName="bg-black/60" />
                     <div className="flex flex-col items-start h-full p-3 sm:p-4">
                       <div className="mb-2 sm:mb-4 inline-flex items-center justify-center p-1.5 sm:p-2 rounded-lg bg-white/20">
                         <item.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />

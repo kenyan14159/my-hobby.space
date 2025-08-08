@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState, Fragment, useEffect } from "react"; // useState, Fragment, useEffectフックを追加
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs, BreadcrumbItem } from "@/components/ui/breadcrumbs";
 import { X, Loader2 } from "lucide-react"; // XアイコンとLoader2アイコンをインポート
 
 // --- 型定義 ---
@@ -202,6 +203,9 @@ export default function MemberIntroductionPage() {
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
+        <div className="mb-6">
+          <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '部員紹介' }]} />
+        </div>
         <AnimatedPageHeader 
           title="部員紹介"
           subtitle="男子駅伝部のメンバーをご紹介します"
@@ -463,6 +467,7 @@ export default function MemberIntroductionPage() {
                 style={{ objectFit: "contain" }}
                 unoptimized
                 className="w-full h-auto"
+                sizes="(max-width: 768px) 90vw, 800px"
               />
               
               {/* ナビゲーションボタン */}

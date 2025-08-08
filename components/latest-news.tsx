@@ -291,15 +291,14 @@ function CountdownSection({
     <div className="relative rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 shadow-lg">
       {/* 背景画像とオーバーレイ */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('${
-              backgroundImage || "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite145.jpg"
-            }')`,
-            backgroundPosition: "center 30%"
-          }}
-        />
+        <div className="absolute inset-0">
+          <img
+            src={backgroundImage || "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite145.jpg"}
+            alt="背景画像"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
         {/* ダークオーバーレイ */}
         <div className="absolute inset-0 bg-neutral-900/80" />
       </div>

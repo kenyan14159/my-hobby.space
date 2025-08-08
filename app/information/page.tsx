@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { ExternalLink, Users, Heart, Globe, MessageCircle } from "lucide-react";
 import Image from "next/image";
 
@@ -54,6 +55,9 @@ export default function InformationPage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
+        <div className="mb-6">
+          <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'チーム情報' }]} />
+        </div>
         <AnimatedPageHeader title="チーム情報" subtitle="各種情報はこちらから。" />
 
         <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 md:grid-cols-3 lg:grid-cols-4 mt-8 sm:mt-12">

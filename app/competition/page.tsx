@@ -10,6 +10,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Calendar, MapPin, Download, ExternalLink, AlertCircle, Info, Twitter, Mail, ChevronRight, Award } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 // スケジュールデータを配列として定義
 const competitionSchedule = [
@@ -33,6 +34,9 @@ export default function LongDistancePage() {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto">
+          <div className="mb-6">
+            <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '日本体育大学長距離競技会' }]} />
+          </div>
           <AnimatedPageHeader 
             title="日本体育大学長距離競技会"
             subtitle="Nippon Sports Science University Long-Distance Running Competition"

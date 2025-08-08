@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Menu, Award, TrendingUp, ArrowRight, User, Users, Loader2, ChevronDown, ChevronUp, ArrowUp } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 // --- 型定義 ---
 interface RecordEntry {
@@ -907,7 +908,10 @@ export default function RecordsPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                {/* ページヘッダー */}
+                {/* パンくず＋ページヘッダー */}
+                <div className="mb-6">
+                    <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '歴代記録' }]} />
+                </div>
                 <div className="text-center mb-12">
                     <AnimatedPageHeader 
                         title="日本体育大学 歴代記録"

@@ -1,12 +1,16 @@
 import React from "react";
 import Link from "next/link";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { CalendarDays, Newspaper, Medal, Users, BookOpen, Star, Twitter, Instagram, Facebook, Youtube } from "lucide-react";
 
 export default function TrackAndFieldPage() {
   return (
     <main className="max-w-3xl mx-auto py-10 px-4">
+      <div className="mb-6">
+        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部' }]} />
+      </div>
       <AnimatedPageHeader
         title="日本体育大学 陸上競技部"
         subtitle="今年で100年目を迎える伝統ある部活動"

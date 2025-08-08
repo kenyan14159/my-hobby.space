@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Award, BookOpen, CalendarClock, Flag, Milestone, Trophy, Users, Zap, X } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { EkidenNavigation } from "@/components/ui/ekiden-navigation";
 
 // --- データ定義 (ご指定の内容に更新) ---
@@ -73,6 +74,9 @@ export default function EkidenHistoryPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
+                <div className="mb-6">
+                    <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '駅伝の歴史' }]} />
+                </div>
                 <AnimatedPageHeader 
                     title="駅伝の歴史"
                     subtitle={"創部1925年。日本の大学駅伝界を牽引してきた名門の、栄光と伝統の軌跡"}
