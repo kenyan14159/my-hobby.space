@@ -63,6 +63,12 @@ const TSX_ARTICLES: Record<string, Omit<NewsMeta, 'slug' | 'type'>> = {
     date: '2025-08-04',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-kurohime-camp00001-scaled.jpg'
   },
+  '08-19-sugadaira-camp': {
+    id: 10,
+    title: '菅平高原選抜合宿がスタートしました！',
+    date: '2025-08-19',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite1-scaled.jpeg'
+  },
 };
 
 export function getAllNews(): NewsMeta[] {
