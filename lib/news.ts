@@ -69,6 +69,30 @@ const TSX_ARTICLES: Record<string, Omit<NewsMeta, 'slug' | 'type'>> = {
     date: '2025-08-19',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite1-scaled.jpeg'
   },
+  '08-31-fujimi-camp': {
+    id: 11,
+    title: '富士見全体合宿がスタートしました！',
+    date: '2025-08-31',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/2025-fujimi-camp00001.jpg'
+  },
+  '09-07-sugadaira-camp': {
+    id: 13,
+    title: '菅平選抜合宿がスタートしました！',
+    date: '2025-09-07',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/2025-sugadaria2-camp-scaled.jpg'
+  },
+  '09-20-summer-camp-end': {
+    id: 14,
+    title: '夏合宿が終了しました!',
+    date: '2025-09-20',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/2025-summer-camp8.jpg'
+  },
+  '09-20-august-september': {
+    id: 15,
+    title: '8,9月の差し入れ',
+    date: '2025-09-20',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/gifts-for-august-and-september13.jpg'
+  },
 };
 
 export function getAllNews(): NewsMeta[] {
