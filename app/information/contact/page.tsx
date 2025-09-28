@@ -65,7 +65,7 @@ export default function ContactPage() {
       formData.append('_subject', `【Webサイトお問い合わせ】${categoryJapanese} - ${values.name}様より`);
 
       // Formspreeに送信
-      const response = await fetch('https://formspree.io/f/xanjlqon', {
+      const response = await fetch('https://formspree.io/f/mrbyzkrj', {
         method: 'POST',
         body: formData,
         headers: {
@@ -244,8 +244,8 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 text-sky-600 mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold mb-1">メールアドレス</h3>
-                      <a href="mailto:nssuekiden@nssu-ekiden.com" className="text-sky-600 hover:underline">
-                        nssuekiden@nssu-ekiden.com
+                      <a href="mailto:info@nssuekiden.com" className="text-sky-600 hover:underline">
+                        info@nssuekiden.com
                       </a>
                     </div>
                   </div>

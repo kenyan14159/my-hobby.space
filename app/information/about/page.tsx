@@ -289,10 +289,10 @@ export default function AboutPage() {
                         <span className="font-medium">制作者メールアドレス:</span>
                       </div>
                       <a 
-                        href="mailto:nssuekiden@nssu-ekiden.com" 
+                        href="mailto:info@nssuekiden.com" 
                         className="text-purple-600 hover:text-purple-800 transition-colors font-medium flex items-center gap-1"
                       >
-                        nssuekiden@nssu-ekiden.com
+                        info@nssuekiden.com
                         <ExternalLink className="h-4 w-4" />
                       </a>
                     </div>

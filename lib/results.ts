@@ -133,6 +133,12 @@ const TSX_RESULTS: Record<string, Omit<ResultMeta, 'slug' | 'type'>> = {
     title: 'ホクレンディスタンスチャレンジ  関東学生網走夏季記録挑戦競技会 2025 ',
     date: '2025-07-20',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/07/gakuren-scaled.jpg'
+  },
+  '09-28-240-tokai': {
+    id: 22,
+    title: '第240回東海大学長距離競技会 ',
+    date: '2025-09-28',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/233tokai27.jpeg'
   }
 };
 

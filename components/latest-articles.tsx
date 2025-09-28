@@ -151,13 +151,17 @@ export function LatestArticles() {
                 <Card className="group cursor-pointer border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden bg-white h-full flex flex-col">
                   {/* 画像部分 */}
                   <div className="relative h-32 md:h-48 overflow-hidden">
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      sizes="(max-width: 768px) 50vw, 33vw"
-                    />
+                    {article.image?.trim() ? (
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="(max-width: 768px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-gray-100" aria-hidden />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     {/* バッジ */}

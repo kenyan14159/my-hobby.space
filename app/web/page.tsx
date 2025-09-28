@@ -19,12 +19,6 @@ const webLinks = [
     description: "陸上競技スコアリングテーブル",
     icon: <ExternalLink className="w-5 h-5 text-blue-500" />,
   },
-  {
-    name: "陸上競技部 非公式サイト",
-    url: "/track-and-field",
-    description: "日体大陸上部の非公式ページ",
-    icon: <ExternalLink className="w-5 h-5 text-blue-500" />,
-  },
 ];
 
 export default function WebPage() {
