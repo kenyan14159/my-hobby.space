@@ -37,26 +37,26 @@ export default function TrackFieldMembersPage() {
         />
       </div>
 
-      <AnimatedPageHeader title="陸上競技部メンバー・ブロック紹介" />
+      <AnimatedPageHeader title="メンバー・ブロック紹介" />
 
-      <p className="text-gray-600 text-center mt-4 mb-8">
-        各ブロックのメンバーを確認できます。下記からブロックを選択してください。
+      <p className="text-gray-600 text-center text-sm mt-3 mb-6">
+        各ブロックのメンバーを確認できます。
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-6">
         {categories.map((cat) => (
           <Link
             key={cat.id}
             href={`/track-and-field/members/${cat.id}`}
-            className={`${cat.color} block border font-semibold rounded-lg px-6 py-8 text-center transition-all shadow-sm hover:shadow-md`}
+            className={`${cat.color} block border rounded-lg px-4 py-6 text-center transition-all shadow-sm hover:shadow-md`}
           >
-            <div className="text-lg">{cat.label}</div>
+            <div className="text-sm font-semibold">{cat.label}</div>
           </Link>
         ))}
       </div>
 
-      <div className="mt-12 text-xs text-gray-500 text-center">
-        ※自己ベストは誤りがある可能性があります。
+      <div className="mt-8 text-xs text-gray-500 text-center">
+        ※種目、自己ベスト、出身校、出身などの情報に誤りがある可能性があります。
       </div>
     </main>
   );

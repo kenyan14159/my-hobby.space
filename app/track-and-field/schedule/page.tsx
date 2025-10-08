@@ -4,6 +4,93 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { Calendar } from "lucide-react";
+
+// 2025年度 日本体育大学陸上競技会
+const nittaiCompetitions = [
+  {
+    number: "第148回",
+    date: "2025年3月22日（土）・23日（日）",
+    hasInfo: true,
+  },
+  {
+    number: "第149回",
+    date: "2025年4月19日（土）・20日（日）",
+    hasInfo: false,
+  },
+  {
+    number: "第150回",
+    date: "2025年5月17日（土）・18日（日）",
+    hasInfo: false,
+  },
+  {
+    number: "第151回",
+    date: "2025年6月21日（土）・22日（日）",
+    hasInfo: false,
+  },
+  {
+    number: "第152回",
+    date: "2025年9月27日（土）・28日（日）",
+    note: "※日程と場所を変更して実施する場合があります",
+  },
+  {
+    number: "第153回",
+    date: "2025年10月18日（土）・19日（日）",
+    note: "※日程と場所を変更して実施する場合があります",
+  },
+  {
+    number: "2025年度日体大選手権",
+    date: "2025年11月1日（土）・2日（日）",
+    note: "※日程と場所を変更して実施する場合があります",
+  },
+];
+
+// 2025年度 長距離競技会
+const longDistanceCompetitions = [
+  {
+    number: "第319回",
+    date: "3月29日(土) - 30日(日)",
+    title: "日本体育大学長距離競技会",
+  },
+  {
+    number: "第320回",
+    date: "4月26日(土) - 27日(日)",
+    title: "日本体育大学長距離競技会 兼 第14回NCG",
+  },
+  {
+    number: "第321回",
+    date: "5月31日(土) - 6月1日(日)",
+    title: "日本体育大学長距離競技会 兼 第15回NCG",
+  },
+  {
+    number: "第322回",
+    date: "6月14日(土) - 15日(日)",
+    title: "日本体育大学長距離競技会 兼 第16回NCG",
+    note: "※改修工事の関係で日程変更(4/1)",
+  },
+  {
+    number: "第323回",
+    date: "10月5日(日)",
+    title: "日本体育大学長距離競技会 兼 第17回NCG",
+    location: "慶應義塾大学日吉陸上競技場",
+    locationNote: "競技場改修工事に伴い会場変更。駐車場なし。",
+  },
+  {
+    number: "第324回",
+    date: "11月15日(土) - 16日(日)",
+    title: "日本体育大学長距離競技会 兼 第18回NCG",
+  },
+  {
+    number: "第325回",
+    date: "11月29日(土) - 30日(日)",
+    title: "日本体育大学長距離競技会 兼 第19回NCG",
+  },
+  {
+    number: "第26回",
+    date: "12月20日(土)",
+    title: "女子長距離競技会",
+  },
+];
 
 // 2025年度大会日程データ
 const scheduleItems = [
@@ -148,51 +235,112 @@ const seasonStyle: Record<string, string> = {
 
 export default function TrackAndFieldSchedulePage() {
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-12">
       <div className="mb-6">
         <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: '大会日程' }]} />
       </div>
       <AnimatedPageHeader
         title="2025年度 大会日程"
-        subtitle="日本体育大学陸上競技部の大会スケジュール"
       />
-      <div className="max-w-4xl mx-auto">
-        <Separator className="mb-8" />
-        <Tabs defaultValue="all" className="w-full mb-8">
-          <TabsList className="grid w-full grid-cols-5 bg-white rounded-xl border">
-            <TabsTrigger value="all" className="font-bold">全て</TabsTrigger>
-            <TabsTrigger value="spring" className="font-bold">春夏</TabsTrigger>
-            <TabsTrigger value="autumn" className="font-bold">秋</TabsTrigger>
-            <TabsTrigger value="winter" className="font-bold">冬春</TabsTrigger>
-            <TabsTrigger value="ekiden" className="font-bold">駅伝</TabsTrigger>
-          </TabsList>
-          <TabsContent value="all">
-            <ScheduleGrid items={scheduleItems} />
-          </TabsContent>
-          <TabsContent value="spring">
-            <ScheduleGrid items={scheduleItems.filter(item => item.season === "春" || item.season === "夏")} />
-          </TabsContent>
-          <TabsContent value="autumn">
-            <ScheduleGrid items={scheduleItems.filter(item => item.season === "秋")} />
-          </TabsContent>
-          <TabsContent value="winter">
-            <ScheduleGrid items={scheduleItems.filter(item => item.season === "冬")} />
-          </TabsContent>
-          <TabsContent value="ekiden">
-            <ScheduleGrid items={scheduleItems.filter(item => item.title.includes("駅伝"))} />
-          </TabsContent>
-        </Tabs>
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle className="text-blue-600">2025年度 大会日程について</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>
-              このページでは、日本体育大学陸上競技部の2025年度大会日程を掲載しています。
-              多くの大会は現時点で開催日や会場が未定です。決定次第、随時更新いたします。
-            </p>
-          </CardContent>
-        </Card>
+      <div className="max-w-5xl mx-auto">
+        
+        {/* 日本体育大学陸上競技会 */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+            <Calendar className="w-6 h-6 text-blue-600" />
+            日本体育大学陸上競技会
+          </h2>
+          <div className="space-y-3">
+            {nittaiCompetitions.map((comp, index) => (
+              <Card key={index} className="border-l-4 border-blue-500 bg-blue-50/50">
+                <CardContent className="py-4">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                    <div>
+                      <h3 className="font-bold text-base">{comp.number}</h3>
+                      <p className="text-sm text-gray-700">{comp.date}</p>
+                      {comp.note && (
+                        <p className="text-xs text-orange-600 mt-1">{comp.note}</p>
+                      )}
+                    </div>
+                    {comp.hasInfo && (
+                      <Badge variant="outline" className="text-xs">
+                        大会要項
+                      </Badge>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* 長距離競技会 */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+            <Calendar className="w-6 h-6 text-green-600" />
+            長距離競技会
+          </h2>
+          <div className="space-y-3">
+            {longDistanceCompetitions.map((comp, index) => (
+              <Card key={index} className="border-l-4 border-green-500 bg-green-50/50">
+                <CardContent className="py-4">
+                  <div className="flex flex-col gap-2">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Badge variant="secondary" className="text-xs">{comp.number}</Badge>
+                          <span className="text-sm font-semibold text-gray-700">{comp.date}</span>
+                        </div>
+                        <h3 className="text-sm text-gray-800">{comp.title}</h3>
+                        {comp.location && (
+                          <p className="text-xs text-blue-600 mt-1">会場：{comp.location}</p>
+                        )}
+                      </div>
+                    </div>
+                    {comp.note && (
+                      <p className="text-xs text-orange-600">{comp.note}</p>
+                    )}
+                    {comp.locationNote && (
+                      <p className="text-xs text-red-600">{comp.locationNote}</p>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* 主要大会 */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+            <Calendar className="w-6 h-6 text-purple-600" />
+            主要大会
+          </h2>
+          <Tabs defaultValue="all" className="w-full">
+            <TabsList className="grid w-full grid-cols-5 bg-white rounded-xl border">
+              <TabsTrigger value="all" className="text-xs md:text-sm">全て</TabsTrigger>
+              <TabsTrigger value="spring" className="text-xs md:text-sm">春夏</TabsTrigger>
+              <TabsTrigger value="autumn" className="text-xs md:text-sm">秋</TabsTrigger>
+              <TabsTrigger value="winter" className="text-xs md:text-sm">冬春</TabsTrigger>
+              <TabsTrigger value="ekiden" className="text-xs md:text-sm">駅伝</TabsTrigger>
+            </TabsList>
+            <TabsContent value="all">
+              <ScheduleGrid items={scheduleItems} />
+            </TabsContent>
+            <TabsContent value="spring">
+              <ScheduleGrid items={scheduleItems.filter(item => item.season === "春" || item.season === "夏")} />
+            </TabsContent>
+            <TabsContent value="autumn">
+              <ScheduleGrid items={scheduleItems.filter(item => item.season === "秋")} />
+            </TabsContent>
+            <TabsContent value="winter">
+              <ScheduleGrid items={scheduleItems.filter(item => item.season === "冬")} />
+            </TabsContent>
+            <TabsContent value="ekiden">
+              <ScheduleGrid items={scheduleItems.filter(item => item.title.includes("駅伝"))} />
+            </TabsContent>
+          </Tabs>
+        </section>
       </div>
     </div>
   );

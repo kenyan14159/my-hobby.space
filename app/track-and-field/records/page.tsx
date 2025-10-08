@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
+import { ExternalLink, Info } from "lucide-react";
 
 export default function TrackAndFieldRecordsPage() {
   return (
@@ -10,6 +11,30 @@ export default function TrackAndFieldRecordsPage() {
         <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: '歴代記録' }]} />
       </div>
       <AnimatedPageHeader title="歴代記録" subtitle="歴代記録・ランキングを種目別に掲載" />
+      
+      {/* 参考情報 */}
+      <div className="mt-6 mb-8">
+        <Card className="p-4 bg-blue-50 border border-blue-200">
+          <div className="flex items-start gap-3">
+            <Info className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+            <div className="flex-1">
+              <h4 className="font-semibold text-blue-900 mb-2 text-sm">参考情報</h4>
+              <p className="text-xs text-gray-700 mb-2">
+                このページの記録は以下の公式情報を参考にしています。
+              </p>
+              <a 
+                href="https://nssu-athletic.com/news/detail/id/16850" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-xs text-blue-600 hover:text-blue-800 font-medium"
+              >
+                <ExternalLink className="w-3 h-3 mr-1" />
+                日本体育大学陸上競技部 公式記録
+              </a>
+            </div>
+          </div>
+        </Card>
+      </div>
       
       {/* 統合記録ページへのリンク */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">

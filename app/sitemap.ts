@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/track-and-field/records/data/men', priority: 0.9, changeFrequency: 'monthly' as const },
     { url: '/track-and-field/records/data/women', priority: 0.9, changeFrequency: 'monthly' as const },
     { url: '/track-and-field/schedule', priority: 0.7, changeFrequency: 'weekly' as const },
+    { url: '/track-and-field/recruitment', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/track-and-field/supporters', priority: 0.6, changeFrequency: 'monthly' as const },
     { url: '/members', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/records', priority: 0.8, changeFrequency: 'monthly' as const },

@@ -7,14 +7,14 @@ import { CalendarDays, MapPin } from "lucide-react";
 
 const events = [
   {
-    date: "2025.10.04～05",
-    title: "第323回日本体育大学長距離競技会・第17回NCG",
-    location: "慶應義塾大学日吉キャンパス",
-  },
-  {
     date: "2025.10.18",
     title: "第102回東京箱根間往復大学駅伝競走予選会",
     location: "陸上自衛隊立川駐屯地～立川市街地～国営昭和記念公園",
+  },
+    {
+    date: "2025.10.26",
+    title: "第241回東海大学長距離競技会",
+    location: "東海大学湘南校舎陸上競技場",
   },
   {
     date: "2025.11.02",
