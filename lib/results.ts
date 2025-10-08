@@ -138,8 +138,14 @@ const TSX_RESULTS: Record<string, Omit<ResultMeta, 'slug' | 'type'>> = {
     id: 22,
     title: '第240回東海大学長距離競技会 ',
     date: '2025-09-28',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/233tokai27.jpeg'
-  }
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/240-tokai-favorite5.jpeg'
+  },
+  '10-05-nssu-323th-long-distance': {
+    id: 23,
+    title: '第323回日本体育大学長距離競技会兼第17回NCG',
+    date: '2025-10-05',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/10/323-nittai-favorite13.jpeg'
+  },
 };
 
 export function getAllResults(): ResultMeta[] {

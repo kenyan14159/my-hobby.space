@@ -93,6 +93,12 @@ const TSX_ARTICLES: Record<string, Omit<NewsMeta, 'slug' | 'type'>> = {
     date: '2025-09-20',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/gifts-for-august-and-september13.jpg'
   },
+  '10-06-hakone-qualifying-event-roster-announcement': {
+    id: 15,
+    title: '箱根駅伝予選会メンバー発表',
+    date: '2025-10-06',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/2025-fujimi-whole-camp151.jpg'
+  },
 };
 
 export function getAllNews(): NewsMeta[] {

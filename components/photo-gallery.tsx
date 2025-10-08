@@ -211,19 +211,33 @@ const itemVariants = {
 interface PhotoGalleryProps {
   showTitle?: boolean;
   maxImages?: number;
+  images?: string[]; // 外部から画像リストを渡せるようにする
+  enableShuffle?: boolean; // シャッフル機能を有効/無効にする
+  title?: string; // カスタムタイトル
+  subtitle?: string; // カスタムサブタイトル
 }
 
-export function PhotoGallery({ showTitle = true, maxImages = 30 }: PhotoGalleryProps) {
+export function PhotoGallery({ 
+  showTitle = true, 
+  maxImages = 30, 
+  images, 
+  enableShuffle = true,
+  title = "ギャラリー",
+  subtitle = "チームの活動を写真で振り返る、思い出深い瞬間の数々"
+}: PhotoGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [displayImages, setDisplayImages] = useState<string[]>([]);
+  
+  // 使用する画像リストを決定（propsで渡された場合はそれを使用、なければデフォルト）
+  const sourceImages = images || imagePaths;
 
   // 初回マウント時とシャッフルボタン押下時に画像をシャッフル
   const shuffleImages = useCallback(() => {
-    const shuffled = shuffleArray(imagePaths);
+    const shuffled = enableShuffle ? shuffleArray(sourceImages) : sourceImages;
     const selectedImages = shuffled.slice(0, maxImages);
     setDisplayImages(selectedImages);
     setSelectedImage(null); // ライトボックスを閉じる
-  }, [maxImages]);
+  }, [maxImages, sourceImages, enableShuffle]);
 
   // 初回マウント時にシャッフル
   useEffect(() => {
@@ -265,8 +279,8 @@ export function PhotoGallery({ showTitle = true, maxImages = 30 }: PhotoGalleryP
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {showTitle && (
           <AnimatedPageHeader
-            title="ギャラリー"
-            subtitle="チームの活動を写真で振り返る、思い出深い瞬間の数々"
+            title={title}
+            subtitle={subtitle}
             underlineColor="bg-gray-500"
             titleClassName="text-4xl md:text-5xl font-bold text-gray-800 tracking-tight mb-3"
             subtitleClassName="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed mt-6"
@@ -274,17 +288,19 @@ export function PhotoGallery({ showTitle = true, maxImages = 30 }: PhotoGalleryP
         )}
 
         {/* シャッフルボタン */}
-        <div className="text-center mb-8">
-          <Button
-            onClick={shuffleImages}
-            variant="outline"
-            size="lg"
-            className="bg-white hover:bg-gray-50 border-gray-300 text-gray-700 px-6 py-3 rounded-xl"
-          >
-            <Shuffle className="w-4 h-4 mr-2" />
-            画像をシャッフル
-          </Button>
-        </div>
+        {enableShuffle && (
+          <div className="text-center mb-8">
+            <Button
+              onClick={shuffleImages}
+              variant="outline"
+              size="lg"
+              className="bg-white hover:bg-gray-50 border-gray-300 text-gray-700 px-6 py-3 rounded-xl"
+            >
+              <Shuffle className="w-4 h-4 mr-2" />
+              画像をシャッフル
+            </Button>
+          </div>
+        )}
 
         <motion.div
           className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
