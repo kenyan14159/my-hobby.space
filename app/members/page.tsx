@@ -261,11 +261,14 @@ export default function MemberIntroductionPage() {
                             {member.imageUrl ? (
                               <Image
                                 src={member.imageUrl}
-                                alt={member.name}
+                                alt={`${member.name} - 日体大駅伝部${member.grade}年 ${member.highSchool}出身`}
                                 fill
+                                loading="lazy"
+                                quality={75}
                                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                                 style={{ objectFit: "cover" }}
-                                unoptimized
+                                placeholder="blur"
+                                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
                               />
                             ) : (
                               <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-xs sm:text-base">
@@ -332,11 +335,14 @@ export default function MemberIntroductionPage() {
                            {staff.imageUrl ? (
                               <Image
                                 src={staff.imageUrl}
-                                alt={staff.name}
+                                alt={`${staff.name} - 日体大駅伝部${staff.role}`}
                                 fill
+                                loading="lazy"
+                                quality={75}
                                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                                 style={{ objectFit: "cover" }}
-                                unoptimized
+                                placeholder="blur"
+                                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
                               />
                             ) : (
                               <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-xs sm:text-base">
@@ -387,11 +393,14 @@ export default function MemberIntroductionPage() {
                            {staff.imageUrl ? (
                               <Image
                                 src={staff.imageUrl}
-                                alt={staff.name}
+                                alt={`${staff.name} - 日体大駅伝部${staff.role} ${staff.grade}年`}
                                 fill
+                                loading="lazy"
+                                quality={75}
                                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                                 style={{ objectFit: "cover" }}
-                                unoptimized
+                                placeholder="blur"
+                                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
                               />
                             ) : (
                               <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-xs sm:text-base">
@@ -441,15 +450,15 @@ export default function MemberIntroductionPage() {
 
       {/* カスタムモーダル */}
       {isModalOpen && modalItems.length > 0 && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          {/* オーバーレイ */}
-          <div 
-            className="absolute inset-0 bg-black/80" 
-            onClick={() => setIsModalOpen(false)}
-          />
-          
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+          onClick={() => setIsModalOpen(false)}
+        >
           {/* モーダルコンテンツ */}
-          <div className="relative z-10 bg-white max-w-3xl w-full rounded-lg overflow-hidden">
+          <div 
+            className="relative z-10 bg-white max-w-3xl w-full rounded-lg overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* 閉じるボタン */}
             <button 
               onClick={() => setIsModalOpen(false)} 
@@ -462,11 +471,22 @@ export default function MemberIntroductionPage() {
             <div className="relative">
               <Image
                 src={modalItems[currentIndex].imageUrl}
-                alt={modalItems[currentIndex].name}
+                alt={(() => {
+                  const item = modalItems[currentIndex];
+                  const isStaff = (item as Staff).role !== undefined;
+                  if (isStaff) {
+                    const staff = item as Staff;
+                    return `${staff.name} - 日体大駅伝部${staff.role}${staff.grade ? ` ${staff.grade}年` : ''}`;
+                  } else {
+                    const member = item as Member;
+                    return `${member.name} - 日体大駅伝部${member.grade}年 ${member.highSchool}出身`;
+                  }
+                })()}
                 width={800}
                 height={600}
+                quality={85}
+                priority
                 style={{ objectFit: "contain" }}
-                unoptimized
                 className="w-full h-auto"
                 sizes="(max-width: 768px) 90vw, 800px"
               />

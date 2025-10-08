@@ -1,0 +1,214 @@
+{
+  "200m": [
+    {
+      "name": "川瀬 孝則",
+      "school": "桑名高校",
+      "time": "20\"65",
+      "year": 4,
+      "recordYear": "2016年"
+    },
+    {
+      "name": "羽根 聖也",
+      "school": "藤枝明誠",
+      "time": "20\"78",
+      "year": 4,
+      "recordYear": "2011年"
+    },
+    {
+      "name": "林 拓優",
+      "school": "龍谷大付属平安",
+      "time": "20\"78",
+      "year": "M1",
+      "recordYear": "2022年"
+    },
+    {
+      "name": "海老沢 雅人",
+      "school": "日立商業",
+      "time": "20\"82",
+      "year": 4,
+      "recordYear": "1997年"
+    },
+    {
+      "name": "正川 雄一",
+      "school": "本郷高校",
+      "time": "20\"84",
+      "year": 3,
+      "recordYear": "2006年"
+    },
+    {
+      "name": "松尾 慎太郎",
+      "school": "桑名工業",
+      "time": "20\"86",
+      "year": 4,
+      "recordYear": "2015年"
+    },
+    {
+      "name": "井盛 雅",
+      "school": "伊奈学園",
+      "time": "20\"90",
+      "year": 3,
+      "recordYear": "1999年"
+    },
+    {
+      "name": "大谷 介人",
+      "school": "帝京安積",
+      "time": "20\"93",
+      "year": 1,
+      "recordYear": "2023年"
+    },
+    {
+      "name": "新佛 流生",
+      "school": "片倉高校",
+      "time": "20\"93",
+      "year": 3,
+      "recordYear": "2024年"
+    },
+    {
+      "name": "奈良 賢司",
+      "school": "土浦日大",
+      "time": "20\"99",
+      "year": 3,
+      "recordYear": "2000年"
+    },
+    {
+      "name": "沖原 一光",
+      "school": "西条農業",
+      "time": "21\"05",
+      "year": null,
+      "recordYear": "1993年"
+    },
+    {
+      "name": "原田 康弘",
+      "school": "白石工業",
+      "time": "21\"06",
+      "year": null,
+      "recordYear": "1977年"
+    },
+    {
+      "name": "樋口 信吾",
+      "school": "名張桔梗丘",
+      "time": "21\"06",
+      "year": 3,
+      "recordYear": "2004年"
+    },
+    {
+      "name": "井澤 竜二",
+      "school": "広島皆実",
+      "time": "21\"07",
+      "year": 4,
+      "recordYear": "2022年"
+    },
+    {
+      "name": "佐藤 雄哉",
+      "school": "草加南",
+      "time": "21\"10",
+      "year": 3,
+      "recordYear": "2001年"
+    },
+    {
+      "name": "堀籠 佳宏",
+      "school": "泉館山",
+      "time": "21\"11",
+      "year": "M1",
+      "recordYear": "2004年"
+    },
+    {
+      "name": "福島 裕之",
+      "school": "稲生高校",
+      "time": "21\"11",
+      "year": 4,
+      "recordYear": "2010年"
+    },
+    {
+      "name": "瀬野 晃章",
+      "school": "清瀬高校",
+      "time": "21\"12",
+      "year": 4,
+      "recordYear": "2001年"
+    },
+    {
+      "name": "児谷野 佑都",
+      "school": "つくば秀英",
+      "time": "21\"14",
+      "year": 2,
+      "recordYear": "2022年"
+    },
+    {
+      "name": "金子 敬孝",
+      "school": "埼玉栄",
+      "time": "21\"20",
+      "year": 2,
+      "recordYear": "2002年"
+    },
+    {
+      "name": "松岡 紳介",
+      "school": "神戸長坂",
+      "time": "21\"22",
+      "year": 4,
+      "recordYear": "2002年"
+    },
+    {
+      "name": "浅川 大輔",
+      "school": "都立高島",
+      "time": "21\"22",
+      "year": 4,
+      "recordYear": "2005年"
+    },
+    {
+      "name": "石飛 剛",
+      "school": "大社高校",
+      "time": "21\"23",
+      "year": null,
+      "recordYear": "1996年"
+    },
+    {
+      "name": "窪田 慎",
+      "school": "戸畑中央",
+      "time": "21\"24",
+      "year": null,
+      "recordYear": "1994年"
+    },
+    {
+      "name": "鷹合 耕甫",
+      "school": "埼玉栄",
+      "time": "21\"25",
+      "year": 3,
+      "recordYear": "2016年"
+    },
+    {
+      "name": "半田 昌一",
+      "school": "甲府北星",
+      "time": "21\"28",
+      "year": null,
+      "recordYear": "1980年"
+    },
+    {
+      "name": "大串 尚輝",
+      "school": "相模原弥栄",
+      "time": "21\"28",
+      "year": 4,
+      "recordYear": "2024年"
+    },
+    {
+      "name": "高橋 正人",
+      "school": "向上高校",
+      "time": "21\"31",
+      "year": 4,
+      "recordYear": "2006年"
+    },
+    {
+      "name": "堀川 直哉",
+      "school": "名張桔梗丘",
+      "time": "21\"34",
+      "year": null,
+      "recordYear": "1995年"
+    },
+    {
+      "name": "平岡 誠大",
+      "school": "大菅高校",
+      "time": "21\"34",
+      "year": 3,
+      "recordYear": "2018年"
+    }
+  ]
+}

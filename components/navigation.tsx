@@ -106,10 +106,6 @@ const menuStructure: MenuSection[] = [
     ]
   },
   {
-    title: "日体大記録会",
-    href: "/competition"
-  },
-  {
     title: "Webサイト",
     href: "/web",
     submenu: [
@@ -118,10 +114,14 @@ const menuStructure: MenuSection[] = [
         items: [
           { title: "陸上競技部 非公式", href: "/track-and-field" },
           { title: "駅伝リザルト", href: "https://www.ekiden-results.com/" },
-          { title: "スコアリングテーブル", href: "https://www.ekiden-results.com/information/scoring-table.html" },
+          { title: "スコアリングテーブル", href: "https://ekiden-results.com/information/scoring-table/" },
         ]
       }
     ]
+  },
+  {
+    title: "日体大記録会",
+    href: "/competition"
   },
 ];
 
@@ -161,7 +161,7 @@ export function Navigation() {
             <div className="relative h-8 w-16 flex-shrink-0">
               <Image
                 src="https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu.jpeg"
-                alt="日本体育大学 男子駅伝部 ロゴ"
+                alt="日本体育大学陸上競技部男子駅伝ブロック 公式ロゴ"
                 fill
                 className="object-contain"
                 sizes="64px"

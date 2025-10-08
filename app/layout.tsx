@@ -5,6 +5,8 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ImageProtection } from "@/components/ui/image-protection";
 import { BackToTop } from "@/components/ui/back-to-top";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -13,11 +15,26 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: '日本体育大学駅伝部公式 - ホームページ',
+    default: '日本体育大学駅伝部公式 | 箱根駅伝2026出場を目指す',
     template: '%s | 日本体育大学駅伝部'
   },
-  description: '日本体育大学陸上競技部男子駅伝ブロックの公式ウェブサイト。箱根駅伝出場を目指す選手たちの活動、記録、最新情報をお届けします。',
-  keywords: ['日本体育大学', '駅伝部', '箱根駅伝', '陸上競技', '大学駅伝', 'NSSU', '日体大'],
+  description: '日体大駅伝部の最新ニュース、選手情報、試合結果を配信。箱根駅伝予選会の速報、メンバー紹介、記録データベース、陸上競技部の活動をリアルタイムでお届け。藤本監督率いるチームの挑戦を応援しよう。',
+  keywords: [
+    '日体大駅伝', 
+    '箱根駅伝', 
+    '日体大 駅伝 メンバー',
+    '箱根駅伝 予選会',
+    '日本体育大学 陸上部', 
+    '大学駅伝',
+    '全日本大学駅伝',
+    '出雲駅伝',
+    '陸上競技', 
+    'NSSU', 
+    '日体大',
+    '駅伝部',
+    '試合結果',
+    '記録'
+  ],
   authors: [{ name: '日本体育大学陸上競技部男子駅伝ブロック' }],
   creator: '日本体育大学陸上競技部男子駅伝ブロック',
   publisher: '日本体育大学陸上競技部男子駅伝ブロック',
@@ -37,21 +54,21 @@ export const metadata: Metadata = {
     locale: 'ja_JP',
     url: 'https://nssu-ekiden.com',
     siteName: '日本体育大学駅伝部',
-    title: '日本体育大学駅伝部公式 - ホームページ',
-    description: '日本体育大学陸上競技部男子駅伝ブロックの公式ウェブサイト。箱根駅伝出場を目指す選手たちの活動、記録、最新情報をお届けします。',
+    title: '日本体育大学駅伝部公式 | 箱根駅伝2026出場を目指す',
+    description: '日体大駅伝部の最新ニュース、選手情報、試合結果を配信。箱根駅伝予選会の速報、メンバー紹介、記録データベース。藤本監督率いるチームの挑戦をリアルタイムでお届けします。',
     images: [
       {
         url: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/nssuimageog.jpeg',
         width: 1200,
         height: 630,
-        alt: '日本体育大学駅伝部',
+        alt: '日本体育大学駅伝部 - 箱根駅伝出場を目指すチーム',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '日本体育大学駅伝部公式 - ホームページ',
-    description: '日本体育大学陸上競技部男子駅伝ブロックの公式ウェブサイト。箱根駅伝出場を目指す選手たちの活動、記録、最新情報をお届けします。',
+    title: '日本体育大学駅伝部公式 | 箱根駅伝2026出場を目指す',
+    description: '日体大駅伝部の最新ニュース、選手情報、試合結果を配信。箱根駅伝予選会の速報、メンバー紹介、記録データベース。藤本監督率いるチームの挑戦をリアルタイムでお届けします。',
     images: ['https://nssu-ekiden.com/wp-content/uploads/2025/02/nssuimageog.jpeg'],
   },
   icons: {
@@ -147,6 +164,8 @@ export default function RootLayout({
             <Footer />
           </div>
         </ImageProtection>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

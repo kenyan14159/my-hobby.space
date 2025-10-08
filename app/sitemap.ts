@@ -8,52 +8,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   // 基本的な静的ページ
   const staticPages = [
-    '',
-    '/information',
-    '/information/about',
-    '/information/contact',
-    '/information/for-fans',
-    '/information/supporters',
-    '/ekiden',
-    '/ekiden/hakone',
-    '/ekiden/izumo',
-    '/ekiden/all-japan',
-    '/ekiden/fujisan',
-    '/ekiden/mixed',
-    '/ekiden/womens-all-japan',
-    '/track-and-field',
-    '/track-and-field/competition',
-    '/track-and-field/members',
-    '/track-and-field/news',
-    '/track-and-field/records',
-    '/track-and-field/schedule',
-    '/track-and-field/supporters',
-    '/members',
-    '/records',
-    '/topics',
-    '/topics/news',
-    '/topics/results',
-    '/topics/schedule',
-    '/board',
-    '/competition',
-    '/web',
+    { url: '', priority: 1.0, changeFrequency: 'daily' as const },
+    { url: '/information', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/information/about', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/information/contact', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/information/faq', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/information/for-fans', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/information/supporters', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ekiden', priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: '/ekiden/hakone', priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: '/ekiden/izumo', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/ekiden/all-japan', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/ekiden/fujisan', priority: 0.7, changeFrequency: 'weekly' as const },
+    { url: '/ekiden/mixed', priority: 0.7, changeFrequency: 'weekly' as const },
+    { url: '/ekiden/womens-all-japan', priority: 0.7, changeFrequency: 'weekly' as const },
+    { url: '/track-and-field', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/track-and-field/competition', priority: 0.7, changeFrequency: 'weekly' as const },
+    { url: '/track-and-field/members', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/track-and-field/news', priority: 0.7, changeFrequency: 'weekly' as const },
+    { url: '/track-and-field/records', priority: 0.9, changeFrequency: 'monthly' as const },
+    { url: '/track-and-field/records/data/men', priority: 0.9, changeFrequency: 'monthly' as const },
+    { url: '/track-and-field/records/data/women', priority: 0.9, changeFrequency: 'monthly' as const },
+    { url: '/track-and-field/schedule', priority: 0.7, changeFrequency: 'weekly' as const },
+    { url: '/track-and-field/supporters', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/members', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/records', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/topics', priority: 0.8, changeFrequency: 'daily' as const },
+    { url: '/topics/news', priority: 0.9, changeFrequency: 'daily' as const },
+    { url: '/topics/results', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/topics/schedule', priority: 0.7, changeFrequency: 'weekly' as const },
+    { url: '/board', priority: 0.6, changeFrequency: 'daily' as const },
+    { url: '/competition', priority: 0.7, changeFrequency: 'weekly' as const },
+    { url: '/web', priority: 0.5, changeFrequency: 'yearly' as const },
   ];
 
-  // 記録ページ（男子）
-  const menRecordEvents = [
-    '100m', '200m', '400m', '800m', '1500m', '5000m', '10000m', '3000msc',
-    '110mh', '400mh', 'high-jump', 'pole-vault', 'long-jump', 'triple-jump',
-    'shot-put', 'discus', 'hammer-throw', 'javelin-throw', 'decathlon',
-    'relay', 'half-marathon', 'marathon', '10000mwalk', '20kmwalk'
-  ];
+  // 記録ページ（男子） - 統合ページに変更したため個別ページは削除
+  const menRecordEvents: string[] = [];
 
-  // 記録ページ（女子）
-  const womenRecordEvents = [
-    '100m', '200m', '400m', '800m', '1500m', '5000m', '10000m', '3000msc',
-    '100mh', '400mh', 'high-jump', 'pole-vault', 'long-jump', 'triple-jump',
-    'shot-put', 'discus', 'half-marathon', 'marathon', '10000mwalk', '20kmwalk',
-    'relay'
-  ];
+  // 記録ページ（女子） - 統合ページに変更したため個別ページは削除
+  const womenRecordEvents: string[] = [];
 
   // メンバーページ
   const memberCategories = [
@@ -71,10 +64,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 静的ページを追加
   staticPages.forEach(page => {
     sitemapEntries.push({
-      url: `${baseUrl}${page}`,
+      url: `${baseUrl}${page.url}`,
       lastModified: currentDate,
-      changeFrequency: page === '' ? 'daily' : 'weekly',
-      priority: page === '' ? 1.0 : 0.8,
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
     });
   });
 
@@ -108,29 +101,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // 限定コンテンツページを追加
-  const limitedContentPages = [
-    '/limited-content',
-    '/limited-content/content',
-    '/limited-content/album',
-    '/limited-content/records/1500m',
-    '/limited-content/records/5000m',
-    '/limited-content/records/10000m',
-    '/limited-content/records/3000msc',
-    '/limited-content/records/half-marathon',
-    '/limited-content/analysis/hakone',
-  ];
+  // 限定コンテンツページを追加（クロール対象外）
+  // これらは robots.txt で Disallow に設定するため、サイトマップからは除外
 
-  limitedContentPages.forEach(page => {
-    sitemapEntries.push({
-      url: `${baseUrl}${page}`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    });
-  });
-
-  // ニュース・結果ページを追加（2025年のみ動的に生成）
+  // 2025年ニュース記事を追加
   const newsPages = [
     '03-15-new-system',
     '03-30-gifts-feb-mar',
@@ -140,8 +114,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '07-23-arinamin-sponsor',
     '07-25-summer-camp',
     '07-29-june-july',
+    '08-04-nojiriko-camp',
+    '08-19-sugadaira-camp',
+    '08-31-fujimi-camp',
+    '09-07-sugadaira-camp',
+    '09-20-summer-camp-end',
+    '09-20-august-september',
+    '10-06-hakone-qualifying-event-roster-announcement',
+    '10-18-all-japan-entry',
   ];
 
+  // 2025年試合結果記事を追加
   const resultPages = [
     '02-02-kagawa-marugame-half',
     '02-02-osawa-ekiden',
@@ -170,8 +153,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     sitemapEntries.push({
       url: `${baseUrl}/topics/news/${currentYear}/${page}`,
       lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.6,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     });
   });
 
@@ -179,8 +162,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     sitemapEntries.push({
       url: `${baseUrl}/topics/results/${currentYear}/${page}`,
       lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.6,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     });
   });
 

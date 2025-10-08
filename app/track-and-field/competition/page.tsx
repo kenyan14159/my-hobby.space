@@ -27,7 +27,7 @@ export default function CompetitionPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg">日体大競技会</h2>
               <p className="text-lg md:text-xl mb-4 drop-shadow">2025年度 年間6回開催・エントリー受付中</p>
               <Button size="lg" asChild>
-                <a href="http://tf.nssu-athletic.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://nishi-nans21v.com/" target="_blank" rel="noopener noreferrer">
                   エントリーはこちら <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -46,10 +46,13 @@ export default function CompetitionPage() {
       <div className="max-w-4xl mx-auto">
         <Alert className="mb-8 border-blue-600 bg-blue-50">
           <Info className="h-5 w-5 text-blue-600" />
-          <AlertTitle className="text-blue-800 font-bold">お知らせ</AlertTitle>
+          <AlertTitle className="text-blue-800 font-bold">重要なお知らせ</AlertTitle>
           <AlertDescription className="text-blue-800">
-            年度明けについて初回ログイン時に団体更新をお願い致します。
-            尚、登録選手は学年やJAAF IDが変わる関係で再登録が必要となります。
+            <ul className="list-disc list-inside space-y-2">
+              <li>年度明けについて初回ログイン時に団体更新をお願い致します。尚、登録選手は学年やJAAF IDが変わる関係で再登録が必要となります。</li>
+              <li><strong>2025年4月よりエントリー方法が変更</strong>されました。NISHIのエントリーシステム「nans21v」を使用します。</li>
+              <li><strong>第150回競技会より、2次レースを事前エントリーのみ</strong>とします。詳細は競技会要項をご覧ください。</li>
+            </ul>
           </AlertDescription>
         </Alert>
 
@@ -103,6 +106,7 @@ export default function CompetitionPage() {
                   <Calendar className="h-4 w-4 mr-2 text-blue-600" />
                   <span>2025年9月27日（土）・28日（日）</span>
                 </div>
+                <p className="text-sm text-amber-600 font-medium">※日程と場所を変更して実施する場合があります</p>
               </div>
 
               <div>
@@ -111,6 +115,7 @@ export default function CompetitionPage() {
                   <Calendar className="h-4 w-4 mr-2 text-blue-600" />
                   <span>2025年10月18日（土）・19日（日）</span>
                 </div>
+                <p className="text-sm text-amber-600 font-medium">※日程と場所を変更して実施する場合があります</p>
               </div>
 
               <div>
@@ -119,6 +124,7 @@ export default function CompetitionPage() {
                   <Calendar className="h-4 w-4 mr-2 text-blue-600" />
                   <span>2025年11月1日（土）・2日（日）</span>
                 </div>
+                <p className="text-sm text-amber-600 font-medium">※日程と場所を変更して実施する場合があります</p>
               </div>
             </div>
 
@@ -157,17 +163,33 @@ export default function CompetitionPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-3">駐車申請は、エントリー時にページ内から申請をお願い致します。</p>
-              <p className="text-sm text-muted-foreground">
-                学内工事により駐車可能な台数が減っているため、各所属【1台まで】の申請とします。
-                車両は【東門】からの入構をお願い致します。
-              </p>
-              <Button variant="outline" className="w-full justify-start mt-4" asChild>
-                <a href="https://nssu-ekiden.com/wp-content/uploads/2025/03/日体大競技会駐車について.pdf" target="_blank" rel="noopener noreferrer">
-                  <Download className="h-4 w-4 mr-2" />
-                  駐車について
-                </a>
-              </Button>
+              <div className="space-y-4">
+                <Alert className="border-red-600 bg-red-50">
+                  <AlertCircle className="h-5 w-5 text-red-600" />
+                  <AlertDescription className="text-red-800">
+                    <strong>【重要】駐車申請について</strong>
+                    <ul className="list-disc list-inside mt-2 space-y-1">
+                      <li>申請フォームや期日は各競技会要項をご確認ください</li>
+                      <li>Googleアカウントにログインの上申請し、証明書として回答を保存してください</li>
+                      <li>毎競技会ごと要項に記載の期日までの受け入れとします</li>
+                      <li><strong>期日以降の申請はいかなる場合にも受け入れません</strong></li>
+                      <li>エントリーと駐車申請は別で申請が必要です</li>
+                    </ul>
+                  </AlertDescription>
+                </Alert>
+                
+                <p className="text-sm text-muted-foreground">
+                  駐車可能台数は各所属【1台まで】とします。満車になることがありますが、その際はご了承ください。<br />
+                  車両は<strong className="text-blue-600">正門</strong>から入構ください。
+                </p>
+                
+                <Button variant="outline" className="w-full justify-start" asChild>
+                  <a href="https://nssu-ekiden.com/wp-content/uploads/2025/03/日体大競技会駐車について.pdf" target="_blank" rel="noopener noreferrer">
+                    <Download className="h-4 w-4 mr-2" />
+                    駐車について（詳細PDF）
+                  </a>
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
@@ -209,14 +231,32 @@ export default function CompetitionPage() {
                 <div className="space-y-4">
                   <div>
                     <h3 className="font-bold mb-2">エントリーサイト</h3>
+                    <Alert className="mb-4 border-amber-600 bg-amber-50">
+                      <AlertCircle className="h-5 w-5 text-amber-600" />
+                      <AlertDescription className="text-amber-800">
+                        <strong>2025年4月よりエントリー方法が変更されました。</strong><br />
+                        NISHIのエントリーシステム「nans21v」を使用します。
+                      </AlertDescription>
+                    </Alert>
                     <p className="mb-4">
                       エントリーは以下のサイトから行ってください。
                     </p>
                     <Button className="mt-2" asChild>
-                      <a href="http://tf.nssu-athletic.com/" target="_blank" rel="noopener noreferrer">
-                        エントリーサイトへ <ExternalLink className="ml-2 h-4 w-4" />
+                      <a href="https://nishi-nans21v.com/" target="_blank" rel="noopener noreferrer">
+                        エントリーサイト（nans21v）へ <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
+                  </div>
+                  
+                  <div className="mt-6">
+                    <h3 className="font-bold mb-2">2次レースについて</h3>
+                    <Alert className="border-blue-600 bg-blue-50">
+                      <Info className="h-5 w-5 text-blue-600" />
+                      <AlertDescription className="text-blue-800">
+                        <strong>第150回競技会より、2次レースを事前エントリーのみとします。</strong><br />
+                        詳細は競技会要項をご覧ください。
+                      </AlertDescription>
+                    </Alert>
                   </div>
                   
                   <div className="mt-6">
@@ -232,6 +272,59 @@ export default function CompetitionPage() {
                   <div className="mt-6">
                     <h3 className="font-bold mb-2">忘れ物について</h3>
                     <p>忘れ物はこちらまで → <a href="mailto:nittai-honbu@d02.itscom.net" className="text-blue-600 hover:underline">nittai-honbu@d02.itscom.net</a></p>
+                  </div>
+                  
+                  <div className="mt-6">
+                    <h3 className="font-bold mb-3">ナンバー（アスリートビブス）について</h3>
+                    <Alert className="border-purple-600 bg-purple-50">
+                      <Info className="h-5 w-5 text-purple-600" />
+                      <AlertDescription className="text-purple-900">
+                        <div className="space-y-3">
+                          <p className="font-bold">アスリートビブスに記載するナンバーは以下の通りです：</p>
+                          
+                          <div className="bg-white p-3 rounded border border-purple-200">
+                            <table className="w-full text-sm">
+                              <thead>
+                                <tr className="border-b border-purple-200">
+                                  <th className="text-left py-2 px-2">ナンバー範囲</th>
+                                  <th className="text-left py-2 px-2">カテゴリー</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr className="border-b border-purple-100">
+                                  <td className="py-2 px-2 font-mono">1000～1999</td>
+                                  <td className="py-2 px-2">小・中学</td>
+                                </tr>
+                                <tr className="border-b border-purple-100">
+                                  <td className="py-2 px-2 font-mono">2000～2999</td>
+                                  <td className="py-2 px-2">高校</td>
+                                </tr>
+                                <tr className="border-b border-purple-100">
+                                  <td className="py-2 px-2 font-mono">3000～4999</td>
+                                  <td className="py-2 px-2">大学</td>
+                                </tr>
+                                <tr>
+                                  <td className="py-2 px-2 font-mono">5000～6999</td>
+                                  <td className="py-2 px-2">一般</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          
+                          <div className="space-y-2">
+                            <p className="font-bold text-sm">【重要事項】</p>
+                            <ul className="list-disc list-inside space-y-1 text-sm">
+                              <li>エントリー時に入力する番号は、各カテゴリーの指定された範囲内で参加者の任意で設定する</li>
+                              <li>ナンバーは任意だが、<strong>必ず4桁の数字</strong>を入力すること</li>
+                              <li><strong>4桁全て違う数字を入力</strong>すること（連番は不可）<br />
+                              <span className="text-red-700">例：1234 → ❌不可</span></li>
+                              <li>同所属内で同一のナンバーが発生しないようにすること</li>
+                              <li>入力されたナンバーは変更となる場合があるため、<strong>確定したナンバーはスタートリストで確認</strong>すること</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </AlertDescription>
+                    </Alert>
                   </div>
                 </div>
               </CardContent>

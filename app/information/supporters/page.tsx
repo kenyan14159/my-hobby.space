@@ -42,7 +42,7 @@ const itoSupporter = {
     { name: "Instagram", url: "https://www.instagram.com/tomo.icoco", icon: <Instagram className="h-6 w-6" /> },
     { name: "Facebook", url: "https://www.facebook.com/profile.php?id=100007170611509", icon: <Facebook className="h-6 w-6" /> },
     { name: "X", url: "https://x.com/tomo_i_coco", icon: <Twitter className="h-6 w-6" /> },
-    { name: "Threads", url: "https://www.threads.net/@tomo.icoco", icon: <Image src="https://nssu-ekiden.com/wp-content/uploads/2025/02/threads-logo-black-01.png" alt="Threads" width={24} height={24} className="h-6 w-6" /> },
+    { name: "Threads", url: "https://www.threads.net/@tomo.icoco", icon: <Image src="https://nssu-ekiden.com/wp-content/uploads/2025/02/threads-logo-black-01.png" alt="Threads" width={24} height={24} quality={75} className="h-6 w-6" /> },
   ]
 };
 
@@ -100,7 +100,17 @@ const SupporterProfile = ({ supporter, onImageClick }: { supporter: typeof itoSu
         aria-label="サポーター画像を拡大"
       >
           <AspectRatio ratio={3 / 4} className="rounded-xl overflow-hidden shadow-md">
-          <Image src={supporter.image} alt={supporter.name} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" />
+          <Image 
+            src={supporter.image} 
+            alt={supporter.name} 
+            fill 
+            loading="lazy"
+            quality={80}
+            className="object-cover" 
+            sizes="(max-width: 1024px) 100vw, 33vw"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
+          />
         </AspectRatio>
       </motion.div>
       <div className="lg:w-2/3">
@@ -151,8 +161,12 @@ const SupporterProfile = ({ supporter, onImageClick }: { supporter: typeof itoSu
               src="https://nssu-ekiden.com/wp-content/uploads/2025/07/rairakku.jpg" 
               alt="ライラック治療院" 
               fill 
+              loading="lazy"
+              quality={80}
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 800px"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
             />
           </AspectRatio>
         </div>
@@ -192,7 +206,17 @@ const SupporterCard = ({ supporter }: { supporter: { name: string, logo: string,
         className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 h-full flex flex-col"
     >
         <AspectRatio ratio={16 / 9} className="bg-gray-50">
-            <Image src={supporter.logo} alt={supporter.name} fill className="object-contain p-4" sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 200px" />
+            <Image 
+              src={supporter.logo} 
+              alt={supporter.name} 
+              fill 
+              loading="lazy"
+              quality={75}
+              className="object-contain p-4" 
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 200px"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
+            />
         </AspectRatio>
         <div className="p-4 flex-grow flex flex-col">
             <h3 className="font-bold text-lg text-sky-900 flex-grow">{supporter.name}</h3>

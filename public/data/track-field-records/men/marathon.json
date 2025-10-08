@@ -1,0 +1,214 @@
+{
+  "marathon": [
+    {
+      "name": "千葉 祐一",
+      "school": "東北高校",
+      "time": "2:13'54",
+      "year": 4,
+      "recordYear": "1991年"
+    },
+    {
+      "name": "大塚 正美",
+      "school": "水戸工業",
+      "time": "2:16'03",
+      "year": 3,
+      "recordYear": "1982年"
+    },
+    {
+      "name": "坂本 亘",
+      "school": "島原工業",
+      "time": "2:17'31",
+      "year": 2,
+      "recordYear": "1979年"
+    },
+    {
+      "name": "関 英雄",
+      "school": "水戸工業",
+      "time": "2:17'36",
+      "year": 3,
+      "recordYear": "1976年"
+    },
+    {
+      "name": "植松 孝太",
+      "school": "佐久長聖",
+      "time": "2:17'57",
+      "year": 3,
+      "recordYear": "2024年"
+    },
+    {
+      "name": "盛本 聖也",
+      "school": "洛南高校",
+      "time": "2:19'35",
+      "year": 4,
+      "recordYear": "2023年"
+    },
+    {
+      "name": "大内 宏樹",
+      "school": "松山商業",
+      "time": "2:20'32",
+      "year": 2,
+      "recordYear": "2020年"
+    },
+    {
+      "name": "小塚 慎一",
+      "school": "豊橋商業",
+      "time": "2:21'27",
+      "year": 2,
+      "recordYear": "1978年"
+    },
+    {
+      "name": "田ノ上 貢一",
+      "school": "大濠高校",
+      "time": "2:22'30",
+      "year": 4,
+      "recordYear": "1974年"
+    },
+    {
+      "name": "関口 孝久",
+      "school": "秩父農工",
+      "time": "2:22'32",
+      "year": 4,
+      "recordYear": "1975年"
+    },
+    {
+      "name": "古謝 将大",
+      "school": "那覇西",
+      "time": "2:22'51",
+      "year": 4,
+      "recordYear": "2021年"
+    },
+    {
+      "name": "岡野 章",
+      "school": "",
+      "time": "2:22'54",
+      "year": 4,
+      "recordYear": "1963年"
+    },
+    {
+      "name": "中田 盛之",
+      "school": "清水市立",
+      "time": "2:23'04",
+      "year": 4,
+      "recordYear": "1985年"
+    },
+    {
+      "name": "中田 一吉",
+      "school": "呉工業",
+      "time": "2:23'14",
+      "year": 2,
+      "recordYear": "1976年"
+    },
+    {
+      "name": "田中 弘一",
+      "school": "大谷高校",
+      "time": "2:23'28",
+      "year": 2,
+      "recordYear": "1969年"
+    },
+    {
+      "name": "大見 治夫",
+      "school": "",
+      "time": "2:23'43",
+      "year": 3,
+      "recordYear": "1963年"
+    },
+    {
+      "name": "伊藤 保",
+      "school": "神戸高校",
+      "time": "2:24'24",
+      "year": 3,
+      "recordYear": "1970年"
+    },
+    {
+      "name": "石倉 義隆",
+      "school": "五日市",
+      "time": "2:24'30",
+      "year": 1,
+      "recordYear": "1969年"
+    },
+    {
+      "name": "小泉 雄輝",
+      "school": "藤沢翔陵",
+      "time": "2:24'46",
+      "year": 3,
+      "recordYear": "2014年"
+    },
+    {
+      "name": "宮崎 龍彦",
+      "school": "中央農業",
+      "time": "2:25'15",
+      "year": 3,
+      "recordYear": "1981年"
+    },
+    {
+      "name": "小松 巧弥",
+      "school": "倉敷南",
+      "time": "2:25'20",
+      "year": 2,
+      "recordYear": "2014年"
+    },
+    {
+      "name": "奥野 翔弥",
+      "school": "豊川工業",
+      "time": "2:25'28",
+      "year": 3,
+      "recordYear": "2014年"
+    },
+    {
+      "name": "富安 央",
+      "school": "豊川工業",
+      "time": "2:25'38",
+      "year": 3,
+      "recordYear": "2014年"
+    },
+    {
+      "name": "水金 大亮",
+      "school": "報徳学園",
+      "time": "2:25'41",
+      "year": 4,
+      "recordYear": "2024年"
+    },
+    {
+      "name": "住田 優範",
+      "school": "西京高校",
+      "time": "2:25'55",
+      "year": 1,
+      "recordYear": "2014年"
+    },
+    {
+      "name": "竹林 昌広",
+      "school": "丸亀商業",
+      "time": "2:26'01",
+      "year": 1,
+      "recordYear": "2014年"
+    },
+    {
+      "name": "坂本 充",
+      "school": "島原工業",
+      "time": "2:26'40",
+      "year": 2,
+      "recordYear": "1975年"
+    },
+    {
+      "name": "金井 勝政",
+      "school": "",
+      "time": "2:27'05",
+      "year": 4,
+      "recordYear": "1980年"
+    },
+    {
+      "name": "小町 昌矢",
+      "school": "藤沢翔陵",
+      "time": "2:27'32",
+      "year": 2,
+      "recordYear": "1966年"
+    },
+    {
+      "name": "越尾 咲男",
+      "school": "川口高校",
+      "time": "2:27'38",
+      "year": 1,
+      "recordYear": "1969年"
+    }
+  ]
+}

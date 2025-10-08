@@ -54,7 +54,7 @@ export default function TrackAndFieldPage() {
                 <BookOpen className="w-8 h-8 text-purple-600 mb-2 group-hover:scale-110 transition-transform" />
                 <CardTitle className="text-lg">歴代記録</CardTitle>
               </CardHeader>
-              <CardContent className="text-center text-gray-600 text-sm">未掲載</CardContent>
+              <CardContent className="text-center text-gray-600 text-sm">種目別の歴代トップ記録</CardContent>
             </Card>
           </Link>
           {/* メンバー・ブロック紹介 */}

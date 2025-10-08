@@ -1,11 +1,8 @@
-"use client";
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowLeft, LucideIcon } from 'lucide-react';
 import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/breadcrumbs';
 import { PrevNextNav } from '@/components/ui/prev-next-nav';
-import { RelatedNews } from '@/components/ui/related-news';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -175,7 +172,7 @@ export function NewsDetailLayout({
   title, 
   date, 
   gradient = 'from-gray-50 to-gray-100',
-  children, 
+  children
 }: NewsDetailLayoutProps) {
   const pathname = usePathname();
   const pageUrl = `https://nssu-ekiden.com${pathname || ''}`;
@@ -268,9 +265,6 @@ export function NewsDetailLayout({
         <div className="mt-6 hidden sm:block">
           <PrevNextNav type="news" />
         </div>
-
-        {/* 関連ニュース */}
-        <RelatedNews />
       </motion.div>
     </div>
   );

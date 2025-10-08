@@ -1,1 +1,0 @@
-export default function Men10000mwalkRecordPage() { return null; } 

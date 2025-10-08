@@ -1,1 +1,0 @@
-export default function WomenLongJumpRecordPage() { return null; } 

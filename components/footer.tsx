@@ -49,7 +49,7 @@ const footerLinkGroups = [
     items: [
         { title: "陸上競技部 非公式", href: "/track-and-field" },
         { title: "駅伝リザルト", href: "https://www.ekiden-results.com/" },
-        { title: "スコアリングテーブル", href: "https://www.ekiden-results.com/information/scoring-table.html" }
+        { title: "スコアリングテーブル", href: "https://ekiden-results.com/information/scoring-table/" }
     ]
   },
   {
@@ -72,7 +72,7 @@ export function Footer() {
             <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white">
               <Image
                 src="https://nssu-ekiden.com/wp-content/uploads/2025/02/photo194-300x300-1.jpg"
-                alt="saya"
+                alt="スポーツカメラマン saya - 日体大駅伝部写真提供"
                 fill
                 className="object-cover"
                 sizes="32px"

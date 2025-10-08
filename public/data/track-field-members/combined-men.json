@@ -1,0 +1,28 @@
+{
+  "4年生": [
+    { "name": "島田 康平", "furigana": "シマダ コウヘイ", "role": "-", "event": "十種競技", "pb": "4843点", "school": "自由ヶ丘高等学校", "from": "-" },
+    { "name": "達川 廉", "furigana": "タツカワ レン", "role": "-", "event": "十種競技", "pb": "6352点", "school": "川崎市立橘高等学校", "from": "-" },
+    { "name": "星野 愛弥", "furigana": "ホシノ マナヤ", "role": "-", "event": "十種競技", "pb": "6660点", "school": "群馬県立前橋商業高等学校", "from": "-" },
+    { "name": "遊佐 祥太", "furigana": "ユサ ショウタ", "role": "-", "event": "十種競技", "pb": "6620点", "school": "宮城県立利府高等学校", "from": "-" },
+    { "name": "横川 碧生", "furigana": "ヨコカワ アオイ", "role": "-", "event": "十種競技", "pb": "4681点", "school": "茨城県立古河第三高等学校", "from": "-" }
+  ],
+  "3年生": [
+    { "name": "岩沢 奏楽", "furigana": "イワサワ ソラ", "role": "-", "event": "十種競技", "pb": "5835点", "school": "板橋", "from": "東京" },
+    { "name": "木村 隼人", "furigana": "キムラ ハヤト", "role": "-", "event": "十種競技", "pb": "6263点", "school": "横浜清風", "from": "神奈川" },
+    { "name": "古田 匠馬", "furigana": "フルタ ショウマ", "role": "-", "event": "十種競技", "pb": "4903点", "school": "東京", "from": "-" },
+    { "name": "吉海 慶斗", "furigana": "ヨシウミ ケイト", "role": "-", "event": "十種競技", "pb": "6045点", "school": "伊豆中央", "from": "静岡" }
+  ],
+  "2年生": [
+    { "name": "大木 咲翔", "furigana": "オオキ サクト", "role": "-", "event": "十種競技", "pb": "5875点", "school": "上田西高校", "from": "長野県" },
+    { "name": "中西 慧冴", "furigana": "ナカニシ ケイゴ", "role": "-", "event": "十種競技", "pb": "-", "school": "相洋高校", "from": "神奈川県" },
+    { "name": "藤原 秀旭", "furigana": "フジワラ ヒデアキ", "role": "-", "event": "十種競技", "pb": "5146点", "school": "都立松ケ谷高校", "from": "東京都" },
+    { "name": "宮内 夏葵", "furigana": "ミヤウチ ナツキ", "role": "-", "event": "十種競技", "pb": "6314点", "school": "東京", "from": "-" },
+    { "name": "山形 和喜", "furigana": "ヤマガタ カズキ", "role": "-", "event": "十種競技", "pb": "-", "school": "茨城キリスト", "from": "茨城" }
+  ],
+  "1年生": [
+    { "name": "石橋 汰悠", "furigana": "イシバシ タイユウ", "role": "-", "event": "十種競技", "pb": "-", "school": "藤沢清流高等学校", "from": "神奈川県" },
+    { "name": "小山 裕成", "furigana": "コヤマ ユウナ", "role": "-", "event": "十種競技", "pb": "5727点", "school": "板橋高等学校", "from": "東京都" },
+    { "name": "田中 元人", "furigana": "タナカ ゲント", "role": "-", "event": "十種競技", "pb": "6029点", "school": "川崎市立橘高校", "from": "神奈川県" },
+    { "name": "山口 輝", "furigana": "ヤマグチ ヒカル", "role": "-", "event": "十種競技", "pb": "4790点 (八種)", "school": "旭高校", "from": "神奈川県" }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "high-jump": [
+    {
+      "name": "太田 陽子",
+      "school": "湘南工科大附属",
+      "time": "1.93m",
+      "year": 1,
+      "recordYear": "1993年"
+    },
+    {
+      "name": "大谷 弘子",
+      "school": "大竹高校",
+      "time": "1.80m",
+      "year": 1,
+      "recordYear": "1980年"
+    },
+    {
+      "name": "大庭 邦子",
+      "school": "由利高校",
+      "time": "1.80m",
+      "year": 3,
+      "recordYear": "1980年"
+    },
+    {
+      "name": "五島 昌代",
+      "school": "富士見高校",
+      "time": "1.80m",
+      "year": 4,
+      "recordYear": "1984年"
+    },
+    {
+      "name": "伊藤 楓",
+      "school": "東京高校",
+      "time": "1.80m",
+      "year": 1,
+      "recordYear": "2022年"
+    },
+    {
+      "name": "石田 広江",
+      "school": "宮城県立第二女子",
+      "time": "1.79m",
+      "year": 4,
+      "recordYear": "1976年"
+    },
+    {
+      "name": "大玉 華鈴",
+      "school": "西京高校",
+      "time": "1.78m",
+      "year": 3,
+      "recordYear": "2020年"
+    },
+    {
+      "name": "細田 弥々",
+      "school": "東京高校",
+      "time": "1.77m",
+      "year": 3,
+      "recordYear": "2023年"
+    },
+    {
+      "name": "高橋 恭子",
+      "school": "東京高校",
+      "time": "1.76m",
+      "year": 3,
+      "recordYear": "1993年"
+    },
+    {
+      "name": "澤木 幸子",
+      "school": "安城学園",
+      "time": "1.76m",
+      "year": null,
+      "recordYear": "1994年"
+    },
+    {
+      "name": "添田 順子",
+      "school": "大分女子",
+      "time": "1.75m",
+      "year": 3,
+      "recordYear": "1984年"
+    },
+    {
+      "name": "斎藤 由美",
+      "school": "新潟青陵",
+      "time": "1.75m",
+      "year": 2,
+      "recordYear": "1989年"
+    },
+    {
+      "name": "渡部 由美子",
+      "school": "-",
+      "time": "1.75m",
+      "year": 1,
+      "recordYear": "1993年"
+    },
+    {
+      "name": "今泉 美紀",
+      "school": "豊丘高校",
+      "time": "1.75m",
+      "year": 2,
+      "recordYear": "1996年"
+    },
+    {
+      "name": "秋本 香津美",
+      "school": "下関商業",
+      "time": "1.73m",
+      "year": 3,
+      "recordYear": "1974年"
+    },
+    {
+      "name": "三浦 朝代",
+      "school": "藤枝南",
+      "time": "1.73m",
+      "year": 1,
+      "recordYear": "1978年"
+    },
+    {
+      "name": "原田 直美",
+      "school": "上溝南",
+      "time": "1.73m",
+      "year": 1,
+      "recordYear": "1982年"
+    },
+    {
+      "name": "陸川 明日香",
+      "school": "新潟産業大付属",
+      "time": "1.73m",
+      "year": 2,
+      "recordYear": "2021年"
+    },
+    {
+      "name": "村川 幸恵",
+      "school": "水戸桜ノ牧",
+      "time": "1.72m",
+      "year": 3,
+      "recordYear": "2004年"
+    },
+    {
+      "name": "河合 玲美",
+      "school": "関商工",
+      "time": "1.70m",
+      "year": 1,
+      "recordYear": "2007年"
+    },
+    {
+      "name": "松元 珠凛",
+      "school": "日体大柏",
+      "time": "1.70m",
+      "year": 1,
+      "recordYear": "2016年"
+    },
+    {
+      "name": "古谷 舞羽",
+      "school": "八王子高校",
+      "time": "1.70m",
+      "year": 1,
+      "recordYear": "2017年"
+    },
+    {
+      "name": "佐藤 加奈子",
+      "school": "野沢南",
+      "time": "1.68m",
+      "year": 1,
+      "recordYear": "1978年"
+    },
+    {
+      "name": "大庫 康代",
+      "school": "七里ガ浜",
+      "time": "1.68m",
+      "year": 2,
+      "recordYear": "1982年"
+    },
+    {
+      "name": "河北 貴子",
+      "school": "土浦日大",
+      "time": "1.68m",
+      "year": 1,
+      "recordYear": "1990年"
+    },
+    {
+      "name": "須々田 佳穂",
+      "school": "弘前実業",
+      "time": "1.67m",
+      "year": 3,
+      "recordYear": "2017年"
+    },
+    {
+      "name": "有田 樹里",
+      "school": "中津商業",
+      "time": "1.66m",
+      "year": 2,
+      "recordYear": "2010年"
+    },
+    {
+      "name": "尾崎 美沙",
+      "school": "近大高専",
+      "time": "1.66m",
+      "year": 1,
+      "recordYear": "2012年"
+    },
+    {
+      "name": "中村 茜",
+      "school": "東京高校",
+      "time": "1.66m",
+      "year": 2,
+      "recordYear": "2012年"
+    },
+    {
+      "name": "平野 未来",
+      "school": "尚絅学院",
+      "time": "1.66m",
+      "year": 4,
+      "recordYear": "2013年"
+    },
+    {
+      "name": "渡辺 歩佳",
+      "school": "滝川高校",
+      "time": "1.66m",
+      "year": 3,
+      "recordYear": "2016年"
+    },
+    {
+      "name": "土屋 美晏",
+      "school": "フラガ佐渡",
+      "time": "1.66m",
+      "year": 4,
+      "recordYear": "2024年"
+    }
+  ]
+}

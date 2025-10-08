@@ -1,0 +1,106 @@
+{
+  "marathon": [
+    {
+      "name": "細田 あい",
+      "school": "長野東",
+      "time": "2時間21分42秒",
+      "recordYear": "2022年"
+    },
+    {
+      "name": "有森 裕子",
+      "school": "就実",
+      "time": "2時間26分39秒",
+      "recordYear": "1999年"
+    },
+    {
+      "name": "唐沢 ゆり",
+      "school": "都立上水",
+      "time": "2時間27分27秒",
+      "recordYear": "2023年"
+    },
+    {
+      "name": "川口 紀子",
+      "school": "湖西",
+      "time": "2時間28分08秒",
+      "recordYear": "1994年"
+    },
+    {
+      "name": "平田 裕美",
+      "school": "騎西",
+      "time": "2時間29分23秒",
+      "recordYear": "2008年"
+    },
+    {
+      "name": "佐々木 七恵",
+      "school": "住田",
+      "time": "2時間33分57秒",
+      "recordYear": "1985年"
+    },
+    {
+      "name": "浜田真由美",
+      "school": "光高校",
+      "time": "2時間39分15秒",
+      "recordYear": "1991年"
+    },
+    {
+      "name": "熊坂 多恵",
+      "school": "-",
+      "time": "2時間46分53秒",
+      "recordYear": "2002年"
+    },
+    {
+      "name": "中坂 仁美",
+      "school": "浜松市立",
+      "time": "2時間47分48秒",
+      "recordYear": "1999年"
+    },
+    {
+      "name": "山田 佐知恵",
+      "school": "七里が浜",
+      "time": "2時間43分48秒",
+      "recordYear": "1995年"
+    },
+    {
+      "name": "海老根 美恵子",
+      "school": "茨城キリ",
+      "time": "2時間49分46秒",
+      "recordYear": "1993年"
+    },
+    {
+      "name": "白田 雅子",
+      "school": "米沢中央",
+      "time": "2時間51分03秒",
+      "recordYear": "1987年"
+    },
+    {
+      "name": "田中 真愛",
+      "school": "平田高校",
+      "time": "2時間51分27秒",
+      "recordYear": "2018年"
+    },
+    {
+      "name": "布施 温菜",
+      "school": "NSAC",
+      "time": "2時間58分01秒",
+      "recordYear": "2018年"
+    },
+    {
+      "name": "堀内 怜",
+      "school": "浦和学院",
+      "time": "2時間58分27秒",
+      "recordYear": "2001年"
+    },
+    {
+      "name": "井筒 紫乃",
+      "school": "日体大柏",
+      "time": "3時間03分40秒",
+      "recordYear": "1982年"
+    },
+    {
+      "name": "本田 牧子",
+      "school": "桜華女学",
+      "time": "3時間11分52秒",
+      "recordYear": "2001年"
+    }
+  ]
+}

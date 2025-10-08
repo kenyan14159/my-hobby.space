@@ -1,0 +1,214 @@
+{
+  "400mh": [
+    {
+      "name": "渡邊 修",
+      "school": "十日町高校",
+      "time": "48\"51",
+      "year": 3,
+      "recordYear": "2024年"
+    },
+    {
+      "name": "水野 龍彦",
+      "school": "桐蔭学園",
+      "time": "49\"99",
+      "year": 4,
+      "recordYear": "2012年"
+    },
+    {
+      "name": "木村 大輔",
+      "school": "倉敷工業",
+      "time": "50\"05",
+      "year": 3,
+      "recordYear": "2008年"
+    },
+    {
+      "name": "米田 太陽",
+      "school": "九州学院",
+      "time": "50\"33",
+      "year": 3,
+      "recordYear": "2022年"
+    },
+    {
+      "name": "江田 茂行",
+      "school": "長岡高校",
+      "time": "50\"56",
+      "year": "M1",
+      "recordYear": "1993年"
+    },
+    {
+      "name": "蜷川 知秀",
+      "school": "牛久高校",
+      "time": "50\"59",
+      "year": "S1",
+      "recordYear": "2005年"
+    },
+    {
+      "name": "崎山 仁",
+      "school": "杵築高校",
+      "time": "50\"72",
+      "year": 4,
+      "recordYear": "2003年"
+    },
+    {
+      "name": "飯塚 啓伍",
+      "school": "東北高校",
+      "time": "50\"74",
+      "year": 4,
+      "recordYear": "2017年"
+    },
+    {
+      "name": "山本 健太",
+      "school": "宇治山田商業",
+      "time": "50\"92",
+      "year": 3,
+      "recordYear": "2009年"
+    },
+    {
+      "name": "山崎 高人",
+      "school": "相洋高校",
+      "time": "50\"96",
+      "year": 4,
+      "recordYear": "1996年"
+    },
+    {
+      "name": "渡辺 航平",
+      "school": "福岡城南",
+      "time": "51\"15",
+      "year": 4,
+      "recordYear": "2004年"
+    },
+    {
+      "name": "大串 卓也",
+      "school": "東京高校",
+      "time": "51\"22",
+      "year": 1,
+      "recordYear": "2013年"
+    },
+    {
+      "name": "成松 伸朗",
+      "school": "佐伯鶴城",
+      "time": "51\"36",
+      "year": 2,
+      "recordYear": "1993年"
+    },
+    {
+      "name": "宮田 正美",
+      "school": "六日町高校",
+      "time": "51\"46",
+      "year": null,
+      "recordYear": "1984年"
+    },
+    {
+      "name": "木全 広大",
+      "school": "愛工大名電",
+      "time": "51\"47",
+      "year": 3,
+      "recordYear": "2013年"
+    },
+    {
+      "name": "中野 萌人",
+      "school": "八戸西",
+      "time": "51\"55",
+      "year": 2,
+      "recordYear": "2024年"
+    },
+    {
+      "name": "高橋 竜成",
+      "school": "つくば秀英",
+      "time": "51\"65",
+      "year": 1,
+      "recordYear": "2019年"
+    },
+    {
+      "name": "鈴木 勇人",
+      "school": "下妻二",
+      "time": "51\"69",
+      "year": 3,
+      "recordYear": "2015年"
+    },
+    {
+      "name": "宮内 夏葵",
+      "school": "東京高校",
+      "time": "51\"76",
+      "year": 2,
+      "recordYear": "2024年"
+    },
+    {
+      "name": "赤木 健太郎",
+      "school": "姫路商業",
+      "time": "51\"78",
+      "year": 4,
+      "recordYear": "2013年"
+    },
+    {
+      "name": "佐々木 啓人",
+      "school": "浜松商",
+      "time": "51\"86",
+      "year": 3,
+      "recordYear": "2024年"
+    },
+    {
+      "name": "山中 辰男",
+      "school": "柏日体",
+      "time": "51\"88",
+      "year": 4,
+      "recordYear": "1985年"
+    },
+    {
+      "name": "山田 泰雅",
+      "school": "岡山一宮",
+      "time": "51\"90",
+      "year": 2,
+      "recordYear": "2019年"
+    },
+    {
+      "name": "甲斐 政人",
+      "school": "延岡東",
+      "time": "51\"94",
+      "year": 3,
+      "recordYear": "2004年"
+    },
+    {
+      "name": "柴沼 貴文",
+      "school": "笠間高校",
+      "time": "51\"96",
+      "year": null,
+      "recordYear": "1984年"
+    },
+    {
+      "name": "古賀 翔吾",
+      "school": "相洋高校",
+      "time": "51\"97",
+      "year": 3,
+      "recordYear": "2022年"
+    },
+    {
+      "name": "大西 真仁",
+      "school": "大町高校",
+      "time": "52\"16",
+      "year": 3,
+      "recordYear": "2005年"
+    },
+    {
+      "name": "槙 浩二",
+      "school": "西条農業",
+      "time": "52\"24",
+      "year": 2,
+      "recordYear": "1989年"
+    },
+    {
+      "name": "小野 浩介",
+      "school": "日立工業",
+      "time": "52\"24",
+      "year": 1,
+      "recordYear": "2017年"
+    },
+    {
+      "name": "北村 貴嗣",
+      "school": "福島成蹊",
+      "time": "52\"36",
+      "year": 4,
+      "recordYear": "2018年"
+    }
+  ]
+}

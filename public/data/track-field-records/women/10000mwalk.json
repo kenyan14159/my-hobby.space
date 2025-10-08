@@ -1,0 +1,53 @@
+{
+  "10000mwalk": [
+    {
+      "name": "中村 綾花",
+      "school": "長野東",
+      "time": "47分56秒37",
+      "year": 1,
+      "recordYear": "2022年"
+    },
+    {
+      "name": "吉田 百見",
+      "school": "都立文京",
+      "time": "54分50秒41",
+      "year": 1,
+      "recordYear": "2014年"
+    },
+    {
+      "name": "池上 由里子",
+      "school": "興譲館",
+      "time": "54分52秒86",
+      "year": 2,
+      "recordYear": "2005年"
+    },
+    {
+      "name": "石井 智子",
+      "school": "匝瑳高",
+      "time": "54分59秒12",
+      "year": 4,
+      "recordYear": "2004年"
+    },
+    {
+      "name": "国崎 美帆",
+      "school": "西条農業",
+      "time": "55分33秒66",
+      "year": 2,
+      "recordYear": "2011年"
+    },
+    {
+      "name": "松本 真澄",
+      "school": "樟蔭",
+      "time": "56分11秒01",
+      "year": 2,
+      "recordYear": "2011年"
+    },
+    {
+      "name": "長谷川 仁美",
+      "school": "秦野",
+      "time": "57分14秒70",
+      "year": 3,
+      "recordYear": "2011年"
+    }
+  ]
+}

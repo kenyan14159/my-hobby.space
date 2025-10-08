@@ -1,12 +1,16 @@
+# 日本体育大学駅伝部公式サイト robots.txt
+# https://nssu-ekiden.com
+
 User-agent: *
 Allow: /
+
+# クロールを除外するディレクトリ
+Disallow: /api/
+Disallow: /limited-content/
 
 # サイトマップの場所
 Sitemap: https://nssu-ekiden.com/sitemap.xml
 
-# クロール頻度の調整
-Crawl-delay: 1
-
-# 特定のディレクトリを除外する場合（必要に応じて）
-# Disallow: /admin/
-# Disallow: /private/ 
+# クロール頻度の調整（推奨値）
+# 1秒の遅延でサーバー負荷を軽減
+Crawl-delay: 1 
