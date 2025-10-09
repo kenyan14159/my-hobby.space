@@ -266,9 +266,8 @@ export default function WomensEkidenHistoryPage() {
                 </div>
                 <AnimatedPageHeader
                     title="全日本大学女子駅伝"
-                    subtitle="女子駅伝ブロック"
+                    subtitle="Women's All-Japan University Ekiden"
                     underlineColor="bg-pink-500"
-                    largeSubtitle={true}
                 />
 
                 <EkidenNavigation />

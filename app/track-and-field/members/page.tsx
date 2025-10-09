@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { TrackFieldQuickAccess } from "@/components/track-field-quick-access";
 
 // カテゴリ定義
 const categories = [
@@ -37,7 +38,10 @@ export default function TrackFieldMembersPage() {
         />
       </div>
 
-      <AnimatedPageHeader title="メンバー・ブロック紹介" />
+      <AnimatedPageHeader title="メンバー・ブロック紹介" subtitle="Team Members & Blocks" />
+      
+      {/* クイックアクセスボタン */}
+      <TrackFieldQuickAccess />
 
       <p className="text-gray-600 text-center text-sm mt-3 mb-6">
         各ブロックのメンバーを確認できます。

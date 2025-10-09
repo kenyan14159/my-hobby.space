@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { TrackFieldQuickAccess } from "@/components/track-field-quick-access";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Info } from "lucide-react";
 
@@ -10,7 +11,10 @@ export default function TrackAndFieldRecordsPage() {
       <div className="mb-6">
         <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: '歴代記録' }]} />
       </div>
-      <AnimatedPageHeader title="歴代記録" subtitle="歴代記録・ランキングを種目別に掲載" />
+      <AnimatedPageHeader title="歴代記録" subtitle="All-Time Records" />
+      
+      {/* クイックアクセスボタン */}
+      <TrackFieldQuickAccess />
       
       {/* 参考情報 */}
       <div className="mt-6 mb-8">

@@ -94,7 +94,7 @@ export default function AboutPage() {
           </div>
           <AnimatedPageHeader 
             title="ホームページについて"
-            subtitle="当サイトの利用規約、プライバシーポリシー、運営方針について"
+            subtitle="About This Website"
           />
 
           {/* クイックアクセスボタン */}

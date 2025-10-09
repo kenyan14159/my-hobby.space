@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -25,6 +25,31 @@ const competitionSchedule = [
 ];
 
 export default function LongDistancePage() {
+  useEffect(() => {
+    // 既存のスクリプトがあれば削除
+    const existingScript = document.getElementById('twitter-widget-script');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // Xのウィジェットスクリプトを読み込む
+    const script = document.createElement('script');
+    script.id = 'twitter-widget-script';
+    script.src = 'https://platform.twitter.com/widgets.js';
+    script.async = true;
+    script.charset = 'utf-8';
+    document.body.appendChild(script);
+
+    // スクリプト読み込み後にウィジェットを再レンダリング
+    script.onload = () => {
+      // @ts-ignore - Twitter widgets API
+      if (window.twttr?.widgets) {
+        // @ts-ignore
+        window.twttr.widgets.load();
+      }
+    };
+  }, []);
+
   return (
     <div className="bg-gradient-to-b from-white to-sky-50 min-h-screen">
       <motion.div 
@@ -38,7 +63,7 @@ export default function LongDistancePage() {
             <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '日本体育大学長距離競技会' }]} />
           </div>
           <AnimatedPageHeader 
-            title="日本体育大学長距離競技会"
+            title="日体大長距離競技会"
             subtitle="Nippon Sports Science University Long-Distance Running Competition"
             titleClassName="text-4xl md:text-5xl font-bold text-sky-900 mb-2 tracking-tight"
             subtitleClassName="text-lg text-sky-700"
@@ -177,6 +202,29 @@ export default function LongDistancePage() {
           </div>
 
           <div className="space-y-10">
+            {/* Xタイムライン埋め込み */}
+            <Section 
+              id="twitter-timeline"
+              title="最新情報（X / Twitter）"
+              icon={<Twitter className="h-6 w-6 text-sky-600" />}
+              content={
+                <div className="bg-white p-6 rounded-xl border border-sky-200 shadow-sm">
+                  <div className="flex justify-center max-w-xl mx-auto">
+                    <a 
+                      className="twitter-timeline" 
+                      data-width="550"
+                      data-height="600" 
+                      data-theme="light"
+                      data-chrome="nofooter noborders"
+                      href="https://twitter.com/nittai_e?ref_src=twsrc%5Etfw"
+                    >
+                      Tweets by @nittai_e
+                    </a>
+                  </div>
+                </div>
+              }
+            />
+
             <Section 
               id="official-site"
               title="公式サイト"

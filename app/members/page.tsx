@@ -209,7 +209,7 @@ export default function MemberIntroductionPage() {
         </div>
         <AnimatedPageHeader 
           title="部員紹介"
-          subtitle="男子駅伝部のメンバーをご紹介します"
+          subtitle="Team Members"
         />
 
         <Tabs defaultValue="grade-1" className="space-y-8">

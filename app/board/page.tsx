@@ -10,6 +10,7 @@ import {
   NotificationContainer
 } from "@/components/bulletin-board";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 
 export default function BulletinBoardPage() {
   const [showTerms, setShowTerms] = useState(false);
@@ -42,14 +43,10 @@ export default function BulletinBoardPage() {
       <div className="mb-6">
         <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '掲示板' }]} />
       </div>
-      <header className="text-center mb-10">
-        <h1 className="text-4xl font-black text-sky-800 mb-2">
-          駅伝匿名掲示板
-        </h1>
-        <p className="text-lg text-sky-700">
-          日本体育大学駅伝部を応援しよう！
-        </p>
-      </header>
+      <AnimatedPageHeader 
+        title="駅伝匿名掲示板"
+        subtitle="Anonymous Bulletin Board"
+      />
 
       <BulletinBoardForm 
         onPostSubmitted={handlePostSubmitted}

@@ -58,7 +58,7 @@ export default function InformationPage() {
         <div className="mb-6">
           <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'チーム情報' }]} />
         </div>
-        <AnimatedPageHeader title="チーム情報" subtitle="各種情報はこちらから。" />
+        <AnimatedPageHeader title="チーム情報" subtitle="Team Information" />
 
         <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 md:grid-cols-3 lg:grid-cols-4 mt-8 sm:mt-12">
           {infoItems.map((item, idx) => {

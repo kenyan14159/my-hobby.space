@@ -264,9 +264,8 @@ export default function AllJapanHistoryPage() {
                 </div>
                 <AnimatedPageHeader
                     title="全日本大学駅伝"
-                    subtitle="男子駅伝ブロック"
+                    subtitle="All-Japan University Ekiden"
                     underlineColor="bg-sky-500"
-                    largeSubtitle={true}
                 />
 
                 <EkidenNavigation />

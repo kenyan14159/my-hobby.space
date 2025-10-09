@@ -64,7 +64,7 @@ export default function LimitedContent() {
       >
         <AnimatedPageHeader 
           title="限定コンテンツ"
-          subtitle="駅伝部員の特別なコンテンツ"
+          subtitle="Limited Content"
           underlineColor="bg-sky-500"
         />
         <div className="mb-6">

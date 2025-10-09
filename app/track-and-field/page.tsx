@@ -97,7 +97,7 @@ export default function TrackAndFieldPage() {
       
       <AnimatedPageHeader
         title="日本体育大学 陸上競技部"
-        subtitle="今年で100年目を迎える伝統ある部活動"
+        subtitle="Track and Field Club"
       />
       
       {/* SEO用の説明文（視覚的には隠す） */}

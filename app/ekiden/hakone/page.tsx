@@ -269,9 +269,8 @@ export default function HakoneHistoryPage() {
                 </div>
                 <AnimatedPageHeader
                     title="箱根駅伝"
-                    subtitle="男子駅伝ブロック"
+                    subtitle="Hakone Ekiden"
                     underlineColor="bg-red-500"
-                    largeSubtitle={true}
                 />
 
                 <EkidenNavigation />

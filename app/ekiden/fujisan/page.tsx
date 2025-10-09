@@ -263,9 +263,8 @@ export default function FujiWomensEkidenHistoryPage() {
                 </div>
                 <AnimatedPageHeader
                     title="富士山女子駅伝"
-                    subtitle="女子駅伝ブロック"
+                    subtitle="Mt. Fuji Women's Ekiden"
                     underlineColor="bg-orange-500"
-                    largeSubtitle={true}
                 />
 
                 <EkidenNavigation />

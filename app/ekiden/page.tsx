@@ -79,7 +79,7 @@ export default function EkidenHistoryPage() {
                 </div>
                 <AnimatedPageHeader 
                     title="駅伝の歴史"
-                    subtitle={"創部1925年。日本の大学駅伝界を牽引してきた名門の、栄光と伝統の軌跡"}
+                    subtitle="Ekiden History"
                 />
 
                 <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20" variants={containerVariants} initial="hidden" animate="visible">

@@ -642,7 +642,7 @@ const GenderRecordsView = ({ recordsData, eventLabel }: { recordsData: RecordsDa
         const eventTitle = (
             <div className="mb-8">
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 text-center border-b-2 border-slate-200 pb-4 mb-6">
-                    {event === "その他" ? "その他 記録" : `${event} ランキング`}
+                    {event === "その他" ? "その他 記録" : event}
                 </h2>
             </div>
         );
@@ -916,11 +916,8 @@ export default function RecordsPage() {
                 </div>
                 <div className="text-center mb-12">
                     <AnimatedPageHeader 
-                        title="日本体育大学 歴代記録"
-                        subtitle="男子・女子の各種目における歴代ランキングをご覧いただけます"
-                        titleClassName="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight mb-0"
-                        subtitleClassName="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
-                        underlineWidth="300px"
+                        title="歴代記録"
+                        subtitle="All-Time Records"
                     />
                 </div>
 

@@ -8,13 +8,27 @@ import { Calendar, MapPin, Download, ExternalLink, AlertCircle, Info } from "luc
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { TrackFieldQuickAccess } from "@/components/track-field-quick-access";
 
 export default function CompetitionPage() {
   return (
     <div className="container mx-auto px-4 py-16">
-      {/* ヒーロー画像＋タイトル */}
-      <div className="relative mb-12 rounded-lg overflow-hidden">
-        <AspectRatio ratio={16 / 9}>
+      {/* パンくず */}
+      <div className="mb-6">
+        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: '日体大競技会' }]} />
+      </div>
+      
+      <AnimatedPageHeader
+        title="日体大競技会"
+        subtitle="NSSU Track and Field Meet"
+      />
+      
+      {/* クイックアクセスボタン */}
+      <TrackFieldQuickAccess />
+      
+      {/* ヒーロー画像＋バナー情報 */}
+      <div className="relative mb-12 rounded-lg overflow-hidden mt-8">
+        <AspectRatio ratio={21 / 9}>
           <Image
             src="https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite282.jpg"
             alt="日体大競技会"
@@ -35,14 +49,7 @@ export default function CompetitionPage() {
           </div>
         </AspectRatio>
       </div>
-      {/* パンくず＋下部にもAnimatedPageHeaderで統一感＋変化 */}
-      <div className="mb-6">
-        <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: '日体大競技会' }]} />
-      </div>
-      <AnimatedPageHeader
-        title="日体大競技会"
-        subtitle="開催日程・会場・エントリー・案内・お問い合わせはこちら"
-      />
+      
       <div className="max-w-4xl mx-auto">
         <Alert className="mb-8 border-blue-600 bg-blue-50">
           <Info className="h-5 w-5 text-blue-600" />

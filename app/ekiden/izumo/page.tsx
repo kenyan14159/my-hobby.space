@@ -280,9 +280,8 @@ export default function IzumoEkidenHistoryPage() {
                 </div>
                 <AnimatedPageHeader
                     title="出雲駅伝"
-                    subtitle="男子駅伝ブロック"
+                    subtitle="Izumo Ekiden"
                     underlineColor="bg-purple-500"
-                    largeSubtitle={true}
                 />
 
                 <EkidenNavigation />

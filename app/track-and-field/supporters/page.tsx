@@ -1,5 +1,6 @@
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { TrackFieldQuickAccess } from "@/components/track-field-quick-access";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
@@ -21,7 +22,10 @@ export default function TrackAndFieldSupportersPage() {
       
       <AnimatedPageHeader
         title="OB・OGの皆様へ"
+        subtitle="For Our Alumni"
       />
+      
+      <TrackFieldQuickAccess />
       
       <div className="max-w-3xl mx-auto">
         {/* メインメッセージカード */}

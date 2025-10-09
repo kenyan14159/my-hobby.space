@@ -1,5 +1,6 @@
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { TrackFieldQuickAccess } from "@/components/track-field-quick-access";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AlertCircle } from "lucide-react";
@@ -143,7 +144,10 @@ export default function RecruitmentPage() {
         />
       </div>
 
-      <AnimatedPageHeader title="入部案内" />
+      <AnimatedPageHeader title="入部案内" subtitle="Recruitment" />
+      
+      {/* クイックアクセスボタン */}
+      <TrackFieldQuickAccess />
 
       {/* 注意書き */}
       <Card className="my-6 p-4 bg-yellow-50 border-yellow-300">

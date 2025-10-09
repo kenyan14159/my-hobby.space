@@ -89,7 +89,7 @@ function NewsPageContent() {
     <NewsPageLayout>
       <AnimatedPageHeader
         title="ニュース"
-        subtitle="駅伝部に関する最新ニュースをお届けします。"
+        subtitle="News"
       />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="mb-6">

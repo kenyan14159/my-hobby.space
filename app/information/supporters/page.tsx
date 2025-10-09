@@ -251,10 +251,7 @@ export default function SupportersPage() {
           </div>
           <AnimatedPageHeader 
             title="サポーターの皆様"
-            subtitle="日頃からの温かいご支援、心より感謝申し上げます。"
-            titleClassName="text-5xl font-extrabold text-sky-900 mb-3 tracking-tight"
-            subtitleClassName="text-lg text-gray-600"
-            underlineWidth="300px"
+            subtitle="Our Supporters"
           />
           
           {/* クイックアクセスボタン */}

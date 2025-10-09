@@ -15,15 +15,15 @@ interface AnimatedPageHeaderProps {
 export function AnimatedPageHeader({
   title,
   subtitle,
-  titleClassName = "text-5xl md:text-6xl font-bold text-sky-900 mb-3 tracking-tight",
-  subtitleClassName,
+  titleClassName = "text-4xl md:text-5xl font-bold text-sky-900 mb-2 tracking-tight",
+  subtitleClassName = "text-lg text-sky-700",
   underlineColor = "bg-sky-500",
-  underlineWidth = "200px",
+  underlineWidth = "250px",
   largeSubtitle = false
 }: AnimatedPageHeaderProps) {
   const defaultSubtitleClassName = largeSubtitle 
     ? "mt-6 text-2xl md:text-3xl font-semibold text-gray-700 max-w-2xl mx-auto"
-    : "mt-6 text-lg text-gray-600 max-w-2xl mx-auto";
+    : subtitleClassName;
   
   const finalSubtitleClassName = subtitleClassName || defaultSubtitleClassName;
 

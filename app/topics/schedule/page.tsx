@@ -219,7 +219,7 @@ export default function Schedule() {
       >
         <AnimatedPageHeader 
           title="スケジュール"
-          subtitle="男子駅伝部の今後のスケジュールです"
+          subtitle="Schedule"
         />
         <div className="mb-6">
           <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'トピックス', href: '/topics' }, { label: 'スケジュール' }]} />

@@ -110,7 +110,7 @@ export default function ContactPage() {
           </div>
           <AnimatedPageHeader 
             title="お問い合わせ"
-            subtitle="ご質問・ご相談など、お気軽にお問い合わせください。"
+            subtitle="Contact Us"
           />
           
           {/* クイックアクセスボタン */}

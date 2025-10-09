@@ -97,7 +97,7 @@ function ResultsPageContent() {
       >
         <AnimatedPageHeader
           title="リザルト"
-          subtitle="大会、記録会の成績をご覧いただけます。"
+          subtitle="Results"
         />
         <div className="mb-6">
           <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: 'トピックス', href: '/topics' }, { label: 'リザルト' }]} />

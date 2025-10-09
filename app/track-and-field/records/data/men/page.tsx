@@ -314,7 +314,7 @@ export default function MenRecordsPage() {
             
             <AnimatedPageHeader
                 title="男子 歴代記録"
-                subtitle="日本体育大学陸上競技部 男子の歴代トップ記録"
+                subtitle="Men's All-Time Records"
             />
 
             <div className="max-w-6xl mx-auto mt-8">

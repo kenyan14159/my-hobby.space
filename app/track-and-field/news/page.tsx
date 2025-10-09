@@ -2,6 +2,7 @@
 
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { TrackFieldQuickAccess } from "@/components/track-field-quick-access";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -70,7 +71,11 @@ export default function TrackAndFieldNewsPage() {
       <div className="mb-6">
         <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: '陸上競技部', href: '/track-and-field' }, { label: 'ニュース' }]} />
       </div>
-      <AnimatedPageHeader title="ニュース" subtitle="最新の活動・大会情報・お知らせ" />
+      <AnimatedPageHeader title="ニュース" subtitle="News" />
+      
+      {/* クイックアクセスボタン */}
+      <TrackFieldQuickAccess />
+      
       <section className="mt-8 space-y-6">
         {newsList.map((item, idx) => (
           <Card key={item.title + item.date} className="hover:shadow-md transition-shadow">

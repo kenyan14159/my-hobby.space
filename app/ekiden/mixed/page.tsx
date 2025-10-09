@@ -278,9 +278,8 @@ export default function MixedEkidenHistoryPage() {
                 </div>
                 <AnimatedPageHeader
                     title="男女混合駅伝"
-                    subtitle="男女駅伝ブロック"
+                    subtitle="Mixed Gender Ekiden"
                     underlineColor="bg-indigo-500"
-                    largeSubtitle={true}
                 />
 
                 <EkidenNavigation />

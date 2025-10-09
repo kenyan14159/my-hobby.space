@@ -10,12 +10,12 @@ import { CardImage } from "@/components/ui/card-image";
 const records = [
   { title: "箱根駅伝", stats: ["77年連続77回出場", "優勝10回", "5連覇"] },
   { title: "全日本大学駅伝", stats: ["44回出場", "優勝11回", "3連覇"] },
-  { title: "5000m", stats: ["13'32″58", "藤本 珠輝", "2021年"] },
-  { title: "10000m", stats: ["27'58″52", "池田 燿平", "2020年"] },
-  { title: "ハーフマラソン", stats: ["1:00'56", "富永 椋太", "2025年"] },
-  { title: "1500m", stats: ["3'38″4", "石井 隆士", "1976年"] },
-  { title: "3000mSC", stats: ["8'25″88", "新宅 雅也", "1979年"] },
-  { title: "800m", stats: ["1'47″40", "長沢 匠人", "2025年"] }
+  { title: "5000m", stats: ["藤本 珠輝", "13:32.58", "2021年"] },
+  { title: "10000m", stats: ["池田 燿平", "27:58.52", "2020年"] },
+  { title: "ハーフマラソン", stats: ["富永 椋太", "1:00:56", "2025年"] },
+  { title: "1500m", stats: ["石井 隆士", "3:38.4", "1976年"] },
+  { title: "3000mSC", stats: ["新宅 雅也", "8:25.88", "1979年"] },
+  { title: "800m", stats: ["長沢 匠人", "1:47.40", "2025年"] }
 ];
 
 // シンプルなアニメーション変数
@@ -142,8 +142,8 @@ export function LatestNews() {
             subtitle="Qualifying Race - 2025.10.18 8:30 Start"
             timeLeft={yosenTimeLeft}
             progress={yosenProgress}
-            description1="第102回箱根駅伝出場権獲得に向けて、予選会突破を目指します。"
-            description2="全選手が一丸となって、箱根駅伝本大会への切符を掴みます。"
+            description1="予選会突破に向けて、チーム一丸となって挑みます。"
+            description2="本大会出場を目指し、日々練習に励んでいます。"
             startLabel="2025年スタート"
             endLabel="2025.10.18 予選会"
             backgroundImage="https://nssu-ekiden.com/wp-content/uploads/2025/06/saya-img19.jpg"
@@ -164,8 +164,8 @@ export function LatestNews() {
             subtitle="Road to Hakone 2026 - 2026.01.02 8:00 Start"
             timeLeft={hakoneTimeLeft}
             progress={hakoneProgress}
-            description1="伝統の箱根駅伝に向けて、日体大駅伝部は新たな歴史を刻む準備を進めています。"
-            description2="77年連続出場の誇りを胸に、チーム一丸となって目標達成を目指します。"
+            description1="77年連続出場の伝統を守り、更なる高みを目指します。"
+            description2="チーム全員で箱根路を駆け抜ける日を目指して。"
             startLabel="2025年スタート"
             endLabel="2026.01.02 本戦"
             backgroundImage="https://nssu-ekiden.com/wp-content/uploads/2025/06/saya-img7.jpg"
@@ -173,74 +173,101 @@ export function LatestNews() {
           />
         </motion.div>
 
-        {/* 歴代記録 - AnimatedPageHeader使用 */}
-        <div className="mb-16">
-          <AnimatedPageHeader
-            title="最高記録"
-            subtitle="100年の歴史が刻んだ輝かしい軌跡。伝統と革新が織りなす日体大の誇り"
-            underlineColor="bg-gray-500"
-            titleClassName="text-4xl md:text-5xl font-bold text-gray-800 tracking-tight mb-3"
-            subtitleClassName="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed mt-6"
-          />
-          
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            {records.map((record, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-              >
-                <Card className="h-full border-0 rounded-2xl shadow-lg bg-white overflow-hidden">
-                  {/* ヘッダー部分 */}
-                  <div className={`relative bg-gradient-to-br from-gray-50 to-gray-100 p-6 flex flex-col justify-center ${
-                    record.title === "ハーフマラソン" ? "h-40 sm:h-36" : "h-36"
-                  }`}>
-                    {/* トップアクセント */}
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-400 to-gray-500" />
-                    
-                    <h3 className="text-gray-800 font-bold text-xl mb-3 tracking-tight">{record.title}</h3>
-                    <div className={`font-bold text-gray-800 tracking-tight leading-tight ${
-                      record.title === "ハーフマラソン" ? "text-lg sm:text-xl md:text-2xl font-mono" :
-                      record.stats[0].includes("'") || record.stats[0].includes("″") || record.stats[0].includes(":") 
-                        ? "text-xl sm:text-2xl md:text-3xl tracking-wider font-mono" 
-                        : "text-2xl sm:text-2xl md:text-3xl"
-                    }`}>
-                      {record.stats[0]}
-                    </div>
-                  </div>
-                  
-                  {/* コンテンツ部分 */}
-                  <div className="p-6 bg-white">
-                    <div className="space-y-4">
-                      {record.stats.slice(1).map((stat, statIndex) => (
-                        <div key={statIndex} className={`flex items-center ${statIndex === 0 ? "pb-3 border-b border-gray-100" : ""}`}>
-                          {statIndex === 0 ? (
-                            <div className="flex mr-4 bg-amber-100 rounded-xl p-2">
-                              <Medal className="h-4 w-4 text-amber-600 flex-shrink-0" />
-                            </div>
-                          ) : (
-                            <div className="flex mr-4 bg-slate-100 rounded-xl p-2">
-                              <TrendingUp className="h-4 w-4 text-slate-600 flex-shrink-0" />
-                            </div>
-                          )}
-                          {statIndex === 0 ? (
-                            <span className="text-gray-800 font-bold">{stat}</span>
-                          ) : (
-                            <span className="text-gray-700">{stat}</span>
+        {/* 歴代記録 - 超かっこいいデザイン */}
+        <div className="mb-16 relative">
+          {/* 背景装飾 */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 rounded-3xl overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 blur-[120px] rounded-full" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-600/20 blur-[120px] rounded-full" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-slate-700/30 blur-[100px] rounded-full" />
+          </div>
+
+          <div className="relative z-10 p-6 md:p-10">
+            {/* ヘッダー */}
+            <motion.div
+              className="text-center mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent mb-3 tracking-tight">
+                最高記録
+              </h2>
+              <p className="text-cyan-200/70 text-sm md:text-base max-w-3xl mx-auto">
+                日体大駅伝部・陸上競技部の歴代最高記録
+              </p>
+            </motion.div>
+            
+            {/* レコードグリッド */}
+            <motion.div
+              className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              {records.map((record, index) => {
+                const isEkiden = record.title === "箱根駅伝" || record.title === "全日本大学駅伝";
+                const isRecent = record.stats[2] === "2025年";
+                
+                return (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.02, y: -3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Card className="h-full border-0 rounded-xl overflow-hidden bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-sm shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 group relative">
+                      {/* 輝きエフェクト */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                      
+                      {/* 上部アクセント */}
+                      <div className={`h-1 ${isEkiden ? 'bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400' : isRecent ? 'bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400' : 'bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400'}`} />
+                      
+                      {/* ヘッダー */}
+                      <div className="p-3 md:p-4 pb-2 relative">
+                        <div className="flex items-start justify-between mb-2">
+                          <h3 className="text-white font-bold text-sm md:text-base tracking-tight">{record.title}</h3>
+                          {isRecent && (
+                            <span className="px-1.5 py-0.5 bg-emerald-500/20 border border-emerald-400/40 rounded text-emerald-300 text-[10px] font-bold">
+                              NEW
+                            </span>
                           )}
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+                        
+                        {/* 選手名(駅伝以外) */}
+                        {!isEkiden && (
+                          <div className="text-white/90 font-medium text-xs md:text-sm mb-1.5">
+                            {record.stats[0]}
+                          </div>
+                        )}
+                        
+                        {/* メイン記録 */}
+                        <div className={`font-bold leading-tight ${
+                          isEkiden ? 'text-lg md:text-xl lg:text-2xl text-transparent bg-gradient-to-r from-amber-200 to-yellow-300 bg-clip-text' :
+                          'text-xl md:text-2xl lg:text-3xl font-mono text-transparent bg-gradient-to-r from-cyan-200 to-blue-300 bg-clip-text'
+                        }`}>
+                          {isEkiden ? record.stats[0] : record.stats[1]}
+                        </div>
+                      </div>
+                      
+                      {/* ディテール */}
+                      <div className="px-3 md:px-4 pb-3 md:pb-4 space-y-1">
+                        {(isEkiden ? record.stats.slice(1) : [record.stats[2]]).map((stat, statIndex) => (
+                          <div key={statIndex} className="text-xs md:text-sm">
+                            <span className={isEkiden && statIndex === 0 ? "text-white/90 font-medium" : "text-slate-300/80"}>
+                              {stat}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
