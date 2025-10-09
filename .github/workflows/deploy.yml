@@ -1,45 +1,57 @@
-name: Deploy to Rental Server
+name: Deploy to Xserver via FTP
 
 on:
   push:
     branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+  workflow_dispatch:  # 手動実行も可能にする
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
+    - name: 🔧 Setup Node.js
+      uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
         cache: 'npm'
 
-    - name: Install dependencies
+    - name: 📦 Install dependencies
       run: npm ci
 
-    - name: Build project
+    - name: 🏗️ Build Next.js project
       run: npm run build
+      env:
+        NODE_ENV: production
 
-    - name: Deploy to server via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: 📤 Deploy to Xserver via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./out/
-        server-dir: /public_html/
+        server-dir: /nittaiekiden.xsrv.jp/public_html/
+        dangerous-clean-slate: false
         exclude: |
           **/.git*
           **/.git*/**
           **/node_modules/**
           **/.next/**
           **/.env*
+          **/.DS_Store
+          **/Thumbs.db
 
-    - name: Notify deployment success
-      run: echo "🎉 Deployment completed successfully!" 
+    - name: ✅ Deployment Success
+      if: success()
+      run: |
+        echo "🎉 デプロイが正常に完了しました！"
+        echo "サイトURL: https://nssu-ekiden.com"
+        
+    - name: ❌ Deployment Failed
+      if: failure()
+      run: |
+        echo "⚠️ デプロイに失敗しました。ログを確認してください。" 
