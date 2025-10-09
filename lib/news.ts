@@ -94,13 +94,13 @@ const TSX_ARTICLES: Record<string, Omit<NewsMeta, 'slug' | 'type'>> = {
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/gifts-for-august-and-september13.jpg'
   },
   '10-06-hakone-qualifying-event-roster-announcement': {
-    id: 17,
+    id: 16,
     title: '箱根駅伝予選会メンバー発表',
     date: '2025-10-06',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/2025-fujimi-whole-camp151.jpg'
   },
   '10-18-all-japan-entry': {
-    id: 18,
+    id: 17,
     title: '全日本大学駅伝エントリー決定！',
     date: '2025-10-18',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/2024zennihonekiden178.jpeg'

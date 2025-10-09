@@ -17,7 +17,18 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title,
     description,
-    keywords: ['日体大駅伝', '駅伝ニュース', '日本体育大学', '箱根駅伝', '大学駅伝'],
+    keywords: [
+      'NSSU',
+      '日本体育大学',
+      '日体大',
+      '陸上競技部',
+      '陸上部',
+      '駅伝部',
+      '大学駅伝',
+      '駅伝競走',
+      'ニュース',
+      '最新情報'
+    ],
     openGraph: {
       title,
       description,

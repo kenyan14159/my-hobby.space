@@ -15,29 +15,27 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: '日本体育大学駅伝部公式 | 箱根駅伝2026出場を目指す',
+    default: '日本体育大学駅伝部 | 公式ホームページ',
     template: '%s | 日本体育大学駅伝部'
   },
-  description: '日体大駅伝部の最新ニュース、選手情報、試合結果を配信。箱根駅伝予選会の速報、メンバー紹介、記録データベース、陸上競技部の活動をリアルタイムでお届け。藤本監督率いるチームの挑戦を応援しよう。',
+  description: '日本体育大学駅伝部の公式サイト。箱根駅伝、全日本大学駅伝、出雲駅伝の最新情報、選手紹介、試合結果、記録を掲載。',
   keywords: [
-    '日体大駅伝', 
-    '箱根駅伝', 
-    '日体大 駅伝 メンバー',
-    '箱根駅伝 予選会',
-    '日本体育大学 陸上部', 
+    'NSSU',
+    '日本体育大学',
+    '日体大',
+    '陸上競技部',
+    '陸上部',
+    '駅伝部',
     '大学駅伝',
+    '駅伝競走',
+    '箱根駅伝',
     '全日本大学駅伝',
     '出雲駅伝',
-    '陸上競技', 
-    'NSSU', 
-    '日体大',
-    '駅伝部',
-    '試合結果',
-    '記録'
+    '三大駅伝'
   ],
-  authors: [{ name: '日本体育大学陸上競技部男子駅伝ブロック' }],
-  creator: '日本体育大学陸上競技部男子駅伝ブロック',
-  publisher: '日本体育大学陸上競技部男子駅伝ブロック',
+  authors: [{ name: '日本体育大学駅伝部' }],
+  creator: '日本体育大学駅伝部',
+  publisher: '日本体育大学駅伝部',
   robots: {
     index: true,
     follow: true,
@@ -54,21 +52,21 @@ export const metadata: Metadata = {
     locale: 'ja_JP',
     url: 'https://nssu-ekiden.com',
     siteName: '日本体育大学駅伝部',
-    title: '日本体育大学駅伝部公式 | 箱根駅伝2026出場を目指す',
-    description: '日体大駅伝部の最新ニュース、選手情報、試合結果を配信。箱根駅伝予選会の速報、メンバー紹介、記録データベース。藤本監督率いるチームの挑戦をリアルタイムでお届けします。',
+    title: '日本体育大学駅伝部 | 公式ホームページ',
+    description: '日体大駅伝部の公式サイト。箱根駅伝、全日本大学駅伝、出雲駅伝の最新情報、選手紹介、試合結果、記録を掲載。',
     images: [
       {
         url: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/nssuimageog.jpeg',
         width: 1200,
         height: 630,
-        alt: '日本体育大学駅伝部 - 箱根駅伝出場を目指すチーム',
+        alt: '日本体育大学駅伝部 - 公式ホームページ',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '日本体育大学駅伝部公式 | 箱根駅伝2026出場を目指す',
-    description: '日体大駅伝部の最新ニュース、選手情報、試合結果を配信。箱根駅伝予選会の速報、メンバー紹介、記録データベース。藤本監督率いるチームの挑戦をリアルタイムでお届けします。',
+    title: '日本体育大学駅伝部 | 公式ホームページ',
+    description: '日体大駅伝部の公式サイト。箱根駅伝、全日本大学駅伝、出雲駅伝の最新情報、選手紹介、試合結果、記録を掲載。',
     images: ['https://nssu-ekiden.com/wp-content/uploads/2025/02/nssuimageog.jpeg'],
   },
   icons: {
@@ -100,11 +98,11 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SportsTeam',
-    name: '日本体育大学陸上競技部男子駅伝ブロック',
+    name: '日本体育大学駅伝部',
     alternateName: '日体大駅伝部',
     url: 'https://nssu-ekiden.com',
     logo: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu192.jpg',
-    description: '日本体育大学陸上競技部男子駅伝ブロックの公式ウェブサイト。箱根駅伝出場を目指す選手たちの活動、記録、最新情報をお届けします。',
+    description: '日本体育大学駅伝部の公式ホームページ。箱根駅伝出場を目指す選手たちの活動、記録、最新情報をお届けします。',
     sport: '駅伝・陸上競技',
     memberOf: {
       '@type': 'EducationalOrganization',

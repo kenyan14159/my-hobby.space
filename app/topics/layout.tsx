@@ -2,22 +2,27 @@ import { Metadata } from 'next';
 import { TopicsNavigation } from "@/components/ui/topics-navigation";
 
 export const metadata: Metadata = {
-  title: 'トピックス | 最新ニュース・試合結果・スケジュール',
-  description: '日体大駅伝部の最新ニュース、試合結果、今後のスケジュールを配信。箱根駅伝予選会や三大駅伝の速報、選手の活躍、チーム情報をリアルタイムで更新。駅伝ファンは要チェック！',
+  title: 'トピックス | 日本体育大学駅伝部',
+  description: '日本体育大学駅伝部のトピックス。最新ニュース、試合結果、大会スケジュールを掲載。',
   keywords: [
-    '日体大 ニュース',
-    '駅伝 ニュース',
-    '試合結果',
-    '箱根駅伝 速報',
-    '大会スケジュール',
-    '駅伝 最新情報',
+    'NSSU',
+    '日本体育大学',
+    '日体大',
+    '陸上競技部',
+    '陸上部',
+    '駅伝部',
+    '大学駅伝',
+    '駅伝競走',
     'トピックス',
-    '結果速報'
+    'ニュース',
+    '試合結果',
+    'スケジュール'
   ],
   openGraph: {
-    title: 'トピックス | 最新ニュース・試合結果・スケジュール',
-    description: '日体大駅伝部の最新ニュース、試合結果、スケジュールをリアルタイムで配信。',
+    title: 'トピックス | 日本体育大学駅伝部',
+    description: '日体大駅伝部のトピックス。最新ニュース、試合結果、スケジュールを掲載。',
     url: 'https://nssu-ekiden.com/topics',
+    type: 'website',
   },
   alternates: {
     canonical: 'https://nssu-ekiden.com/topics',
