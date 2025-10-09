@@ -6,6 +6,8 @@
 
 **本番環境**: https://nssu-ekiden.com
 
+> 🎯 GitHub Actionsによる自動デプロイを実装済み！mainブランチへのpush時に自動的にエックスサーバーへデプロイされます。
+
 ---
 
 ## 🚀 技術スタック
