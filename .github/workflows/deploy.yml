@@ -20,10 +20,26 @@ jobs:
         cache: 'npm'
 
     - name: 📦 Install dependencies
-      run: npm ci
+      run: |
+        echo "Installing dependencies..."
+        npm ci
+        echo "Dependencies installed successfully!"
+    
+    - name: 🔧 Setup environment variables
+      run: |
+        echo "Setting up environment variables..."
+        echo "NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }}" >> $GITHUB_ENV
+        echo "NEXT_PUBLIC_SUPABASE_URL=${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}" >> $GITHUB_ENV
+        echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" >> $GITHUB_ENV
+        echo "Environment variables configured!"
 
     - name: 🏗️ Build Next.js project
-      run: npm run build
+      run: |
+        echo "Starting Next.js build..."
+        npm run build
+        echo "Build completed successfully!"
+        echo "Checking out directory..."
+        ls -la out/ || echo "out directory not found"
       env:
         NODE_ENV: production
 
@@ -34,8 +50,9 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./out/
-        server-dir: /nittaiekiden.xsrv.jp/public_html/
+        server-dir: ./public_html/
         dangerous-clean-slate: false
+        log-level: verbose
         exclude: |
           **/.git*
           **/.git*/**
@@ -44,6 +61,7 @@ jobs:
           **/.env*
           **/.DS_Store
           **/Thumbs.db
+      continue-on-error: false
 
     - name: ✅ Deployment Success
       if: success()
