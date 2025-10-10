@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // 静的エクスポートモード（画像最適化は無効）
+  output: 'export', // 静的エクスポートモード
   trailingSlash: true,
-  distDir: 'out',
+  // distDir: 'out', ← この行を削除（デフォルトの.nextを使用）
   eslint: {
     ignoreDuringBuilds: false,
   },

@@ -104,6 +104,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 限定コンテンツページを追加（クロール対象外）
   // これらは robots.txt で Disallow に設定するため、サイトマップからは除外
+  // ただし、内部的には以下のページが存在:
+  // - /limited-content
+  // - /limited-content/album
+  // - /limited-content/analysis
+  // - /limited-content/analysis/hakone
+  // - /limited-content/content
+  // - /limited-content/records
 
   // 2025年ニュース記事を追加
   const newsPages = [
@@ -148,6 +155,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '06-21-nssu-track',
     '06-28-oga-ekiden',
     '07-20-hokuren-gakuren',
+    '09-28-240-tokai',
+    '10-05-nssu-323th-long-distance',
   ];
 
   newsPages.forEach(page => {
