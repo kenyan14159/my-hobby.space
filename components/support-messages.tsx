@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -42,28 +42,22 @@ export function SupportMessages() {
   // 初期表示は3件のみ
   const initialDisplayLimit = 3;
 
-  // メッセージを取得
-  useEffect(() => {
-    // 初期表示は3件のみ取得
-    fetchMessages(showAllMessages ? undefined : initialDisplayLimit);
-    // リアルタイム更新を設定
-    const channel = supabase
-      .channel('support_messages')
-      .on(
-        'postgres_changes',
-        { event: '*', schema: 'public', table: 'support_messages' },
-        () => {
-          fetchMessages(showAllMessages ? undefined : initialDisplayLimit);
-        }
-      )
-      .subscribe();
+  // 統計情報を計算する関数（useCallbackでメモ化）
+  const calculateStats = useCallback((data: SupportMessage[]) => {
+    const senderTypeCounts: Record<string, number> = {};
 
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, [showAllMessages]);
+    data.forEach((msg) => {
+      senderTypeCounts[msg.sender_type] = (senderTypeCounts[msg.sender_type] || 0) + 1;
+    });
 
-  const fetchMessages = async (limit?: number) => {
+    setStats({
+      senderTypes: senderTypeCounts,
+      total: data.length
+    });
+  }, []);
+
+  // メッセージを取得する関数（useCallbackでメモ化）
+  const fetchMessages = useCallback(async (limit?: number) => {
     try {
       let query = supabase
         .from('support_messages')
@@ -87,20 +81,31 @@ export function SupportMessages() {
     } catch (error) {
       console.error('メッセージの取得に失敗:', error);
     }
-  };
+  }, [calculateStats]);
 
-  const calculateStats = (data: SupportMessage[]) => {
-    const senderTypeCounts: Record<string, number> = {};
+  // メッセージを取得
+  useEffect(() => {
+    // 初期表示は3件のみ取得
+    const limit = showAllMessages ? undefined : initialDisplayLimit;
+    fetchMessages(limit);
+    
+    // リアルタイム更新を設定
+    const channel = supabase
+      .channel('support_messages')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'support_messages' },
+        () => {
+          const currentLimit = showAllMessages ? undefined : initialDisplayLimit;
+          fetchMessages(currentLimit);
+        }
+      )
+      .subscribe();
 
-    data.forEach((msg) => {
-      senderTypeCounts[msg.sender_type] = (senderTypeCounts[msg.sender_type] || 0) + 1;
-    });
-
-    setStats({
-      senderTypes: senderTypeCounts,
-      total: data.length
-    });
-  };
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [showAllMessages, fetchMessages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -195,10 +200,11 @@ export function SupportMessages() {
                 <CardContent className="pt-6">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="message-input" className="block text-sm font-medium text-gray-700 mb-2">
                         メッセージ
                       </label>
                       <Textarea
+                        id="message-input"
                         value={newMessage}
                         onChange={(e) => setNewMessage(e.target.value)}
                         placeholder="選手への応援メッセージを入力してください..."
@@ -212,9 +218,9 @@ export function SupportMessages() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <div className="block text-sm font-medium text-gray-700 mb-2">
                         あなたは？
-                      </label>
+                      </div>
                       <Select value={senderType} onValueChange={(value: any) => setSenderType(value)}>
                         <SelectTrigger>
                           <SelectValue />

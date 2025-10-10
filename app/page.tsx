@@ -7,12 +7,16 @@ import { LatestArticles } from "@/components/latest-articles";
 import { Skeleton } from "@/components/ui/skeleton";
 import { TeamHighlights } from "@/components/team-highlights";
 import { UpcomingEvents } from "@/components/upcoming-events";
-import { SupportMessages } from "@/components/support-messages";
 
 // Heavy Client Components を動的インポートし、ロード中は Skeleton を表示
 const LatestNews = dynamic(() => import("@/components/latest-news").then(mod => mod.LatestNews), {
   ssr: false,
   loading: () => <Skeleton className="h-[600px] w-full" />
+});
+
+const SupportMessages = dynamic(() => import("@/components/support-messages").then(mod => mod.SupportMessages), {
+  ssr: false,
+  loading: () => <Skeleton className="h-[400px] w-full" />
 });
 
 const PhotoGallery = dynamic(() => import("@/components/photo-gallery").then(mod => mod.PhotoGallery), {

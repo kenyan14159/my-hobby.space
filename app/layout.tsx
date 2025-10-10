@@ -131,25 +131,10 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning={true}>
       <head>
-        {/* 画像ホストへの接続最適化 */}
         <link rel="preconnect" href="https://nssu-ekiden.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://nssu-ekiden.com" />
         <link rel="preconnect" href="https://ekiden-results.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://ekiden-results.com" />
-        {/* 開発環境では react-refresh に必要な 'unsafe-eval' を許可。*/}
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content={
-            `default-src 'self'; ` +
-            `img-src 'self' https: data: blob:; ` +
-            `script-src 'self' 'unsafe-inline' ${isDevelopment ? "'unsafe-eval' " : ''}https:; ` +
-            `style-src 'self' 'unsafe-inline'; ` +
-            `font-src 'self' https: data:; ` +
-            `connect-src 'self' https://*.supabase.co https://formspree.io https://api.formspree.io https://cdn.shopimgs.com; ` +
-            `base-uri 'self'; ` +
-            `form-action 'self' https://formspree.io https://api.formspree.io`
-          }
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
