@@ -7,6 +7,7 @@ import { LatestArticles } from "@/components/latest-articles";
 import { Skeleton } from "@/components/ui/skeleton";
 import { TeamHighlights } from "@/components/team-highlights";
 import { UpcomingEvents } from "@/components/upcoming-events";
+import { SupportMessages } from "@/components/support-messages";
 
 // Heavy Client Components を動的インポートし、ロード中は Skeleton を表示
 const LatestNews = dynamic(() => import("@/components/latest-news").then(mod => mod.LatestNews), {
@@ -31,6 +32,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         >
           <LatestNews />
+          <SupportMessages />
           <PhotoGallery />
           <TeamHighlights />
           <UpcomingEvents />

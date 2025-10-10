@@ -25,4 +25,14 @@ export interface Post {
   content: string;
   created_at: string;
   reply_to?: number | null;
+}
+
+// 応援メッセージ型定義
+export interface SupportMessage {
+  id: number;
+  message: string;
+  sender_type: '在校生' | '卒業生' | '駅伝部関係者' | 'ファン' | '家族' | 'その他';
+  region: '北海道' | '東北' | '関東' | '中部' | '近畿' | '中国' | '四国' | '九州' | '国外';
+  created_at: string;
+  is_approved?: boolean;
 } 

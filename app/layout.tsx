@@ -18,11 +18,15 @@ export const metadata: Metadata = {
     default: '日本体育大学駅伝部 | 公式ホームページ',
     template: '%s | 日本体育大学駅伝部'
   },
-  description: '日本体育大学駅伝部の公式サイト。箱根駅伝、全日本大学駅伝、出雲駅伝の最新情報、選手紹介、試合結果、記録を掲載。',
+  description: '日本体育大学駅伝部の公式サイトです。箱根駅伝、全日本大学駅伝への挑戦、選手紹介、試合結果、記録を掲載しています。',
   keywords: [
     'NSSU',
+    'NASU',
     '日本体育大学',
     '日体大',
+    '日体',
+    '日体駅伝',
+    'エッサッサ',
     '陸上競技部',
     '陸上部',
     '駅伝部',
@@ -30,8 +34,8 @@ export const metadata: Metadata = {
     '駅伝競走',
     '箱根駅伝',
     '全日本大学駅伝',
-    '出雲駅伝',
-    '三大駅伝'
+    '関東学生陸上競技対校選手権大会',
+    '関東インカレ'
   ],
   authors: [{ name: '日本体育大学駅伝部' }],
   creator: '日本体育大学駅伝部',
@@ -53,7 +57,7 @@ export const metadata: Metadata = {
     url: 'https://nssu-ekiden.com',
     siteName: '日本体育大学駅伝部',
     title: '日本体育大学駅伝部 | 公式ホームページ',
-    description: '日体大駅伝部の公式サイト。箱根駅伝、全日本大学駅伝、出雲駅伝の最新情報、選手紹介、試合結果、記録を掲載。',
+    description: '日体大駅伝部の公式サイトです。箱根駅伝、全日本大学駅伝への挑戦、選手紹介、試合結果、記録を掲載しています。',
     images: [
       {
         url: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/nssuimageog.jpeg',
@@ -66,7 +70,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '日本体育大学駅伝部 | 公式ホームページ',
-    description: '日体大駅伝部の公式サイト。箱根駅伝、全日本大学駅伝、出雲駅伝の最新情報、選手紹介、試合結果、記録を掲載。',
+    description: '日体大駅伝部の公式サイトです。箱根駅伝、全日本大学駅伝への挑戦、選手紹介、試合結果、記録を掲載しています。',
     images: ['https://nssu-ekiden.com/wp-content/uploads/2025/02/nssuimageog.jpeg'],
   },
   icons: {
@@ -99,10 +103,10 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'SportsTeam',
     name: '日本体育大学駅伝部',
-    alternateName: '日体大駅伝部',
+    alternateName: ['日体大駅伝部', '日体駅伝', 'NSSU駅伝部'],
     url: 'https://nssu-ekiden.com',
     logo: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu192.jpg',
-    description: '日本体育大学駅伝部の公式ホームページ。箱根駅伝出場を目指す選手たちの活動、記録、最新情報をお届けします。',
+    description: '日本体育大学駅伝部の公式ホームページです。箱根駅伝・全日本大学駅伝への挑戦を続ける選手たちの活動、記録、最新情報を発信しています。',
     sport: '駅伝・陸上競技',
     memberOf: {
       '@type': 'EducationalOrganization',
