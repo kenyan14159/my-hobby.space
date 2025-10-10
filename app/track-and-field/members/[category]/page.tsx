@@ -2,6 +2,7 @@ import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { BackToTop } from "@/components/ui/back-to-top";
 import Link from "next/link";
 import Image from "next/image";
 import fs from "fs";
@@ -216,6 +217,26 @@ export default async function CategoryMembersPage({
       <div className="mt-12 text-xs text-gray-500 text-center">
         ※種目、自己ベスト、出身校、出身などの情報に誤りがある可能性があります。
       </div>
+
+      {/* 下部の他のブロックを見るセクション */}
+      <section className="mt-12 mb-8">
+        <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">他のブロックを見る</h2>
+        <div className="flex flex-wrap gap-2 justify-center">
+          {Object.entries(categories)
+            .filter(([key]) => key !== category)
+            .map(([key, cat]) => (
+              <Link
+                key={`bottom-${key}`}
+                href={`/track-and-field/members/${key}`}
+                className={`${cat.color} text-xs px-3 py-1.5 rounded-full border hover:shadow-md transition-all`}
+              >
+                {cat.label}
+              </Link>
+            ))}
+        </div>
+      </section>
+
+      <BackToTop />
     </main>
   );
 }

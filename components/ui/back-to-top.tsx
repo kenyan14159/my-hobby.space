@@ -15,7 +15,7 @@ export function BackToTop() {
     return pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
   }, [pathname]);
 
-  // 対象ページのみ有効化（要件ベース）
+  // 対象ページのみ有効化(要件ベース)
   const enabled = useMemo(() => {
     return (
       path === "/" ||
@@ -23,7 +23,11 @@ export function BackToTop() {
       path.startsWith("/ekiden") ||
       path.startsWith("/limited-content/records") ||
       path.startsWith("/topics/results") ||
-      path.startsWith("/topics/news")
+      path.startsWith("/topics/news") ||
+      path.startsWith("/track-and-field/members") ||
+      path === "/track-and-field/competition" ||
+      path === "/track-and-field/recruitment" ||
+      path === "/track-and-field/schedule"
     );
   }, [path]);
 

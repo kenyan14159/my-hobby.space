@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { TrackFieldQuickAccess } from "@/components/track-field-quick-access";
+import { BackToTop } from "@/components/ui/back-to-top";
 
 // カテゴリ定義
 const categories = [
@@ -62,6 +63,8 @@ export default function TrackFieldMembersPage() {
       <div className="mt-8 text-xs text-gray-500 text-center">
         ※種目、自己ベスト、出身校、出身などの情報に誤りがある可能性があります。
       </div>
+
+      <BackToTop />
     </main>
   );
 }

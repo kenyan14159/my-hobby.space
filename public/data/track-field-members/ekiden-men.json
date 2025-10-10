@@ -86,8 +86,8 @@
       "role": "-",
       "event": "1500m / 5000m / 10000m / ハーフマラソン",
       "pb": "1500m: 4'07\"67<br>5000m: 14'29\"14<br>10000m: 29'44\"72<br>ハーフマラソン: 1:05'47",
-      "school": "-",
-      "from": "-",
+      "school": "日体大柏",
+      "from": "神奈川県",
       "画像URL": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers64.jpeg"
     },
     {
@@ -137,7 +137,7 @@
       "event": "1500m / 5000m / 10000m / ハーフマラソン",
       "pb": "1500m: 3'57\"52<br>5000m: 13'56\"57<br>10000m: 29'03\"74<br>ハーフマラソン: 1:05'51",
       "school": "仙台育英",
-      "from": "宮城県",
+      "from": "富山県",
       "画像URL": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers12.jpeg"
     },
     {
@@ -163,23 +163,13 @@
   ],
   "3年生": [
     {
-      "name": "尾上 雄大",
-      "furigana": "おのうえ ゆうた",
-      "role": "マネージャー",
-      "event": "-",
-      "pb": "-",
-      "school": "日体大柏",
-      "from": "千葉県",
-      "画像URL": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers65.jpeg"
-    },
-    {
       "name": "大島 正虎",
       "furigana": "おおしま まさとら",
       "role": "マネージャー",
       "event": "-",
       "pb": "-",
       "school": "学法石川",
-      "from": "福島県",
+      "from": "栃木県",
       "画像URL": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers14.jpeg"
     },
     {
@@ -229,7 +219,7 @@
       "event": "1500m / 5000m / 10000m / ハーフマラソン",
       "pb": "1500m: 4'06\"29<br>5000m: 14'43\"73<br>10000m: 30'49\"35<br>ハーフマラソン: 1:05'07",
       "school": "美方高校",
-      "from": "福井県",
+      "from": "京都府",
       "画像URL": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers13.jpeg"
     },
     {
@@ -471,7 +461,7 @@
       "event": "1500m / 5000m",
       "pb": "1500m: 4'14\"31<br>5000m: 14'52\"62",
       "school": "小豆島中央",
-      "from": "香川県",
+      "from": "兵庫県",
       "画像URL": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers1.jpeg"
     },
     {
@@ -663,7 +653,7 @@
       "event": "1500m / 5000m",
       "pb": "1500m: 4'10\"46<br>5000m: 14'47\"42",
       "school": "佐久長聖",
-      "from": "長野県",
+      "from": "東京都",
       "画像URL": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-members5.jpeg"
     },
     {
@@ -673,7 +663,7 @@
       "event": "1500m / 3000mSC / 5000m",
       "pb": "1500m: 4'19\"64<br>3000mSC: 10'26\"53<br>5000m: 15'07\"85",
       "school": "東北高校",
-      "from": "宮城県",
+      "from": "静岡県",
       "画像URL": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers61.jpeg"
     },
     {

@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { TrackFieldQuickAccess } from "@/components/track-field-quick-access";
+import { BackToTop } from "@/components/ui/back-to-top";
 import { Calendar } from "lucide-react";
 
 // 2025年度 日本体育大学陸上競技会
@@ -348,6 +349,7 @@ export default function TrackAndFieldSchedulePage() {
           </Tabs>
         </section>
       </div>
+      <BackToTop />
     </div>
   );
 }

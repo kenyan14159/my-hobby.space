@@ -1,6 +1,7 @@
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { TrackFieldQuickAccess } from "@/components/track-field-quick-access";
+import { BackToTop } from "@/components/ui/back-to-top";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AlertCircle } from "lucide-react";
@@ -294,6 +295,7 @@ export default function RecruitmentPage() {
       <div className="text-center text-sm text-gray-500 mt-8">
         <p>※詳細は陸上競技部に直接お問い合わせください。</p>
       </div>
+      <BackToTop />
     </main>
   );
 }

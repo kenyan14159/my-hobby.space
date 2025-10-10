@@ -107,20 +107,6 @@
         "isStudent": true
       },
       {
-        "name": "尾上 雄大",
-        "nameRubyParts": [
-          { "kanji": "尾上", "ruby": "おのうえ" },
-          { "kanji": "雄大", "ruby": "ゆうた" }
-        ],
-        "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers65.jpeg",
-        "role": "マネージャー",
-        "grade": 3,
-        "highSchool": "日体大柏",
-        "faculty": "体育",
-        "department": "体育",
-        "isStudent": true
-      },
-      {
         "name": "大島 正虎",
         "nameRubyParts": [
           { "kanji": "大島", "ruby": "おおしま" },

@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { BackToTop } from "@/components/ui/back-to-top";
 import { Calendar, MapPin, Download, ExternalLink, AlertCircle, Info } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
@@ -73,21 +74,15 @@ export default function CompetitionPage() {
                 <h3 className="font-bold mb-2">第148回日本体育大学陸上競技会</h3>
                 <div className="flex items-center text-muted-foreground mb-2">
                   <Calendar className="h-4 w-4 mr-2 text-blue-600" />
-                  <span>2025年3月22日（土）・23日（日）</span>
+                  <span>2025年3月22日(土)・23日(日)</span>
                 </div>
-                <Button variant="outline" className="mt-1" asChild>
-                  <a href="https://nssu-ekiden.com/wp-content/uploads/2025/03/148回日体大競技会要項.pdf" target="_blank" rel="noopener noreferrer">
-                    <Download className="h-4 w-4 mr-2" />
-                    大会要項
-                  </a>
-                </Button>
               </div>
 
               <div>
                 <h3 className="font-bold mb-2">第149回日本体育大学陸上競技会</h3>
                 <div className="flex items-center text-muted-foreground mb-2">
                   <Calendar className="h-4 w-4 mr-2 text-blue-600" />
-                  <span>2025年4月19日（土）・20日（日）</span>
+                  <span>2025年4月19日(土)・20日(日)</span>
                 </div>
               </div>
 
@@ -95,7 +90,7 @@ export default function CompetitionPage() {
                 <h3 className="font-bold mb-2">第150回日本体育大学陸上競技会</h3>
                 <div className="flex items-center text-muted-foreground mb-2">
                   <Calendar className="h-4 w-4 mr-2 text-blue-600" />
-                  <span>2025年5月17日（土）・18日（日）</span>
+                  <span>2025年5月17日(土)・18日(日)</span>
                 </div>
               </div>
 
@@ -103,7 +98,7 @@ export default function CompetitionPage() {
                 <h3 className="font-bold mb-2">第151回日本体育大学陸上競技会</h3>
                 <div className="flex items-center text-muted-foreground mb-2">
                   <Calendar className="h-4 w-4 mr-2 text-blue-600" />
-                  <span>2025年6月21日（土）・22日（日）</span>
+                  <span>2025年6月21日(土)・22日(日)</span>
                 </div>
               </div>
 
@@ -111,37 +106,26 @@ export default function CompetitionPage() {
                 <h3 className="font-bold mb-2">第152回日本体育大学陸上競技会</h3>
                 <div className="flex items-center text-muted-foreground mb-2">
                   <Calendar className="h-4 w-4 mr-2 text-blue-600" />
-                  <span>2025年9月27日（土）・28日（日）</span>
+                  <span>2025年9月27日(土)・28日(日)</span>
                 </div>
-                <p className="text-sm text-amber-600 font-medium">※日程と場所を変更して実施する場合があります</p>
               </div>
 
               <div>
                 <h3 className="font-bold mb-2">第153回日本体育大学陸上競技会</h3>
                 <div className="flex items-center text-muted-foreground mb-2">
                   <Calendar className="h-4 w-4 mr-2 text-blue-600" />
-                  <span>2025年10月18日（土）・19日（日）</span>
+                  <span>2025年10月18日(土)・19日(日)</span>
                 </div>
-                <p className="text-sm text-amber-600 font-medium">※日程と場所を変更して実施する場合があります</p>
               </div>
 
               <div>
                 <h3 className="font-bold mb-2">2025年度日体大選手権</h3>
                 <div className="flex items-center text-muted-foreground mb-2">
                   <Calendar className="h-4 w-4 mr-2 text-blue-600" />
-                  <span>2025年11月1日（土）・2日（日）</span>
+                  <span>2025年11月1日(土)・2日(日)</span>
                 </div>
-                <p className="text-sm text-amber-600 font-medium">※日程と場所を変更して実施する場合があります</p>
               </div>
             </div>
-
-            <Alert className="mt-6 border-amber-600 bg-amber-50">
-              <AlertCircle className="h-5 w-5 text-amber-600" />
-              <AlertDescription className="text-amber-800">
-                学内工事の関係で、競技会開催中の変更などは、競技会案内にてお知らせ致します。
-                競技会が開催される前日や、当日にも更新致しますので、参加される方は随時確認するようお願い致します。
-              </AlertDescription>
-            </Alert>
           </CardContent>
         </Card>
 
@@ -170,12 +154,12 @@ export default function CompetitionPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <Alert className="border-red-600 bg-red-50">
-                  <AlertCircle className="h-5 w-5 text-red-600" />
-                  <AlertDescription className="text-red-800">
-                    <strong>【重要】駐車申請について</strong>
-                    <ul className="list-disc list-inside mt-2 space-y-1">
+                  <AlertCircle className="h-4 w-4 text-red-600" />
+                  <AlertDescription className="text-red-800 text-xs">
+                    <strong className="text-sm">【重要】駐車申請について</strong>
+                    <ul className="list-disc list-inside mt-1.5 space-y-0.5 text-xs">
                       <li>申請フォームや期日は各競技会要項をご確認ください</li>
                       <li>Googleアカウントにログインの上申請し、証明書として回答を保存してください</li>
                       <li>毎競技会ごと要項に記載の期日までの受け入れとします</li>
@@ -185,15 +169,15 @@ export default function CompetitionPage() {
                   </AlertDescription>
                 </Alert>
                 
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   駐車可能台数は各所属【1台まで】とします。満車になることがありますが、その際はご了承ください。<br />
                   車両は<strong className="text-blue-600">正門</strong>から入構ください。
                 </p>
                 
-                <Button variant="outline" className="w-full justify-start" asChild>
+                <Button variant="outline" size="sm" className="w-full justify-start text-xs" asChild>
                   <a href="https://nssu-ekiden.com/wp-content/uploads/2025/03/日体大競技会駐車について.pdf" target="_blank" rel="noopener noreferrer">
-                    <Download className="h-4 w-4 mr-2" />
-                    駐車について（詳細PDF）
+                    <Download className="h-3 w-3 mr-2" />
+                    駐車について(詳細PDF)
                   </a>
                 </Button>
               </div>
@@ -372,7 +356,13 @@ export default function CompetitionPage() {
                 </p>
                 <div className="space-y-2">
                   <p>
-                    <span className="font-medium">メールアドレス:</span> nittai-honbu@d02.itscom.net
+                    <span className="font-medium">メールアドレス:</span>{" "}
+                    <a 
+                      href="mailto:nittai-honbu@d02.itscom.net" 
+                      className="text-blue-600 hover:text-blue-800 hover:underline"
+                    >
+                      nittai-honbu@d02.itscom.net
+                    </a>
                   </p>
                 </div>
               </CardContent>
@@ -380,6 +370,7 @@ export default function CompetitionPage() {
           </section>
         </div>
       </div>
+      <BackToTop />
     </div>
   );
 }
