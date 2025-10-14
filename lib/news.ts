@@ -99,11 +99,17 @@ const TSX_ARTICLES: Record<string, Omit<NewsMeta, 'slug' | 'type'>> = {
     date: '2025-10-06',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/2025-fujimi-whole-camp151.jpg'
   },
-  '10-18-all-japan-entry': {
+  '10-08-all-japan-entry': {
     id: 17,
     title: '全日本大学駅伝エントリー決定！',
-    date: '2025-10-18',
+    date: '2025-10-08',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/2024zennihonekiden178.jpeg'
+  },
+    '10-14-torch-alinamin': {
+    id: 18,
+    title: '日体大駅伝部 × アリナミン製薬の取り組みがTORCHに掲載',
+    date: '2025-10-14',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/10/torch.jpg'
   },
 };
 

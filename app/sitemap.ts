@@ -129,7 +129,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '09-20-summer-camp-end',
     '09-20-august-september',
     '10-06-hakone-qualifying-event-roster-announcement',
-    '10-18-all-japan-entry',
+        '10-08-all-japan-entry',
+    '10-14-torch-alinamin',
   ];
 
   // 2025年試合結果記事を追加
