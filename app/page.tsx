@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/hero";
 import { LatestArticles } from "@/components/latest-articles";
+import { BoardPromotion } from "@/components/board-promotion";
 import { Skeleton } from "@/components/ui/skeleton";
 import { TeamHighlights } from "@/components/team-highlights";
 import { UpcomingEvents } from "@/components/upcoming-events";
@@ -35,9 +36,10 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <LatestNews />
           <SupportMessages />
+          <BoardPromotion />
           <PhotoGallery />
+          <LatestNews />
           <TeamHighlights />
           <UpcomingEvents />
         </motion.div>

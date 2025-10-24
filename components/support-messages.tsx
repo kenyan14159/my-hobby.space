@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,7 +14,7 @@ import {
   SelectTrigger, 
   SelectValue 
 } from "@/components/ui/select";
-import { MessageCircle, Send, Users, TrendingUp, Megaphone } from "lucide-react";
+import { MessageCircle, Send, Users, TrendingUp, Megaphone, Clock } from "lucide-react";
 import { supabase, SupportMessage } from "@/lib/supabase";
 
 const senderTypes = ['在校生', '卒業生', '駅伝部関係者', 'ファン', '家族', 'その他'] as const;
@@ -27,20 +28,30 @@ const senderTypeColors = {
   'その他': 'bg-gray-100 text-gray-800 border-gray-200',
 };
 
+// タイムスタンプをフォーマットする関数 (YYYY.MM.DD HH:mm形式)
+const formatTimestamp = (dateString: string) => {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${year}.${month}.${day} ${hours}:${minutes}`;
+};
+
 export function SupportMessages() {
   const [messages, setMessages] = useState<SupportMessage[]>([]);
   const [newMessage, setNewMessage] = useState('');
   const [senderType, setSenderType] = useState<typeof senderTypes[number]>('ファン');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const [showAllMessages, setShowAllMessages] = useState(false);
   const [stats, setStats] = useState({
     senderTypes: {} as Record<string, number>,
     total: 0
   });
   
-  // 初期表示は3件のみ
-  const initialDisplayLimit = 3;
+  // 初期表示は4件のみ
+  const initialDisplayLimit = 4;
 
   // 統計情報を計算する関数（useCallbackでメモ化）
   const calculateStats = useCallback((data: SupportMessage[]) => {
@@ -54,6 +65,27 @@ export function SupportMessages() {
       senderTypes: senderTypeCounts,
       total: data.length
     });
+  }, []);
+
+  // 全体の件数を取得する関数
+  const fetchTotalCount = useCallback(async () => {
+    try {
+      const { count, error } = await supabase
+        .from('support_messages')
+        .select('*', { count: 'exact', head: true })
+        .eq('is_approved', true);
+
+      if (error) throw error;
+
+      if (count !== null) {
+        setStats(prev => ({
+          ...prev,
+          total: count
+        }));
+      }
+    } catch (error) {
+      console.error('件数の取得に失敗:', error);
+    }
   }, []);
 
   // メッセージを取得する関数（useCallbackでメモ化）
@@ -76,28 +108,29 @@ export function SupportMessages() {
 
       if (data) {
         setMessages(data);
-        calculateStats(data);
+        // 統計情報は別途全件数を取得
+        fetchTotalCount();
       }
     } catch (error) {
       console.error('メッセージの取得に失敗:', error);
     }
-  }, [calculateStats]);
+  }, [fetchTotalCount]);
 
   // メッセージを取得
   useEffect(() => {
-    // 初期表示は3件のみ取得
-    const limit = showAllMessages ? undefined : initialDisplayLimit;
-    fetchMessages(limit);
-    
-    // リアルタイム更新を設定
+    // 初期表示は4件のみ取得
+    fetchMessages(initialDisplayLimit);
+  }, [fetchMessages]);
+
+  // リアルタイム更新を設定
+  useEffect(() => {
     const channel = supabase
       .channel('support_messages')
       .on(
         'postgres_changes',
         { event: '*', schema: 'public', table: 'support_messages' },
         () => {
-          const currentLimit = showAllMessages ? undefined : initialDisplayLimit;
-          fetchMessages(currentLimit);
+          fetchMessages(initialDisplayLimit);
         }
       )
       .subscribe();
@@ -105,7 +138,7 @@ export function SupportMessages() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [showAllMessages, fetchMessages]);
+  }, [fetchMessages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -145,20 +178,16 @@ export function SupportMessages() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Megaphone className="h-8 w-8 text-blue-600" />
-            <h2 className="text-4xl font-bold text-gray-900">
-              選手たちに、応援メッセージを送ろう!
-            </h2>
-            <Megaphone className="h-8 w-8 text-blue-600" />
-          </div>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            選手たちに、応援メッセージを送ろう!
+          </h2>
           <p className="text-lg text-gray-600">
             あなたの声援を、選手たちに届けよう!
           </p>
         </motion.div>
 
         {/* アクションボタン */}
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
+        <div className="flex justify-center mb-12">
           <Button
             size="lg"
             onClick={() => setShowForm(!showForm)}
@@ -166,18 +195,6 @@ export function SupportMessages() {
           >
             <Send className="mr-2 h-5 w-5" />
             応援メッセージを送る
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            onClick={() => {
-              const element = document.getElementById('messages-list');
-              element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
-            className="px-8 py-6 text-lg border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
-          >
-            <MessageCircle className="mr-2 h-5 w-5" />
-            メッセージを見る
           </Button>
         </div>
 
@@ -262,10 +279,9 @@ export function SupportMessages() {
         </AnimatePresence>
 
         {/* 統計情報 - トップページでは非表示 */}
-        {/* メッセージ一覧(最新3件) */}
+        {/* メッセージ一覧(最新4件) */}
         <div id="messages-list">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <TrendingUp className="h-6 w-6 text-blue-600" />
             <h3 className="text-2xl font-bold text-gray-900">
               選手たちに届いたみんなのメッセージ
             </h3>
@@ -276,7 +292,7 @@ export function SupportMessages() {
             )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             <AnimatePresence>
               {messages.map((msg, index) => (
                 <motion.div
@@ -291,10 +307,16 @@ export function SupportMessages() {
                       <p className="text-gray-800 mb-4 leading-relaxed">
                         {msg.message}
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-col gap-2">
                         <Badge className={senderTypeColors[msg.sender_type]}>
                           {msg.sender_type}
                         </Badge>
+                        {msg.created_at && (
+                          <div className="flex items-center gap-1 text-xs text-gray-500">
+                            <Clock className="h-3 w-3" />
+                            <span>{formatTimestamp(msg.created_at)}</span>
+                          </div>
+                        )}
                       </div>
                     </CardContent>
                   </Card>
@@ -315,18 +337,19 @@ export function SupportMessages() {
             </Card>
           )}
 
-          {/* もっと見るボタン */}
-          {!showAllMessages && stats.total > initialDisplayLimit && (
+          {/* 全て見るボタン */}
+          {messages.length >= initialDisplayLimit && stats.total > initialDisplayLimit && (
             <div className="mt-8 text-center">
-              <Button
-                onClick={() => setShowAllMessages(true)}
-                size="lg"
-                variant="outline"
-                className="px-8 py-6 text-lg border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
-              >
-                <TrendingUp className="mr-2 h-5 w-5" />
-                もっと見る ({stats.total - initialDisplayLimit}件)
-              </Button>
+              <Link href="/messages/">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-8 py-6 text-lg border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  全て見る (残り{stats.total - messages.length}件)
+                </Button>
+              </Link>
             </div>
           )}
         </div>

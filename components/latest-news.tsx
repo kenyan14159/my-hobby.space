@@ -44,15 +44,6 @@ const itemVariants = {
 
 export function LatestNews() {
   // カウントダウン関連の状態
-  const [yosenTimeLeft, setYosenTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-    totalSeconds: 0,
-    isPassed: false
-  });
-  
   const [hakoneTimeLeft, setHakoneTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -63,38 +54,15 @@ export function LatestNews() {
   });
   
   // 進行度を計算（アニメーション用）
-  const [yosenProgress, setYosenProgress] = useState(0);
   const [hakoneProgress, setHakoneProgress] = useState(0);
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
     setMounted(true);
     const hakoneDate = new Date("2026-01-02T08:00:00"); // 2026年箱根駅伝 8時スタート
-    const yosenDate = new Date("2025-10-18T08:30:00"); // 予選会 8時30分スタート
     
     const calculateTimeRemaining = () => {
       const now = new Date();
-      
-      // 予選会のカウントダウン計算
-      const yosenDiffTime = yosenDate.getTime() - now.getTime();
-      const yosenTotalDuration = yosenDate.getTime() - new Date("2025-01-01T00:00:00").getTime();
-      
-      if (yosenDiffTime <= 0) {
-        setYosenTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, totalSeconds: 0, isPassed: true });
-        setYosenProgress(100);
-      } else {
-        const yosenDays = Math.floor(yosenDiffTime / (1000 * 60 * 60 * 24));
-        const yosenHours = Math.floor((yosenDiffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const yosenMinutes = Math.floor((yosenDiffTime % (1000 * 60 * 60)) / (1000 * 60));
-        const yosenSeconds = Math.floor((yosenDiffTime % (1000 * 60)) / 1000);
-        const yosenTotalSeconds = Math.floor(yosenDiffTime / 1000);
-        
-        const yosenElapsed = new Date().getTime() - new Date("2025-01-01T00:00:00").getTime();
-        const yosenNewProgress = Math.min(100, Math.max(0, (yosenElapsed / yosenTotalDuration) * 100));
-        
-        setYosenTimeLeft({ days: yosenDays, hours: yosenHours, minutes: yosenMinutes, seconds: yosenSeconds, totalSeconds: yosenTotalSeconds, isPassed: false });
-        setYosenProgress(yosenNewProgress);
-      }
       
       // 箱根駅伝のカウントダウン計算
       const hakoneDiffTime = hakoneDate.getTime() - now.getTime();
@@ -129,34 +97,12 @@ export function LatestNews() {
   return (
     <section className="py-24 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* 箱根駅伝予選会カウントダウン */}
-        <motion.div
-          className="mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          viewport={{ once: true }}
-        >
-          <CountdownSection
-            title="第102回箱根駅伝予選会まで"
-            subtitle="Qualifying Race - 2025.10.18 8:30 Start"
-            timeLeft={yosenTimeLeft}
-            progress={yosenProgress}
-            description1="予選会突破に向けて、チーム一丸となって挑みます。"
-            description2="本大会出場を目指し、日々練習に励んでいます。"
-            startLabel="2025年スタート"
-            endLabel="2025.10.18 予選会"
-            backgroundImage="https://nssu-ekiden.com/wp-content/uploads/2025/06/saya-img19.jpg"
-            colorTheme="amber"
-          />
-        </motion.div>
-
         {/* 箱根駅伝本大会カウントダウン */}
         <motion.div
           className="mb-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true }}
         >
           <CountdownSection
@@ -164,9 +110,9 @@ export function LatestNews() {
             subtitle="Road to Hakone 2026 - 2026.01.02 8:00 Start"
             timeLeft={hakoneTimeLeft}
             progress={hakoneProgress}
-            description1="77年連続出場の伝統を守り、更なる高みを目指します。"
+            description1="78年連続出場の伝統を力に、更なる高みを目指します。"
             description2="チーム全員で箱根路を駆け抜ける日を目指して。"
-            startLabel="2025年スタート"
+            startLabel="2026年スタート"
             endLabel="2026.01.02 本戦"
             backgroundImage="https://nssu-ekiden.com/wp-content/uploads/2025/06/saya-img7.jpg"
             colorTheme="blue"

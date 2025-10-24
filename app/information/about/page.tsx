@@ -250,7 +250,7 @@ export default function AboutPage() {
                 <CardContent className="p-8">
                   <div className="space-y-4 text-gray-700 leading-relaxed">
                     <p className="font-medium text-red-700">
-                      日本体育大学長距離競技会に関してのお問い合わせ等は私は一切関わっていないので、以下の連絡先までお願いいたします。
+                      日本体育大学長距離競技会に関してのお問い合わせ等は、以下の連絡先までお願いいたします。
                     </p>
                     <div className="bg-red-50 p-4 rounded-lg border border-red-200">
                       <div className="flex items-center gap-2 text-red-800 mb-2">
@@ -286,7 +286,7 @@ export default function AboutPage() {
                     <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
                       <div className="flex items-center gap-2 text-purple-800 mb-2">
                         <Mail className="h-4 w-4" />
-                        <span className="font-medium">制作者メールアドレス:</span>
+                        <span className="font-medium">ホームページに関するお問い合わせ:</span>
                       </div>
                       <a 
                         href="mailto:info@nssuekiden.com" 

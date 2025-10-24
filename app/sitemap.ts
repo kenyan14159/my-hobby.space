@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/information/faq', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/information/for-fans', priority: 0.6, changeFrequency: 'monthly' as const },
     { url: '/information/supporters', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/messages', priority: 0.8, changeFrequency: 'daily' as const },
     { url: '/ekiden', priority: 0.9, changeFrequency: 'weekly' as const },
     { url: '/ekiden/hakone', priority: 0.9, changeFrequency: 'weekly' as const },
     { url: '/ekiden/izumo', priority: 0.8, changeFrequency: 'weekly' as const },
@@ -158,6 +159,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '07-20-hokuren-gakuren',
     '09-28-240-tokai',
     '10-05-nssu-323th-long-distance',
+    '10-18-hakone-qualifying-round',
   ];
 
   newsPages.forEach(page => {

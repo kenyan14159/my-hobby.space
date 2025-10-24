@@ -146,6 +146,12 @@ const TSX_RESULTS: Record<string, Omit<ResultMeta, 'slug' | 'type'>> = {
     date: '2025-10-05',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/10/323-nittai-favorite13.jpeg'
   },
+    '10-18-hakone-qualifying-round': {
+    id: 24,
+    title: '第102回東京箱根間往復大学駅伝競走予選会',
+    date: '2025-10-18',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite2.jpeg'
+  },
 };
 
 export function getAllResults(): ResultMeta[] {
