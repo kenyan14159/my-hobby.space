@@ -130,7 +130,7 @@ export default function AllJapanEntryPage() {
         "3000mSC": "8'49\"23",
         "ハーフマラソン": "1:05'46"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers59.jpeg"
+      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers25.jpeg"
     },
     {
       name: "佐藤 輝歩",
@@ -144,7 +144,7 @@ export default function AllJapanEntryPage() {
         "10000m": "29'53\"29",
         "3000mSC": "9'07\"53"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers25.jpeg"
+      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers59.jpeg"
     },
     {
       name: "吉田 黎大",

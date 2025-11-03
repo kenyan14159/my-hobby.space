@@ -180,13 +180,13 @@ export function Navigation() {
             <DesktopNavigation />
           </div>
 
-          {/* モバイル メニュー */}
+          {/* モバイル メニューボタン */}
           <div className="lg:hidden">
             <ButtonComponent
               variant="ghost"
               size="icon"
               aria-label={mobileMenuOpen ? "メニューを閉じる" : "メニューを開く"}
-              className="text-gray-900 hover:text-sky-700 hover:bg-sky-50"
+              className="text-gray-900 hover:text-sky-700 hover:bg-sky-50 p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -344,9 +344,9 @@ function MobileNavigation({ closeMobileMenu }: { closeMobileMenu: () => void }) 
 
   return (
     <div className="relative h-full w-full flex flex-col">
-      {/* ヘッダー部分 */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-sky-100 bg-white">
-        <Link href="/" onClick={handleLinkClick} className="flex items-center space-x-2">
+      {/* ヘッダー部分 - 通常のヘッダーと同じレイアウト */}
+      <div className="flex h-16 items-center justify-between px-4 border-b border-sky-100 bg-white">
+        <Link href="/" onClick={handleLinkClick} className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
           <div className="relative h-8 w-16 flex-shrink-0">
             <Image
               src="https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu.jpeg"
@@ -359,10 +359,10 @@ function MobileNavigation({ closeMobileMenu }: { closeMobileMenu: () => void }) 
         </Link>
         <button
           onClick={closeMobileMenu}
-          className="p-2 hover:bg-sky-50 rounded-full transition-colors"
+          className="p-2 hover:bg-sky-50 rounded-md transition-colors"
           aria-label="メニューを閉じる"
         >
-          <X size={24} className="text-sky-700" />
+          <X size={24} className="text-gray-900" />
         </button>
       </div>
 

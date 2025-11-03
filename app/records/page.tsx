@@ -231,34 +231,44 @@ const EkidenSpecialTable = ({ records, sectionType }: { records: RecordEntry[]; 
   return (
     <>
       {/* モバイル表示 */}
-      <div className="sm:hidden space-y-3">
+      <div className="sm:hidden space-y-2">
         {records.map((record, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm"
+            className="flex items-center justify-between px-3 py-2 rounded-lg border border-gray-100 bg-white/70"
           >
-            <div className="flex items-start justify-between mb-2">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="bg-sky-100 text-sky-700 text-xs font-semibold px-2 py-1 rounded-full">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-1">
+                {isZennihon ? (
+                  <span className="bg-blue-100 text-blue-700 text-[10px] font-semibold px-1.5 py-0.5 rounded">
+                    {record.note?.replace('全日本大学駅伝 ', '') || `${index + 1}区`}
+                  </span>
+                ) : isOtherTrack ? (
+                  <span className="bg-gray-100 text-gray-800 text-[10px] font-semibold px-1.5 py-0.5 rounded">
+                    {getEventFromNote(record.note || '')}
+                  </span>
+                ) : !isBoxHakoneOverall ? (
+                  <span className="bg-sky-100 text-sky-700 text-[10px] font-semibold px-1.5 py-0.5 rounded">
                     {index + 1}位
                   </span>
-                  <span className="font-medium text-gray-900">
+                ) : null}
+                {isBoxHakoneOverall && (
+                  <span className="bg-red-100 text-red-700 text-[10px] font-semibold px-1.5 py-0.5 rounded">
                     {record.name}
                   </span>
-                </div>
-                <div className="text-sm text-gray-600 space-y-1">
-                  {record.school && <div>🏫 {record.school}</div>}
-                  {record.grade && !isBoxHakoneOverall && <div>👤 {record.grade}</div>}
-                  {record.date && <div>📅 {record.date}</div>}
-                  {isOtherTrack && <div>🏃 {getEventFromNote(record.note || '')}</div>}
-                </div>
+                )}
+                {!isBoxHakoneOverall && (
+                  <span className="text-sm font-medium truncate">{record.name}</span>
+                )}
               </div>
-              <div className="text-right">
-                <div className="text-lg font-mono font-bold text-sky-600">
-                  {formatTimeDisplay(record.time, sectionType)}
-                </div>
-              </div>
+              <p className="text-[11px] text-gray-500 truncate">
+                {!isBoxHakoneOverall && record.school}
+                {record.grade && !isBoxHakoneOverall && ` / ${record.grade}`}
+                {record.date && ` / ${record.date}`}
+              </p>
+            </div>
+            <div className="ml-2 text-xs font-mono whitespace-nowrap">
+              {formatTimeDisplay(record.time, sectionType)}
             </div>
           </div>
         ))}
@@ -270,19 +280,21 @@ const EkidenSpecialTable = ({ records, sectionType }: { records: RecordEntry[]; 
           <thead>
             <tr className="bg-gradient-to-r from-sky-50 to-blue-50 border-b border-gray-200">
               <th className="px-6 py-4 text-left text-xs font-semibold text-sky-700 uppercase tracking-wider">
-                {isZennihon ? "区間" : isOtherTrack ? "種目" : "順位"}
+                {isZennihon || isOtherTrack ? (isZennihon ? "区間" : "種目") : "順位"}
               </th>
               <th className="px-6 py-4 text-left text-xs font-semibold text-sky-700 uppercase tracking-wider">
                 {isBoxHakoneOverall ? "記録" : "氏名"}
               </th>
               {!isBoxHakoneOverall && (
-                <th className="px-6 py-4 text-left text-xs font-semibold text-sky-700 uppercase tracking-wider">所属 / 学年</th>
+                <th className="px-6 py-4 text-left text-xs font-semibold text-sky-700 uppercase tracking-wider">
+                  {isZennihon || isOtherTrack ? "氏名" : "所属 / 学年"}
+                </th>
               )}
               <th className="px-6 py-4 text-left text-xs font-semibold text-sky-700 uppercase tracking-wider">
-                {isBoxHakoneOverall ? "年度" : isZennihon ? "年度" : "回数"}
+                {isBoxHakoneOverall ? "回" : "年"}
               </th>
               <th className="px-6 py-4 text-left text-xs font-semibold text-sky-700 uppercase tracking-wider">
-                {isZennihon ? "区間記録" : "タイム"}
+                タイム
               </th>
             </tr>
           </thead>
@@ -290,42 +302,50 @@ const EkidenSpecialTable = ({ records, sectionType }: { records: RecordEntry[]; 
             {records.map((record, index) => (
               <tr key={index} className="hover:bg-gray-50 transition-colors duration-150">
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    {isZennihon ? (
-                      <span className="bg-sky-100 text-sky-800 text-sm font-semibold px-2 py-1 rounded-full">
-                        {record.note?.replace('全日本大学駅伝 ', '') || `${index + 1}区`}
-                      </span>
-                    ) : isOtherTrack ? (
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                        {getEventFromNote(record.note || '')}
-                      </span>
-                    ) : (
-                      <span className={`
-                        w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold
-                        ${index === 0 ? 'bg-yellow-100 text-yellow-800' : 
-                          index === 1 ? 'bg-gray-100 text-gray-800' : 
-                          index === 2 ? 'bg-orange-100 text-orange-800' : 
-                          'bg-sky-50 text-sky-700'}
-                      `}>
+                  {isZennihon ? (
+                    <div className="text-sm font-medium text-gray-900">
+                      {record.note?.replace('全日本大学駅伝 ', '') || `${index + 1}区`}
+                    </div>
+                  ) : isOtherTrack ? (
+                    <div className="text-sm font-medium text-gray-900">
+                      {getEventFromNote(record.note || '')}
+                    </div>
+                  ) : (
+                    <div className="flex items-center">
+                      <span className="text-sm text-gray-700">
                         {index + 1}
                       </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm font-medium text-gray-900">{record.name}</div>
+                  {isBoxHakoneOverall ? (
+                    <div className="text-sm font-medium text-gray-900">{record.name}</div>
+                  ) : isZennihon ? (
+                    <div className="text-sm font-medium text-gray-900">{record.name}</div>
+                  ) : isOtherTrack ? (
+                    <div className="text-sm font-medium text-gray-900">{record.name}</div>
+                  ) : (
+                    <div className="text-sm font-medium text-gray-900">{record.name}</div>
+                  )}
                 </td>
                 {!isBoxHakoneOverall && (
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">{record.school}</div>
-                    {record.grade && <div className="text-xs text-gray-500">{record.grade}</div>}
+                    {isZennihon || isOtherTrack ? (
+                      <div className="text-sm text-gray-900">{record.name}</div>
+                    ) : (
+                      <>
+                        <div className="text-sm text-gray-900">{record.school}</div>
+                        {record.grade && <div className="text-xs text-gray-500">{record.grade}</div>}
+                      </>
+                    )}
                   </td>
                 )}
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {record.date}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <span className="text-lg font-mono font-semibold text-sky-600">
+                  <span className="text-sm font-mono text-gray-900">
                     {formatTimeDisplay(record.time, sectionType)}
                   </span>
                 </td>
@@ -641,7 +661,7 @@ const GenderRecordsView = ({ recordsData, eventLabel }: { recordsData: RecordsDa
         // 個別種目選択時のタイトル表示
         const eventTitle = (
             <div className="mb-8">
-                <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 text-center border-b-2 border-slate-200 pb-4 mb-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 text-left sm:text-center border-b-2 border-slate-200 pb-4 mb-6">
                     {event === "その他" ? "その他 記録" : event}
                 </h2>
             </div>

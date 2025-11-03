@@ -26,28 +26,34 @@ const competitionSchedule = [
 
 export default function LongDistancePage() {
   useEffect(() => {
-    // 既存のスクリプトがあれば削除
-    const existingScript = document.getElementById('twitter-widget-script');
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    // Xのウィジェットスクリプトを読み込む
-    const script = document.createElement('script');
-    script.id = 'twitter-widget-script';
-    script.src = 'https://platform.twitter.com/widgets.js';
-    script.async = true;
-    script.charset = 'utf-8';
-    document.body.appendChild(script);
-
-    // スクリプト読み込み後にウィジェットを再レンダリング
-    script.onload = () => {
-      // @ts-ignore - Twitter widgets API
-      if (window.twttr?.widgets) {
+    // Twitter widgets スクリプトの読み込み
+    const loadTwitterWidget = () => {
+      // 既存のスクリプトを確認
+      const existingScript = document.getElementById('twitter-wjs');
+      
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.id = 'twitter-wjs';
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.async = true;
+        script.charset = 'utf-8';
+        document.body.appendChild(script);
+      } else {
+        // 既にスクリプトが存在する場合は再レンダリング
         // @ts-ignore
-        window.twttr.widgets.load();
+        if (window.twttr?.widgets) {
+          // @ts-ignore
+          window.twttr.widgets.load();
+        }
       }
     };
+
+    // 少し遅延させて確実に読み込む
+    const timer = setTimeout(() => {
+      loadTwitterWidget();
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -209,13 +215,14 @@ export default function LongDistancePage() {
               icon={<Twitter className="h-6 w-6 text-sky-600" />}
               content={
                 <div className="bg-white p-6 rounded-xl border border-sky-200 shadow-sm">
-                  <div className="flex justify-center max-w-xl mx-auto">
+                  <div className="flex justify-center">
                     <a 
                       className="twitter-timeline" 
-                      data-width="550"
+                      data-width="100%"
                       data-height="600" 
                       data-theme="light"
-                      data-chrome="nofooter noborders"
+                      data-chrome="noheader nofooter noborders"
+                      data-link-color="#0284c7"
                       href="https://twitter.com/nittai_e?ref_src=twsrc%5Etfw"
                     >
                       Tweets by @nittai_e

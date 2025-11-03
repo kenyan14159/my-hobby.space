@@ -92,12 +92,19 @@ const timeToSeconds = (timeStr: string | null): number => {
     const parts = timeStr.split(':');
     
     if (parts.length === 3) {
-        // H:MM:SS 形式
+        // H:MM:SS または HH:MM:SS 形式
         const hours = parseInt(parts[0], 10);
         const minutes = parseInt(parts[1], 10);
         const seconds = parseFloat(parts[2]);
         
         if (isNaN(hours) || isNaN(minutes) || isNaN(seconds)) return Infinity;
+        
+        // 妥当性チェック: 分または秒が60以上は不正
+        if (minutes >= 60 || seconds >= 60) {
+            console.warn(`Invalid time format: ${timeStr}`);
+            return Infinity;
+        }
+        
         return hours * 3600 + minutes * 60 + seconds;
     } else if (parts.length === 2) {
         // M:SS.ss または MM:SS.ss 形式
@@ -105,6 +112,13 @@ const timeToSeconds = (timeStr: string | null): number => {
         const seconds = parseFloat(parts[1]);
         
         if (isNaN(minutes) || isNaN(seconds)) return Infinity;
+        
+        // 10000mの妥当性チェック: 分が60以上または秒が60以上は不正
+        if (minutes >= 60 || seconds >= 60) {
+            console.warn(`Invalid time format: ${timeStr}`);
+            return Infinity;
+        }
+        
         return minutes * 60 + seconds;
     }
     
@@ -260,7 +274,7 @@ export default function RecordsPage() {
         const isLongDistance = isLongDistanceEvent(eventId);
         return (
             <TableRow key={`header-${grade}`} className="bg-gray-100 hover:bg-gray-100">
-                <TableCell colSpan={8} className="text-center text-gray-700">
+                <TableCell colSpan={7} className="text-center text-gray-700">
                     {grade}年生 (平均: {avgTime > 0 ? formatTime(avgTime, isLongDistance, eventId) : 'N/A'})
                 </TableCell>
             </TableRow>
@@ -296,18 +310,19 @@ export default function RecordsPage() {
             <Card>
                 <CardHeader>
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                        <CardTitle className="flex items-center text-2xl">
-                            <Trophy className="mr-3 text-amber-500" />
+                        <CardTitle className="flex items-center text-xl sm:text-2xl">
+                            <Trophy className="mr-2 sm:mr-3 text-amber-500 h-5 w-5 sm:h-6 sm:w-6" />
                             {eventData.name} ランキング
-                            <Badge variant="secondary" className="ml-2">
+                            <Badge variant="secondary" className="ml-2 text-xs">
                                 {eventData.data.length}名
                             </Badge>
                         </CardTitle>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 w-full sm:w-auto">
                             <Button 
                                 variant={sortBy === 'time' ? 'default' : 'outline'} 
                                 onClick={() => setSortBy('time')}
                                 size="sm"
+                                className="flex-1 sm:flex-none text-xs sm:text-sm"
                             >
                                 タイム順
                             </Button>
@@ -315,6 +330,7 @@ export default function RecordsPage() {
                                 variant={sortBy === 'grade' ? 'default' : 'outline'} 
                                 onClick={() => setSortBy('grade')}
                                 size="sm"
+                                className="flex-1 sm:flex-none text-xs sm:text-sm"
                             >
                                 学年順
                             </Button>
@@ -322,24 +338,49 @@ export default function RecordsPage() {
                     </div>
                 </CardHeader>
                 <CardContent>
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6 text-center">
-                        <div className="p-3 bg-blue-50 rounded-lg">
-                            <p className="text-sm text-blue-800">全体平均</p>
-                            <p className="text-lg font-mono text-blue-900">
-                                {averageTimes.overall > 0 ? formatTime(averageTimes.overall, isLongDistance, eventId) : 'N/A'}
-                            </p>
+                    {/* 平均タイム統計 - モバイル用コンパクト表示 */}
+                    <div className="mb-6">
+                        {/* モバイル表示 */}
+                        <div className="grid grid-cols-2 gap-2 sm:hidden">
+                            <div className="p-2 bg-blue-50 rounded-lg col-span-2">
+                                <p className="text-xs text-blue-800">全体平均</p>
+                                <p className="text-base font-mono text-blue-900 font-semibold">
+                                    {averageTimes.overall > 0 ? formatTime(averageTimes.overall, isLongDistance, eventId) : 'N/A'}
+                                </p>
+                            </div>
+                            {[1, 2, 3, 4].map(grade => {
+                                const avgTime = averageTimes[`grade${grade}` as keyof typeof averageTimes];
+                                return (
+                                    <div key={grade} className="p-2 bg-gray-100 rounded-lg">
+                                        <p className="text-xs text-gray-700">{grade}年</p>
+                                        <p className="text-sm font-mono text-gray-800">
+                                            {avgTime > 0 ? formatTime(avgTime, isLongDistance, eventId) : 'N/A'}
+                                        </p>
+                                    </div>
+                                );
+                            })}
                         </div>
-                        {[1, 2, 3, 4].map(grade => {
-                            const avgTime = averageTimes[`grade${grade}` as keyof typeof averageTimes];
-                            return (
-                                <div key={grade} className="p-3 bg-gray-100 rounded-lg">
-                                    <p className="text-sm text-gray-700">{grade}年平均</p>
-                                    <p className="text-lg font-mono text-gray-800">
-                                        {avgTime > 0 ? formatTime(avgTime, isLongDistance, eventId) : 'N/A'}
-                                    </p>
-                                </div>
-                            );
-                        })}
+                        
+                        {/* デスクトップ表示 */}
+                        <div className="hidden sm:grid grid-cols-5 gap-4 text-center">
+                            <div className="p-3 bg-blue-50 rounded-lg">
+                                <p className="text-sm text-blue-800">全体平均</p>
+                                <p className="text-lg font-mono text-blue-900">
+                                    {averageTimes.overall > 0 ? formatTime(averageTimes.overall, isLongDistance, eventId) : 'N/A'}
+                                </p>
+                            </div>
+                            {[1, 2, 3, 4].map(grade => {
+                                const avgTime = averageTimes[`grade${grade}` as keyof typeof averageTimes];
+                                return (
+                                    <div key={grade} className="p-3 bg-gray-100 rounded-lg">
+                                        <p className="text-sm text-gray-700">{grade}年平均</p>
+                                        <p className="text-lg font-mono text-gray-800">
+                                            {avgTime > 0 ? formatTime(avgTime, isLongDistance, eventId) : 'N/A'}
+                                        </p>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                     
                     <div className="overflow-x-auto">
@@ -348,7 +389,6 @@ export default function RecordsPage() {
                                 <TableRow>
                                     <TableHead className="w-12 sm:w-20 text-center">順位</TableHead>
                                     <TableHead className="min-w-[6rem] sm:min-w-[8rem]">名前</TableHead>
-                                    <TableHead className="w-12 sm:w-20 text-center">学年</TableHead>
                                     <TableHead className="w-24 sm:w-48">出身校</TableHead>
                                     <TableHead className="w-16 sm:w-24 text-center">タイム</TableHead>
                                     <TableHead className="min-w-[10rem] hidden md:table-cell">大会名</TableHead>
@@ -359,7 +399,7 @@ export default function RecordsPage() {
                             <TableBody>
                                 {sortedRunners.length === 0 ? (
                                     <TableRow>
-                                        <TableCell colSpan={8} className="text-center py-8 text-gray-500">
+                                        <TableCell colSpan={7} className="text-center py-8 text-gray-500">
                                             データがありません
                                         </TableCell>
                                     </TableRow>
@@ -376,8 +416,7 @@ export default function RecordsPage() {
                                                 {showHeader && renderGradeHeader(runner.grade, eventId)}
                                                 <TableRow className={isNewRecord(runner.date) ? "bg-sky-50" : ""}>
                                                     <TableCell className="text-center">{rank}</TableCell>
-                                                    <TableCell>{runner.name}</TableCell>
-                                                    <TableCell className="text-center">{runner.grade}</TableCell>
+                                                    <TableCell>{runner.name}（{runner.grade}）</TableCell>
                                                     <TableCell>
                                                         <div className="whitespace-normal sm:whitespace-nowrap overflow-hidden text-ellipsis max-w-[8rem] sm:max-w-[12rem]">
                                                             {runner.school || 'N/A'}
@@ -470,30 +509,36 @@ export default function RecordsPage() {
                 />
 
                 <Tabs value={activeEvent} onValueChange={setActiveEvent} className="w-full">
-                    {/* 種目選択ボタン */}
+                    {/* ナビゲーションボタン */}
                     <div className="mb-6 md:mb-8">
-                        <TabsList className="flex flex-wrap gap-2 sm:gap-3 bg-transparent p-0 justify-center">
-                            {EVENTS.map((event) => (
-                                <TabsTrigger 
-                                    key={event.id} 
-                                    value={event.id}
-                                    className="px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium rounded-full border-2 transition-all duration-200 data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:border-blue-600 data-[state=active]:shadow-lg data-[state=inactive]:bg-white data-[state=inactive]:text-gray-700 data-[state=inactive]:border-gray-200 hover:data-[state=inactive]:bg-gray-50 hover:data-[state=inactive]:border-gray-300 whitespace-nowrap flex-shrink-0"
-                                >
-                                    {event.name}
-                                </TabsTrigger>
-                            ))}
-                        </TabsList>
-                    </div>
+                        {/* 種目選択ボタン */}
+                        <div className="mb-8">
+                            <p className="text-xs text-gray-500 mb-3 text-center">種目選択</p>
+                            <TabsList className="flex flex-wrap gap-2 bg-transparent p-0 justify-center w-full min-h-[44px]">
+                                {EVENTS.map((event) => (
+                                    <TabsTrigger 
+                                        key={event.id} 
+                                        value={event.id}
+                                        className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg border-2 transition-all duration-200 data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:border-blue-600 data-[state=active]:shadow-lg data-[state=inactive]:bg-white data-[state=inactive]:text-gray-700 data-[state=inactive]:border-gray-200 hover:data-[state=inactive]:bg-gray-50 hover:data-[state=inactive]:border-gray-300 whitespace-nowrap"
+                                    >
+                                        {event.name}
+                                    </TabsTrigger>
+                                ))}
+                            </TabsList>
+                        </div>
 
-                    {/* 追加ナビゲーション項目 */}
-                    <div className="flex flex-wrap gap-3 mb-6 md:mb-8 justify-center">
-                        {ADDITIONAL_NAV_ITEMS.map((item) => (
-                            <Link key={item.id} href={item.href}>
-                                <div className="px-3 py-2 text-xs sm:text-sm font-medium rounded-full border-2 transition-all duration-200 bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300 cursor-pointer">
-                                    {item.name}
-                                </div>
-                            </Link>
-                        ))}
+                        {/* 追加ナビゲーション項目 */}
+                        <div>
+                            <div className="flex flex-wrap gap-2 justify-center">
+                                {ADDITIONAL_NAV_ITEMS.map((item) => (
+                                    <Link key={item.id} href={item.href}>
+                                        <div className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg border-2 transition-all duration-200 bg-gradient-to-r from-gray-50 to-white text-gray-700 border-gray-300 hover:from-blue-50 hover:to-white hover:border-blue-300 hover:text-blue-700 cursor-pointer whitespace-nowrap shadow-sm">
+                                            {item.name}
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
                     {EVENTS.map((event) => (

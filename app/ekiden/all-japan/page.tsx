@@ -151,7 +151,10 @@ const HistoryCard = ({ entry, searchTerm }: { entry: HistoryEntry, searchTerm: s
                                 {entry.runners.map(runner => (
                                     <TableRow key={runner.section}>
                                         <TableCell className="font-medium text-center">{runner.section}区</TableCell>
-                                        <TableCell><HighlightedText text={runner.name} highlight={searchTerm} /></TableCell>
+                                        <TableCell>
+                                            <HighlightedText text={runner.name} highlight={searchTerm} />
+                                            {runner.grade && <span className="text-gray-500 ml-1">({runner.grade}年)</span>}
+                                        </TableCell>
                                         <TableCell className="text-center">{runner.rank}位<RankIcon rank={runner.rank} /></TableCell>
                                         <TableCell className="text-right font-mono">{runner.time}</TableCell>
                                     </TableRow>

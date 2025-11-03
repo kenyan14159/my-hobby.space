@@ -1,5 +1,19 @@
 {
     "womens-all-japan-history": [
+    {
+      "kai": 43,
+      "year": 2025,
+      "rank": 10,
+      "totalTime": "2:08:06",
+      "runners": [
+        { "section": 1, "name": "柳井 桜子", "grade": 4, "rank": 21, "time": "22:33" },
+        { "section": 2, "name": "佐藤 柚優", "grade": 1, "rank": 6, "time": "13:10" },
+        { "section": 3, "name": "飯田 和代", "grade": 2, "rank": 7, "time": "18:54" },
+        { "section": 4, "name": "高杢 光希", "grade": 1, "rank": 8, "time": "16:31" },
+        { "section": 5, "name": "田中 希実", "grade": 3, "rank": 14, "time": "31:13" },
+        { "section": 6, "name": "齋藤 一乃", "grade": 2, "rank": 6, "time": "25:45" }
+      ]
+    },      
       {
         "kai": 42,
         "year": 2024,
@@ -63,7 +77,7 @@
         "totalTime": "2:06:11",
         "runners": [
           { "section": 1, "name": "岡島 楓", "rank": 5, "time": "21:35" },
-          { "section": 2, "name": "保坂 晴子", "rank": 1, "time": "12:30", "isSectionRecord": true },
+          { "section": 2, "name": "保坂 晴子", "rank": 1, "time": "12:30"},
           { "section": 3, "name": "一瀬 美結", "rank": 4, "time": "22:58" },
           { "section": 4, "name": "赤堀 かりん", "rank": 2, "time": "15:50" },
           { "section": 5, "name": "栗原 泉", "rank": 4, "time": "30:25" },
@@ -106,7 +120,7 @@
         "runners": [
           { "section": 1, "name": "工藤 杏華", "rank": 7, "time": "20:54" },
           { "section": 2, "name": "唐沢 ゆり", "rank": 10, "time": "18:40" },
-          { "section": 3, "name": "細田 あい", "rank": 1, "time": "22:06", "isSectionRecord": true },
+          { "section": 3, "name": "細田 あい", "rank": 1, "time": "22:06"},
           { "section": 4, "name": "花野 桃子", "rank": 5, "time": "16:34" },
           { "section": 5, "name": "平野 文珠", "rank": 17, "time": "32:13" },
           { "section": 6, "name": "鈴木 彩智歩", "rank": 7, "time": "17:45" }

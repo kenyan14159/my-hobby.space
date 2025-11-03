@@ -20,23 +20,6 @@ interface Event {
 // 全てのスケジュールデータ
 const allEvents: Event[] = [
   {
-    date: "2025.10.18",
-    title: "第102回東京箱根間往復大学駅伝競走予選会",
-    location: "陸上自衛隊立川駐屯地～立川市街地～国営昭和記念公園",
-    important: true
-  },
-  {
-    date: "2025.10.26",
-    title: "第241回東海大学長距離競技会 ",
-    location: "東海大学湘南校舎陸上競技場",
-  },
-  {
-    date: "2025.11.02",
-    title: "第57回全日本大学駅伝対校選手権大会",
-    location: "愛知・三重",
-    important: true
-  },
-  {
     date: "2025.11.09",
     title: "第20回世田谷246ハーフマラソン",
     location: "駒沢オリンピック公園陸上競技場"

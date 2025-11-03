@@ -69,6 +69,21 @@ const secondsToTime = (totalSeconds: number): string => {
     return sign + timeString;
 };
 
+// モバイル表示用：区間タイムの先頭0を削除（総合タイムは維持）
+const formatTimeForDisplay = (timeStr: string, isTotalTime: boolean = false): string => {
+    if (!timeStr || timeStr.includes('--')) return timeStr;
+    
+    // 総合タイム（2時間台がある）はそのまま表示
+    if (isTotalTime) return timeStr;
+    
+    // 区間タイム：先頭が0で始まる場合は削除（例: 01:02:40 → 1:02:40）
+    if (timeStr.startsWith('0') && timeStr.length > 1 && timeStr[1] !== ':') {
+        return timeStr.substring(1);
+    }
+    
+    return timeStr;
+};
+
 // --- コンポーネント ---
 
 const RankIcon = ({ rank }: { rank: number | string }) => {
@@ -132,9 +147,11 @@ const HistoryCard = ({ entry, searchTerm }: { entry: HistoryEntry, searchTerm: s
                                 <p className="text-sm text-gray-500">総合タイム</p>
                                 <p className="text-xl font-bold font-mono text-red-900">{entry.totalTime}</p>
                                 <div className="text-xs text-gray-500 mt-1">
-                                    <span>往路: {entry.outbound.rank}位 {entry.outbound.time}</span>
+                                    <span className="hidden sm:inline">往路: {entry.outbound.rank}位 {entry.outbound.time}</span>
+                                    <span className="sm:hidden">往路: {entry.outbound.rank}位 {formatTimeForDisplay(entry.outbound.time, true)}</span>
                                     <br />
-                                    <span>復路: {entry.inbound.rank}位 {entry.inbound.time}</span>
+                                    <span className="hidden sm:inline">復路: {entry.inbound.rank}位 {entry.inbound.time}</span>
+                                    <span className="sm:hidden">復路: {entry.inbound.rank}位 {formatTimeForDisplay(entry.inbound.time, true)}</span>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +173,8 @@ const HistoryCard = ({ entry, searchTerm }: { entry: HistoryEntry, searchTerm: s
                                         <TableCell><HighlightedText text={runner.name} highlight={searchTerm} /></TableCell>
                                         <TableCell className="text-center">{runner.rank}位<RankIcon rank={runner.rank} /></TableCell>
                                         <TableCell className="text-right font-mono">
-                                            {runner.time}
+                                            <span className="hidden sm:inline">{runner.time}</span>
+                                            <span className="sm:hidden">{formatTimeForDisplay(runner.time)}</span>
                                             {runner.isSectionRecord && <span title="区間記録"><Star className="h-4 w-4 text-red-500 fill-red-500 inline-block ml-1" /></span>}
                                         </TableCell>
                                     </TableRow>
@@ -453,8 +471,16 @@ function ComparisonResultView({ result }: { result: { dataA: HistoryEntry, dataB
                                     return (
                                         <TableRow key={i}>
                                             <TableCell className="font-medium">{rA.section}区</TableCell>
-                                            <TableCell className={`${isFinite(tDiff) && tDiff <= 0 ? 'font-bold text-red-600' : ''}`}>{rA.name}<br/><span className="text-xs text-gray-500">{rA.time}</span></TableCell>
-                                            <TableCell className={`${isFinite(tDiff) && tDiff > 0 ? 'font-bold text-red-600' : ''}`}>{rB.name}<br/><span className="text-xs text-gray-500">{rB.time}</span></TableCell>
+                                            <TableCell className={`${isFinite(tDiff) && tDiff <= 0 ? 'font-bold text-red-600' : ''}`}>
+                                                {rA.name}<br/>
+                                                <span className="text-xs text-gray-500 hidden sm:inline">{rA.time}</span>
+                                                <span className="text-xs text-gray-500 sm:hidden">{formatTimeForDisplay(rA.time)}</span>
+                                            </TableCell>
+                                            <TableCell className={`${isFinite(tDiff) && tDiff > 0 ? 'font-bold text-red-600' : ''}`}>
+                                                {rB.name}<br/>
+                                                <span className="text-xs text-gray-500 hidden sm:inline">{rB.time}</span>
+                                                <span className="text-xs text-gray-500 sm:hidden">{formatTimeForDisplay(rB.time)}</span>
+                                            </TableCell>
                                             <TableCell className="text-right font-mono">{isFinite(tDiff) ? `${tDiff > 0 ? '+' : ''}${secondsToTime(tDiff)}` : 'N/A'}</TableCell>
                                         </TableRow>
                                     )

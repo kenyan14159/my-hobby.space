@@ -142,7 +142,7 @@ const GenderRecordsView = ({ recordsData }: { recordsData: RecordsData }) => {
         return (
             <div>
                 <div className="mb-8">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 text-center border-b-2 border-slate-200 pb-4 mb-6">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 text-left sm:text-center border-b-2 border-slate-200 pb-4 mb-6">
                         {event}
                     </h2>
                 </div>

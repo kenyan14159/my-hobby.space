@@ -26,9 +26,9 @@ interface Runner {
 interface HistoryEntry {
     kai: number;
     year: number;
-    rank: number | string;
-    totalTime: string;
-    runners: Runner[];
+    rank: number | string | null;
+    totalTime?: string;
+    runners?: Runner[];
 }
 
 // --- データ読み込み ---
@@ -105,13 +105,34 @@ const HighlightedText = ({ text, highlight }: { text: string, highlight: string 
 };
 
 const HistoryCard = ({ entry, searchTerm }: { entry: HistoryEntry, searchTerm: string }) => {
-    const getRankBorderClass = (rank: number | string) => {
+    const getRankBorderClass = (rank: number | string | null) => {
+        if (rank === null) return 'border-l-4 border-gray-300';
         const rankNum = typeof rank === 'string' ? parseInt(rank, 10) : rank;
         if (rankNum === 1) return 'border-l-4 border-amber-400';
         if (rankNum === 2) return 'border-l-4 border-slate-400';
         if (rankNum === 3) return 'border-l-4 border-orange-600';
         return 'border-l-4 border-gray-200';
     };
+
+    // 詳細データ(runners)がない場合は簡易表示
+    if (!entry.runners || entry.runners.length === 0) {
+        return (
+            <Card className={`overflow-hidden transition-shadow hover:shadow-lg ${getRankBorderClass(entry.rank)}`}>
+                <div className="p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                        <span className="text-2xl font-bold text-pink-800 w-16 text-center">
+                            {entry.rank !== null ? `${entry.rank}位` : '－'}
+                        </span>
+                        <div className="text-left">
+                            <h3 className="text-lg font-semibold text-gray-800">
+                                第{entry.kai}回 ({entry.year}年)
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </Card>
+        );
+    }
 
     return (
         <Card className={`overflow-hidden transition-shadow hover:shadow-lg ${getRankBorderClass(entry.rank)}`}>
@@ -144,7 +165,7 @@ const HistoryCard = ({ entry, searchTerm }: { entry: HistoryEntry, searchTerm: s
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                {entry.runners && entry.runners.map(runner => (
+                                {entry.runners.map(runner => (
                                     <TableRow key={runner.section}>
                                         <TableCell className="font-medium text-center">{runner.section}区</TableCell>
                                         <TableCell>
@@ -239,7 +260,8 @@ export default function WomensEkidenHistoryPage() {
 
     const validEntries = useMemo(() => {
         if (!womensAllJapanHistory || womensAllJapanHistory.length === 0) return [];
-        return womensAllJapanHistory.filter(entry => entry && entry.kai);
+        // 詳細データ(runners)がある年度のみを比較対象とする
+        return womensAllJapanHistory.filter(entry => entry && entry.kai && entry.runners && entry.runners.length > 0);
     }, [womensAllJapanHistory]);
 
     if (loading) {
@@ -311,7 +333,7 @@ export default function WomensEkidenHistoryPage() {
                                     <SelectContent>
                                         {validEntries.map(entry => (
                                             <SelectItem key={entry.kai} value={String(entry.kai)}>
-                                                第{entry.kai}回 ({entry.year}年) - {entry.rank}位
+                                                第{entry.kai}回 ({entry.year}年) - {entry.rank !== null ? `${entry.rank}位` : '－'}
                                             </SelectItem>
                                         ))}
                                     </SelectContent>
@@ -326,7 +348,7 @@ export default function WomensEkidenHistoryPage() {
                                     <SelectContent>
                                         {validEntries.map(entry => (
                                             <SelectItem key={entry.kai} value={String(entry.kai)}>
-                                                第{entry.kai}回 ({entry.year}年) - {entry.rank}位
+                                                第{entry.kai}回 ({entry.year}年) - {entry.rank !== null ? `${entry.rank}位` : '－'}
                                             </SelectItem>
                                         ))}
                                     </SelectContent>
@@ -372,6 +394,12 @@ export default function WomensEkidenHistoryPage() {
 
 function ComparisonResultView({ result }: { result: { dataA: HistoryEntry, dataB: HistoryEntry }}) {
     const { dataA, dataB } = result;
+    
+    // 詳細データがない場合は比較不可
+    if (!dataA.runners || !dataB.runners || !dataA.totalTime || !dataB.totalTime) {
+        return <p className="text-center text-gray-500">詳細データがないため比較できません</p>;
+    }
+    
     const timeA = timeToSeconds(dataA.totalTime);
     const timeB = timeToSeconds(dataB.totalTime);
     const diff = timeA - timeB;
@@ -415,7 +443,7 @@ function ComparisonResultView({ result }: { result: { dataA: HistoryEntry, dataB
                             </TableHeader>
                             <TableBody>
                                 {dataA.runners.map((rA, i) => {
-                                    const rB = dataB.runners.find(r => r.section === rA.section);
+                                    const rB = dataB.runners!.find(r => r.section === rA.section);
                                     if (!rB) return null; // 対応する区間がない場合はスキップ
 
                                     const tA = timeToSeconds(rA.time);

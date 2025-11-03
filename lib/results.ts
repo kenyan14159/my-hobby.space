@@ -152,6 +152,18 @@ const TSX_RESULTS: Record<string, Omit<ResultMeta, 'slug' | 'type'>> = {
     date: '2025-10-18',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite2.jpeg'
   },
+  '10-26-241-tokai': {
+    id: 25,
+    title: '第241回東海大学長距離競技会',
+    date: '2025-10-26',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai1.jpg'
+  },
+    '11-02-57th-all-japan': {
+    id: 26,
+    title: '第57回全日本大学駅伝対校選手権大会',
+    date: '2025-11-02',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan83.jpeg'
+  },
 };
 
 export function getAllResults(): ResultMeta[] {

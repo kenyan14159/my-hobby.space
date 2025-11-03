@@ -111,6 +111,12 @@ const TSX_ARTICLES: Record<string, Omit<NewsMeta, 'slug' | 'type'>> = {
     date: '2025-10-14',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/10/torch.jpg'
   },
+  '10-31-all-japan-section-entry': {
+    id: 19,
+    title: '第57回全日本大学駅伝区間エントリー決定！',
+    date: '2025-10-31',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-zennihonyosen4.jpeg'
+  },
 };
 
 export function getAllNews(): NewsMeta[] {

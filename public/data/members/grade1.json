@@ -130,7 +130,8 @@
       "department": "体育",
       "personalBests": [
         { "event": "1500m", "time": "3'52\"85" },
-        { "event": "5000m", "time": "14'44\"00" }
+        { "event": "5000m", "time": "14'44\"00" },
+        { "event": "10000m", "time": "31'03\"53" }
       ],
       "grade": 1
     },

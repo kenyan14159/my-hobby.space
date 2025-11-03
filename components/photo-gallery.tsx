@@ -223,7 +223,7 @@ export function PhotoGallery({
   images, 
   enableShuffle = true,
   title = "ギャラリー",
-  subtitle = "日体大駅伝部の日々の活動や大会の様子"
+  subtitle = ""
 }: PhotoGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [displayImages, setDisplayImages] = useState<string[]>([]);

@@ -14,7 +14,7 @@ import { EkidenNavigation } from "@/components/ui/ekiden-navigation";
 const keyStats = [
   { icon: Trophy, value: "10回", label: "箱根駅伝 総合優勝", description: "5連覇の偉業を含む" },
   { icon: Award, value: "11回", label: "全日本大学駅伝 優勝", description: "3連覇2回" },
-  { icon: Flag, value: "77年", label: "箱根駅伝 連続出場", description: "歴代2位の継続記録" },
+  { icon: Flag, value: "78年", label: "箱根駅伝 連続出場", description: "歴代2位の継続記録" },
   { icon: Users, value: "多数", label: "世界的ランナー輩出", description: "谷口浩美選手など" },
 ];
 
