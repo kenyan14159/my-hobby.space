@@ -238,22 +238,6 @@
       "grade": 1
     },
     {
-      "name": "増田 陸斗",
-      "nameRubyParts": [
-        { "kanji": "増田", "ruby": "ますだ" },
-        { "kanji": "陸斗", "ruby": "りくと" }
-      ],
-      "imageUrl": "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-members5.jpeg",
-      "highSchool": "佐久長聖",
-      "faculty": "体育",
-      "department": "体育",
-      "personalBests": [
-        { "event": "1500m", "time": "4'10\"46" },
-        { "event": "5000m", "time": "14'47\"40" }
-      ],
-      "grade": 1
-    },
-    {
       "name": "松田 進",
       "nameRubyParts": [
         { "kanji": "松田", "ruby": "まつだ" },
