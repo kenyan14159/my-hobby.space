@@ -10,6 +10,8 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { Menu, Award, TrendingUp, ArrowRight, User, Users, Loader2, ChevronDown, ChevronUp, ArrowUp } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { ErrorDisplay } from "@/components/ui/error-display";
+import { logger } from "@/lib/logger";
 
 // --- 型定義 ---
 interface RecordEntry {
@@ -25,6 +27,20 @@ interface RecordEntry {
 
 interface RecordsData {
   [eventName: string]: RecordEntry[];
+}
+
+// 生データの型定義（JSONから読み込まれるデータ構造）
+interface RawRunnerData {
+  name?: string;
+  time?: string;
+  year?: string;
+  recordYear?: string;
+  回数?: string;
+  school?: string;
+  出身高校?: string;
+  location?: string;
+  note?: string;
+  [key: string]: unknown; // その他のプロパティに対応
 }
 
 // --- データ処理ヘルパー関数群 ---
@@ -51,7 +67,7 @@ const timeToSeconds = (timeStr: string | undefined | null): number => {
   if (ekidenParts.length === 3) return parseInt(ekidenParts[0])*3600 + parseInt(ekidenParts[1])*60 + parseFloat(ekidenParts[2]);
   if (ekidenParts.length === 2) return parseInt(ekidenParts[0])*60 + parseFloat(ekidenParts[1]);
 
-  console.warn(`[timeToSeconds] Could not parse time: ${timeStr}`);
+  logger.warn(`[timeToSeconds] Could not parse time: ${timeStr}`);
   return Infinity;
 };
 
@@ -117,9 +133,9 @@ const formatTimeDisplay = (timeStr: string, eventName?: string): string => {
 };
 
 // データ生成・ソート関数（メモ化）
-const createSortedRecords = (runnersData: any[]): RecordEntry[] => {
+const createSortedRecords = (runnersData: RawRunnerData[]): RecordEntry[] => {
   return runnersData
-    .map((runner: any): RecordEntry => ({
+    .map((runner: RawRunnerData): RecordEntry => ({
       name: runner.name || "",
       time: runner.time || "",
       grade: runner.year || "",
@@ -778,8 +794,22 @@ export default function RecordsPage() {
     const [mensData, setMensData] = useState<RecordsData>({});
     const [womensData, setWomensData] = useState<RecordsData>({});
 
+    // 種目名を表示用に変換
+    const getEventDisplayName = useCallback((eventKey: string): string => {
+        const displayNames: { [key: string]: string } = {
+            '1500m': '1500m',
+            '3000mSC': '3000mSC', 
+            '5000m': '5000m',
+            '10000m': '10000m',
+            'ハーフマラソン': 'ハーフマラソン',
+            'マラソン': 'マラソン',
+            'その他': 'その他'
+        };
+        return displayNames[eventKey] || eventKey;
+    }, []);
+
     // データ読み込み関数
-    const loadRecordsData = async () => {
+    const loadRecordsData = useCallback(async () => {
         try {
             setIsLoading(true);
             setError(null);
@@ -811,7 +841,7 @@ export default function RecordsPage() {
                         }
                     }
                 } catch (err) {
-                    console.warn(`Failed to load men's ${file}:`, err);
+                    logger.warn(`Failed to load men's ${file}:`, err);
                 }
             }
 
@@ -841,7 +871,7 @@ export default function RecordsPage() {
                         }
                     }
                 } catch (err) {
-                    console.warn(`Failed to load women's ${file}:`, err);
+                    logger.warn(`Failed to load women's ${file}:`, err);
                 }
             }
 
@@ -849,58 +879,28 @@ export default function RecordsPage() {
             setWomensData(womensResults);
 
         } catch (err) {
-            console.error('Error loading records data:', err);
+            logger.error('Error loading records data:', err);
             setError('記録データの読み込みに失敗しました');
         } finally {
             setIsLoading(false);
         }
-    };
-
-    // 種目名を表示用に変換
-    const getEventDisplayName = (eventKey: string): string => {
-        const displayNames: { [key: string]: string } = {
-            '1500m': '1500m',
-            '3000mSC': '3000mSC', 
-            '5000m': '5000m',
-            '10000m': '10000m',
-            'ハーフマラソン': 'ハーフマラソン',
-            'マラソン': 'マラソン',
-            'その他': 'その他'
-        };
-        return displayNames[eventKey] || eventKey;
-    };
+    }, [getEventDisplayName]);
 
     // 初期化
     useEffect(() => {
         loadRecordsData();
-        // loadRecordsData は同一レンダ内で安定参照（再定義なし）のため依存配列から除外
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [loadRecordsData]);
 
     // エラー状態
     if (error) {
         return (
-            <div className="min-h-screen bg-gradient-to-br from-white to-sky-50 flex flex-col items-center justify-center p-4">
-                <motion.div 
-                    className="text-center"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <Award className="mx-auto h-16 w-16 text-red-500 mb-4" />
-                    <h1 className="text-2xl font-bold text-red-600 mb-4">エラーが発生しました</h1>
-                    <p className="text-gray-600 mb-6">{error}</p>
-                    <Button
-                        onClick={() => {
-                            setError(null);
-                            loadRecordsData();
-                        }}
-                        className="bg-sky-600 hover:bg-sky-700 text-white"
-                    >
-                        再読み込み
-                    </Button>
-                </motion.div>
-            </div>
+            <ErrorDisplay 
+                message={error}
+                onRetry={() => {
+                    setError(null);
+                    loadRecordsData();
+                }}
+            />
         );
     }
 

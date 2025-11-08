@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { supabase, Post } from "@/lib/supabase";
+import { logger } from "@/lib/logger";
 import { Loader2, MessageSquare, Flag } from "lucide-react";
 
 interface PostsListProps {
@@ -34,14 +35,14 @@ export function PostsList({ refreshTrigger, onOpenReport, onOpenImage }: PostsLi
         .range(offset, offset + postsPerPage - 1);
 
       if (error) {
-        console.error('Supabase取得エラー:', error);
+        logger.error('Supabase取得エラー:', error);
         throw error;
       }
       
       setPosts(data || []);
       setTotalPosts(count || 0);
     } catch (error) {
-      console.error('投稿の読み込みエラー:', error);
+      logger.error('投稿の読み込みエラー:', error);
       // エラー時は空の状態を表示
       setPosts([]);
       setTotalPosts(0);
@@ -88,11 +89,51 @@ export function PostsList({ refreshTrigger, onOpenReport, onOpenImage }: PostsLi
     }
   };
 
-  const processContent = (content: string): string => {
-    // 改行を<br>に変換し、返信リンクをスタイリング
-    return escapeHtml(content)
-      .replace(/\n/g, '<br>')
-      .replace(/&gt;&gt;(\d+)/g, '<span class="text-blue-500 font-medium">&gt;&gt;$1</span>');
+  // コンテンツを安全にレンダリングするための関数
+  const renderContent = (content: string) => {
+    // 改行で分割（エスケープ前）
+    const lines = content.split('\n');
+    
+    return lines.map((line, lineIndex) => {
+      // 返信リンク（>>数字）を検出してスタイリング（エスケープ前のテキストで検出）
+      const parts: (string | JSX.Element)[] = [];
+      const replyPattern = />>(\d+)/g;
+      let lastIndex = 0;
+      let match;
+      let matchCount = 0;
+      
+      while ((match = replyPattern.exec(line)) !== null) {
+        // マッチ前のテキストをエスケープ
+        if (match.index > lastIndex) {
+          parts.push(escapeHtml(line.substring(lastIndex, match.index)));
+        }
+        // 返信リンク部分（数字部分のみエスケープ）
+        parts.push(
+          <span key={`reply-${lineIndex}-${matchCount}`} className="text-blue-500 font-medium">
+            &gt;&gt;{escapeHtml(match[1])}
+          </span>
+        );
+        lastIndex = match.index + match[0].length;
+        matchCount++;
+      }
+      
+      // 残りのテキストをエスケープ
+      if (lastIndex < line.length) {
+        parts.push(escapeHtml(line.substring(lastIndex)));
+      }
+      
+      // マッチがない場合は全体をエスケープ
+      if (parts.length === 0) {
+        parts.push(escapeHtml(line));
+      }
+      
+      return (
+        <React.Fragment key={`line-${lineIndex}`}>
+          {parts}
+          {lineIndex < lines.length - 1 && <br />}
+        </React.Fragment>
+      );
+    });
   };
 
   const totalPages = Math.ceil(totalPosts / postsPerPage);
@@ -134,10 +175,9 @@ export function PostsList({ refreshTrigger, onOpenReport, onOpenImage }: PostsLi
               <span className="text-gray-400 text-xs">ID:{generateId(post.id)}</span>
             </div>
             
-            <div 
-              className="text-gray-700 leading-relaxed mb-4 whitespace-pre-wrap"
-              dangerouslySetInnerHTML={{ __html: processContent(post.content) }}
-            />
+            <div className="text-gray-700 leading-relaxed mb-4 whitespace-pre-wrap">
+              {renderContent(post.content)}
+            </div>
             
             <div className="flex gap-4 text-sm">
               <button

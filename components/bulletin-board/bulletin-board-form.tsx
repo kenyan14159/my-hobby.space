@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useNotification } from "@/lib/hooks/use-notification";
 import { supabase } from "@/lib/supabase";
+import { logger } from "@/lib/logger";
 import { Loader2 } from "lucide-react";
 
 interface BulletinBoardFormProps {
@@ -25,6 +26,8 @@ export function BulletinBoardForm({ onPostSubmitted, onShowTerms }: BulletinBoar
   const postCooldown = 20000; // 20秒
   const MAX_AUTHOR_LENGTH = 50;
   const MAX_CONTENT_LENGTH = 2000;
+  
+  // NGワードリスト（より包括的で、部分一致を防ぐ）
   const ngWords = [
     'バカ', 'ばか', 'アホ', 'あほ', 'クズ', 'くず', 'ゴミ', 'ごみ', 
     '死ね', 'しね', '殺す', 'ころす', 'うざい', 'ウザい', 'きもい', 'キモい',
@@ -33,13 +36,51 @@ export function BulletinBoardForm({ onPostSubmitted, onShowTerms }: BulletinBoar
     '才能ない', '向いてない', 'むいてない', 'やる気ない', 'やるきない'
   ];
 
+  // NGワードフィルター（より堅牢な実装）
   const filterNGWords = (text: string): string => {
+    if (!text || text.trim().length === 0) {
+      return text;
+    }
+    
     let filteredText = text;
+    
+    // 各NGワードをチェック（部分一致を防ぐため、単語境界を考慮）
     ngWords.forEach(word => {
-      const regex = new RegExp(word, 'gi');
-      filteredText = filteredText.replace(regex, '***');
+      // 単語全体にマッチする正規表現（より厳密）
+      // 日本語の場合は前後に空白や句読点、行頭/行末をチェック
+      const patterns = [
+        new RegExp(`^${word}`, 'gi'), // 行頭
+        new RegExp(`${word}$`, 'gi'), // 行末
+        new RegExp(`\\s${word}\\s`, 'gi'), // 前後に空白
+        new RegExp(`\\s${word}`, 'gi'), // 前に空白
+        new RegExp(`${word}\\s`, 'gi'), // 後に空白
+        new RegExp(`[。、，．]${word}`, 'gi'), // 句読点の後
+        new RegExp(`${word}[。、，．]`, 'gi'), // 句読点の前
+      ];
+      
+      patterns.forEach(pattern => {
+        filteredText = filteredText.replace(pattern, (match) => {
+          return match.replace(word, '***');
+        });
+      });
+      
+      // 単独で存在する場合（前後が空白や句読点、または行頭/行末）
+      const standalonePattern = new RegExp(`(^|\\s|[。、，．])${word}(\\s|[。、，．]|$)`, 'gi');
+      filteredText = filteredText.replace(standalonePattern, (match) => {
+        return match.replace(word, '***');
+      });
     });
+    
     return filteredText;
+  };
+  
+  // 入力値のサニタイゼーション（追加のセキュリティ対策）
+  const sanitizeInput = (text: string): string => {
+    // 制御文字を除去
+    return text
+      .replace(/[\x00-\x1F\x7F]/g, '') // 制御文字
+      .replace(/\u200B/g, '') // ゼロ幅スペース
+      .trim();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -51,24 +92,28 @@ export function BulletinBoardForm({ onPostSubmitted, onShowTerms }: BulletinBoar
       return;
     }
 
-    const trimmedContent = content.trim();
-    if (!trimmedContent) {
+    // 入力値のサニタイゼーション
+    const sanitizedAuthor = sanitizeInput(author);
+    const sanitizedContent = sanitizeInput(content);
+    
+    if (!sanitizedContent) {
       showNotification('コメントを入力してください。', 'error');
       return;
     }
 
-    // 文字数バリデーション
-    if (author.length > MAX_AUTHOR_LENGTH) {
+    // 文字数バリデーション（サニタイズ後）
+    if (sanitizedAuthor.length > MAX_AUTHOR_LENGTH) {
       showNotification(`お名前は${MAX_AUTHOR_LENGTH}文字以内で入力してください。`, 'error');
       return;
     }
-    if (trimmedContent.length > MAX_CONTENT_LENGTH) {
+    if (sanitizedContent.length > MAX_CONTENT_LENGTH) {
       showNotification(`コメントは${MAX_CONTENT_LENGTH}文字以内で入力してください。`, 'error');
       return;
     }
 
-    const filteredAuthor = filterNGWords(author.trim()) || '日体駅伝さん';
-    const filteredContent = filterNGWords(trimmedContent);
+    // NGワードフィルター適用
+    const filteredAuthor = filterNGWords(sanitizedAuthor) || '日体駅伝さん';
+    const filteredContent = filterNGWords(sanitizedContent);
 
     setIsSubmitting(true);
 
@@ -85,7 +130,7 @@ export function BulletinBoardForm({ onPostSubmitted, onShowTerms }: BulletinBoar
         .select();
 
       if (error) {
-        console.error('Supabase投稿エラー:', error);
+        logger.error('Supabase投稿エラー:', error);
         throw error;
       }
       
@@ -95,7 +140,7 @@ export function BulletinBoardForm({ onPostSubmitted, onShowTerms }: BulletinBoar
       onPostSubmitted();
       showNotification('投稿しました！', 'success');
     } catch (error) {
-      console.error('投稿エラー:', error);
+      logger.error('投稿エラー:', error);
       const errorMessage = error instanceof Error ? error.message : '投稿の送信に失敗しました';
       showNotification(`投稿エラー: ${errorMessage}`, 'error');
     } finally {

@@ -138,13 +138,27 @@ export function Footer() {
             <div key={index}>
               <h4 className="text-sm lg:text-base font-bold mb-3 text-sky-800">{group.title}</h4>
               <ul className="space-y-1">
-                {group.items.map((item, itemIndex) => (
-                  <li key={itemIndex}>
-                    <Link href={item.href} className="text-xs lg:text-sm text-sky-600 hover:text-sky-800 transition-colors">
-                      {item.title}
-                    </Link>
-                  </li>
-                ))}
+                {group.items.map((item, itemIndex) => {
+                  const isExternal = item.href.startsWith('http://') || item.href.startsWith('https://');
+                  return (
+                    <li key={itemIndex}>
+                      {isExternal ? (
+                        <a 
+                          href={item.href} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs lg:text-sm text-sky-600 hover:text-sky-800 transition-colors"
+                        >
+                          {item.title}
+                        </a>
+                      ) : (
+                        <Link href={item.href} className="text-xs lg:text-sm text-sky-600 hover:text-sky-800 transition-colors">
+                          {item.title}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

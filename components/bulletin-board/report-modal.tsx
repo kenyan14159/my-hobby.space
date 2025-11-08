@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useNotification } from "@/lib/hooks/use-notification";
 import { supabase } from "@/lib/supabase";
+import { logger } from "@/lib/logger";
 import { AlertTriangle, Loader2 } from "lucide-react";
 
 interface ReportModalProps {
@@ -43,7 +44,7 @@ export function ReportModal({ isOpen, postInfo, onClose }: ReportModalProps) {
         ]);
 
       if (error) {
-        console.error('Supabase通報エラー:', error);
+        logger.error('Supabase通報エラー:', error);
         throw error;
       }
       
@@ -51,7 +52,7 @@ export function ReportModal({ isOpen, postInfo, onClose }: ReportModalProps) {
       setReason("");
       onClose();
     } catch (error) {
-      console.error('通報エラー:', error);
+      logger.error('通報エラー:', error);
       const errorMessage = error instanceof Error ? error.message : '通報の送信に失敗しました';
       showNotification(`通報エラー: ${errorMessage}`, 'error');
     } finally {

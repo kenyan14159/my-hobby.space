@@ -1,22 +1,44 @@
 import { createClient } from '@supabase/supabase-js';
+import { logger } from './logger';
 
 // 環境変数の確認
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('❌ Supabase環境変数が設定されていません');
-  console.error('📝 .env.localファイルに以下を設定してください:');
-  console.error('NEXT_PUBLIC_SUPABASE_URL=https://kgpiheirspgktmfqobkn.supabase.co');
-  console.error('NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here');
-  console.error('🔗 詳細な手順: SUPABASE_SETUP.md を参照してください');
+const isProduction = process.env.NODE_ENV === 'production';
+const hasValidConfig: boolean = Boolean(
+  supabaseUrl && 
+  supabaseAnonKey && 
+  supabaseUrl !== 'https://dummy.supabase.co' && 
+  supabaseAnonKey !== 'dummy-key'
+);
+
+if (!hasValidConfig) {
+  if (isProduction) {
+    // 本番環境では警告のみ（ビルド時に検出されるべき）
+    logger.warn('⚠️ Supabase環境変数が正しく設定されていません。一部の機能が動作しない可能性があります。');
+  } else {
+    // 開発環境では詳細なエラーメッセージ
+    logger.error('❌ Supabase環境変数が設定されていません');
+    logger.error('📝 .env.localファイルに以下を設定してください:');
+    logger.error('NEXT_PUBLIC_SUPABASE_URL=https://kgpiheirspgktmfqobkn.supabase.co');
+    logger.error('NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here');
+    logger.error('🔗 詳細な手順: SUPABASE_SETUP.md を参照してください');
+  }
 }
 
-// Supabaseクライアントの作成（環境変数がない場合はダミー値を使用）
+// Supabaseクライアントの作成
+// 環境変数がない場合はダミー値を使用（ビルド時のエラーを防ぐため）
+// ただし、実際の使用時にはエラーハンドリングが必要
 export const supabase = createClient(
   supabaseUrl || 'https://dummy.supabase.co',
   supabaseAnonKey || 'dummy-key'
 );
+
+// 環境変数の検証ヘルパー関数
+export function isSupabaseConfigured(): boolean {
+  return hasValidConfig;
+}
 
 // データベース型定義
 export interface Post {

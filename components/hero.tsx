@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
+import { generateGenericAlt } from "@/lib/seo-image-alt";
 
 export function Hero() {
   const controlsTitle = useAnimation();
@@ -49,7 +49,10 @@ export function Hero() {
         <div className="absolute inset-0">
           <Image
             src="https://nssu-ekiden.com/wp-content/uploads/2025/02/myfavorite.jpeg"
-            alt="日本体育大学駅伝部 - チーム一丸となって箱根駅伝出場を目指す選手たち"
+            alt={generateGenericAlt(
+              "チーム一丸となって箱根駅伝出場を目指す選手たち",
+              "日本体育大学駅伝部"
+            )}
             fill
             priority
             quality={85}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,7 @@ import { Trophy, TrendingUp, FileX, Loader2, Eye, EyeOff } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import React from "react";
+import { logger } from "@/lib/logger";
 
 // --- 型定義 ---
 interface RawRunner {
@@ -101,7 +102,7 @@ const timeToSeconds = (timeStr: string | null): number => {
         
         // 妥当性チェック: 分または秒が60以上は不正
         if (minutes >= 60 || seconds >= 60) {
-            console.warn(`Invalid time format: ${timeStr}`);
+            logger.warn(`Invalid time format: ${timeStr}`);
             return Infinity;
         }
         
@@ -115,7 +116,7 @@ const timeToSeconds = (timeStr: string | null): number => {
         
         // 10000mの妥当性チェック: 分が60以上または秒が60以上は不正
         if (minutes >= 60 || seconds >= 60) {
-            console.warn(`Invalid time format: ${timeStr}`);
+            logger.warn(`Invalid time format: ${timeStr}`);
             return Infinity;
         }
         
@@ -166,7 +167,7 @@ export default function RecordsPage() {
     const [showMobileDetails, setShowMobileDetails] = useState(false);
 
     // データ読み込み関数
-    const loadEventData = async (eventId: string, fileName: string) => {
+    const loadEventData = useCallback(async (eventId: string, fileName: string) => {
         try {
             setEventsData(prev => ({
                 ...prev,
@@ -197,7 +198,7 @@ export default function RecordsPage() {
                 }
             }));
         } catch (error) {
-            console.error(`Error loading ${fileName}:`, error);
+            logger.error(`Error loading ${fileName}:`, error);
             setEventsData(prev => ({
                 ...prev,
                 [eventId]: {
@@ -210,14 +211,14 @@ export default function RecordsPage() {
                 }
             }));
         }
-    };
+    }, []);
 
     // 初期データ読み込み
     useEffect(() => {
         EVENTS.forEach(event => {
             loadEventData(event.id, event.fileName);
         });
-    }, []);
+    }, [loadEventData]);
 
     // データ処理
     const processedRunners = useMemo((): Runner[] => {

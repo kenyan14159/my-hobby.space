@@ -99,7 +99,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const isDevelopment = process.env.NODE_ENV === 'development';
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SportsTeam',

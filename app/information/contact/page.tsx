@@ -20,6 +20,7 @@ import { useState } from "react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { InfoQuickAccess } from "@/components/info-quick-access";
+import { logger } from "@/lib/logger";
 
 // バリデーションスキーマの定義
 const formSchema = z.object({
@@ -43,7 +44,7 @@ export default function ContactPage() {
     async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      console.log('フォーム送信開始:', values);
+      logger.debug('フォーム送信開始:', values);
 
       // カテゴリーの日本語変換
       const categoryMap: { [key: string]: string } = {
@@ -78,12 +79,12 @@ export default function ContactPage() {
         throw new Error(errorData.error || '送信に失敗しました');
       }
 
-      console.log('Formspree送信成功');
+      logger.info('Formspree送信成功');
       
       toast.success("お問い合わせが送信されました。ありがとうございます！");
       form.reset();
     } catch (error) {
-      console.error('送信エラー:', error);
+      logger.error('送信エラー:', error);
       
       if (error instanceof Error) {
         toast.error(`送信に失敗しました: ${error.message}`);

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Camera, Shuffle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
+import { generateGenericAlt } from "@/lib/seo-image-alt";
 
 const imagePaths = [
     "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite308.jpg",
@@ -310,31 +311,48 @@ export function PhotoGallery({
           viewport={{ once: true, margin: "-50px" }}
           key={displayImages.join(',')} // シャッフル時にアニメーションを再実行
         >
-          {displayImages.map((imagePath, index) => (
-            <motion.div
-              key={`${imagePath}-${index}`}
-              variants={itemVariants}
-              className="group cursor-pointer"
-              onClick={() => setSelectedImage(index)}
-            >
-              <div className="relative aspect-square overflow-hidden rounded-xl bg-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                <Image
-                  src={imagePath}
-                  alt={`チームフォト ${index + 1}`}
-                  fill
-                  loading="lazy"
-                  quality={75}
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16.67vw"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
-                />
+          {displayImages.map((imagePath, index) => {
+            // SEO最適化されたalt属性を生成
+            const imageAlt = generateGenericAlt(
+              `日本体育大学駅伝部の活動写真 ${index + 1}`,
+              title || 'ギャラリー'
+            );
+
+            return (
+              <motion.div
+                key={`${imagePath}-${index}`}
+                variants={itemVariants}
+                className="group cursor-pointer"
+                onClick={() => setSelectedImage(index)}
+                role="button"
+                tabIndex={0}
+                aria-label={`写真 ${index + 1} を拡大表示`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedImage(index);
+                  }
+                }}
+              >
+                <div className="relative aspect-square overflow-hidden rounded-xl bg-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                  <Image
+                    src={imagePath}
+                    alt={imageAlt}
+                    fill
+                    loading="lazy"
+                    quality={75}
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    sizes="(max-width: 640px) 33vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16.67vw"
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
+                  />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                  <Camera className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <Camera className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
                 </div>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
 
 
@@ -359,7 +377,10 @@ export function PhotoGallery({
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={displayImages[selectedImage]}
-                    alt={`チームフォト ${selectedImage + 1}`}
+                    alt={generateGenericAlt(
+                      `日本体育大学駅伝部の活動写真 ${selectedImage + 1}`,
+                      title || 'ギャラリー'
+                    )}
                     width={1200}
                     height={800}
                     quality={90}

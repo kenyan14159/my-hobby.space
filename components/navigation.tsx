@@ -17,6 +17,7 @@ import {
 import { Menu, X, ChevronDown, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button"; // Assuming this is correctly imported from your project
 import type { MenuItem, MenuSection, SubmenuSection } from "@/types/navigation";
+import { cn } from "@/lib/utils";
 
 // --- shadcn/ui Components ---
 // 実運用ではモックを使用せず、Radix ベースの shadcn/ui コンポーネントに直接依存します
@@ -29,11 +30,6 @@ const NavigationMenuTriggerComponent = NavigationMenuTrigger;
 const navigationMenuTriggerStyleFunc = navigationMenuTriggerStyle;
 const ButtonComponent = Button;
 // --- End Components ---
-
-// Utility function (if not imported)
-const cn = (...inputs: any[]) => {
-  return inputs.filter(Boolean).join(' ');
-};
 
 // メニュー構造の定義
 const menuStructure: MenuSection[] = [
@@ -290,6 +286,11 @@ function DesktopNavigation() {
   );
 }
 
+// 外部リンクかどうかを判定する関数
+const isExternalLink = (href: string): boolean => {
+  return href.startsWith('http://') || href.startsWith('https://');
+};
+
 // デスクトップメニュー項目コンポーネント
 const DesktopMenuItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -297,31 +298,56 @@ const DesktopMenuItem = React.forwardRef<
 >(({ item, className, ...props }, ref) => {
   const pathname = usePathname();
   const isActive = pathname === item.href;
+  const external = isExternalLink(item.href);
+  
+  const linkClassName = cn(
+    "block select-none rounded-md px-3 py-2 leading-none no-underline outline-none transition-colors hover:bg-sky-50 hover:text-sky-900 focus:bg-sky-50 focus:text-sky-900",
+    "text-sm",
+    isActive && "bg-sky-100 text-sky-800 font-medium",
+    className
+  );
   
   return (
     <li>
-      <NavigationMenuLinkComponent asChild>
-        <Link
-          href={item.href}
-          ref={ref}
-          className={cn(
-            "block select-none rounded-md px-3 py-2 leading-none no-underline outline-none transition-colors hover:bg-sky-50 hover:text-sky-900 focus:bg-sky-50 focus:text-sky-900",
-            "text-sm",
-            isActive && "bg-sky-100 text-sky-800 font-medium",
-            className
-          )}
-          {...props}
-        >
-          <div className="leading-none">
-            {item.title}
-          </div>
-          {item.description && (
-            <p className="line-clamp-2 text-xs leading-snug text-gray-500 mt-1">
-              {item.description}
-            </p>
-          )}
-        </Link>
-      </NavigationMenuLinkComponent>
+      {external ? (
+        <NavigationMenuLinkComponent asChild>
+          <a
+            href={item.href}
+            ref={ref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClassName}
+            {...props}
+          >
+            <div className="leading-none">
+              {item.title}
+            </div>
+            {item.description && (
+              <p className="line-clamp-2 text-xs leading-snug text-gray-500 mt-1">
+                {item.description}
+              </p>
+            )}
+          </a>
+        </NavigationMenuLinkComponent>
+      ) : (
+        <NavigationMenuLinkComponent asChild>
+          <Link
+            href={item.href}
+            ref={ref}
+            className={linkClassName}
+            {...props}
+          >
+            <div className="leading-none">
+              {item.title}
+            </div>
+            {item.description && (
+              <p className="line-clamp-2 text-xs leading-snug text-gray-500 mt-1">
+                {item.description}
+              </p>
+            )}
+          </Link>
+        </NavigationMenuLinkComponent>
+      )}
     </li>
   );
 });
@@ -416,16 +442,30 @@ function MobileNavigation({ closeMobileMenu }: { closeMobileMenu: () => void }) 
               )}
               {openSections[section.title] && section.submenu && (
                 <div className="pl-4 pb-2 space-y-1 bg-sky-50/50 rounded-lg mt-1 py-2">
-                  {section.submenu.flatMap(submenu => submenu.items).map((item, itemIndex) => (
-                    <Link
-                      key={itemIndex}
-                      href={item.href}
-                      className="block py-2.5 px-3 text-gray-700 hover:text-sky-700 hover:bg-white rounded transition-colors text-sm"
-                      onClick={handleLinkClick}
-                    >
-                      {item.title}
-                    </Link>
-                  ))}
+                  {section.submenu.flatMap(submenu => submenu.items).map((item, itemIndex) => {
+                    const external = isExternalLink(item.href);
+                    return external ? (
+                      <a
+                        key={itemIndex}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block py-2.5 px-3 text-gray-700 hover:text-sky-700 hover:bg-white rounded transition-colors text-sm"
+                        onClick={handleLinkClick}
+                      >
+                        {item.title}
+                      </a>
+                    ) : (
+                      <Link
+                        key={itemIndex}
+                        href={item.href}
+                        className="block py-2.5 px-3 text-gray-700 hover:text-sky-700 hover:bg-white rounded transition-colors text-sm"
+                        onClick={handleLinkClick}
+                      >
+                        {item.title}
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
             </div>

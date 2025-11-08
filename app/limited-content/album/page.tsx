@@ -6,7 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Camera, ExternalLink, Calendar, ChevronDown, Images, Loader2 } from "lucide-react";
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { ErrorDisplay } from "@/components/ui/error-display";
 import Image from "next/image";
+import { logger } from "@/lib/logger";
 
 // --- 型定義 ---
 interface AlbumItem {
@@ -157,7 +159,7 @@ export default function AlbumPage() {
         const data = await response.json();
         setAlbumData(data);
       } catch (err) {
-        console.error('Error loading album data:', err);
+        logger.error('Error loading album data:', err);
         setError('データの読み込みに失敗しました');
       } finally {
         setIsLoading(false);
@@ -198,17 +200,15 @@ export default function AlbumPage() {
   // エラー状態
   if (error) {
     return (
-      <div className="bg-gradient-to-b from-slate-50 via-gray-50 to-slate-50 min-h-screen flex items-center justify-center">
-        <div className="text-center bg-white p-8 rounded-2xl shadow-xl border-2 border-red-200">
-          <p className="text-red-600 mb-6 text-lg font-medium">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="bg-slate-700 hover:bg-slate-800 text-white px-8 py-3 rounded-xl font-medium transition-all transform hover:scale-105 shadow-lg"
-          >
-            再読み込み
-          </button>
-        </div>
-      </div>
+      <ErrorDisplay 
+        message={error}
+        onRetry={() => {
+          setError(null);
+          setIsLoading(true);
+          // データ再読み込みはuseEffectで自動実行される
+          window.location.reload();
+        }}
+      />
     );
   }
 

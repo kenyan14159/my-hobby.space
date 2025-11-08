@@ -8,6 +8,7 @@ import { useState, Fragment, useEffect, useMemo } from "react"; // useState, Fra
 import { AnimatedPageHeader } from "@/components/ui/animated-page-header";
 import { Breadcrumbs, BreadcrumbItem } from "@/components/ui/breadcrumbs";
 import { X, Loader2 } from "lucide-react"; // XアイコンとLoader2アイコンをインポート
+import { logger } from "@/lib/logger";
 
 // --- 型定義 ---
 interface PersonalBest {
@@ -94,7 +95,7 @@ export default function MemberIntroductionPage() {
         setStaffData(allStaff);
 
       } catch (err) {
-        console.error('Error loading member data:', err);
+        logger.error('Error loading member data:', err);
         setError('データの読み込みに失敗しました');
       } finally {
         setIsLoading(false);
@@ -102,8 +103,7 @@ export default function MemberIntroductionPage() {
     };
 
     loadData();
-    // grades, setMembersData, setStaffData は安定参照のため省略
-  }, [/* intentionally empty: runs once on mount */]);
+  }, [grades]);
 
   const professionalStaff = staffData.filter(s => !s.isStudent);
   const studentStaff = staffData.filter(s => s.isStudent);
@@ -116,11 +116,11 @@ export default function MemberIntroductionPage() {
 
   // モーダルを開くヘルパー関数
   const openModal = (items: (Member | Staff)[], index: number) => {
-    console.log("openModal called", { items, index });
+    logger.debug("openModal called", { items, index });
     setModalItems(items);
     setCurrentIndex(index);
     setIsModalOpen(true);
-    console.log("Modal state updated", { isModalOpen: true, itemsLength: items.length, currentIndex: index });
+    logger.debug("Modal state updated", { isModalOpen: true, itemsLength: items.length, currentIndex: index });
   };
 
   // 前後の選手へ移動
