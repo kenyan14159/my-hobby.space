@@ -164,6 +164,12 @@ const TSX_RESULTS: Record<string, Omit<ResultMeta, 'slug' | 'type'>> = {
     date: '2025-11-02',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan83.jpeg'
   },
+  '11-09-setagaya': {
+    id: 27,
+    title: '第20回世田谷246ハーフマラソン',
+    date: '2025-11-09',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/2023setagaya17.jpg'
+  },
 };
 
 export function getAllResults(): ResultMeta[] {
