@@ -211,6 +211,30 @@ export default function MemberIntroductionPage() {
           title="部員紹介"
           subtitle="Team Members"
         />
+        
+        {/* SEO用の選手名リスト（視覚的には隠す） */}
+        <div className="sr-only">
+          <h2>日本体育大学駅伝部メンバー一覧</h2>
+          <p>
+            日本体育大学駅伝部のメンバー紹介ページです。
+            以下の選手・スタッフのプロフィール、自己ベスト記録、出身校情報を掲載しています：
+            {membersData.map((member, index) => (
+              <span key={member.name}>
+                {index > 0 && '、'}
+                {member.name}
+                {member.grade && `（${member.grade}年生）`}
+                {member.highSchool && `（${member.highSchool}出身）`}
+              </span>
+            ))}
+            {staffData.map((staff, index) => (
+              <span key={`staff-${staff.name}`}>
+                {index > 0 || membersData.length > 0 ? '、' : ''}
+                {staff.name}
+                {staff.role && `（${staff.role}）`}
+              </span>
+            ))}
+          </p>
+        </div>
 
         <Tabs defaultValue="grade-1" className="space-y-8">
           <TabsList className="grid grid-cols-5 w-full max-w-3xl mx-auto gap-4 bg-transparent p-0">
@@ -248,6 +272,7 @@ export default function MemberIntroductionPage() {
                     {getMembersByGrade(grade).map((member, index) => (
                       <motion.div
                         key={`${grade}-${member.name}`}
+                        id={encodeURIComponent(member.name)}
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -322,6 +347,7 @@ export default function MemberIntroductionPage() {
                   {professionalStaff.map((staff, index) => (
                      <motion.div
                       key={`prof-staff-${staff.name}`}
+                      id={encodeURIComponent(staff.name)}
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -380,6 +406,7 @@ export default function MemberIntroductionPage() {
                   {sortedStudentStaff.map((staff, index) => (
                     <motion.div
                       key={`student-staff-${staff.name}`}
+                      id={encodeURIComponent(staff.name)}
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.05 }}

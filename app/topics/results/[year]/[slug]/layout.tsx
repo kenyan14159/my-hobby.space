@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getAllResults } from '@/lib/results';
+import Script from 'next/script';
 
 type Params = { params: { year: string; slug: string } };
 
@@ -8,9 +9,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const item = getAllResults().find((n) => n.slug === fullSlug);
 
   const title = item ? item.title : 'リザルト';
+  const dateStr = item && typeof item.date === 'string' ? item.date : '';
   const description = item
-    ? `${item.title}（${typeof item.date === 'string' ? item.date : ''}）`
-    : '日本体育大学駅伝部の結果';
+    ? `${item.title}${dateStr ? `（${dateStr}）` : ''}。日本体育大学駅伝部の試合結果、大会成績、選手の記録を掲載。日体大駅伝部の公式リザルトページです。`
+    : '日本体育大学駅伝部の試合結果一覧。大会成績、選手の記録を掲載。';
   const images = item?.image ? [item.image] : [];
 
   return {
@@ -46,8 +48,82 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-export default function ResultDetailLayoutRoute({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+export default function ResultDetailLayoutRoute({ 
+  children,
+  params 
+}: { 
+  children: React.ReactNode;
+  params: { year: string; slug: string };
+}) {
+  const fullSlug = `${params.year}/${params.slug}`;
+  const item = getAllResults().find((n) => n.slug === fullSlug);
+
+  // SportsEvent 構造化データ
+  const sportsEventJsonLd = item ? {
+    '@context': 'https://schema.org',
+    '@type': 'SportsEvent',
+    name: item.title,
+    startDate: item.date && typeof item.date === 'string' ? new Date(item.date).toISOString() : undefined,
+    sport: '駅伝・陸上競技',
+    organizer: {
+      '@type': 'Organization',
+      name: '日本体育大学陸上競技部男子駅伝ブロック',
+      url: 'https://nssu-ekiden.com'
+    },
+    image: item.image,
+    description: `${item.title}${item.date && typeof item.date === 'string' ? `（${item.date}）` : ''}。日本体育大学駅伝部の試合結果。`,
+    url: `https://nssu-ekiden.com/topics/results/${fullSlug}`,
+  } : null;
+
+  // BreadcrumbList構造化データ
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'ホーム',
+        item: 'https://nssu-ekiden.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'トピックス',
+        item: 'https://nssu-ekiden.com/topics',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'リザルト',
+        item: 'https://nssu-ekiden.com/topics/results',
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: item?.title || '試合結果',
+        item: `https://nssu-ekiden.com/topics/results/${fullSlug}`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      {sportsEventJsonLd && (
+        <Script
+          id="sports-event-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(sportsEventJsonLd) }}
+        />
+      )}
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {children}
+    </>
+  );
 }
 
 

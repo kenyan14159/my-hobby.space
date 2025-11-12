@@ -267,7 +267,7 @@ function CountdownSection({
       <div className="absolute inset-0">
         <CardImage
           src={backgroundImage || "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite145.jpg"}
-          alt="背景画像"
+          alt={`${title}${subtitle ? ` - ${subtitle}` : ''} - 日本体育大学駅伝部`}
           sizes="100vw"
           overlayClassName="bg-neutral-900/80"
         />

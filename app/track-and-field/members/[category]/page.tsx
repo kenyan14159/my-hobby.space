@@ -120,6 +120,25 @@ export default async function CategoryMembersPage({
 
       <AnimatedPageHeader title={categoryInfo.label} />
 
+      {/* SEO用の選手名リスト（視覚的には隠す） */}
+      <div className="sr-only">
+        <h2>日本体育大学陸上競技部{categoryInfo.label}メンバー一覧</h2>
+        <p>
+          日本体育大学陸上競技部{categoryInfo.label}のメンバー紹介ページです。
+          以下の選手のプロフィール、自己ベスト記録、出身校情報を掲載しています：
+          {membersData && Object.entries(membersData).map(([grade, members]) => 
+            members.map((member, index) => (
+              <span key={`${grade}-${member.name}-${index}`}>
+                {index > 0 || (grade !== Object.keys(membersData!)[0] && index === 0) ? '、' : ''}
+                {member.name}
+                {member.school && `（${member.school}出身）`}
+                {member.event && member.event !== '-' && `（種目: ${member.event.replace(/<br>/g, '、')}）`}
+              </span>
+            ))
+          )}
+        </p>
+      </div>
+
       {/* 他の種目へのナビゲーション */}
       <div className="mt-6 mb-8">
         <h3 className="text-sm font-semibold text-gray-700 mb-3">他のブロックを見る</h3>
@@ -147,7 +166,11 @@ export default async function CategoryMembersPage({
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {members.map((member, index) => (
-                  <Card key={index} className={`p-4 ${categoryInfo.color} border-2`}>
+                  <Card 
+                    key={index} 
+                    id={encodeURIComponent(member.name)}
+                    className={`p-4 ${categoryInfo.color} border-2`}
+                  >
                     <div className="space-y-3">
                       {/* 画像表示 */}
                       {member["画像URL"] && (

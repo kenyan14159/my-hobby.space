@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
-import { TopicsNavigation } from "@/components/ui/topics-navigation";
 
 export const metadata: Metadata = {
-  title: 'トピックス | 日本体育大学駅伝部',
-  description: '日本体育大学駅伝部のトピックス。最新ニュース、試合結果、大会スケジュールを掲載。',
+  title: 'Webサイト集 | 日本体育大学駅伝部',
+  description: '日本体育大学駅伝部に関連するWebサイトのリンク集。陸上競技部公式ページ、駅伝リザルト、スコアリングテーブルなどの関連サイトを掲載。',
   keywords: [
     'NSSU',
     '日本体育大学',
@@ -13,23 +12,24 @@ export const metadata: Metadata = {
     '駅伝部',
     '大学駅伝',
     '駅伝競走',
-    'トピックス',
-    'ニュース',
-    '試合結果',
-    'スケジュール'
+    'リンク集',
+    '関連サイト',
+    '駅伝リザルト',
+    'スコアリングテーブル',
+    '陸上競技'
   ],
   openGraph: {
-    title: 'トピックス | 日本体育大学駅伝部',
-    description: '日体大駅伝部のトピックス。最新ニュース、試合結果、スケジュールを掲載。',
-    url: 'https://nssu-ekiden.com/topics',
+    title: 'Webサイト集 | 日本体育大学駅伝部',
+    description: '日体大駅伝部に関連するWebサイトのリンク集。関連サイトへのリンクを掲載。',
+    url: 'https://nssu-ekiden.com/web',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/topics',
+    canonical: 'https://nssu-ekiden.com/web',
   },
 };
 
-export default function TopicsLayout({
+export default function WebLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -48,8 +48,8 @@ export default function TopicsLayout({
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'トピックス',
-        item: 'https://nssu-ekiden.com/topics',
+        name: 'Webサイト集',
+        item: 'https://nssu-ekiden.com/web',
       },
     ],
   };
@@ -58,37 +58,37 @@ export default function TopicsLayout({
   const collectionPageSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'トピックス',
-    description: '日本体育大学駅伝部のトピックスページ。最新ニュース、試合結果、大会スケジュールを掲載。',
-    url: 'https://nssu-ekiden.com/topics',
+    name: 'Webサイト集',
+    description: '日本体育大学駅伝部に関連するWebサイトのリンク集',
+    url: 'https://nssu-ekiden.com/web',
     mainEntity: {
       '@type': 'ItemList',
-      name: 'トピックスメニュー',
+      name: '関連Webサイトリスト',
       itemListElement: [
         {
           '@type': 'ListItem',
           position: 1,
-          name: 'スケジュール',
-          url: 'https://nssu-ekiden.com/topics/schedule',
+          name: '陸上競技部',
+          url: 'https://nssu-ekiden.com/track-and-field',
         },
         {
           '@type': 'ListItem',
           position: 2,
-          name: 'リザルト',
-          url: 'https://nssu-ekiden.com/topics/results',
+          name: '駅伝リザルト',
+          url: 'https://www.ekiden-results.com/',
         },
         {
           '@type': 'ListItem',
           position: 3,
-          name: 'ニュース',
-          url: 'https://nssu-ekiden.com/topics/news',
+          name: 'スコアリングテーブル',
+          url: 'https://ekiden-results.com/information/scoring-table/',
         },
       ],
     },
   };
 
   return (
-    <div className="bg-gradient-to-br from-white to-sky-50 min-h-screen py-16">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -97,9 +97,8 @@ export default function TopicsLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
       />
-      <div className="container mx-auto px-4">
-        {children}
-      </div>
-    </div>
+      {children}
+    </>
   );
 }
+

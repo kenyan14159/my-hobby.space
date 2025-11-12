@@ -1,47 +1,102 @@
 import { Metadata } from 'next';
-import grade1Data from '@/data/members/grade1.json';
-import grade2Data from '@/data/members/grade2.json';
-import grade3Data from '@/data/members/grade3.json';
-import grade4Data from '@/data/members/grade4.json';
-import staffData from '@/data/members/staff.json';
+import fs from 'fs';
+import path from 'path';
 
-// 全メンバーの名前を取得
-const getAllMemberNames = () => {
-  const allMembers: string[] = [];
-  
-  // 各学年のメンバー名を取得
-  [grade1Data, grade2Data, grade3Data, grade4Data].forEach((data: any) => {
-    Object.values(data).forEach((gradeMembers: any) => {
-      if (Array.isArray(gradeMembers)) {
-        gradeMembers.forEach((member: any) => {
-          if (member.name) {
-            allMembers.push(member.name);
+// メンバー情報の型定義
+interface TrackFieldMember {
+  name: string;
+  school?: string;
+  from?: string;
+  role?: string;
+  event?: string;
+  pb?: string;
+  '画像URL'?: string;
+}
+
+interface MembersData {
+  [grade: string]: TrackFieldMember[];
+}
+
+// 全カテゴリのメンバーデータを取得
+const getAllTrackFieldMembers = (): TrackFieldMember[] => {
+  const allMembers: TrackFieldMember[] = [];
+  const categories = [
+    'sprint-men',
+    'sprint-women',
+    'middle-men',
+    'middle-women',
+    'ekiden-men',
+    'ekiden-women',
+    'jump-men',
+    'jump-women',
+    'throw-men',
+    'throw-women',
+    'combined-men',
+    'combined-women',
+    'para',
+    'trainer-men',
+    'trainer-women',
+    'staff',
+  ];
+
+  categories.forEach((category) => {
+    try {
+      const filePath = path.join(process.cwd(), 'public', 'data', 'track-field-members', `${category}.json`);
+      if (fs.existsSync(filePath)) {
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const data: MembersData = JSON.parse(fileContent);
+        
+        Object.values(data).forEach((gradeMembers) => {
+          if (Array.isArray(gradeMembers)) {
+            gradeMembers.forEach((member) => {
+              if (member.name) {
+                allMembers.push({
+                  name: member.name,
+                  school: member.school,
+                  from: member.from,
+                  role: member.role,
+                  event: member.event,
+                  pb: member.pb,
+                  '画像URL': member['画像URL'],
+                });
+              }
+            });
           }
         });
       }
-    });
-  });
-  
-  // スタッフの名前を取得
-  const staffDataObj = staffData as any;
-  Object.values(staffDataObj).forEach((staffCategory: any) => {
-    if (Array.isArray(staffCategory)) {
-      staffCategory.forEach((staff: any) => {
-        if (staff.name) {
-          allMembers.push(staff.name);
-        }
-      });
+    } catch (err) {
+      // ファイルが存在しない場合はスキップ
+      console.warn(`Failed to load ${category}.json:`, err);
     }
   });
-  
+
   return allMembers;
 };
 
+// 全メンバーの名前を取得
+const getAllMemberNames = (): string[] => {
+  const members = getAllTrackFieldMembers();
+  return members.map(m => m.name).filter((name, index, self) => self.indexOf(name) === index); // 重複を除去
+};
+
+const allMembers = getAllTrackFieldMembers();
 const memberNames = getAllMemberNames();
+
+// 選手名を含む詳細な説明文を生成（最大30名まで）
+const generateDescription = (): string => {
+  const displayNames = memberNames.slice(0, 30);
+  const remainingCount = memberNames.length - displayNames.length;
+  let description = `日本体育大学陸上競技部のメンバー・ブロック紹介ページ。短距離、中距離、駅伝、跳躍、投擲、混成、パラ、トレーナー、本部スタッフなど各ブロックの選手情報。${displayNames.join('、')}`;
+  if (remainingCount > 0) {
+    description += `ほか${remainingCount}名を含む全${memberNames.length}名のメンバー`;
+  }
+  description += 'の自己ベスト記録、出身校を掲載。選手名で検索してプロフィールを確認できます。';
+  return description;
+};
 
 export const metadata: Metadata = {
   title: 'メンバー・ブロック紹介 | 日本体育大学陸上競技部',
-  description: `日本体育大学陸上競技部のメンバー・ブロック紹介。短距離、中距離、駅伝、跳躍、投擲、混成、パラ、トレーナー、本部スタッフなど各ブロックの選手情報。${memberNames.slice(0, 15).join('、')}ほか全メンバーの自己ベスト記録、出身校を掲載。`,
+  description: generateDescription(),
   keywords: [
     'NSSU',
     '日本体育大学',
@@ -88,11 +143,16 @@ export const metadata: Metadata = {
     '箱根駅伝',
     '全日本大学駅伝',
     '出雲駅伝',
-    ...memberNames // 全選手名をキーワードに追加
+    ...memberNames, // 全選手名をキーワードに追加
+    // 選手名と「日体大」の組み合わせも追加
+    ...memberNames.map(name => `${name} 日体大`),
+    ...memberNames.map(name => `${name} 日本体育大学`),
+    ...memberNames.map(name => `日体大 ${name}`),
+    ...memberNames.map(name => `${name} 陸上競技部`),
   ],
   openGraph: {
     title: 'メンバー・ブロック紹介 | 日本体育大学陸上競技部',
-    description: `日体大陸上競技部の各ブロックメンバー紹介。短距離、中距離、駅伝、跳躍、投擲、混成、パラ、トレーナー、スタッフの選手情報を掲載。${memberNames.slice(0, 10).join('、')}ほか全メンバーの自己ベスト記録を公開。`,
+    description: generateDescription(),
     url: 'https://nssu-ekiden.com/track-and-field/members',
     type: 'website',
   },
@@ -146,6 +206,54 @@ export default function TrackMembersLayout({
     description: '日本体育大学陸上競技部の各ブロック(短距離、中距離、駅伝、跳躍、投擲、混成、パラ、トレーナー、スタッフ)のメンバー紹介',
   };
 
+  // 各メンバーのPerson構造化データを生成
+  const personSchemas = allMembers
+    .filter(member => member.name) // 名前があるもののみ
+    .map((member) => {
+      const schema: any = {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: member.name,
+        affiliation: {
+          '@type': 'Organization',
+          name: '日本体育大学陸上競技部',
+        },
+        url: `https://nssu-ekiden.com/track-and-field/members#${encodeURIComponent(member.name)}`,
+        description: `日本体育大学陸上競技部${member.role ? ` ${member.role}。` : ''}${member.event ? `種目: ${member.event.replace(/<br>/g, '、')}。` : ''}${member.school ? `${member.school}出身。` : ''}${member.from ? `${member.from}。` : ''}`,
+      };
+      
+      if (member.school) {
+        schema.alumniOf = {
+          '@type': 'EducationalOrganization',
+          name: member.school,
+        };
+      }
+      
+      if (member['画像URL']) {
+        schema.image = member['画像URL'];
+      }
+      
+      if (member.role && member.role !== '-') {
+        schema.jobTitle = member.role;
+      }
+      
+      return schema;
+    });
+
+  // ItemList構造化データ（全メンバーをリスト化）
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: '日本体育大学陸上競技部メンバー一覧',
+    description: '日本体育大学陸上競技部の全メンバーリスト',
+    itemListElement: memberNames.map((name, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: name,
+      url: `https://nssu-ekiden.com/track-and-field/members#${encodeURIComponent(name)}`,
+    })),
+  };
+
   return (
     <>
       <script
@@ -156,6 +264,18 @@ export default function TrackMembersLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(sportsTeamSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      {/* 各メンバーのPerson構造化データ */}
+      {personSchemas.map((schema, index) => (
+        <script
+          key={`person-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       {children}
     </>
   );

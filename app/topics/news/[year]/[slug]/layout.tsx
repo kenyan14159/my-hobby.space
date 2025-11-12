@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
   const title = item ? `${item.title} | 日体大駅伝部ニュース` : 'ニュース';
   const description = item
-    ? `${item.title} - 日本体育大学駅伝部の最新情報をお届けします。`
-    : '日本体育大学駅伝部のニュース';
+    ? `${item.title}。日本体育大学駅伝部の最新情報、チーム活動、選手の活躍、大会出場情報を掲載。日体大駅伝部の公式ニュースページです。`
+    : '日本体育大学駅伝部のニュース一覧。最新情報、チーム活動、選手の活躍を掲載。';
   const images = item?.image ? [item.image] : [];
 
   return {
@@ -84,7 +84,7 @@ export default function NewsDetailLayoutRoute({
       '@type': 'WebPage',
       '@id': `https://nssu-ekiden.com/topics/news/${fullSlug}`
     },
-    description: `${item.title} - 日本体育大学駅伝部の最新情報をお届けします。`
+    description: `${item.title}。日本体育大学駅伝部の最新情報、チーム活動、選手の活躍、大会出場情報を掲載。日体大駅伝部の公式ニュースページです。`
   } : null;
 
   return (
