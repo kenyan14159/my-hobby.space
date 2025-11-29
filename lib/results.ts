@@ -170,6 +170,24 @@ const TSX_RESULTS: Record<string, Omit<ResultMeta, 'slug' | 'type'>> = {
     date: '2025-11-09',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/2023setagaya17.jpg'
   },
+    '11-15-16-324-nittai': {
+    id: 28,
+    title: '第324回日本体育大学長距離競技会兼第18回NCG',
+    date: '2025-11-15',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/11/324-nittai95.jpeg'
+  },
+    '11-16-ageo-half': {
+    id: 29,
+    title: '第38回2025上尾シティハーフマラソン',
+    date: '2025-11-16',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-ageo21.jpeg'
+  },
+    '11-29-30-325-nittai': {
+    id: 30,
+    title: '第325回日本体育大学長距離競技会兼第19回NCG',
+    date: '2025-11-30',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/302nittai89.jpeg'
+  },
 };
 
 export function getAllResults(): ResultMeta[] {

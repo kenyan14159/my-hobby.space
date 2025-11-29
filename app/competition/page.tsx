@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,122 +17,14 @@ const competitionSchedule = [
   { month: "3月", dates: "29日(土) - 30日(日)", title: "第319回 日本体育大学長距離競技会" },
   { month: "4月", dates: "26日(土) - 27日(日)", title: "第320回 日本体育大学長距離競技会 兼 第14回NCG", isNCG: true },
   { month: "5月", dates: "31日(土) - 6月1日(日)", title: "第321回 日本体育大学長距離競技会 兼 第15回NCG", isNCG: true },
-  { month: "6月", dates: "14日(土) - 15日(日)", title: "第322回 日本体育大学長距離競技会 兼 第16回NCG", isNCG: true, note: "※改修工事の関係で日程変更(4/1)" },
-  { month: "10月", dates: "5日(日)", title: "第323回 日本体育大学長距離競技会 兼 第17回NCG", isNCG: true, venue: "慶應義塾大学日吉陸上競技場", specialNote: "競技場改修工事に伴い会場変更。駐車場なし。" },
+  { month: "6月", dates: "14日(土) - 15日(日)", title: "第322回 日本体育大学長距離競技会 兼 第16回NCG", isNCG: true,},
+  { month: "10月", dates: "5日(日)", title: "第323回 日本体育大学長距離競技会 兼 第17回NCG", isNCG: true, },
   { month: "11月", dates: "15日(土) - 16日(日)", title: "第324回 日本体育大学長距離競技会 兼 第18回NCG", isNCG: true },
   { month: "11月", dates: "29日(土) - 30日(日)", title: "第325回 日本体育大学長距離競技会 兼 第19回NCG", isNCG: true },
   { month: "12月", dates: "20日(土)", title: "第26回 女子長距離競技会" },
 ];
 
 export default function LongDistancePage() {
-  useEffect(() => {
-    // X (Twitter) widgets スクリプトの読み込みとレンダリング
-    // グローバル変数で読み込み状態を管理（重複読み込みを防ぐ）
-    const loadTwitterWidget = () => {
-      // 既に読み込み中の場合はスキップ
-      // @ts-ignore
-      if (window.__twitterWidgetLoading) {
-        return;
-      }
-
-      // 既存のスクリプトを確認
-      const existingScript = document.getElementById('twitter-wjs');
-      
-      const renderWidgets = () => {
-        try {
-          // @ts-ignore - Twitter widgets API
-          if (window.twttr?.widgets) {
-            // @ts-ignore
-            window.twttr.widgets.load();
-            
-            // レンダリング後の確認（5秒後にタイムラインが表示されているかチェック）
-            setTimeout(() => {
-              const container = document.getElementById('twitter-timeline-container');
-              const timeline = container?.querySelector('iframe');
-              if (!timeline || timeline.style.display === 'none') {
-                // タイムラインが表示されていない場合、フォールバックメッセージを表示
-                const fallback = container?.querySelector('.twitter-timeline-fallback');
-                if (fallback) {
-                  (fallback as HTMLElement).style.display = 'block';
-                }
-              }
-            }, 5000);
-          }
-        } catch (error) {
-          console.warn('Twitter widgets のレンダリングに失敗しました:', error);
-          // エラー時もフォールバックを表示
-          const container = document.getElementById('twitter-timeline-container');
-          const fallback = container?.querySelector('.twitter-timeline-fallback');
-          if (fallback) {
-            (fallback as HTMLElement).style.display = 'block';
-          }
-        }
-      };
-      
-      if (!existingScript) {
-        // @ts-ignore
-        window.__twitterWidgetLoading = true;
-        
-        const script = document.createElement('script');
-        script.id = 'twitter-wjs';
-        script.src = 'https://platform.twitter.com/widgets.js';
-        script.async = true;
-        script.charset = 'utf-8';
-        
-        // スクリプト読み込み完了後にwidgetsをレンダリング
-        script.onload = () => {
-          // @ts-ignore
-          window.__twitterWidgetLoading = false;
-          // 少し遅延させてからレンダリング（DOMの準備を待つ）
-          setTimeout(() => {
-            renderWidgets();
-          }, 200);
-        };
-        
-        // エラーハンドリング
-        script.onerror = () => {
-          // @ts-ignore
-          window.__twitterWidgetLoading = false;
-          console.warn('Twitter widgets スクリプトの読み込みに失敗しました。レート制限の可能性があります。');
-        };
-        
-        document.body.appendChild(script);
-      } else {
-        // 既にスクリプトが存在する場合
-        // @ts-ignore - Twitter widgets API
-        if (window.twttr?.widgets) {
-          renderWidgets();
-        } else {
-          // スクリプトがまだ読み込まれていない場合は、読み込みを待つ
-          let attempts = 0;
-          const maxAttempts = 50; // 5秒間待つ（100ms * 50）
-          
-          const checkTwttr = setInterval(() => {
-            attempts++;
-            // @ts-ignore
-            if (window.twttr?.widgets) {
-              renderWidgets();
-              clearInterval(checkTwttr);
-            } else if (attempts >= maxAttempts) {
-              clearInterval(checkTwttr);
-              console.warn('Twitter widgets の読み込みがタイムアウトしました。');
-            }
-          }, 100);
-        }
-      }
-    };
-
-    // コンポーネントがマウントされた後に実行
-    // 少し遅延させてDOMの準備を確実にする
-    const timer = setTimeout(() => {
-      loadTwitterWidget();
-    }, 1000); // 1秒に変更（レート制限を避けるため）
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
   return (
     <div className="bg-gradient-to-b from-white to-sky-50 min-h-screen">
       <motion.div 
@@ -194,9 +86,6 @@ export default function LongDistancePage() {
                       month={item.month}
                       dates={item.dates}
                       title={item.title}
-                      note={item.note}
-                      venue={item.venue}
-                      specialNote={item.specialNote}
                     />
                   ))}
                 </div>
@@ -207,7 +96,6 @@ export default function LongDistancePage() {
               <AlertCircle className="h-5 w-5 text-amber-600" />
               <AlertDescription className="text-amber-800">
                 <p className="mb-2">NCGはWRk申請対象となります。NCGと長距離競技会は別大会です。</p>
-                <p>第322回、第323回大会については競技場改修工事の関係で変更になる可能性があります。</p>
               </AlertDescription>
             </Alert>
           </div>
@@ -285,67 +173,6 @@ export default function LongDistancePage() {
           </div>
 
           <div className="space-y-10">
-            {/* Xタイムライン埋め込み */}
-            <Section 
-              id="twitter-timeline"
-              title="最新情報（X / Twitter）"
-              icon={<Twitter className="h-6 w-6 text-sky-600" />}
-              content={
-                <div className="bg-white p-6 rounded-xl border border-sky-200 shadow-sm">
-                  <div className="flex flex-col items-center space-y-4">
-                    {/* メイン: Xタイムライン埋め込み */}
-                    <div id="twitter-timeline-container" className="w-full min-h-[600px] flex items-center justify-center">
-                      <a 
-                        className="twitter-timeline" 
-                        data-width="100%"
-                        data-height="600" 
-                        data-theme="light"
-                        data-chrome="noheader nofooter noborders"
-                        data-link-color="#0284c7"
-                        data-dnt="true"
-                        href="https://twitter.com/nittai_e?ref_src=twsrc%5Etfw"
-                      >
-                        Tweets by @nittai_e
-                      </a>
-                    </div>
-                    
-                    {/* フォールバック: 直接リンクと説明 */}
-                    <div className="w-full border-t border-sky-100 pt-4">
-                      <div className="bg-sky-50 rounded-lg p-4 mb-4">
-                        <p className="text-sm text-gray-700 mb-3">
-                          <strong>タイムラインが表示されない場合：</strong><br />
-                          X（Twitter）のAPIレート制限により、タイムラインの表示が一時的に制限される場合があります。
-                          以下のリンクから直接@nittai_eの最新情報をご確認いただけます。
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                          <Button className="bg-sky-600 hover:bg-sky-700 text-white" asChild>
-                            <a 
-                              href="https://x.com/nittai_e" 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                            >
-                              <Twitter className="h-4 w-4 mr-2 inline" />
-                              @nittai_e をXで見る
-                            </a>
-                          </Button>
-                          <Button variant="outline" className="border-sky-300 text-sky-700 hover:bg-sky-50" asChild>
-                            <a 
-                              href="https://x.com/nittai_e" 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                            >
-                              新しいタブで開く
-                              <ExternalLink className="h-4 w-4 ml-2 inline" />
-                            </a>
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              }
-            />
-
             <Section 
               id="official-site"
               title="公式サイト"

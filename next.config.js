@@ -1,4 +1,37 @@
 /** @type {import('next').NextConfig} */
+
+// セキュリティヘッダーの設定
+const securityHeaders = [
+  {
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on'
+  },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload'
+  },
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff'
+  },
+  {
+    key: 'X-Frame-Options',
+    value: 'DENY'
+  },
+  {
+    key: 'X-XSS-Protection',
+    value: '1; mode=block'
+  },
+  {
+    key: 'Referrer-Policy',
+    value: 'strict-origin-when-cross-origin'
+  },
+  {
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=()'
+  },
+];
+
 const nextConfig = {
   output: 'export', // 静的エクスポートモード
   trailingSlash: true,
@@ -13,6 +46,15 @@ const nextConfig = {
   experimental: {
     // Type Strippingの警告を抑制
     typedRoutes: false,
+  },
+  // セキュリティヘッダーの追加（Vercelや一部ホスティングで使用）
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: securityHeaders,
+      },
+    ];
   },
   // Node.jsの警告を抑制
   webpack: (config, { isServer }) => {

@@ -513,14 +513,14 @@ export default function RecordsPage() {
                     {/* ナビゲーションボタン */}
                     <div className="mb-6 md:mb-8">
                         {/* 種目選択ボタン */}
-                        <div className="mb-8">
+                        <div className="mb-6">
                             <p className="text-xs text-gray-500 mb-3 text-center">種目選択</p>
-                            <TabsList className="flex flex-wrap gap-2 bg-transparent p-0 justify-center w-full min-h-[44px]">
+                            <TabsList className="grid grid-cols-3 sm:flex sm:flex-wrap gap-1.5 sm:gap-2 bg-transparent p-0 sm:justify-center w-full h-auto">
                                 {EVENTS.map((event) => (
                                     <TabsTrigger 
                                         key={event.id} 
                                         value={event.id}
-                                        className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg border-2 transition-all duration-200 data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:border-blue-600 data-[state=active]:shadow-lg data-[state=inactive]:bg-white data-[state=inactive]:text-gray-700 data-[state=inactive]:border-gray-200 hover:data-[state=inactive]:bg-gray-50 hover:data-[state=inactive]:border-gray-300 whitespace-nowrap"
+                                        className="px-2 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-sm font-medium rounded-md sm:rounded-lg border transition-all duration-200 data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:border-blue-600 data-[state=active]:shadow-md data-[state=inactive]:bg-white data-[state=inactive]:text-gray-700 data-[state=inactive]:border-gray-200 hover:data-[state=inactive]:bg-gray-50 hover:data-[state=inactive]:border-gray-300 whitespace-nowrap"
                                     >
                                         {event.name}
                                     </TabsTrigger>
@@ -530,10 +530,10 @@ export default function RecordsPage() {
 
                         {/* 追加ナビゲーション項目 */}
                         <div>
-                            <div className="flex flex-wrap gap-2 justify-center">
+                            <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-1.5 sm:gap-2 sm:justify-center">
                                 {ADDITIONAL_NAV_ITEMS.map((item) => (
                                     <Link key={item.id} href={item.href}>
-                                        <div className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg border-2 transition-all duration-200 bg-gradient-to-r from-gray-50 to-white text-gray-700 border-gray-300 hover:from-blue-50 hover:to-white hover:border-blue-300 hover:text-blue-700 cursor-pointer whitespace-nowrap shadow-sm">
+                                        <div className="px-2 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-sm font-medium rounded-md sm:rounded-lg border transition-all duration-200 bg-gradient-to-r from-gray-50 to-white text-gray-700 border-gray-300 hover:from-blue-50 hover:to-white hover:border-blue-300 hover:text-blue-700 cursor-pointer whitespace-nowrap shadow-sm text-center">
                                             {item.name}
                                         </div>
                                     </Link>

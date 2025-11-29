@@ -6,8 +6,10 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ImageProtection } from "@/components/ui/image-protection";
 import { BackToTop } from "@/components/ui/back-to-top";
+import { SkipLink } from "@/components/ui/skip-link";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { generateHakoneEkidenSchema, generateWebSiteSchema } from '@/lib/structured-data-extended';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -99,7 +101,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = {
+  // SportsTeam構造化データ
+  const sportsTeamSchema = {
     '@context': 'https://schema.org',
     '@type': 'SportsTeam',
     name: '日本体育大学駅伝部',
@@ -124,9 +127,16 @@ export default function RootLayout({
       }
     },
     sameAs: [
-      'https://nssu-ekiden.com'
+      'https://x.com/nssu_ekiden',
+      'https://www.instagram.com/nssu_ekiden'
     ]
   };
+
+  // WebSite構造化データ（検索対応）
+  const websiteSchema = generateWebSiteSchema();
+  
+  // 箱根駅伝イベント構造化データ
+  const hakoneSchema = generateHakoneEkidenSchema(2026);
 
   return (
     <html lang="ja" suppressHydrationWarning={true}>
@@ -135,12 +145,23 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://nssu-ekiden.com" />
         <link rel="preconnect" href="https://ekiden-results.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://ekiden-results.com" />
+        {/* 構造化データ: SportsTeam */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(sportsTeamSchema) }}
+        />
+        {/* 構造化データ: WebSite（検索対応） */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        {/* 構造化データ: 箱根駅伝イベント */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(hakoneSchema) }}
         />
       </head>
-      <body className={`${inter.className} no-scrollbar-x`} suppressHydrationWarning={true}>
+      <body className={`${inter.className} no-scrollbar-x antialiased`} suppressHydrationWarning={true}>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9TYY2HLEB5"
@@ -155,10 +176,11 @@ export default function RootLayout({
           `}
         </Script>
 
+        <SkipLink />
         <ImageProtection>
           <div className="flex flex-col min-h-screen responsive-container">
             <Navigation />
-            <main className="flex-grow responsive-container pt-16">
+            <main id="main-content" className="flex-grow responsive-container pt-16" tabIndex={-1}>
               {children}
             </main>
             <BackToTop />

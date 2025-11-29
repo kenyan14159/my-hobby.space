@@ -1,10 +1,13 @@
 import { MetadataRoute } from 'next';
+import { getAllNews } from '@/lib/news';
+import { getAllResults } from '@/lib/results';
 
 // Static export用の設定
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nssu-ekiden.com';
+  const currentDate = new Date().toISOString();
   
   // 基本的な静的ページ
   const staticPages = [
@@ -58,9 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'trainer-men', 'trainer-women', 'staff', 'para'
   ];
 
-  const currentYear = new Date().getFullYear();
-  const currentDate = new Date().toISOString();
-
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
   // 静的ページを追加
@@ -103,78 +103,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // 限定コンテンツページを追加（クロール対象外）
-  // これらは robots.txt で Disallow に設定するため、サイトマップからは除外
-  // ただし、内部的には以下のページが存在:
-  // - /limited-content
-  // - /limited-content/album
-  // - /limited-content/analysis
-  // - /limited-content/analysis/hakone
-  // - /limited-content/content
-  // - /limited-content/records
-
-  // 2025年ニュース記事を追加
-  const newsPages = [
-    '03-15-new-system',
-    '03-30-gifts-feb-mar',
-    '04-04-new-members',
-    '05-19-alljapan-members',
-    '05-25-gifts-apr-may',
-    '07-23-arinamin-sponsor',
-    '07-25-summer-camp',
-    '07-29-june-july',
-    '08-04-nojiriko-camp',
-    '08-19-sugadaira-camp',
-    '08-31-fujimi-camp',
-    '09-07-sugadaira-camp',
-    '09-20-summer-camp-end',
-    '09-20-august-september',
-    '10-06-hakone-qualifying-event-roster-announcement',
-        '10-08-all-japan-entry',
-    '10-14-torch-alinamin',
-  ];
-
-  // 2025年試合結果記事を追加
-  const resultPages = [
-    '02-02-kagawa-marugame-half',
-    '02-02-osawa-ekiden',
-    '02-09-kanagawa-ekiden',
-    '02-16-national-university-mixed-ekiden',
-    '03-08-sagamihara-cross-country',
-    '03-09-tachikawa-city-half',
-    '03-16-niigata-half',
-    '03-29-30-nssu-319th-long-distance',
-    '04-05-four-universities-track',
-    '04-13-adizero-5k',
-    '04-19-hosei-university',
-    '04-20-kokushikan-university',
-    '04-25-japan-student-individual',
-    '04-26-27-nssu-320th-long-distance',
-    '05-08-11-kanto-student-track',
-    '05-24-all-japan-university-ekiden-qualifier',
-    '05-31-nssu-long-distance',
-    '06-09-japan-student',
-    '06-21-nssu-track',
-    '06-28-oga-ekiden',
-    '07-20-hokuren-gakuren',
-    '09-28-240-tokai',
-    '10-05-nssu-323th-long-distance',
-    '10-18-hakone-qualifying-round',
-  ];
-
-  newsPages.forEach(page => {
+  // ニュース記事を動的に追加（実際の日付を使用）
+  const allNews = getAllNews();
+  allNews.forEach(news => {
+    const dateStr = typeof news.date === 'string' ? news.date : news.date.toISOString().split('T')[0];
+    const lastModified = new Date(dateStr).toISOString();
+    
     sitemapEntries.push({
-      url: `${baseUrl}/topics/news/${currentYear}/${page}`,
-      lastModified: currentDate,
+      url: `${baseUrl}/topics/news/${news.slug}`,
+      lastModified: lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,
     });
   });
 
-  resultPages.forEach(page => {
+  // リザルト記事を動的に追加（実際の日付を使用）
+  const allResults = getAllResults();
+  allResults.forEach(result => {
+    const dateStr = typeof result.date === 'string' ? result.date : result.date.toISOString().split('T')[0];
+    const lastModified = new Date(dateStr).toISOString();
+    
     sitemapEntries.push({
-      url: `${baseUrl}/topics/results/${currentYear}/${page}`,
-      lastModified: currentDate,
+      url: `${baseUrl}/topics/results/${result.slug}`,
+      lastModified: lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,
     });

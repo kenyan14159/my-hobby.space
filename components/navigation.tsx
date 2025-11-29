@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/navigation-menu"; // Assuming these are correctly imported from your project
 import { Menu, X, ChevronDown, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button"; // Assuming this is correctly imported from your project
+import { SearchButton } from "@/components/ui/search-dialog";
 import type { MenuItem, MenuSection, SubmenuSection } from "@/types/navigation";
 import { cn } from "@/lib/utils";
 
@@ -172,12 +173,16 @@ export function Navigation() {
           </Link>
 
           {/* デスクトップナビゲーション */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex lg:items-center lg:gap-2">
             <DesktopNavigation />
+            <div className="flex items-center gap-1 ml-2 border-l border-gray-200 pl-3">
+              <SearchButton />
+            </div>
           </div>
 
           {/* モバイル メニューボタン */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center gap-1">
+            <SearchButton />
             <ButtonComponent
               variant="ghost"
               size="icon"

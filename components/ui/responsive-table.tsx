@@ -37,27 +37,30 @@ const RankBadge = ({ rank }: { rank: any }): React.ReactElement | null => {
   return <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${className}`}>{rankStr}</span>;
 };
 
-const createNoteBadges = ({ note, isPB }: { note?: any; isPB?: boolean }): React.ReactElement[] => {
+const createNoteBadges = ({ note, isPB, isFirst }: { note?: any; isPB?: boolean; isFirst?: boolean }): React.ReactElement[] => {
   const badges: React.ReactElement[] = [];
   const noteStr = String(note || '');
 
   if (isPB) {
-    badges.push(<span key="pb" className="px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">自己新</span>);
+    badges.push(<span key="pb" className="px-1.5 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-700">PB</span>);
+  }
+  if (isFirst || noteStr === '初') {
+    badges.push(<span key="first" className="px-1.5 py-0.5 rounded text-xs font-medium bg-green-100 text-green-700">初</span>);
   }
   if (noteStr.includes('日体大記録')) {
-    badges.push(<span key="nssu" className="px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">大学記録</span>);
+    badges.push(<span key="nssu" className="px-1.5 py-0.5 rounded text-xs font-medium bg-red-100 text-red-700">大学記録</span>);
   }
   if (noteStr.includes('U20日本記録')) {
-    badges.push(<span key="u20" className="px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">U20日本記録</span>);
+    badges.push(<span key="u20" className="px-1.5 py-0.5 rounded text-xs font-medium bg-purple-100 text-purple-700">U20日本記録</span>);
   }
   if (noteStr.includes('MGC')) {
-    badges.push(<span key="mgc" className="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">MGC出場権</span>);
+    badges.push(<span key="mgc" className="px-1.5 py-0.5 rounded text-xs font-medium bg-green-100 text-green-700">MGC出場権</span>);
   }
   if (noteStr === 'Q') {
-    badges.push(<span key="q" className="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Q</span>);
+    badges.push(<span key="q" className="px-1.5 py-0.5 rounded text-xs font-medium bg-green-100 text-green-700">Q</span>);
   }
   if (noteStr === 'qR') {
-    badges.push(<span key="qr" className="px-2 py-1 rounded-full text-xs font-medium bg-blue-200 text-blue-900">qR</span>);
+    badges.push(<span key="qr" className="px-1.5 py-0.5 rounded text-xs font-medium bg-blue-200 text-blue-700">qR</span>);
   }
 
   return badges;
@@ -68,27 +71,29 @@ const renderCellContent = (row: TableData, columnKey: string) => {
 
   switch (columnKey) {
     case 'name':
-      return <span className="font-semibold text-gray-800">{cellData}</span>;
+      return <span className="font-medium text-gray-800">{cellData}</span>;
     case 'time':
-      return <span className="font-mono tracking-wider">{cellData}</span>;
+      return <span className="font-mono text-sm">{cellData}</span>;
     case 'rank':
       return RankBadge({ rank: cellData }) || cellData;
     case 'note': {
-      const badges = createNoteBadges({ note: cellData, isPB: row.isPB });
+      const noteStr = String(cellData || '');
+      const isFirst = row.isFirst || noteStr === '初';
+      const badges = createNoteBadges({ note: cellData, isPB: row.isPB, isFirst });
       if (badges.length === 0) {
         return cellData; // バッジがなければ元のデータをそのまま表示
       }
 
-      const noteStr = String(cellData || '');
       // これらのキーワードが備考の全体である場合、テキストとしては表示しない
-      const replacementKeywords = ['Q', 'qR', '日体大記録', 'U20日本記録', 'MGC出場権'];
+      const replacementKeywords = ['Q', 'qR', '日体大記録', 'U20日本記録', 'MGC出場権', '初', 'PB'];
       const textHandledByPb = row.isPB && noteStr === 'PB';
+      const textHandledByFirst = isFirst && noteStr === '初';
       const textHandledByKeyword = replacementKeywords.includes(noteStr);
 
-      const showText = !textHandledByPb && !textHandledByKeyword;
+      const showText = !textHandledByPb && !textHandledByFirst && !textHandledByKeyword;
 
       return (
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-1">
           {badges}
           {showText && <span className="text-sm">{noteStr}</span>}
         </div>

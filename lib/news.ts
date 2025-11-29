@@ -117,6 +117,12 @@ const TSX_ARTICLES: Record<string, Omit<NewsMeta, 'slug' | 'type'>> = {
     date: '2025-10-31',
     image: 'https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-zennihonyosen4.jpeg'
   },
+    '11-30-gifts-oct-nov': {
+    id: 20,
+    title: '10、11月の差し入れ',
+    date: '2025-11-29',
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/11/october_and_november_care_packages40.jpg'
+  },
 };
 
 export function getAllNews(): NewsMeta[] {

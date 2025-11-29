@@ -13,7 +13,7 @@
       "personalBests": [
         { "event": "1500m", "time": "4'07\"47" },
         { "event": "3000mSC", "time": "9'41\"19" },
-        { "event": "5000m", "time": "14'35\"30" },
+        { "event": "5000m", "time": "14'33\"75" },
         { "event": "10000m", "time": "31'49\"74" }
       ],
       "grade": 1
@@ -30,7 +30,8 @@
       "department": "体育",
       "personalBests": [
         { "event": "1500m", "time": "4'03\"52" },
-        { "event": "5000m", "time": "14'32\"70" },
+        { "event": "5000m", "time": "14'29\"13" },
+        { "event": "10000m", "time": "29'42\"46" },
         { "event": "ハーフマラソン", "time": "1:05'49" }
       ],
       "grade": 1
@@ -100,7 +101,7 @@
       "personalBests": [
         { "event": "1500m", "time": "4'04\"14" },
         { "event": "5000m", "time": "14'33\"00" },
-        { "event": "10000m", "time": "31'31\"81" },
+        { "event": "10000m", "time": "29'46\"58" },
         { "event": "ハーフマラソン", "time": "1:04'36" }
       ],
       "grade": 1
@@ -133,8 +134,8 @@
       "department": "体育",
       "personalBests": [
         { "event": "1500m", "time": "3'52\"85" },
-        { "event": "5000m", "time": "14'44\"00" },
-        { "event": "10000m", "time": "31'03\"53" }
+        { "event": "5000m", "time": "14'31\"01" },
+        { "event": "10000m", "time": "29'56\"61" }
       ],
       "grade": 1
     },
@@ -151,7 +152,7 @@
       "personalBests": [
         { "event": "1500m", "time": "3'53\"78" },
         { "event": "5000m", "time": "14'15\"80" },
-        { "event": "10000m", "time": "29'19\"91" },
+        { "event": "10000m", "time": "28'29\"82" },
         { "event": "ハーフマラソン", "time": "1:04'17" }
       ],
       "grade": 1
@@ -185,7 +186,8 @@
       "department": "体育",
       "personalBests": [
         { "event": "1500m", "time": "3'59\"99" },
-        { "event": "5000m", "time": "14'32\"40" }
+        { "event": "5000m", "time": "14'28\"00" },
+        { "event": "10000m", "time": "29'17\"61" }
       ],
       "grade": 1
     },
@@ -202,7 +204,7 @@
       "personalBests": [
         { "event": "1500m", "time": "3'54\"97" },
         { "event": "3000mSC", "time": "9'45\"68" },
-        { "event": "5000m", "time": "15'02\"10" },
+        { "event": "5000m", "time": "14'56\"71" },
         { "event": "10000m", "time": "32'30\"74" },
         { "event": "ハーフマラソン", "time": "1:07'28" }
       ],
