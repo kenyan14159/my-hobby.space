@@ -1,0 +1,68 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:  # 手動実行も可能にする
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+
+    - name: 🔧 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: 📦 Install dependencies
+      run: |
+        echo "Installing dependencies..."
+        npm ci
+        echo "Dependencies installed successfully!"
+    
+    - name: 🔧 Setup environment variables
+      run: |
+        echo "Setting up environment variables..."
+        echo "NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }}" >> $GITHUB_ENV
+        echo "NEXT_PUBLIC_SUPABASE_URL=${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}" >> $GITHUB_ENV
+        echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" >> $GITHUB_ENV
+        echo "Environment variables configured!"
+
+    - name: 🏗️ Build Next.js project
+      run: |
+        echo "Starting Next.js build..."
+        npm run build
+        echo "Build completed successfully!"
+        echo "Checking out directory..."
+        ls -la out/ || echo "out directory not found"
+      env:
+        NODE_ENV: production
+
+    - name: 📤 Deploy to Cloudflare Pages
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: my-hobby-space
+        directory: ./out
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: ✅ Deployment Success
+      if: success()
+      run: |
+        echo "🎉 デプロイが正常に完了しました！"
+        echo "Cloudflare Pagesで公開されています"
+        
+    - name: ❌ Deployment Failed
+      if: failure()
+      run: |
+        echo "⚠️ デプロイに失敗しました。ログを確認してください。"
+
