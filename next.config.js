@@ -1,36 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-// セキュリティヘッダーの設定
-const securityHeaders = [
-  {
-    key: 'X-DNS-Prefetch-Control',
-    value: 'on'
-  },
-  {
-    key: 'Strict-Transport-Security',
-    value: 'max-age=63072000; includeSubDomains; preload'
-  },
-  {
-    key: 'X-Content-Type-Options',
-    value: 'nosniff'
-  },
-  {
-    key: 'X-Frame-Options',
-    value: 'DENY'
-  },
-  {
-    key: 'X-XSS-Protection',
-    value: '1; mode=block'
-  },
-  {
-    key: 'Referrer-Policy',
-    value: 'strict-origin-when-cross-origin'
-  },
-  {
-    key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=()'
-  },
-];
+// 注意: セキュリティヘッダーは静的エクスポート(output: 'export')では
+// Next.jsの設定では適用されません。
+// ホスティングサービス側で設定してください:
+// - Netlify: netlify.toml または _headers ファイル
+// - Vercel: vercel.json
+// - Apache: .htaccess
+// - Nginx: nginx.conf
 
 const nextConfig = {
   output: 'export', // 静的エクスポートモード
@@ -46,15 +22,6 @@ const nextConfig = {
   experimental: {
     // Type Strippingの警告を抑制
     typedRoutes: false,
-  },
-  // セキュリティヘッダーの追加（Vercelや一部ホスティングで使用）
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: securityHeaders,
-      },
-    ];
   },
   // Node.jsの警告を抑制
   webpack: (config, { isServer }) => {

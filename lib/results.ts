@@ -186,7 +186,7 @@ const TSX_RESULTS: Record<string, Omit<ResultMeta, 'slug' | 'type'>> = {
     id: 30,
     title: '第325回日本体育大学長距離競技会兼第19回NCG',
     date: '2025-11-30',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/302nittai89.jpeg'
+    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/12/325-nittai443.jpeg'
   },
 };
 

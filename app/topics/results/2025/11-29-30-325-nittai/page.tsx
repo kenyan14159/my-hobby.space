@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Medal } from 'lucide-react';
+import { Medal, ExternalLink } from 'lucide-react';
 import { ResponsiveTable, SectionHeader, ResultCard, ResultPageLayout } from '@/components/results';
+import { Button } from '@/components/ui/button';
 
 export default function NSSU325thLongDistanceResult2025() {
   const columns = [
@@ -90,6 +91,41 @@ export default function NSSU325thLongDistanceResult2025() {
     { name: '平島 龍斗④', time: "27'56\"84", rank: '13着', note: '日体大記録', isPB: true },
   ];
 
+  // 男子5000m (7組)
+  const event5000m7 = [
+    { name: '大島 脩太③', time: "14'59\"16", rank: '1着', note: '' },
+    { name: '島村 真登①', time: "15'48\"16", rank: '34着', note: '' },
+    { name: '今井 結斗②', time: "15'50\"41", rank: '36着', note: '' },
+    { name: '平木 仁①', time: "16'05\"18", rank: '39着', note: '' },
+  ];
+
+  // 男子5000m (13組)
+  const event5000m13 = [
+    { name: '松田 進①', time: "14'57\"59", rank: '1着', note: '', isPB: true },
+    { name: '渡邉 晄月①', time: "15'11\"51", rank: '10着', note: '' },
+    { name: '藤原 想太①', time: "16'07\"31", rank: '38着', note: '' },
+  ];
+
+  // 男子5000m (18組)
+  const event5000m18 = [
+    { name: '安田 大翔②', time: "14'56\"60", rank: '14着', note: '' },
+    { name: '阿知和 優汰③', time: "15'04\"62", rank: '17着', note: '' },
+    { name: '稗村 泰吾①', time: "15'12\"61", rank: '20着', note: '' },
+    { name: '勝又 大介①', time: "15'22\"87", rank: '27着', note: '' },
+  ];
+
+  // 男子5000m (23組)
+  const event5000m23 = [
+    { name: '嶋野 太海（コーチ）', time: "14'26\"95", rank: '3着', note: '' },
+    { name: '佐々木 快斗①', time: "14'40\"95", rank: '14着', note: '' },
+    { name: '中辻 健斗②', time: 'DNF', rank: '', note: 'DNF', _className: 'bg-red-50' },
+  ];
+
+  // 男子5000m (26組)
+  const event5000m26 = [
+    { name: '渡辺 和志①', time: "15'00\"81", rank: '34着', note: '' },
+  ];
+
   return (
     <ResultPageLayout
       title="第325回 日本体育大学長距離競技会兼第19回NCG"
@@ -97,6 +133,27 @@ export default function NSSU325thLongDistanceResult2025() {
       place="日本体育大学健志台グラウンド"
       gradient="from-gray-50 to-gray-100"
     >
+      {/* ギャラリーリンク */}
+      <ResultCard delay={0.1}>
+        <div className="flex justify-center">
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold shadow-lg"
+          >
+            <a
+              href="https://nssu-ekiden.com/the-325th-nippon-sport-science-university-long-distance-track-meet-and-the-19th-ncg/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <span>ギャラリーはこちら</span>
+              <ExternalLink size={18} />
+            </a>
+          </Button>
+        </div>
+      </ResultCard>
+
       {/* 男子10000m */}
       <ResultCard delay={0.2}>
         <SectionHeader icon={<Medal size={20} />} title="男子10000m" />
@@ -162,6 +219,38 @@ export default function NSSU325thLongDistanceResult2025() {
           <div>
             <h4 className="text-lg font-semibold text-gray-700 mb-3">2組</h4>
             <ResponsiveTable columns={columns} data={eventNCG10000m2} delay={1.4} />
+          </div>
+        </div>
+      </ResultCard>
+
+      {/* 男子5000m */}
+      <ResultCard delay={1.5}>
+        <SectionHeader icon={<Medal size={20} />} title="男子5000m" />
+
+        <div className="space-y-6">
+          <div>
+            <h4 className="text-lg font-semibold text-gray-700 mb-3">7組</h4>
+            <ResponsiveTable columns={columns} data={event5000m7} delay={1.6} />
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-gray-700 mb-3">13組</h4>
+            <ResponsiveTable columns={columns} data={event5000m13} delay={1.7} />
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-gray-700 mb-3">18組</h4>
+            <ResponsiveTable columns={columns} data={event5000m18} delay={1.8} />
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-gray-700 mb-3">23組</h4>
+            <ResponsiveTable columns={columns} data={event5000m23} delay={1.9} />
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-gray-700 mb-3">26組</h4>
+            <ResponsiveTable columns={columns} data={event5000m26} delay={2.0} />
           </div>
         </div>
       </ResultCard>
