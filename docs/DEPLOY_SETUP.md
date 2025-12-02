@@ -114,7 +114,7 @@ server-dir: /nittaiekiden.xsrv.jp/public_html/
    - ✅ Deployment Success
 
 **実際のサイトで確認**:
-- https://nssu-ekiden.com にアクセス
+- https://nssu-ekiden.works にアクセス
 - ブラウザのキャッシュをクリア（Cmd+Shift+R または Ctrl+Shift+R）
 - 変更が反映されているか確認
 
@@ -239,7 +239,7 @@ Error: Build failed
          ▼
 ┌─────────────────┐
 │  ✅ デプロイ完了 │
-│  https://nssu-ekiden.com │
+│  https://nssu-ekiden.works │
 └─────────────────┘
 ```
 
@@ -334,7 +334,7 @@ exclude: |
 - [ ] GitHub Secretsに3つの値を登録済み（FTP_SERVER, FTP_USERNAME, FTP_PASSWORD）
 - [ ] テストコミット＆プッシュが成功
 - [ ] GitHub Actionsで緑のチェックマーク ✅ を確認
-- [ ] 実際のサイト（https://nssu-ekiden.com）で変更を確認
+- [ ] 実際のサイト（https://nssu-ekiden.works）で変更を確認
 - [ ] この設定ガイドを保存・共有
 
 ---

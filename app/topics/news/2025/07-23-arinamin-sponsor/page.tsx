@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export default function ArinaminSponsorPage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const imageUrl = "https://nssu-ekiden.com/wp-content/uploads/2025/07/arinamin00001-scaled.jpg";
+  const imageUrl = "https://nssu-ekiden.works/wp-content/uploads/2025/07/arinamin00001-scaled.jpg";
 
   return (
     <NewsDetailLayout

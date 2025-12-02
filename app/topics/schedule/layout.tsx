@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '大会スケジュール | 日本体育大学駅伝部',
     description: '日体大駅伝部の大会スケジュール。箱根、全日本、記録会の日程を掲載。',
-    url: 'https://nssu-ekiden.com/topics/schedule',
+    url: 'https://nssu-ekiden.works/topics/schedule',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/topics/schedule',
+    canonical: 'https://nssu-ekiden.works/topics/schedule',
   },
 };
 

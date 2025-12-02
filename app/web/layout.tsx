@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Webサイト集 | 日本体育大学駅伝部',
     description: '日体大駅伝部に関連するWebサイトのリンク集。関連サイトへのリンクを掲載。',
-    url: 'https://nssu-ekiden.com/web',
+    url: 'https://nssu-ekiden.works/web',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/web',
+    canonical: 'https://nssu-ekiden.works/web',
   },
 };
 
@@ -43,13 +43,13 @@ export default function WebLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'ホーム',
-        item: 'https://nssu-ekiden.com',
+        item: 'https://nssu-ekiden.works',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Webサイト集',
-        item: 'https://nssu-ekiden.com/web',
+        item: 'https://nssu-ekiden.works/web',
       },
     ],
   };
@@ -60,7 +60,7 @@ export default function WebLayout({
     '@type': 'CollectionPage',
     name: 'Webサイト集',
     description: '日本体育大学駅伝部に関連するWebサイトのリンク集',
-    url: 'https://nssu-ekiden.com/web',
+    url: 'https://nssu-ekiden.works/web',
     mainEntity: {
       '@type': 'ItemList',
       name: '関連Webサイトリスト',
@@ -69,7 +69,7 @@ export default function WebLayout({
           '@type': 'ListItem',
           position: 1,
           name: '陸上競技部',
-          url: 'https://nssu-ekiden.com/track-and-field',
+          url: 'https://nssu-ekiden.works/track-and-field',
         },
         {
           '@type': 'ListItem',

@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'トピックス | 日本体育大学駅伝部',
     description: '日体大駅伝部のトピックス。最新ニュース、試合結果、スケジュールを掲載。',
-    url: 'https://nssu-ekiden.com/topics',
+    url: 'https://nssu-ekiden.works/topics',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/topics',
+    canonical: 'https://nssu-ekiden.works/topics',
   },
 };
 
@@ -43,13 +43,13 @@ export default function TopicsLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'ホーム',
-        item: 'https://nssu-ekiden.com',
+        item: 'https://nssu-ekiden.works',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'トピックス',
-        item: 'https://nssu-ekiden.com/topics',
+        item: 'https://nssu-ekiden.works/topics',
       },
     ],
   };
@@ -60,7 +60,7 @@ export default function TopicsLayout({
     '@type': 'CollectionPage',
     name: 'トピックス',
     description: '日本体育大学駅伝部のトピックスページ。最新ニュース、試合結果、大会スケジュールを掲載。',
-    url: 'https://nssu-ekiden.com/topics',
+    url: 'https://nssu-ekiden.works/topics',
     mainEntity: {
       '@type': 'ItemList',
       name: 'トピックスメニュー',
@@ -69,19 +69,19 @@ export default function TopicsLayout({
           '@type': 'ListItem',
           position: 1,
           name: 'スケジュール',
-          url: 'https://nssu-ekiden.com/topics/schedule',
+          url: 'https://nssu-ekiden.works/topics/schedule',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'リザルト',
-          url: 'https://nssu-ekiden.com/topics/results',
+          url: 'https://nssu-ekiden.works/topics/results',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'ニュース',
-          url: 'https://nssu-ekiden.com/topics/news',
+          url: 'https://nssu-ekiden.works/topics/news',
         },
       ],
     },

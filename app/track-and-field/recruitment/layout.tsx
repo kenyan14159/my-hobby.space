@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '入部案内 | 日本体育大学陸上競技部',
     description: '日体大陸上競技部の入部案内。各ブロック紹介、練習日程、施設情報を掲載。',
-    url: 'https://nssu-ekiden.com/track-and-field/recruitment',
+    url: 'https://nssu-ekiden.works/track-and-field/recruitment',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/track-and-field/recruitment',
+    canonical: 'https://nssu-ekiden.works/track-and-field/recruitment',
   },
 };
 

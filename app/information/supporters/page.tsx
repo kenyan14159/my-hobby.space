@@ -19,7 +19,7 @@ const itoSupporter = {
   name: "伊藤 智章",
   furigana: "いとう ともあき",
   catchphrase: "日体大駅伝部の心強い味方！「ゴッドハンド」伊藤さん",
-  image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/itotomoaki.jpg",
+  image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/itotomoaki.jpg",
   rating: 5,
   description: "数々の駅伝チーム、実業団を支える「ゴッドハンド」。選手たちのコンディションを劇的に向上させ、勝利に貢献。監督やコーチにも言えない悩みも打ち明けられる、選手からの信頼も厚い存在です。",
   bookingInfo: "超一流の施術は予約困難！ご予約はお早めに。",
@@ -42,35 +42,35 @@ const itoSupporter = {
     { name: "Instagram", url: "https://www.instagram.com/tomo.icoco", icon: <Instagram className="h-6 w-6" /> },
     { name: "Facebook", url: "https://www.facebook.com/profile.php?id=100007170611509", icon: <Facebook className="h-6 w-6" /> },
     { name: "X", url: "https://x.com/tomo_i_coco", icon: <Twitter className="h-6 w-6" /> },
-    { name: "Threads", url: "https://www.threads.net/@tomo.icoco", icon: <Image src="https://nssu-ekiden.com/wp-content/uploads/2025/02/threads-logo-black-01.png" alt="Threads" width={24} height={24} quality={75} className="h-6 w-6" /> },
+    { name: "Threads", url: "https://www.threads.net/@tomo.icoco", icon: <Image src="https://nssu-ekiden.works/wp-content/uploads/2025/02/threads-logo-black-01.png" alt="Threads" width={24} height={24} quality={75} className="h-6 w-6" /> },
   ]
 };
 
 const corporateSupporters = [
-  { name: "アリナミン製薬", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/07/arinamin.png", website: "https://alinamin-pharma.co.jp/" },
-  { name: "MIZUNO", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/MIZUNO.png", website: "https://jpn.mizuno.com/" },
-  { name: "Phiten", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/phiten.jpg", website: "https://www.phiten-store.com/" },
-  { name: "日体大クリニック・アレックス東京", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/日本体育大学クリニック・アレックス東京.jpg", website: "https://www.nittai.ac.jp/about/facility/clinic/" },
-  { name: "日本体育大学NASS サポート", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/NASS.jpg", website: "https://www.nittai.ac.jp/about/approach/nass.html" },
-  { name: "SPORTS EPA", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/SPORTS-EPA.png", website: "https://www.sportsepa.jp/" },
-  { name: "TOPRUNNER", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/TOPRUNNER.jpg", website: "https://top-runner.net" },
-  { name: "超速RECOVER", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/超速RECOVER.jpeg", website: "https://www.ichibiki.co.jp/brand/recover/" },
-  { name: "サンアクティブ", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/サンアクティブ.jpg", website: "https://www.taiyo-labo.jp/LDP/sunactivefe/" },
-  { name: "スキンストレッチ", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/skinstretch.jpg", website: "https://skinstretch.info/" },
-  { name: "LOFE アーチサポート&インソール", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/LOFE-アーチサポートインソール.jpg", website: "https://joy-life.co.jp/lofe-archsupport" },
-  { name: "空間清浄化システム SterilizAir（ステライザ）", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/空間清浄化システム-SterilizAir（ステライザ）.jpg", website: "https://www.efbalance.com/sterilizair/" },
-  { name: "長野県飯綱町三水丸山農園", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/20201021.jpg", website: "http://www.ngn.janis.or.jp/~samizumarunou/" }
+  { name: "アリナミン製薬", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/07/arinamin.png", website: "https://alinamin-pharma.co.jp/" },
+  { name: "MIZUNO", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/MIZUNO.png", website: "https://jpn.mizuno.com/" },
+  { name: "Phiten", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/phiten.jpg", website: "https://www.phiten-store.com/" },
+  { name: "日体大クリニック・アレックス東京", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/日本体育大学クリニック・アレックス東京.jpg", website: "https://www.nittai.ac.jp/about/facility/clinic/" },
+  { name: "日本体育大学NASS サポート", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/NASS.jpg", website: "https://www.nittai.ac.jp/about/approach/nass.html" },
+  { name: "SPORTS EPA", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/SPORTS-EPA.png", website: "https://www.sportsepa.jp/" },
+  { name: "TOPRUNNER", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/TOPRUNNER.jpg", website: "https://top-runner.net" },
+  { name: "超速RECOVER", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/超速RECOVER.jpeg", website: "https://www.ichibiki.co.jp/brand/recover/" },
+  { name: "サンアクティブ", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/サンアクティブ.jpg", website: "https://www.taiyo-labo.jp/LDP/sunactivefe/" },
+  { name: "スキンストレッチ", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/skinstretch.jpg", website: "https://skinstretch.info/" },
+  { name: "LOFE アーチサポート&インソール", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/LOFE-アーチサポートインソール.jpg", website: "https://joy-life.co.jp/lofe-archsupport" },
+  { name: "空間清浄化システム SterilizAir（ステライザ）", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/空間清浄化システム-SterilizAir（ステライザ）.jpg", website: "https://www.efbalance.com/sterilizair/" },
+  { name: "長野県飯綱町三水丸山農園", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/20201021.jpg", website: "http://www.ngn.janis.or.jp/~samizumarunou/" }
 ];
 
 const facilitySupporters = [
-    { name: "富士見高原 ジュネス八ヶ岳", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/ジュネス.jpg", address: "長野県諏訪郡富士見町境12067", tel: "0266-66-2931", email: "info@junes-yatsugatake.jp", website: "https://junes-yatsugatake.jp/" },
-    { name: "野尻湖畔の宿 藤屋旅館", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/藤屋.jpg", address: "長野県上水内郡信濃町野尻258-5", tel: "026-258-2514", fax: "026-258-2580", website: "https://fujiyaryokan.net/" },
-    { name: "ホテル若月", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/若月.jpg", address: "長野県上水内郡信濃町野尻2014-2", tel: "026-255-2577 (10:00～21:00)", fax: "026-255-4777", website: "https://hotelwakatsuki.com/" },
-    { name: "国民宿舎杉久保ハウス", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/杉久保ハウス.jpg", address: "長野県上水内郡信濃町野尻29-8", tel: "026-258-2550", fax: "026-258-3933", website: "https://www.sugikubo.com/" },
-    { name: "信州 菅平高原つばくら館", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/つばくら館.jpg", address: "長野県上田市菅平高原1223-2910", tel: "0268-74-2073", fax: "0268-74-3866", website: "http://www.sugadaira.ne.jp/~tsubakurakan/" },
-    { name: "菅平高原 ホテル柄澤", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/ホテル柄澤.jpg", address: "長野県上田市菅平高原1278", tel: "0268-74-2555", fax: "0268-74-2380", email: "info@hotel-karasawa.co.jp", website: "http://www.hotel-karasawa.co.jp" },
-    { name: "仙流荘", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/仙流荘.jpg", address: "伊那市長谷黒河内1847-2", tel: "0265-98-2312", fax: "0265-98-2048", website: "https://www.ina-city-kankou.co.jp/senryuso/" },
-    { name: "富津味覚の宿 志ら井", logo: "https://nssu-ekiden.com/wp-content/uploads/2025/06/志ら井.jpg", address: "千葉県富津市富津26-1", tel: "0120-87-2914", fax: "0439-87-3393", website: "http://www.yado-shirai.com/index.html" }
+    { name: "富士見高原 ジュネス八ヶ岳", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/ジュネス.jpg", address: "長野県諏訪郡富士見町境12067", tel: "0266-66-2931", email: "info@junes-yatsugatake.jp", website: "https://junes-yatsugatake.jp/" },
+    { name: "野尻湖畔の宿 藤屋旅館", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/藤屋.jpg", address: "長野県上水内郡信濃町野尻258-5", tel: "026-258-2514", fax: "026-258-2580", website: "https://fujiyaryokan.net/" },
+    { name: "ホテル若月", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/若月.jpg", address: "長野県上水内郡信濃町野尻2014-2", tel: "026-255-2577 (10:00～21:00)", fax: "026-255-4777", website: "https://hotelwakatsuki.com/" },
+    { name: "国民宿舎杉久保ハウス", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/杉久保ハウス.jpg", address: "長野県上水内郡信濃町野尻29-8", tel: "026-258-2550", fax: "026-258-3933", website: "https://www.sugikubo.com/" },
+    { name: "信州 菅平高原つばくら館", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/つばくら館.jpg", address: "長野県上田市菅平高原1223-2910", tel: "0268-74-2073", fax: "0268-74-3866", website: "http://www.sugadaira.ne.jp/~tsubakurakan/" },
+    { name: "菅平高原 ホテル柄澤", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/ホテル柄澤.jpg", address: "長野県上田市菅平高原1278", tel: "0268-74-2555", fax: "0268-74-2380", email: "info@hotel-karasawa.co.jp", website: "http://www.hotel-karasawa.co.jp" },
+    { name: "仙流荘", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/仙流荘.jpg", address: "伊那市長谷黒河内1847-2", tel: "0265-98-2312", fax: "0265-98-2048", website: "https://www.ina-city-kankou.co.jp/senryuso/" },
+    { name: "富津味覚の宿 志ら井", logo: "https://nssu-ekiden.works/wp-content/uploads/2025/06/志ら井.jpg", address: "千葉県富津市富津26-1", tel: "0120-87-2914", fax: "0439-87-3393", website: "http://www.yado-shirai.com/index.html" }
 ];
 
 
@@ -158,7 +158,7 @@ const SupporterProfile = ({ supporter, onImageClick }: { supporter: typeof itoSu
         <div className="mb-4">
           <AspectRatio ratio={16 / 9} className="rounded-lg overflow-hidden shadow-sm">
             <Image 
-              src="https://nssu-ekiden.com/wp-content/uploads/2025/07/rairakku.jpg" 
+              src="https://nssu-ekiden.works/wp-content/uploads/2025/07/rairakku.jpg" 
               alt="ライラック治療院" 
               fill 
               loading="lazy"

@@ -24,7 +24,7 @@ export default function AllJapanEntryPage() {
         "10000m": "29'31\"00",
         "ハーフマラソン": "1:05'33"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers2.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers2.jpeg"
     },
     {
       name: "浦上 和樹",
@@ -37,7 +37,7 @@ export default function AllJapanEntryPage() {
         "10000m": "29'05\"97",
         "ハーフマラソン": "1:03'21"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers54.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers54.jpeg"
     },
     {
       name: "大竹 雄大",
@@ -50,7 +50,7 @@ export default function AllJapanEntryPage() {
         "10000m": "29'44\"72",
         "ハーフマラソン": "1:05'47"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers64.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers64.jpeg"
     },
     {
       name: "倉村 空",
@@ -64,7 +64,7 @@ export default function AllJapanEntryPage() {
         "3000mSC": "9'22\"62",
         "ハーフマラソン": "1:05'45"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/member35-e1748839633610.jpg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/member35-e1748839633610.jpg"
     },
     {
       name: "田島 駿介",
@@ -77,7 +77,7 @@ export default function AllJapanEntryPage() {
         "10000m": "28'11\"41",
         "ハーフマラソン": "1:03'15"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-members1.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-members1.jpeg"
     },
     {
       name: "平島 龍斗",
@@ -90,7 +90,7 @@ export default function AllJapanEntryPage() {
         "10000m": "28'20\"32",
         "ハーフマラソン": "1:03'47"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers5.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers5.jpeg"
     },
     {
       name: "二村 昇太朗",
@@ -103,7 +103,7 @@ export default function AllJapanEntryPage() {
         "10000m": "29'03\"74",
         "ハーフマラソン": "1:05'51"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers12.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers12.jpeg"
     },
     {
       name: "山崎 丞",
@@ -116,7 +116,7 @@ export default function AllJapanEntryPage() {
         "10000m": "28'19\"33",
         "ハーフマラソン": "1:02'06"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers53.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers53.jpeg"
     },
     {
       name: "天瀬 海斗",
@@ -130,7 +130,7 @@ export default function AllJapanEntryPage() {
         "3000mSC": "8'49\"23",
         "ハーフマラソン": "1:05'46"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers25.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers25.jpeg"
     },
     {
       name: "佐藤 輝歩",
@@ -144,7 +144,7 @@ export default function AllJapanEntryPage() {
         "10000m": "29'53\"29",
         "3000mSC": "9'07\"53"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers59.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers59.jpeg"
     },
     {
       name: "吉田 黎大",
@@ -158,7 +158,7 @@ export default function AllJapanEntryPage() {
         "3000mSC": "9'12\"85",
         "ハーフマラソン": "1:04'11"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers21.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers21.jpeg"
     },
     {
       name: "荻野 桂輔",
@@ -171,7 +171,7 @@ export default function AllJapanEntryPage() {
         "3000mSC": "10'06\"84",
         "10000m": "30'41\"10"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers3.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers3.jpeg"
     },
     {
       name: "佐藤 大和",
@@ -185,7 +185,7 @@ export default function AllJapanEntryPage() {
         "3000mSC": "9'51\"96",
         "ハーフマラソン": "1:04:15"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers44.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers44.jpeg"
     },
     {
       name: "樋村 銀河",
@@ -198,7 +198,7 @@ export default function AllJapanEntryPage() {
         "10000m": "29'39\"84",
         "ハーフマラソン": "1:07:15"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers20.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers20.jpeg"
     },
     {
       name: "水津 勇人",
@@ -210,7 +210,7 @@ export default function AllJapanEntryPage() {
         "5000m": "14'32\"99",
         "10000m": "31'31\"81"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers47.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers47.jpeg"
     },
     {
       name: "夏見 虹郎",
@@ -223,7 +223,7 @@ export default function AllJapanEntryPage() {
         "10000m": "29'19\"91",
         "ハーフマラソン": "1:08'13"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers42.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers42.jpeg"
     }
   ];
 
@@ -306,7 +306,7 @@ export default function AllJapanEntryPage() {
       {/* 大会要項ダウンロード */}
       <div className="my-8 text-center">
         <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-          <a href="https://nssu-ekiden.com/wp-content/uploads/2025/10/all-japan-57.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="https://nssu-ekiden.works/wp-content/uploads/2025/10/all-japan-57.pdf" target="_blank" rel="noopener noreferrer">
             <Download className="w-5 h-5 mr-2" />
             大会要項 (PDF)
           </a>

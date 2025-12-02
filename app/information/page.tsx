@@ -12,7 +12,7 @@ const infoItems = [
     title: "サポーターの皆様", 
     href: "/information/supporters", 
     description: "支えてくださる方々",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite284.jpg",
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite284.jpg",
     color: "text-blue-600",
     bgColor: "from-blue-500/10 to-blue-600/10",
     icon: Users
@@ -21,7 +21,7 @@ const infoItems = [
     title: "応援してくださる皆様へ", 
     href: "/information/for-fans", 
     description: "皆様へのメッセージ",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite141.jpg",
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite141.jpg",
     color: "text-red-600",
     bgColor: "from-red-500/10 to-red-600/10",
     icon: Heart
@@ -30,7 +30,7 @@ const infoItems = [
     title: "ホームページに関して", 
     href: "/information/about", 
     description: "本サイトについて",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite295.jpg",
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite295.jpg",
     color: "text-emerald-600",
     bgColor: "from-emerald-500/10 to-emerald-600/10",
     icon: Globe
@@ -39,7 +39,7 @@ const infoItems = [
     title: "お問い合わせ", 
     href: "/information/contact", 
     description: "ご質問はこちら",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite294.jpg",
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite294.jpg",
     color: "text-amber-600",
     bgColor: "from-amber-500/10 to-amber-600/10",
     icon: MessageCircle

@@ -27,7 +27,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "30'40\"26",
         "ハーフマラソン": "1:03'56"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers3.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers3.jpeg"
     },
     {
       section: 2,
@@ -43,7 +43,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "28'20\"32",
         "ハーフマラソン": "1:01'02"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers5.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers5.jpeg"
     },
     {
       section: 3,
@@ -59,7 +59,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "28'11\"41",
         "ハーフマラソン": "1:02'04"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-members1.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-members1.jpeg"
     },
     {
       section: 4,
@@ -75,7 +75,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "29'03\"74",
         "ハーフマラソン": "1:03'58"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers12.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers12.jpeg"
     },
     {
       section: 5,
@@ -92,7 +92,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "29'39\"34",
         "ハーフマラソン": "1:04'08"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers21.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers21.jpeg"
     },
     {
       section: 6,
@@ -108,7 +108,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "29'44\"72",
         "ハーフマラソン": "1:05'47"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers64.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers64.jpeg"
     },
     {
       section: 7,
@@ -124,7 +124,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "28'19\"33",
         "ハーフマラソン": "1:02'06"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers53.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers53.jpeg"
     },
     {
       section: 8,
@@ -141,7 +141,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "29'24\"60",
         "ハーフマラソン": "1:03'44"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers44.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers44.jpeg"
     }
   ];
 
@@ -159,7 +159,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "31'31\"81",
         "ハーフマラソン": "1:04'36"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers47.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers47.jpeg"
     },
     {
       name: "夏見 虹郎",
@@ -173,7 +173,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "29'19\"91",
         "ハーフマラソン": "1:04'17"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers42.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers42.jpeg"
     },
     {
       name: "樋村 銀河",
@@ -187,7 +187,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "29'39\"84",
         "ハーフマラソン": "1:05'11"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers20.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers20.jpeg"
     },
     {
       name: "天瀬 海斗",
@@ -202,7 +202,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "29'32\"38",
         "ハーフマラソン": "1:05'46"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers25.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers25.jpeg"
     },
     {
       name: "倉村 空",
@@ -217,7 +217,7 @@ export default function AllJapanSectionEntryPage() {
         "10000m": "30'05\"62",
         "ハーフマラソン": "1:05'45"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/member35-e1748839633610.jpg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/member35-e1748839633610.jpg"
     }
   ];
 

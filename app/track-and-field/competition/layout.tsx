@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '日体大競技会 | 日本体育大学陸上競技部',
     description: '日本体育大学陸上競技部が主催している日体大競技会の情報を掲載。',
-    url: 'https://nssu-ekiden.com/track-and-field/competition',
+    url: 'https://nssu-ekiden.works/track-and-field/competition',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/track-and-field/competition',
+    canonical: 'https://nssu-ekiden.works/track-and-field/competition',
   },
 };
 

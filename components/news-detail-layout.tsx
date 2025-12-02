@@ -175,7 +175,7 @@ export function NewsDetailLayout({
   children
 }: NewsDetailLayoutProps) {
   const pathname = usePathname();
-  const pageUrl = `https://nssu-ekiden.com${pathname || ''}`;
+  const pageUrl = `https://nssu-ekiden.works${pathname || ''}`;
   const breadcrumbItems: BreadcrumbItem[] = [
     { label: 'トピックス', href: '/topics' },
     { label: 'ニュース', href: '/topics/news' },
@@ -191,15 +191,15 @@ export function NewsDetailLayout({
     publisher: {
       '@type': 'Organization',
       name: '日本体育大学陸上競技部男子駅伝ブロック',
-      url: 'https://nssu-ekiden.com',
+      url: 'https://nssu-ekiden.works',
     },
   } as const;
   const jsonLdBreadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'トピックス', item: 'https://nssu-ekiden.com/topics' },
-      { '@type': 'ListItem', position: 2, name: 'ニュース', item: 'https://nssu-ekiden.com/topics/news' },
+      { '@type': 'ListItem', position: 1, name: 'トピックス', item: 'https://nssu-ekiden.works/topics' },
+      { '@type': 'ListItem', position: 2, name: 'ニュース', item: 'https://nssu-ekiden.works/topics/news' },
       { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
     ],
   } as const;

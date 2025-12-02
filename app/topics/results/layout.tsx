@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'リザルト | 日本体育大学駅伝部',
     description: '日本体育大学駅伝部の試合結果一覧。駅伝、記録会の結果を掲載。',
-    url: 'https://nssu-ekiden.com/topics/results',
+    url: 'https://nssu-ekiden.works/topics/results',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/topics/results',
+    canonical: 'https://nssu-ekiden.works/topics/results',
   },
 };
 

@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '大会スケジュール | 日本体育大学陸上競技部',
     description: '日体大陸上競技部の大会スケジュール。インカレ、日本選手権、記録会の出場予定を掲載。',
-    url: 'https://nssu-ekiden.com/track-and-field/schedule',
+    url: 'https://nssu-ekiden.works/track-and-field/schedule',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/track-and-field/schedule',
+    canonical: 'https://nssu-ekiden.works/track-and-field/schedule',
   },
 };
 

@@ -211,11 +211,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '種目別歴代記録 | 日本体育大学陸上競技部',
     description: generateDescription(),
-    url: 'https://nssu-ekiden.com/track-and-field/records',
+    url: 'https://nssu-ekiden.works/track-and-field/records',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/track-and-field/records',
+    canonical: 'https://nssu-ekiden.works/track-and-field/records',
   },
 };
 
@@ -233,19 +233,19 @@ export default function TrackRecordsLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'ホーム',
-        item: 'https://nssu-ekiden.com',
+        item: 'https://nssu-ekiden.works',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: '陸上競技部',
-        item: 'https://nssu-ekiden.com/track-and-field',
+        item: 'https://nssu-ekiden.works/track-and-field',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: '種目別歴代記録',
-        item: 'https://nssu-ekiden.com/track-and-field/records',
+        item: 'https://nssu-ekiden.works/track-and-field/records',
       },
     ],
   };
@@ -262,7 +262,7 @@ export default function TrackRecordsLayout({
           '@type': 'Organization',
           name: '日本体育大学陸上競技部',
         },
-        url: `https://nssu-ekiden.com/track-and-field/records#${encodeURIComponent(holder.name)}`,
+        url: `https://nssu-ekiden.works/track-and-field/records#${encodeURIComponent(holder.name)}`,
         description: `日本体育大学陸上競技部の歴代記録保持者。${holder.events.join('、')}の記録を保持。${holder.years.length > 0 ? `${holder.years.join('、')}に記録。` : ''}${holder.school ? `${holder.school}出身。` : ''}`,
       };
       
@@ -286,7 +286,7 @@ export default function TrackRecordsLayout({
       '@type': 'ListItem',
       position: index + 1,
       name: name,
-      url: `https://nssu-ekiden.com/track-and-field/records#${encodeURIComponent(name)}`,
+      url: `https://nssu-ekiden.works/track-and-field/records#${encodeURIComponent(name)}`,
     })),
   };
 

@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '匿名掲示板 | 日本体育大学駅伝部',
     description: '日体大駅伝部の匿名掲示板。応援メッセージや試合の感想を投稿できます。',
-    url: 'https://nssu-ekiden.com/board',
+    url: 'https://nssu-ekiden.works/board',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/board',
+    canonical: 'https://nssu-ekiden.works/board',
   },
 };
 

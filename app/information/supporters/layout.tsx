@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'サポーターの皆様 | 日本体育大学駅伝部',
     description: '日体大駅伝部を支えるサポーターの皆様。支援方法、スポンサー情報を掲載。',
-    url: 'https://nssu-ekiden.com/information/supporters',
+    url: 'https://nssu-ekiden.works/information/supporters',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/information/supporters',
+    canonical: 'https://nssu-ekiden.works/information/supporters',
   },
 };
 

@@ -10,20 +10,20 @@ export default function Tokai1026ResultPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const galleryImages = [
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai1.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai2.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai3.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai4.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai5.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai6.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai7.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai8.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai9.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai10.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai11.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai12.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai13.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai14.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai1.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai2.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai3.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai4.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai5.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai6.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai7.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai8.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai9.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai10.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai11.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai12.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai13.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai14.jpg",
   ];
 
   const columns = [

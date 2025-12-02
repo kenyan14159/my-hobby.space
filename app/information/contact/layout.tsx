@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'お問い合わせ | 日本体育大学駅伝部',
     description: '日体大駅伝部へのお問い合わせ。取材依頼、応援メッセージはこちらから。',
-    url: 'https://nssu-ekiden.com/information/contact',
+    url: 'https://nssu-ekiden.works/information/contact',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/information/contact',
+    canonical: 'https://nssu-ekiden.works/information/contact',
   },
 };
 

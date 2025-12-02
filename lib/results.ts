@@ -12,181 +12,181 @@ const TSX_RESULTS: Record<string, Omit<ResultMeta, 'slug' | 'type'>> = {
     id: 1,
     title: '第75回大澤駅伝競走大会',
     date: '2025-02-02',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/03/race5.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/03/race5.jpg'
   },
   '02-02-kagawa-marugame-half': {
     id: 2,
     title: '第77回香川丸亀国際ハーフマラソン',
     date: '2025-02-02',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/03/race4.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/03/race4.jpg'
   },
   '02-09-kanagawa-ekiden': {
     id: 3,
     title: '第79回市町村対抗かながわ駅伝競走大会',
     date: '2025-02-09',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/03/race6.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/03/race6.jpg'
   },
   '02-16-national-university-mixed-ekiden': {
     id: 4,
     title: '第5回 全国大学対校男女混合駅伝競走大会',
     date: '2025-02-16',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/03/race3.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/03/race3.jpg'
   },
   '03-08-sagamihara-cross-country': {
     id: 5,
     title: '相模原クロスカントリー大会',
     date: '2025-03-08',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/03/race1.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/03/race1.jpg'
   },
   '03-09-tachikawa-city-half': {
     id: 6,
     title: '立川シティハーフマラソン',
     date: '2025-03-09',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/03/race2.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/03/race2.jpg'
   },
   '03-16-niigata-half': {
     id: 7,
     title: '新潟ハーフマラソン',
     date: '2025-03-16',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite295.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite295.jpg'
   },
   '03-29-30-nssu-319th-long-distance': {
     id: 8,
     title: '第319回 日本体育大学長距離競技会',
     date: '2025-03-29',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/03/319nittai104.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/03/319nittai104.jpeg'
   },
   '04-05-four-universities-track': {
     id: 9,
     title: '第61回四大学対校陸上競技大会',
     date: '2025-04-05',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/04/2025-yondai65.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/04/2025-yondai65.jpeg'
   },
   '04-13-adizero-5k': {
     id: 10,
     title: 'ADIZERO 5K OFFICIAL RACE アディゼロ 5Kオフィシャルレース',
     date: '2025-04-13',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/2023adidasroad3.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/02/2023adidasroad3.jpeg'
   },
   '04-19-hosei-university': {
     id: 11,
     title: '第86回 法政大学競技会',
     date: '2025-04-19',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/78hosei157.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/02/78hosei157.jpg'
   },
   '04-20-kokushikan-university': {
     id: 12,
     title: '第1回 国士舘大学学内競技会',
     date: '2025-04-20',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/04/86hosei4.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/04/86hosei4.jpg'
   },
   '04-25-japan-student-individual': {
     id: 13,
     title: '2025日本学生陸上競技個人選手権大会',
     date: '2025-04-25',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/04/kojin.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/04/kojin.jpg'
   },
   '04-26-27-nssu-320th-long-distance': {
     id: 14,
     title: '第320回日本体育大学長距離競技会・第14回NCG',
     date: '2025-04-26',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/04/320favorite23.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/04/320favorite23.jpeg'
   },
   '05-08-11-kanto-student-track': {
     id: 15,
     title: '第104回 関東学生陸上競技対校選手権大会',
     date: '2025-05-08',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/05/2025kantoIC108.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/05/2025kantoIC108.jpeg'
   },
   '05-24-all-japan-university-ekiden-qualifier': {
     id: 16,
     title: '秩父宮賜杯第57回全日本大学駅伝対校選手権大会関東学生陸上競技連盟推薦校選考会',
     date: '2025-05-24',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-zennihonyosen-main1.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-zennihonyosen-main1.jpeg'
   },
   '05-31-nssu-long-distance': {
     id: 17,
     title: '第321回日本体育大学長距離競技会兼第15回NCG',
     date: '2025-05-31',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/06/321nittai260.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/06/321nittai260.jpeg'
   },
   '06-09-japan-student': {
     id: 18,
     title: '第94回日本学生陸上競技対校選手権大会',
     date: '2025-06-09',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/06/2025-japan-ic1.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/06/2025-japan-ic1.jpg'
   },
   '06-21-nssu-track': {
     id: 19,
     title: '第151回日本体育大学陸上競技会',
     date: '2025-06-21',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/06/151nittai-favorite4.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/06/151nittai-favorite4.jpeg'
   },
   '06-28-oga-ekiden': {
     id: 20,
     title: '第72回（2025年）全国男鹿駅伝競走大会',
     date: '2025-06-28',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite296.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite296.jpg'
   },
   '07-20-hokuren-gakuren': {
     id: 21,
     title: 'ホクレンディスタンスチャレンジ  関東学生網走夏季記録挑戦競技会 2025 ',
     date: '2025-07-20',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/07/gakuren-scaled.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/07/gakuren-scaled.jpg'
   },
   '09-28-240-tokai': {
     id: 22,
     title: '第240回東海大学長距離競技会 ',
     date: '2025-09-28',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/09/240-tokai-favorite5.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/09/240-tokai-favorite5.jpeg'
   },
   '10-05-nssu-323th-long-distance': {
     id: 23,
     title: '第323回日本体育大学長距離競技会兼第17回NCG',
     date: '2025-10-05',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/10/323-nittai-favorite13.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/10/323-nittai-favorite13.jpeg'
   },
     '10-18-hakone-qualifying-round': {
     id: 24,
     title: '第102回東京箱根間往復大学駅伝競走予選会',
     date: '2025-10-18',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite2.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite2.jpeg'
   },
   '10-26-241-tokai': {
     id: 25,
     title: '第241回東海大学長距離競技会',
     date: '2025-10-26',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/10/241-tokai1.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/10/241-tokai1.jpg'
   },
     '11-02-57th-all-japan': {
     id: 26,
     title: '第57回全日本大学駅伝対校選手権大会',
     date: '2025-11-02',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan83.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/11/2025-all-japan83.jpeg'
   },
   '11-09-setagaya': {
     id: 27,
     title: '第20回世田谷246ハーフマラソン',
     date: '2025-11-09',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/2023setagaya17.jpg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/02/2023setagaya17.jpg'
   },
     '11-15-16-324-nittai': {
     id: 28,
     title: '第324回日本体育大学長距離競技会兼第18回NCG',
     date: '2025-11-15',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/11/324-nittai95.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/11/324-nittai95.jpeg'
   },
     '11-16-ageo-half': {
     id: 29,
     title: '第38回2025上尾シティハーフマラソン',
     date: '2025-11-16',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-ageo21.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/11/2025-ageo21.jpeg'
   },
     '11-29-30-325-nittai': {
     id: 30,
     title: '第325回日本体育大学長距離競技会兼第19回NCG',
     date: '2025-11-30',
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/12/325-nittai443.jpeg'
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/12/325-nittai443.jpeg'
   },
 };
 

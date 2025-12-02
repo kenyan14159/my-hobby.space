@@ -20,12 +20,12 @@ export default function NojirikoCampPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const campImages = [
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-kurohime-camp00001-scaled.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-kurohime-camp00002-scaled.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-kurohime-camp00003-scaled.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-kurohime-camp00004-scaled.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-kurohime-camp00005-scaled.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-kurohime-camp00006-scaled.jpg"
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-kurohime-camp00001-scaled.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-kurohime-camp00002-scaled.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-kurohime-camp00003-scaled.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-kurohime-camp00004-scaled.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-kurohime-camp00005-scaled.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-kurohime-camp00006-scaled.jpg"
   ];
 
   const handlePrevious = useCallback(() => {

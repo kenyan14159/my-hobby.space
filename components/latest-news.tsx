@@ -114,7 +114,7 @@ export function LatestNews() {
             description2="チーム全員で箱根路を駆け抜ける日を目指して。"
             startLabel="2026年スタート"
             endLabel="2026.01.02 本戦"
-            backgroundImage="https://nssu-ekiden.com/wp-content/uploads/2025/06/saya-img7.jpg"
+            backgroundImage="https://nssu-ekiden.works/wp-content/uploads/2025/06/saya-img7.jpg"
             colorTheme="blue"
           />
         </motion.div>
@@ -266,7 +266,7 @@ function CountdownSection({
       {/* 背景画像とオーバーレイ */}
       <div className="absolute inset-0">
         <CardImage
-          src={backgroundImage || "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite145.jpg"}
+          src={backgroundImage || "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite145.jpg"}
           alt={`${title}${subtitle ? ` - ${subtitle}` : ''} - 日本体育大学駅伝部`}
           sizes="100vw"
           overlayClassName="bg-neutral-900/80"

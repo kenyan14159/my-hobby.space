@@ -287,9 +287,9 @@ const LimitedContent = () => {
                                 2025年度 幹部
                             </h3>
                             <div className="grid grid-cols-3 gap-3 sm:gap-4">
-                                <LeaderCard role="主将" name="浦上 和樹" school="九州学院" imgSrc="https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers54.jpeg" />
-                                <LeaderCard role="主務" name="黒葛原 佑真" school="清風高校" imgSrc="https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers7.jpeg" />
-                                <LeaderCard role="副主将" name="犬童 慧真" school="熊本工業" imgSrc="https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers2.jpeg" />
+                                <LeaderCard role="主将" name="浦上 和樹" school="九州学院" imgSrc="https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers54.jpeg" />
+                                <LeaderCard role="主務" name="黒葛原 佑真" school="清風高校" imgSrc="https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers7.jpeg" />
+                                <LeaderCard role="副主将" name="犬童 慧真" school="熊本工業" imgSrc="https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers2.jpeg" />
                             </div>
                         </div>
                     </motion.div>

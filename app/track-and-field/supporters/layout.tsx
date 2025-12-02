@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'OB・OGの皆様へ | 日本体育大学陸上競技部',
     description: '日体大陸上競技部創部100周年記念事業のご案内。記念パーティは2026年3月7日開催。',
-    url: 'https://nssu-ekiden.com/track-and-field/supporters',
+    url: 'https://nssu-ekiden.works/track-and-field/supporters',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/track-and-field/supporters',
+    canonical: 'https://nssu-ekiden.works/track-and-field/supporters',
   },
 };
 

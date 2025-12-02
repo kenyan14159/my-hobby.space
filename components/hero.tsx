@@ -48,7 +48,7 @@ export function Hero() {
         {/* 背景画像（next/image で最適化） */}
         <div className="absolute inset-0">
           <Image
-            src="https://nssu-ekiden.com/wp-content/uploads/2025/02/myfavorite.jpeg"
+            src="https://nssu-ekiden.works/wp-content/uploads/2025/02/myfavorite.jpeg"
             alt={generateGenericAlt(
               "チーム一丸となって箱根駅伝出場を目指す選手たち",
               "日本体育大学駅伝部"

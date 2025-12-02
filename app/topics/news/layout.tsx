@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ニュース一覧 | 日本体育大学駅伝部',
     description: '日体大駅伝部のニュース一覧。チーム情報、選手の活躍を掲載。',
-    url: 'https://nssu-ekiden.com/topics/news',
+    url: 'https://nssu-ekiden.works/topics/news',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/topics/news',
+    canonical: 'https://nssu-ekiden.works/topics/news',
   },
 };
 

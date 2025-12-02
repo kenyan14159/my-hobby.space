@@ -8,20 +8,20 @@ import { PhotoGallery } from '@/components/photo-gallery';
 export default function HakoneQualifyingRound2025() {
   // ギャラリー画像
   const galleryImages: string[] = [
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite1.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite2.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite3.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite4.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite5.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite6.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite7.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite8.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite9.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite10.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite11.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite12.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite13.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/10/102-hakone-yosen-favorite14.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite1.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite2.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite3.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite4.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite5.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite6.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite7.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite8.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite9.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite10.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite11.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite12.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite13.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/10/102-hakone-yosen-favorite14.jpeg',
   ];
 
   // チーム総合成績（上位10校）

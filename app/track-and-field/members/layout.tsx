@@ -153,11 +153,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'メンバー・ブロック紹介 | 日本体育大学陸上競技部',
     description: generateDescription(),
-    url: 'https://nssu-ekiden.com/track-and-field/members',
+    url: 'https://nssu-ekiden.works/track-and-field/members',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/track-and-field/members',
+    canonical: 'https://nssu-ekiden.works/track-and-field/members',
   },
 };
 
@@ -175,19 +175,19 @@ export default function TrackMembersLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'ホーム',
-        item: 'https://nssu-ekiden.com',
+        item: 'https://nssu-ekiden.works',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: '陸上競技部',
-        item: 'https://nssu-ekiden.com/track-and-field',
+        item: 'https://nssu-ekiden.works/track-and-field',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'メンバー・ブロック紹介',
-        item: 'https://nssu-ekiden.com/track-and-field/members',
+        item: 'https://nssu-ekiden.works/track-and-field/members',
       },
     ],
   };
@@ -198,7 +198,7 @@ export default function TrackMembersLayout({
     '@type': 'SportsTeam',
     name: '日本体育大学陸上競技部',
     sport: '陸上競技',
-    url: 'https://nssu-ekiden.com/track-and-field/members',
+    url: 'https://nssu-ekiden.works/track-and-field/members',
     memberOf: {
       '@type': 'Organization',
       name: '日本体育大学',
@@ -218,7 +218,7 @@ export default function TrackMembersLayout({
           '@type': 'Organization',
           name: '日本体育大学陸上競技部',
         },
-        url: `https://nssu-ekiden.com/track-and-field/members#${encodeURIComponent(member.name)}`,
+        url: `https://nssu-ekiden.works/track-and-field/members#${encodeURIComponent(member.name)}`,
         description: `日本体育大学陸上競技部${member.role ? ` ${member.role}。` : ''}${member.event ? `種目: ${member.event.replace(/<br>/g, '、')}。` : ''}${member.school ? `${member.school}出身。` : ''}${member.from ? `${member.from}。` : ''}`,
       };
       
@@ -250,7 +250,7 @@ export default function TrackMembersLayout({
       '@type': 'ListItem',
       position: index + 1,
       name: name,
-      url: `https://nssu-ekiden.com/track-and-field/members#${encodeURIComponent(name)}`,
+      url: `https://nssu-ekiden.works/track-and-field/members#${encodeURIComponent(name)}`,
     })),
   };
 

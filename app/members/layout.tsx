@@ -120,11 +120,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'メンバー紹介 | 日本体育大学駅伝部',
     description: generateDescription(),
-    url: 'https://nssu-ekiden.com/members',
+    url: 'https://nssu-ekiden.works/members',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/members',
+    canonical: 'https://nssu-ekiden.works/members',
   },
 };
 
@@ -142,13 +142,13 @@ export default function MemberLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'ホーム',
-        item: 'https://nssu-ekiden.com',
+        item: 'https://nssu-ekiden.works',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: '部員紹介',
-        item: 'https://nssu-ekiden.com/members',
+        item: 'https://nssu-ekiden.works/members',
       },
     ],
   };
@@ -159,7 +159,7 @@ export default function MemberLayout({
     '@type': 'SportsTeam',
     name: '日本体育大学陸上競技部男子駅伝ブロック',
     sport: '駅伝',
-    url: 'https://nssu-ekiden.com/members',
+    url: 'https://nssu-ekiden.works/members',
     memberOf: {
       '@type': 'Organization',
       name: '日本体育大学',
@@ -178,7 +178,7 @@ export default function MemberLayout({
           '@type': 'Organization',
           name: '日本体育大学陸上競技部男子駅伝ブロック',
         },
-        url: `https://nssu-ekiden.com/members#${encodeURIComponent(member.name)}`,
+        url: `https://nssu-ekiden.works/members#${encodeURIComponent(member.name)}`,
         description: `日本体育大学駅伝部${member.grade ? `${member.grade}年生。` : ''}${member.highSchool ? `${member.highSchool}出身。` : ''}${member.faculty && member.department ? `${member.faculty}学部${member.department}学科。` : ''}`,
       };
       
@@ -208,7 +208,7 @@ export default function MemberLayout({
           '@type': 'Organization',
           name: '日本体育大学陸上競技部男子駅伝ブロック',
         },
-        url: `https://nssu-ekiden.com/members#${encodeURIComponent(staff.name)}`,
+        url: `https://nssu-ekiden.works/members#${encodeURIComponent(staff.name)}`,
         description: `日本体育大学駅伝部${staff.role || 'スタッフ'}。${staff.highSchool ? `${staff.highSchool}出身。` : ''}`,
       };
       
@@ -240,7 +240,7 @@ export default function MemberLayout({
       '@type': 'ListItem',
       position: index + 1,
       name: name,
-      url: `https://nssu-ekiden.com/members#${encodeURIComponent(name)}`,
+      url: `https://nssu-ekiden.works/members#${encodeURIComponent(name)}`,
     })),
   };
 

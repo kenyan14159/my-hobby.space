@@ -270,7 +270,7 @@ export default function AlbumPage() {
                 <div className="flex items-start gap-6 mb-6">
                   <div className="relative w-20 h-20 rounded-2xl overflow-hidden border-4 border-white shadow-xl flex-shrink-0">
                     <Image
-                      src="https://nssu-ekiden.com/wp-content/uploads/2025/02/photo194-300x300-1.jpg"
+                      src="https://nssu-ekiden.works/wp-content/uploads/2025/02/photo194-300x300-1.jpg"
                       alt="saya"
                       fill
                       className="object-cover"

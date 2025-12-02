@@ -54,7 +54,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "nssu-ekiden.com",
+        hostname: "nssu-ekiden.works",
         pathname: "/**",
       },
       {

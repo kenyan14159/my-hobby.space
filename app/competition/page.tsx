@@ -48,7 +48,7 @@ export default function LongDistancePage() {
           <div className="relative mb-12 rounded-xl overflow-hidden shadow-lg">
             <AspectRatio ratio={16 / 9}>
               <Image
-                src="https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite258.jpg"
+                src="https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite258.jpg"
                 alt="日体大長距離競技会"
                 fill
                 priority
@@ -156,15 +156,15 @@ export default function LongDistancePage() {
               content={
                 <div className="space-y-2">
                   <DocumentLink 
-                    href="https://nssu-ekiden.com/wp-content/uploads/2025/03/長距離注意事項.pdf"
+                    href="https://nssu-ekiden.works/wp-content/uploads/2025/03/長距離注意事項.pdf"
                     title="競技会注意事項"
                   />
                   <DocumentLink 
-                    href="https://nssu-ekiden.com/wp-content/uploads/2025/03/長距離開催予定種目.pdf"
+                    href="https://nssu-ekiden.works/wp-content/uploads/2025/03/長距離開催予定種目.pdf"
                     title="開催予定種目"
                   />
                   <DocumentLink 
-                    href="https://nssu-ekiden.com/wp-content/uploads/2025/03/長距離振り込みに関して.pdf"
+                    href="https://nssu-ekiden.works/wp-content/uploads/2025/03/長距離振り込みに関して.pdf"
                     title="お振込みに関して"
                   />
                 </div>
@@ -232,11 +232,11 @@ export default function LongDistancePage() {
                   </p>
                   <div className="space-y-4">
                     <DocumentLink 
-                      href="https://nssu-ekiden.com/wp-content/uploads/2025/02/取材申請につきまして.pdf"
+                      href="https://nssu-ekiden.works/wp-content/uploads/2025/02/取材申請につきまして.pdf"
                       title="取材申請について"
                     />
                     <DocumentLink 
-                      href="https://nssu-ekiden.com/wp-content/uploads/2025/02/取材申請.xlsx"
+                      href="https://nssu-ekiden.works/wp-content/uploads/2025/02/取材申請.xlsx"
                       title="取材申請ファイル"
                     />
                   </div>

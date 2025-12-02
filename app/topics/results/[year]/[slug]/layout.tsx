@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       images,
     },
     alternates: {
-      canonical: `https://nssu-ekiden.com/topics/results/${fullSlug}`,
+      canonical: `https://nssu-ekiden.works/topics/results/${fullSlug}`,
     },
   };
 }
@@ -68,11 +68,11 @@ export default function ResultDetailLayoutRoute({
     organizer: {
       '@type': 'Organization',
       name: '日本体育大学陸上競技部男子駅伝ブロック',
-      url: 'https://nssu-ekiden.com'
+      url: 'https://nssu-ekiden.works'
     },
     image: item.image,
     description: `${item.title}${item.date && typeof item.date === 'string' ? `（${item.date}）` : ''}。日本体育大学駅伝部の試合結果。`,
-    url: `https://nssu-ekiden.com/topics/results/${fullSlug}`,
+    url: `https://nssu-ekiden.works/topics/results/${fullSlug}`,
   } : null;
 
   // BreadcrumbList構造化データ
@@ -84,25 +84,25 @@ export default function ResultDetailLayoutRoute({
         '@type': 'ListItem',
         position: 1,
         name: 'ホーム',
-        item: 'https://nssu-ekiden.com',
+        item: 'https://nssu-ekiden.works',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'トピックス',
-        item: 'https://nssu-ekiden.com/topics',
+        item: 'https://nssu-ekiden.works/topics',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'リザルト',
-        item: 'https://nssu-ekiden.com/topics/results',
+        item: 'https://nssu-ekiden.works/topics/results',
       },
       {
         '@type': 'ListItem',
         position: 4,
         name: item?.title || '試合結果',
-        item: `https://nssu-ekiden.com/topics/results/${fullSlug}`,
+        item: `https://nssu-ekiden.works/topics/results/${fullSlug}`,
       },
     ],
   };

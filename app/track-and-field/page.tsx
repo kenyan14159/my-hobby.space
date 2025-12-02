@@ -84,7 +84,7 @@ export default function TrackAndFieldPage() {
               "name": "日本体育大学",
             },
             "description": "1925年創部、2025年で創部100周年を迎える日本体育大学陸上競技部。箱根駅伝、関東インカレ、日本インカレなど主要大会に出場。",
-            "url": "https://nssu-ekiden.com/track-and-field",
+            "url": "https://nssu-ekiden.works/track-and-field",
             "sameAs": [
               "https://x.com/nittait_f",
               "https://www.instagram.com/nittaidai_official",

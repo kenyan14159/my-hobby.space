@@ -173,11 +173,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '歴代記録 | 日本体育大学駅伝部',
     description: generateDescription(),
-    url: 'https://nssu-ekiden.com/records',
+    url: 'https://nssu-ekiden.works/records',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/records',
+    canonical: 'https://nssu-ekiden.works/records',
   },
 };
 
@@ -195,13 +195,13 @@ export default function RecordsLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'ホーム',
-        item: 'https://nssu-ekiden.com',
+        item: 'https://nssu-ekiden.works',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: '駅伝部記録',
-        item: 'https://nssu-ekiden.com/records',
+        item: 'https://nssu-ekiden.works/records',
       },
     ],
   };
@@ -218,7 +218,7 @@ export default function RecordsLayout({
           '@type': 'Organization',
           name: '日本体育大学陸上競技部男子駅伝ブロック',
         },
-        url: `https://nssu-ekiden.com/records#${encodeURIComponent(holder.name)}`,
+        url: `https://nssu-ekiden.works/records#${encodeURIComponent(holder.name)}`,
         description: `日本体育大学駅伝部の歴代記録保持者。${holder.events.join('、')}の記録を保持。${holder.years.length > 0 ? `${holder.years.join('、')}に記録。` : ''}${holder.school ? `${holder.school}出身。` : ''}`,
       };
       
@@ -242,7 +242,7 @@ export default function RecordsLayout({
       '@type': 'ListItem',
       position: index + 1,
       name: name,
-      url: `https://nssu-ekiden.com/records#${encodeURIComponent(name)}`,
+      url: `https://nssu-ekiden.works/records#${encodeURIComponent(name)}`,
     })),
   };
 

@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '応援メッセージ | 日本体育大学駅伝部',
     description: '日体大駅伝部への応援メッセージ一覧。在校生、卒業生、ファンの皆様からの応援メッセージを掲載。',
-    url: 'https://nssu-ekiden.com/messages',
+    url: 'https://nssu-ekiden.works/messages',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/messages',
+    canonical: 'https://nssu-ekiden.works/messages',
   },
 };
 
@@ -43,13 +43,13 @@ export default function MessagesLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'ホーム',
-        item: 'https://nssu-ekiden.com',
+        item: 'https://nssu-ekiden.works',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: '応援メッセージ',
-        item: 'https://nssu-ekiden.com/messages',
+        item: 'https://nssu-ekiden.works/messages',
       },
     ],
   };
@@ -60,7 +60,7 @@ export default function MessagesLayout({
     '@type': 'CollectionPage',
     name: '応援メッセージ一覧',
     description: '日本体育大学駅伝部への応援メッセージ一覧ページ',
-    url: 'https://nssu-ekiden.com/messages',
+    url: 'https://nssu-ekiden.works/messages',
     mainEntity: {
       '@type': 'ItemList',
       name: '応援メッセージリスト',

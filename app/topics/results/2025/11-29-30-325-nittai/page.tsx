@@ -142,7 +142,7 @@ export default function NSSU325thLongDistanceResult2025() {
             className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold shadow-lg"
           >
             <a
-              href="https://nssu-ekiden.com/the-325th-nippon-sport-science-university-long-distance-track-meet-and-the-19th-ncg/"
+              href="https://nssu-ekiden.works/the-325th-nippon-sport-science-university-long-distance-track-meet-and-the-19th-ncg/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"

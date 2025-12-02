@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '日体大記録会 | 日本体育大学駅伝部',
     description: '日体大駅伝部主催の日体大記録会。大会情報、エントリー方法。',
-    url: 'https://nssu-ekiden.com/competition',
+    url: 'https://nssu-ekiden.works/competition',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/competition',
+    canonical: 'https://nssu-ekiden.works/competition',
   },
 };
 

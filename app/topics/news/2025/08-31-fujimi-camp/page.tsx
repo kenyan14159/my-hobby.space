@@ -20,10 +20,10 @@ export default function FujimiCampPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const campImages = [
-    "https://nssu-ekiden.com/wp-content/uploads/2025/09/2025-fujimi-camp00001.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/09/2025-fujimi-camp00002.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/09/2025-fujimi-camp00003.jpg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/09/2025-fujimi-camp00004.jpg"
+    "https://nssu-ekiden.works/wp-content/uploads/2025/09/2025-fujimi-camp00001.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/09/2025-fujimi-camp00002.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/09/2025-fujimi-camp00003.jpg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/09/2025-fujimi-camp00004.jpg"
   ];
 
   const handlePrevious = useCallback(() => {

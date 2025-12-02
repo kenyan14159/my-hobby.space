@@ -14,56 +14,56 @@ const highlights = [
     title: "メンバー紹介",
     description: "選手・スタッフの紹介",
     href: "/members",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite254.jpg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite254.jpg"
   },
   {
     icon: BarChart3,
     title: "歴代記録",
     description: "チームの輝かしい記録",
     href: "/records",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite337.jpg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite337.jpg"
   },
   {
     icon: Trophy,
     title: "駅伝の歴史",
     description: "箱根駅伝などの出場実績",
     href: "/ekiden",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite339.jpg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite339.jpg"
   },
   {
     icon: CalendarCheck2,
     title: "日体大記録会",
     description: "主催競技会の情報",
     href: "/competition",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite289.jpg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite289.jpg"
   },
   {
     icon: Gift,
     title: "限定コンテンツ",
     description: "限定情報など",
     href: "/limited-content/content",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/06/saya-img1.jpg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/06/saya-img1.jpg"
   },
   {
     icon: Camera,
     title: "アルバム",
     description: "活動写真アルバム集",
     href: "/limited-content/album",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite350.jpg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite350.jpg"
   },
   {
     icon: Landmark,
     title: "サポーターの皆様",
     description: "ご支援いただいている皆様",
     href: "/information/supporters",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite257.jpg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite257.jpg"
   },
   {
     icon: HelpCircle,
     title: "お問い合わせ",
     description: "チームへのお問い合わせはこちら",
     href: "/information/contact",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite171.jpeg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite171.jpeg"
   }
 ];
 

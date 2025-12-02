@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ニュース一覧 | 日本体育大学陸上競技部',
     description: '日体大陸上競技部のニュース一覧。大会結果、選手の活躍を掲載。',
-    url: 'https://nssu-ekiden.com/track-and-field/news',
+    url: 'https://nssu-ekiden.works/track-and-field/news',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/track-and-field/news',
+    canonical: 'https://nssu-ekiden.works/track-and-field/news',
   },
 };
 

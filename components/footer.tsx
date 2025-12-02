@@ -71,7 +71,7 @@ export function Footer() {
           <div className="flex items-center justify-center gap-3">
             <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white">
               <Image
-                src="https://nssu-ekiden.com/wp-content/uploads/2025/02/photo194-300x300-1.jpg"
+                src="https://nssu-ekiden.works/wp-content/uploads/2025/02/photo194-300x300-1.jpg"
                 alt="スポーツカメラマン saya - 日体大駅伝部写真提供"
                 fill
                 className="object-cover"

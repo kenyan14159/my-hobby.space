@@ -25,7 +25,7 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
         '@type': 'ListItem',
         position: index + 1,
         name: item.label,
-        item: `https://nssu-ekiden.com${item.href}`
+        item: `https://nssu-ekiden.works${item.href}`
       }))
   };
 

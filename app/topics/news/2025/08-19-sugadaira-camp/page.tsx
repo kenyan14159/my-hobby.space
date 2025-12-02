@@ -20,12 +20,12 @@ export default function SugadairaCampPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const campImages = [
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite1-scaled.jpeg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite2.jpeg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite3.jpeg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite4.jpeg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite5.jpeg",
-    "https://nssu-ekiden.com/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite6.jpeg"
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite1-scaled.jpeg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite2.jpeg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite3.jpeg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite4.jpeg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite5.jpeg",
+    "https://nssu-ekiden.works/wp-content/uploads/2025/08/2025-sugadaira-camp-favorite6.jpeg"
   ];
 
   const handlePrevious = useCallback(() => {

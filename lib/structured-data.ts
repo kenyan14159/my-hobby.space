@@ -51,10 +51,10 @@ export function generateArticleSchema(data: ArticleData) {
       name: '日本体育大学陸上競技部男子駅伝ブロック',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu192.jpg',
+        url: 'https://nssu-ekiden.works/wp-content/uploads/2025/02/nssu192.jpg',
       },
     },
-    image: data.image || 'https://nssu-ekiden.com/wp-content/uploads/2025/02/nssuimageog.jpeg',
+    image: data.image || 'https://nssu-ekiden.works/wp-content/uploads/2025/02/nssuimageog.jpeg',
     url: data.url,
     mainEntityOfPage: {
       '@type': 'WebPage',

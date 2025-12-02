@@ -23,7 +23,7 @@ export default function HakoneQualifyingRosterPage() {
         "10000m": "29'05\"97",
         "ハーフマラソン": "1:03'21"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers54.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers54.jpeg"
     },
     {
       name: "大竹 雄大",
@@ -36,7 +36,7 @@ export default function HakoneQualifyingRosterPage() {
         "10000m": "29'44\"72",
         "ハーフマラソン": "1:05'47"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers64.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers64.jpeg"
     },
     {
       name: "倉村 空",
@@ -50,7 +50,7 @@ export default function HakoneQualifyingRosterPage() {
         "3000mSC": "9'22\"62",
         "ハーフマラソン": "1:05'45"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/member35-e1748839633610.jpg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/member35-e1748839633610.jpg"
     },
     {
       name: "田島 駿介",
@@ -63,7 +63,7 @@ export default function HakoneQualifyingRosterPage() {
         "10000m": "28'11\"41",
         "ハーフマラソン": "1:03'15"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-members1.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-members1.jpeg"
     },
     {
       name: "平島 龍斗",
@@ -76,7 +76,7 @@ export default function HakoneQualifyingRosterPage() {
         "10000m": "28'20\"32",
         "ハーフマラソン": "1:03'47"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers5.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers5.jpeg"
     },
     {
       name: "二村 昇太朗",
@@ -89,7 +89,7 @@ export default function HakoneQualifyingRosterPage() {
         "10000m": "29'03\"74",
         "ハーフマラソン": "1:05'51"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers12.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers12.jpeg"
     },
     {
       name: "山崎 丞",
@@ -102,7 +102,7 @@ export default function HakoneQualifyingRosterPage() {
         "10000m": "28'19\"33",
         "ハーフマラソン": "1:02'06"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers53.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers53.jpeg"
     },
     {
       name: "天瀬 海斗",
@@ -116,7 +116,7 @@ export default function HakoneQualifyingRosterPage() {
         "3000mSC": "8'49\"23",
         "ハーフマラソン": "1:05'46"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers25.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers25.jpeg"
     },
     {
       name: "吉田 黎大",
@@ -130,7 +130,7 @@ export default function HakoneQualifyingRosterPage() {
         "3000mSC": "9'12\"85",
         "ハーフマラソン": "1:04'11"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers21.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers21.jpeg"
     },
     {
       name: "荻野 桂輔",
@@ -143,7 +143,7 @@ export default function HakoneQualifyingRosterPage() {
         "3000mSC": "10'06\"84",
         "10000m": "30'41\"10"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers3.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers3.jpeg"
     },
     {
       name: "佐藤 大和",
@@ -157,7 +157,7 @@ export default function HakoneQualifyingRosterPage() {
         "3000mSC": "9'51\"96",
         "ハーフマラソン": "1:04:15"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers44.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers44.jpeg"
     },
     {
       name: "樋村 銀河",
@@ -170,7 +170,7 @@ export default function HakoneQualifyingRosterPage() {
         "10000m": "29'39\"84",
         "ハーフマラソン": "1:07:15"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers20.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers20.jpeg"
     },
     {
       name: "水津 勇人",
@@ -182,7 +182,7 @@ export default function HakoneQualifyingRosterPage() {
         "5000m": "14'32\"99",
         "10000m": "31'31\"81"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers47.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers47.jpeg"
     },
     {
       name: "夏見 虹郎",
@@ -195,7 +195,7 @@ export default function HakoneQualifyingRosterPage() {
         "10000m": "29'19\"91",
         "ハーフマラソン": "1:08'13"
       },
-      image: "https://nssu-ekiden.com/wp-content/uploads/2025/05/2025-menbers42.jpeg"
+      image: "https://nssu-ekiden.works/wp-content/uploads/2025/05/2025-menbers42.jpeg"
     }
   ];
 
@@ -393,7 +393,7 @@ export default function HakoneQualifyingRosterPage() {
           </div>
           <div className="flex justify-center">
             <a
-              href="https://nssu-ekiden.com/wp-content/uploads/2025/10/102hakone_coursemap.pdf"
+              href="https://nssu-ekiden.works/wp-content/uploads/2025/10/102hakone_coursemap.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300 shadow-lg hover:shadow-xl"

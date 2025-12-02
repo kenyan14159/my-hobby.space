@@ -15,8 +15,8 @@ const newsList = [
     date: "2025-07-04",
     category: "リザルト",
     images: [
-      "https://nssu-ekiden.com/wp-content/uploads/2025/07/第109回日本陸上競技選手権大会00001.png",
-      "https://nssu-ekiden.com/wp-content/uploads/2025/07/第109回日本陸上競技選手権大会00002.png"
+      "https://nssu-ekiden.works/wp-content/uploads/2025/07/第109回日本陸上競技選手権大会00001.png",
+      "https://nssu-ekiden.works/wp-content/uploads/2025/07/第109回日本陸上競技選手権大会00002.png"
     ]
   },
   {
@@ -24,8 +24,8 @@ const newsList = [
     date: "2025-06-05",
     category: "リザルト",
     images: [
-      "https://nssu-ekiden.com/wp-content/uploads/2025/07/第94回日本学生陸上競技対校選手権大会00001.png",
-      "https://nssu-ekiden.com/wp-content/uploads/2025/07/第94回日本学生陸上競技対校選手権大会00002.png"
+      "https://nssu-ekiden.works/wp-content/uploads/2025/07/第94回日本学生陸上競技対校選手権大会00001.png",
+      "https://nssu-ekiden.works/wp-content/uploads/2025/07/第94回日本学生陸上競技対校選手権大会00002.png"
     ]
   },
   {
@@ -33,8 +33,8 @@ const newsList = [
     date: "2025-05-08",
     category: "リザルト",
     images: [
-      "https://nssu-ekiden.com/wp-content/uploads/2025/07/関東学生陸上競技対校選手権大会00001.png",
-      "https://nssu-ekiden.com/wp-content/uploads/2025/07/関東学生陸上競技対校選手権大会00002.png"
+      "https://nssu-ekiden.works/wp-content/uploads/2025/07/関東学生陸上競技対校選手権大会00001.png",
+      "https://nssu-ekiden.works/wp-content/uploads/2025/07/関東学生陸上競技対校選手権大会00002.png"
     ]
   },
   {
@@ -42,8 +42,8 @@ const newsList = [
     date: "2025-04-25",
     category: "リザルト",
     images: [
-      "https://nssu-ekiden.com/wp-content/uploads/2025/07/日本学生陸上競技個人選手権大会00001.png",
-      "https://nssu-ekiden.com/wp-content/uploads/2025/07/日本学生陸上競技個人選手権大会00002.png"
+      "https://nssu-ekiden.works/wp-content/uploads/2025/07/日本学生陸上競技個人選手権大会00001.png",
+      "https://nssu-ekiden.works/wp-content/uploads/2025/07/日本学生陸上競技個人選手権大会00002.png"
     ]
   },
 ];

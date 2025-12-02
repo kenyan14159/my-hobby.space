@@ -4,7 +4,7 @@
 
 ## 🌐 サイトURL
 
-**本番環境**: https://my-hobby.space
+**本番環境**: https://nssu-ekiden.works
 
 > 🎯 Cloudflare Pagesによる自動デプロイを実装済み！mainブランチへのpush時に自動的にデプロイされます。
 
@@ -33,8 +33,8 @@
 
 ```bash
 # リポジトリのクローン
-git clone https://github.com/kenyan14159/my-hobby.space.git
-cd my-hobby.space
+git clone https://github.com/kenyan14159/nssu-ekiden.works.git
+cd nssu-ekiden.works
 
 # 依存パッケージのインストール
 npm install
@@ -108,7 +108,7 @@ Cloudflare Pagesのビルド設定：
 ## 📁 ディレクトリ構造
 
 ```
-my-hobby.space/
+nssu-ekiden.works/
 ├── app/                      # Next.js App Router
 │   ├── layout.tsx           # ルートレイアウト
 │   ├── page.tsx             # トップページ
@@ -219,8 +219,8 @@ git commit -m "fix: メンバー一覧の表示バグを修正"
 
 ## 📞 サポート・お問い合わせ
 
-- **ウェブサイト**: https://my-hobby.space
-- **GitHub Issues**: https://github.com/kenyan14159/my-hobby.space/issues
+- **ウェブサイト**: https://nssu-ekiden.works
+- **GitHub Issues**: https://github.com/kenyan14159/nssu-ekiden.works/issues
 
 ---
 

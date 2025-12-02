@@ -9,13 +9,13 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu192.jpg",
+      "src": "https://nssu-ekiden.works/wp-content/uploads/2025/02/nssu192.jpg",
       "sizes": "192x192",
       "type": "image/jpeg",
       "purpose": "maskable any"
     },
     {
-      "src": "https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu192.jpg",
+      "src": "https://nssu-ekiden.works/wp-content/uploads/2025/02/nssu192.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "maskable any"

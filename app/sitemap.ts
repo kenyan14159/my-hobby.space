@@ -6,7 +6,7 @@ import { getAllResults } from '@/lib/results';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://nssu-ekiden.com';
+  const baseUrl = 'https://nssu-ekiden.works';
   const currentDate = new Date().toISOString();
   
   // 基本的な静的ページ

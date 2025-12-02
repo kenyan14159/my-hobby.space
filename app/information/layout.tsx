@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'チーム情報 | 日本体育大学駅伝部',
     description: '日体大駅伝部のチーム情報。サポーター情報、応援ガイド、お問い合わせ先を掲載。',
-    url: 'https://nssu-ekiden.com/information',
+    url: 'https://nssu-ekiden.works/information',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/information',
+    canonical: 'https://nssu-ekiden.works/information',
   },
 };
 
@@ -43,13 +43,13 @@ export default function InformationLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'ホーム',
-        item: 'https://nssu-ekiden.com',
+        item: 'https://nssu-ekiden.works',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'チーム情報',
-        item: 'https://nssu-ekiden.com/information',
+        item: 'https://nssu-ekiden.works/information',
       },
     ],
   };
@@ -60,7 +60,7 @@ export default function InformationLayout({
     '@type': 'CollectionPage',
     name: 'チーム情報',
     description: '日本体育大学駅伝部のチーム情報ページ',
-    url: 'https://nssu-ekiden.com/information',
+    url: 'https://nssu-ekiden.works/information',
     mainEntity: {
       '@type': 'ItemList',
       name: 'チーム情報メニュー',
@@ -69,25 +69,25 @@ export default function InformationLayout({
           '@type': 'ListItem',
           position: 1,
           name: 'サポーターの皆様',
-          url: 'https://nssu-ekiden.com/information/supporters',
+          url: 'https://nssu-ekiden.works/information/supporters',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: '応援してくださる皆様へ',
-          url: 'https://nssu-ekiden.com/information/for-fans',
+          url: 'https://nssu-ekiden.works/information/for-fans',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'ホームページについて',
-          url: 'https://nssu-ekiden.com/information/about',
+          url: 'https://nssu-ekiden.works/information/about',
         },
         {
           '@type': 'ListItem',
           position: 4,
           name: 'お問い合わせ',
-          url: 'https://nssu-ekiden.com/information/contact',
+          url: 'https://nssu-ekiden.works/information/contact',
         },
       ],
     },

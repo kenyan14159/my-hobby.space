@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '陸上競技部 | 日本体育大学陸上競技部',
     description: '日体大陸上競技部の活動情報。トラック・フィールド競技の選手情報、大会結果を掲載。',
-    url: 'https://nssu-ekiden.com/track-and-field',
+    url: 'https://nssu-ekiden.works/track-and-field',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://nssu-ekiden.com/track-and-field',
+    canonical: 'https://nssu-ekiden.works/track-and-field',
   },
 };
 

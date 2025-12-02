@@ -8,14 +8,14 @@ import { PhotoGallery } from '@/components/photo-gallery';
 export default function AllJapanUniversityEkidenResult2025() {
   // ギャラリー画像
   const galleryImages: string[] = [
-    'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan-favorite1.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan-favorite2.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan-favorite3.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan-favorite4.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan-favorite5.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan-favorite6.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan-favorite7.jpeg',
-    'https://nssu-ekiden.com/wp-content/uploads/2025/11/2025-all-japan-favorite8.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/11/2025-all-japan-favorite1.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/11/2025-all-japan-favorite2.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/11/2025-all-japan-favorite3.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/11/2025-all-japan-favorite4.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/11/2025-all-japan-favorite5.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/11/2025-all-japan-favorite6.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/11/2025-all-japan-favorite7.jpeg',
+    'https://nssu-ekiden.works/wp-content/uploads/2025/11/2025-all-japan-favorite8.jpeg',
   ];
 
   // 区間成績

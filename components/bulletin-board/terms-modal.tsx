@@ -135,10 +135,10 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
             <AlertDescription className="text-blue-800">
               ご不明な点がございましたら、
               <a 
-                href="mailto:info@nssu-ekiden.com" 
+                href="mailto:info@nssu-ekiden.works" 
                 className="underline hover:no-underline font-medium ml-1"
               >
-                info@nssu-ekiden.com
+                info@nssu-ekiden.works
               </a>
               までご連絡ください。
             </AlertDescription>

@@ -111,12 +111,12 @@ export function generateWebSiteSchema() {
     '@type': 'WebSite',
     name: '日本体育大学駅伝部',
     alternateName: ['日体大駅伝部', 'NSSU駅伝部'],
-    url: 'https://nssu-ekiden.com',
+    url: 'https://nssu-ekiden.works',
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://nssu-ekiden.com/search?q={search_term_string}',
+        urlTemplate: 'https://nssu-ekiden.works/search?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },
@@ -139,10 +139,10 @@ export function generateHakoneEkidenSchema(year: number = 2026) {
     },
     competitor: {
       name: '日本体育大学駅伝部',
-      url: 'https://nssu-ekiden.com',
+      url: 'https://nssu-ekiden.works',
     },
-    image: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/nssuimageog.jpeg',
-    url: 'https://nssu-ekiden.com/ekiden/hakone',
+    image: 'https://nssu-ekiden.works/wp-content/uploads/2025/02/nssuimageog.jpeg',
+    url: 'https://nssu-ekiden.works/ekiden/hakone',
   });
 }
 
@@ -161,9 +161,9 @@ export function generateAllJapanEkidenSchema(year: number = 2025) {
     },
     competitor: {
       name: '日本体育大学駅伝部',
-      url: 'https://nssu-ekiden.com',
+      url: 'https://nssu-ekiden.works',
     },
-    url: 'https://nssu-ekiden.com/ekiden/all-japan',
+    url: 'https://nssu-ekiden.works/ekiden/all-japan',
   });
 }
 
@@ -182,8 +182,8 @@ export function generateIzumoEkidenSchema(year: number = 2025) {
     },
     competitor: {
       name: '日本体育大学駅伝部',
-      url: 'https://nssu-ekiden.com',
+      url: 'https://nssu-ekiden.works',
     },
-    url: 'https://nssu-ekiden.com/ekiden/izumo',
+    url: 'https://nssu-ekiden.works/ekiden/izumo',
   });
 }

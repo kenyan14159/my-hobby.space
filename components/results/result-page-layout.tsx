@@ -38,7 +38,7 @@ export default function ResultPageLayout({
   children,
 }: ResultPageLayoutProps) {
   const pathname = usePathname();
-  const pageUrl = `https://nssu-ekiden.com${pathname || ''}`;
+  const pageUrl = `https://nssu-ekiden.works${pathname || ''}`;
   const breadcrumbItems: BreadcrumbItem[] = [
     { label: 'トピックス', href: '/topics' },
     { label: 'リザルト', href: '/topics/results' },
@@ -48,8 +48,8 @@ export default function ResultPageLayout({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'トピックス', item: 'https://nssu-ekiden.com/topics' },
-      { '@type': 'ListItem', position: 2, name: 'リザルト', item: 'https://nssu-ekiden.com/topics/results' },
+      { '@type': 'ListItem', position: 1, name: 'トピックス', item: 'https://nssu-ekiden.works/topics' },
+      { '@type': 'ListItem', position: 2, name: 'リザルト', item: 'https://nssu-ekiden.works/topics/results' },
       { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
     ],
   } as const;

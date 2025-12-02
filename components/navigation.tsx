@@ -157,7 +157,7 @@ export function Navigation() {
           <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity" onClick={closeMobileMenuAndReset}>
             <div className="relative h-8 w-16 flex-shrink-0">
               <Image
-                src="https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu.jpeg"
+                src="https://nssu-ekiden.works/wp-content/uploads/2025/02/nssu.jpeg"
                 alt="日本体育大学陸上競技部男子駅伝ブロック 公式ロゴ"
                 fill
                 className="object-contain"
@@ -380,7 +380,7 @@ function MobileNavigation({ closeMobileMenu }: { closeMobileMenu: () => void }) 
         <Link href="/" onClick={handleLinkClick} className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
           <div className="relative h-8 w-16 flex-shrink-0">
             <Image
-              src="https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu.jpeg"
+              src="https://nssu-ekiden.works/wp-content/uploads/2025/02/nssu.jpeg"
               alt="日本体育大学駅伝部"
               fill
               className="object-contain"

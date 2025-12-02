@@ -46,7 +46,7 @@ const notableAlumni: Alumnus[] = [
     reading: "いけだ ようへい",
     achievement:
       "箱根駅伝2区3位など学生時代から活躍。実業団・kaoではマラソンで日本人歴代2位の好記録を樹立。現役トップランナーとして世界を目指す。",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/06/yohei-ikeda.jpg",
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/06/yohei-ikeda.jpg",
   },
   {
     name: "采谷 義秋",

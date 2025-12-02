@@ -16,7 +16,7 @@ const topicsItems = [
     color: "text-sky-600",
     bgColor: "from-sky-500/10 to-sky-600/10",
     description: "大会・イベントの日程",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite297.jpg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite297.jpg"
   },
   {
     name: "リザルト",
@@ -25,7 +25,7 @@ const topicsItems = [
     color: "text-emerald-600",
     bgColor: "from-emerald-500/10 to-emerald-600/10",
     description: "大会結果",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/06/saya-img6.jpg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/06/saya-img6.jpg"
   },
   {
     name: "ニュース",
@@ -34,7 +34,7 @@ const topicsItems = [
     color: "text-orange-600",
     bgColor: "from-orange-500/10 to-orange-600/10",
     description: "最新ニュース",
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite195.jpeg"
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite195.jpeg"
   },
 ];
 

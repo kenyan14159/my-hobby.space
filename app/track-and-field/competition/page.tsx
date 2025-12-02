@@ -31,7 +31,7 @@ export default function CompetitionPage() {
       <div className="relative mb-12 rounded-lg overflow-hidden mt-8">
         <AspectRatio ratio={21 / 9}>
           <Image
-            src="https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite282.jpg"
+            src="https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite282.jpg"
             alt="日体大競技会"
             fill
             className="object-cover"
@@ -175,7 +175,7 @@ export default function CompetitionPage() {
                 </p>
                 
                 <Button variant="outline" size="sm" className="w-full justify-start text-xs" asChild>
-                  <a href="https://nssu-ekiden.com/wp-content/uploads/2025/03/日体大競技会駐車について.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href="https://nssu-ekiden.works/wp-content/uploads/2025/03/日体大競技会駐車について.pdf" target="_blank" rel="noopener noreferrer">
                     <Download className="h-3 w-3 mr-2" />
                     駐車について(詳細PDF)
                   </a>
@@ -193,19 +193,19 @@ export default function CompetitionPage() {
             </CardHeader>
             <CardContent className="space-y-2">
               <Button variant="outline" className="w-full justify-start" asChild>
-                <a href="https://nssu-ekiden.com/wp-content/uploads/2025/03/日体大競技会に参加するには.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="https://nssu-ekiden.works/wp-content/uploads/2025/03/日体大競技会に参加するには.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="h-4 w-4 mr-2" />
                   競技会に参加するには
                 </a>
               </Button>
               <Button variant="outline" className="w-full justify-start" asChild>
-                <a href="https://nssu-ekiden.com/wp-content/uploads/2025/03/日体大競技会振り込みに関して.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="https://nssu-ekiden.works/wp-content/uploads/2025/03/日体大競技会振り込みに関して.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="h-4 w-4 mr-2" />
                   お振込みに関して
                 </a>
               </Button>
               <Button variant="outline" className="w-full justify-start" asChild>
-                <a href="https://nssu-ekiden.com/wp-content/uploads/2025/02/証明書の発行に関して.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="https://nssu-ekiden.works/wp-content/uploads/2025/02/証明書の発行に関して.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="h-4 w-4 mr-2" />
                   記録証の発行について
                 </a>
@@ -331,13 +331,13 @@ export default function CompetitionPage() {
                 </p>
                 <div className="space-y-4">
                   <Button variant="outline" className="w-full justify-start" asChild>
-                    <a href="https://nssu-ekiden.com/wp-content/uploads/2025/03/日体大競技会取材申請.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="https://nssu-ekiden.works/wp-content/uploads/2025/03/日体大競技会取材申請.pdf" target="_blank" rel="noopener noreferrer">
                       <Download className="h-4 w-4 mr-2" />
                       取材申請について
                     </a>
                   </Button>
                   <Button variant="outline" className="w-full justify-start" asChild>
-                    <a href="https://nssu-ekiden.com/wp-content/uploads/2025/03/日体大競技会取材申請ファイル.xlsx" target="_blank" rel="noopener noreferrer">
+                    <a href="https://nssu-ekiden.works/wp-content/uploads/2025/03/日体大競技会取材申請ファイル.xlsx" target="_blank" rel="noopener noreferrer">
                       <Download className="h-4 w-4 mr-2" />
                       取材申請ファイル
                     </a>

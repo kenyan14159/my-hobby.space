@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       images,
     },
     alternates: {
-      canonical: `https://nssu-ekiden.com/topics/news/${fullSlug}`,
+      canonical: `https://nssu-ekiden.works/topics/news/${fullSlug}`,
     },
   };
 }
@@ -70,19 +70,19 @@ export default function NewsDetailLayoutRoute({
     author: {
       '@type': 'Organization',
       name: '日本体育大学陸上競技部男子駅伝ブロック',
-      url: 'https://nssu-ekiden.com'
+      url: 'https://nssu-ekiden.works'
     },
     publisher: {
       '@type': 'Organization',
       name: '日本体育大学駅伝部',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu192.jpg'
+        url: 'https://nssu-ekiden.works/wp-content/uploads/2025/02/nssu192.jpg'
       }
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://nssu-ekiden.com/topics/news/${fullSlug}`
+      '@id': `https://nssu-ekiden.works/topics/news/${fullSlug}`
     },
     description: `${item.title}。日本体育大学駅伝部の最新情報、チーム活動、選手の活躍、大会出場情報を掲載。日体大駅伝部の公式ニュースページです。`
   } : null;

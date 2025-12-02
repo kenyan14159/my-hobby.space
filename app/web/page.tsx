@@ -13,7 +13,7 @@ const webLinks = [
     url: "/track-and-field",
     description: "日本体育大学 陸上競技部の公式ページ",
     icon: <ExternalLink className="w-5 h-5 text-purple-500" />,
-    image: "https://nssu-ekiden.com/wp-content/uploads/2025/02/nssu192.jpg",
+    image: "https://nssu-ekiden.works/wp-content/uploads/2025/02/nssu192.jpg",
     isInternal: true,
   },
   {

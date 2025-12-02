@@ -18,7 +18,7 @@ export default function LimitedContent() {
       description: "チームの写真アルバム - 大会や合宿の様子を写真でご覧いただけます",
       link: "/limited-content/album",
       icon: <ImageIcon className="h-12 w-12 text-white drop-shadow-md" />,
-      bgImage: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite200.jpg",
+      bgImage: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite200.jpg",
       bgPosition: "center"
     },
     {
@@ -26,7 +26,7 @@ export default function LimitedContent() {
       description: "会員限定のコンテンツ",
       link: "/limited-content/content",
       icon: <Lock className="h-12 w-12 text-white drop-shadow-md" />,
-      bgImage: "https://nssu-ekiden.com/wp-content/uploads/2025/02/favorite33.jpeg",
+      bgImage: "https://nssu-ekiden.works/wp-content/uploads/2025/02/favorite33.jpeg",
       bgPosition: "center"
     }
   ];
