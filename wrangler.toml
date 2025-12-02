@@ -1,0 +1,8 @@
+# Cloudflare Pages デプロイ設定
+name = "my-hobby-space"
+compatibility_date = "2025-12-02"
+
+# 静的アセットのディレクトリを指定
+[assets]
+directory = "./out"
+
