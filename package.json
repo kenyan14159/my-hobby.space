@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit",
     "deploy": "npm run build && node scripts/deploy.js",
     "deploy:setup": "cp scripts/deploy-config.json.example scripts/deploy-config.json && echo '📝 scripts/deploy-config.json を編集してFTP設定を入力してください'",
-    "deploy:cloudflare": "npm run build && npx wrangler deploy"
+    "deploy:cloudflare": "npm run build && npx wrangler pages deploy out --project-name=my-hobby-space"
   },
   "dependencies": {
     "@apollo/client": "^3.13.8",
